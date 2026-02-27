@@ -80,7 +80,29 @@ function sanitize(val) {
   return String(val).trim();
 }
 
-app.listen(PORT, () => {
-  console.log('Server running at http://localhost:' + PORT);
-  console.log('Open e.g. http://localhost:' + PORT + '/Clinic/clinic_landing.html');
+// Add a root route for health check
+app.get('/', (req, res) => {
+  res.json({ 
+    status: 'ok', 
+    message: 'Landing Pages Server is running',
+    endpoints: {
+      clinic: '/Clinic/clinic_landing.html',
+      foodFranchises: '/Food_Francises/food_landing.html',
+      luxuryBoutiques: '/Luxury_Fashion_Boutiques/luxury_boutique_landing_v2 (1).html',
+      professionalServices: '/Professional_Services/Professional_Real.html',
+      toursTravels: '/Tours_&_Travels/tours_v3.html',
+      api: '/api/submit'
+    }
+  });
+});
+
+// Listen on 0.0.0.0 to accept connections from outside the container
+app.listen(PORT, '0.0.0.0', () => {
+  console.log('Server running on port ' + PORT);
+  console.log('Available landing pages:');
+  console.log('  - /Clinic/clinic_landing.html');
+  console.log('  - /Food_Francises/food_landing.html');
+  console.log('  - /Luxury_Fashion_Boutiques/luxury_boutique_landing_v2 (1).html');
+  console.log('  - /Professional_Services/Professional_Real.html');
+  console.log('  - /Tours_&_Travels/tours_v3.html');
 });
