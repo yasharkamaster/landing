@@ -7,6 +7,7 @@ This guide will help you deploy your landing pages ExpressJS application to Dokp
 1. GitHub account and repository
 2. Dokploy instance running on your server (port 3000)
 3. Airtable credentials (Token, Base ID, Table Name)
+4. Docker (optional - for containerized deployment)
 
 ## Step 1: Prepare Your GitHub Repository
 
@@ -46,17 +47,23 @@ git push -u origin main
 
 ### 2.3 Configure Application Settings
 
-**Application Type:** Node.js
+**Application Type:** Node.js (or Docker if you prefer containerized deployment)
 
-**Build Command:** (usually auto-detected, but you can set)
-```bash
-npm install
-```
+**Option A: Node.js Deployment**
+- **Build Command:** (usually auto-detected, but you can set)
+  ```bash
+  npm install
+  ```
+- **Start Command:**
+  ```bash
+  npm start
+  ```
 
-**Start Command:**
-```bash
-npm start
-```
+**Option B: Docker Deployment**
+- Dokploy can automatically detect the `Dockerfile` in your repository
+- **Dockerfile:** Already included in the repository
+- **Build Context:** Root directory
+- Dokploy will build and run the Docker container automatically
 
 **Port Configuration:**
 - Dokploy will automatically set the `PORT` environment variable
@@ -130,6 +137,7 @@ Test that your Airtable integration works:
 
 ## Local Development
 
+### Option 1: Direct Node.js
 To run locally:
 ```bash
 npm install
@@ -139,6 +147,21 @@ npm start
 ```
 
 The server will run on port 4000 (or whatever PORT is set in .env)
+
+### Option 2: Docker
+To run with Docker:
+```bash
+# Build the Docker image
+docker build -t landing-pages .
+
+# Run the container
+docker run -p 4000:4000 --env-file .env landing-pages
+```
+
+Or using docker-compose (if you create a docker-compose.yml):
+```bash
+docker-compose up
+```
 
 ## Updating Your Deployment
 

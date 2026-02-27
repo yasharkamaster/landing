@@ -11,7 +11,7 @@ professional_v3.html
 tours_landing.html
 tours_travel.html
 tours_v3 (1).html
-./node_modules
+node_modules/
 
 .env
 
