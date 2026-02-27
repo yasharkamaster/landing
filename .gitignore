@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Excluded landing pages (do not push)
+clinic_v2.html
+financial_services.html
+luxury_landing.html
+professional_v3.html
+tours_landing.html
+tours_travel.html
+tours_v3 (1).html
+./node_modules
+
+.env
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

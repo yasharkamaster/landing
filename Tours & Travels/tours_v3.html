@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeadMatrix — Tours & Travel Revenue System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0C0B08;
+  --gold: #B89650;
+  --gold-dim: rgba(184,150,80,0.15);
+  --gold-mid: rgba(184,150,80,0.4);
+  --ivory: #F5F0E8;
+  --ivory-dark: #EDE6D6;
+  --text-body: #2A2720;
+  --text-muted: #8A7D6A;
+  --ticker-height: 32px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#0C0B08;
+  color:var(--ivory);
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:18px;
+  line-height:1.7;
+  cursor:none;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:0.4;
+}
+
+/* CURSOR */
+#cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
+#cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(184,150,80,0.6);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:all .12s ease-out}
+
+/* TICKER */
+.ticker-wrap{background:var(--gold);overflow:hidden;white-space:nowrap;padding:0.5px 0;min-height:var(--ticker-height);border-bottom:1px solid rgba(184,150,80,0.3);contain:layout paint;position:relative;z-index:1}
+.ticker-inner{display:inline-flex;animation:ticker 40s linear infinite;will-change:transform;backface-visibility:hidden;transform:translateZ(0)}
+.ticker-inner span{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:var(--ink);padding:0 40px;text-transform:uppercase;flex-shrink:0}
+.ticker-inner span::before{content:'✦';margin-right:16px;opacity:0.6}
+@keyframes ticker{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(var(--ticker-dx,-50%),0,0)}}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  margin-top:var(--ticker-height);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;
+  mix-blend-mode:normal;
+  background:transparent;
+  border-bottom:1px solid transparent;
+  transition:background 0.35s ease,border-color 0.35s ease,backdrop-filter 0.35s ease;
+}
+nav.nav--scrolled{
+  background:rgba(12,11,8,0.85);
+  border-bottom-color:rgba(184,150,80,0.15);
+  backdrop-filter:blur(8px);
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;
+  color:var(--gold);letter-spacing:0.05em;
+}
+.nav-logo span{color:var(--ivory);font-weight:400;font-style:italic}
+.nav-cta{
+  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:0.15em;text-transform:uppercase;
+  border:1px solid var(--gold);color:var(--gold);
+  padding:2px 10px;text-decoration:none;
+  transition:all 0.3s;
+}
+.nav-cta:hover{background:var(--gold);color:var(--ink)}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  padding-top:80px;
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;
+  top:0;bottom:0;left:50%;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--gold-mid),transparent);
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:8% 6% 8% 8%;
+  position:relative;
+}
+.hero-eyebrow{
+  font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:28px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,4.5vw,64px);
+  font-weight:700;line-height:1.1;
+  margin-bottom:28px;
+  color:var(--ivory);
+}
+.hero-h1 em{color:var(--gold);font-style:italic}
+.hero-sub{
+  font-size:18px;line-height:1.75;
+  color:rgba(245,240,232,0.7);
+  max-width:420px;margin-bottom:40px;
+}
+.hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink);
+  padding:16px 36px;text-decoration:none;
+  transition:all 0.3s;border:none;cursor:none;
+  display:inline-block;
+}
+.btn-primary:hover{background:var(--ivory);transform:translateY(-2px);box-shadow:0 6px 24px rgba(184,150,80,0.25)}
+.btn-primary:focus-visible,.btn-ghost:focus-visible,.form-submit:focus-visible,.nav-cta:focus-visible,.tier-cta:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.form-input:focus-visible,.form-select:focus-visible{outline:2px solid var(--gold);outline-offset:0}
+.btn-ghost{
+  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+  border:1px solid rgba(184,150,80,0.4);color:var(--ivory);
+  padding:16px 36px;text-decoration:none;
+  transition:all 0.3s;display:inline-block;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stat{
+  display:flex;gap:36px;margin-top:48px;
+  padding-top:32px;
+  border-top:1px solid rgba(184,150,80,0.2);
+}
+.hero-stat-item{text-align:left}
+.hero-stat-item .num{
+  font-family:'Playfair Display',serif;font-size:28px;
+  font-weight:700;color:var(--gold);display:block;
+}
+.hero-stat-item .label{
+  font-family:'Raleway',sans-serif;font-size:10px;
+  font-weight:500;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(245,240,232,0.5);
+}
+.hero-right{
+  display:flex;flex-direction:column;justify-content:center;
+  align-items:center;padding:6%;
+  background:linear-gradient(135deg,rgba(184,150,80,0.05),transparent);
+  position:relative;
+}
+/* Hero load stagger */
+.hero-left .hero-reveal{
+  opacity:0;transform:translateY(24px);
+  transition:opacity 0.6s ease,transform 0.6s ease;
+}
+.hero-loaded .hero-left .hero-reveal{opacity:1;transform:translateY(0)}
+.hero-left .hero-reveal-delay-0{transition-delay:0s}
+.hero-left .hero-reveal-delay-1{transition-delay:0.15s}
+.hero-left .hero-reveal-delay-2{transition-delay:0.3s}
+.hero-left .hero-reveal-delay-3{transition-delay:0.45s}
+.hero-left .hero-reveal-delay-4{transition-delay:0.6s}
+.hero-left .hero-reveal-delay-5{transition-delay:0.75s}
+.hero-right .conv-card{
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.6s ease,transform 0.6s ease;
+  transition-delay:0.5s;
+}
+.hero-loaded .hero-right .conv-card{opacity:1;transform:translateY(0)}
+.msg-reveal,.conv-msgs .msg-time{opacity:0;transform:translateY(8px);transition:opacity 0.4s ease,transform 0.4s ease}
+.conv-card.msg-visible .msg-reveal,.conv-card.msg-visible .conv-msgs .msg-time{opacity:1;transform:translateY(0)}
+.conv-card .msg-reveal-delay-0{transition-delay:0.6s}
+.conv-card .msg-reveal-delay-1{transition-delay:0.9s}
+.conv-card .msg-reveal-delay-2{transition-delay:1.2s}
+.conv-card .msg-reveal-delay-3{transition-delay:1.5s}
+.conv-card .msg-reveal-delay-4{transition-delay:1.8s}
+.conv-card .msg-reveal-delay-5{transition-delay:2.1s}
+.conv-card .conv-msgs .msg-time:nth-child(2){transition-delay:0.6s}
+.conv-card .conv-msgs .msg-time:nth-child(4){transition-delay:0.9s}
+.conv-card .conv-msgs .msg-time:nth-child(6){transition-delay:1.2s}
+.conv-card .conv-msgs .msg-time:nth-child(8){transition-delay:1.5s}
+.conv-card .conv-msgs .msg-time:nth-child(10){transition-delay:1.8s}
+.conv-card .conv-msgs .msg-time:nth-child(12){transition-delay:2.1s}
+.conv-card .conv-badge{opacity:0;transform:translateY(8px);transition:opacity 0.4s ease 2.7s,transform 0.4s ease 2.7s}
+.conv-card.msg-visible .conv-badge{opacity:1;transform:translateY(0)}
+/* Conversation card */
+.conv-card{
+  background:rgba(245,240,232,0.04);
+  border:1px solid rgba(184,150,80,0.2);
+  border-radius:2px;
+  padding:28px;width:100%;max-width:420px;
+  position:relative;
+}
+.conv-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:20px;padding-bottom:16px;
+  border-bottom:1px solid rgba(184,150,80,0.15);
+}
+.conv-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Raleway',sans-serif;font-size:14px;font-weight:700;color:var(--ink);
+}
+.conv-name{
+  font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;
+  color:var(--ivory);
+}
+.conv-time{
+  font-family:'Raleway',sans-serif;font-size:11px;
+  color:var(--text-muted);margin-left:auto;
+}
+.conv-msgs{display:flex;flex-direction:column;gap:10px}
+.msg{
+  padding:12px 16px;border-radius:2px;
+  font-family:'Raleway',sans-serif;font-size:13px;line-height:1.5;
+  max-width:85%;
+}
+.msg-in{
+  background:rgba(245,240,232,0.06);color:var(--ivory);
+  border:1px solid rgba(245,240,232,0.1);
+  align-self:flex-start;border-bottom-left-radius:0;
+}
+.msg-out{
+  background:var(--gold);color:var(--ink);font-weight:600;
+  align-self:flex-end;border-bottom-right-radius:0;
+}
+.msg-time{
+  font-size:10px;color:var(--text-muted);
+  font-family:'Raleway',sans-serif;
+  text-align:right;margin-top:4px;
+}
+.conv-badge{
+  margin-top:16px;padding:10px 14px;
+  background:rgba(184,150,80,0.1);
+  border:1px solid rgba(184,150,80,0.3);
+  border-radius:2px;
+  font-family:'Raleway',sans-serif;font-size:11px;
+  color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;
+  display:flex;align-items:center;gap:8px;
+}
+.conv-badge::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--gold);animation:pulse 1.5s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+
+/* LEAK COUNTER */
+.leak-banner{
+  background:rgba(184,150,80,0.08);
+  border-top:1px solid rgba(184,150,80,0.2);
+  border-bottom:1px solid rgba(184,150,80,0.2);
+  padding:24px 8%;
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  justify-content:center;text-align:center;
+}
+.leak-label{
+  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(245,240,232,0.5);
+}
+.leak-number{
+  font-family:'Playfair Display',serif;font-size:36px;
+  font-weight:700;color:var(--gold);
+  min-width:200px;display:inline-block;
+}
+.leak-sub{
+  font-family:'Raleway',sans-serif;font-size:11px;
+  color:rgba(245,240,232,0.4);letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+
+/* SECTIONS */
+section{padding:100px 8%;position:relative}
+.section-eyebrow{
+  font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.section-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,4vw,54px);
+  font-weight:700;line-height:1.15;
+  margin-bottom:20px;
+}
+.section-h2 em{color:var(--gold);font-style:italic}
+.section-lead{
+  font-size:18px;color:rgba(245,240,232,0.7);
+  max-width:600px;line-height:1.8;
+  margin-bottom:60px;
+}
+
+/* INDUSTRY IMAGES GRID */
+.img-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:3px;margin:60px 0;
+}
+.img-grid-item{overflow:hidden;position:relative}
+.img-grid-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.6s ease;filter:grayscale(20%) contrast(1.05);
+}
+.img-grid-item:hover img{transform:scale(1.04)}
+.img-grid-item:first-child{grid-row:span 2;min-height:480px}
+.img-grid-item:not(:first-child){min-height:234px}
+.img-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(12,11,8,0.85));
+  padding:20px 16px 14px;
+  font-family:'Raleway',sans-serif;font-size:11px;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--gold);
+}
+
+/* PROBLEMS */
+.problems-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2px;margin-top:60px;
+}
+.problem-card{
+  padding:48px 40px;
+  background:rgba(245,240,232,0.02);
+  border:1px solid rgba(245,240,232,0.06);
+  position:relative;overflow:hidden;
+  transition:border-color 0.3s,background 0.3s;
+}
+.problem-card:hover{
+  border-color:rgba(184,150,80,0.3);
+  background:rgba(184,150,80,0.04);
+}
+.problem-num{
+  font-family:'Playfair Display',serif;font-size:100px;
+  font-weight:700;color:rgba(184,150,80,0.06);
+  position:absolute;top:-10px;right:20px;
+  line-height:1;pointer-events:none;font-style:italic;
+}
+.problem-title{
+  font-family:'Playfair Display',serif;font-size:22px;
+  font-weight:600;color:var(--ivory);margin-bottom:12px;
+}
+.problem-body{
+  font-size:16px;color:rgba(245,240,232,0.6);line-height:1.7;
+}
+
+/* BEFORE AFTER */
+.before-after{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;margin-top:60px;
+}
+.ba-col{padding:56px 48px;position:relative;overflow:hidden}
+.ba-before{
+  background:rgba(255,60,60,0.04);
+  border:1px solid rgba(255,100,100,0.15);
+}
+.ba-after{
+  background:rgba(184,150,80,0.05);
+  border:1px solid rgba(184,150,80,0.25);
+}
+.ba-label{
+  font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;
+  margin-bottom:24px;display:flex;align-items:center;gap:8px;
+}
+.ba-before .ba-label{color:rgba(255,100,100,0.7)}
+.ba-after .ba-label{color:var(--gold)}
+.ba-item{
+  display:flex;align-items:flex-start;gap:12px;
+  margin-bottom:18px;
+  font-size:16px;line-height:1.6;
+}
+.ba-before .ba-item{color:rgba(245,240,232,0.55)}
+.ba-after .ba-item{color:rgba(245,240,232,0.85)}
+.ba-icon{font-size:16px;margin-top:2px;flex-shrink:0}
+.ba-watermark{
+  position:absolute;bottom:-20px;right:-10px;
+  font-family:'Playfair Display',serif;font-size:120px;
+  font-weight:700;font-style:italic;
+  color:rgba(184,150,80,0.04);
+  pointer-events:none;line-height:1;
+}
+
+/* MECHANISM */
+.mechanism-steps{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:2px;margin-top:60px;
+}
+.step-card{
+  padding:36px 28px;
+  background:rgba(245,240,232,0.02);
+  border:1px solid rgba(245,240,232,0.06);
+  position:relative;
+  transition:all 0.3s;
+}
+.step-card:hover{
+  background:rgba(184,150,80,0.05);
+  border-color:rgba(184,150,80,0.3);
+  transform:translateY(-4px);
+}
+.step-num{
+  font-family:'Playfair Display',serif;font-size:48px;
+  font-weight:700;color:rgba(184,150,80,0.2);
+  font-style:italic;display:block;margin-bottom:16px;
+  line-height:1;
+}
+.step-title{
+  font-family:'Playfair Display',serif;font-size:16px;
+  font-weight:600;color:var(--ivory);margin-bottom:10px;
+}
+.step-body{
+  font-size:14px;color:rgba(245,240,232,0.55);line-height:1.6;
+}
+
+/* DASHBOARD MOCKUP */
+.dashboard-wrap{
+  margin-top:60px;
+  border:1px solid rgba(184,150,80,0.2);
+  border-radius:2px;overflow:hidden;
+}
+.dash-header{
+  background:rgba(184,150,80,0.1);
+  padding:14px 20px;display:flex;align-items:center;gap:8px;
+  border-bottom:1px solid rgba(184,150,80,0.15);
+}
+.dash-dot{width:10px;height:10px;border-radius:50%}
+.dash-title{
+  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-left:8px;
+}
+.dash-body{
+  background:rgba(245,240,232,0.02);
+  padding:24px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.dash-metric{
+  background:rgba(245,240,232,0.03);
+  border:1px solid rgba(184,150,80,0.1);
+  padding:20px 16px;border-radius:2px;
+}
+.dash-metric-val{
+  font-family:'Playfair Display',serif;font-size:28px;
+  font-weight:700;color:var(--gold);
+}
+.dash-metric-label{
+  font-family:'Raleway',sans-serif;font-size:11px;
+  color:rgba(245,240,232,0.5);letter-spacing:0.1em;
+  text-transform:uppercase;margin-top:4px;
+}
+.dash-chart{
+  grid-column:span 2;
+  background:rgba(245,240,232,0.02);
+  border:1px solid rgba(184,150,80,0.1);
+  padding:20px 16px;border-radius:2px;
+  display:flex;flex-direction:column;
+}
+.dash-chart-title{
+  font-family:'Raleway',sans-serif;font-size:11px;
+  font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+}
+.bars{display:flex;align-items:flex-end;gap:6px;height:80px}
+.bar{
+  flex:1;background:rgba(184,150,80,0.2);
+  border-radius:2px 2px 0 0;
+  position:relative;transition:height 0.8s ease-out;min-height:8px;
+}
+.bar.bar--initial{height:0!important}
+.bar.active{background:var(--gold)}
+.dash-pipeline{
+  grid-column:span 4;
+  background:rgba(245,240,232,0.02);
+  border:1px solid rgba(184,150,80,0.1);
+  padding:20px 16px;border-radius:2px;
+}
+.pipeline-stages{
+  display:flex;gap:4px;margin-top:12px;
+}
+.pipeline-stage{
+  flex:1;height:8px;background:rgba(184,150,80,0.15);border-radius:2px;
+  position:relative;overflow:hidden;
+}
+.pipeline-fill{
+  height:100%;background:var(--gold);border-radius:2px;
+  transition:width 1s ease;
+}
+.pipeline-label{
+  font-family:'Raleway',sans-serif;font-size:10px;
+  color:rgba(245,240,232,0.4);margin-top:6px;
+  text-align:center;letter-spacing:0.08em;text-transform:uppercase;
+}
+
+/* VALUE STORY */
+.value-story{
+  max-width:780px;margin:0 auto;
+  padding:80px 8%;
+  text-align:center;
+}
+.qs-large{
+  font-family:'Playfair Display',serif;font-size:100px;
+  color:rgba(184,150,80,0.12);line-height:0.7;
+  display:block;margin-bottom:16px;
+}
+.value-story p{
+  font-family:'EB Garamond',serif;font-size:22px;
+  line-height:1.85;color:rgba(245,240,232,0.8);
+  margin-bottom:24px;
+}
+.value-story strong{color:var(--gold)}
+
+/* VALUE STACK */
+.value-stack{
+  margin-top:60px;
+  border:1px solid rgba(184,150,80,0.2);
+}
+.vs-header{
+  background:rgba(184,150,80,0.08);
+  padding:20px 32px;
+  font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);
+  display:flex;justify-content:space-between;
+}
+.vs-item{
+  padding:20px 32px;
+  border-bottom:1px solid rgba(245,240,232,0.05);
+  display:flex;justify-content:space-between;align-items:center;
+  transition:background 0.2s;
+}
+.vs-item:hover{background:rgba(184,150,80,0.04)}
+.vs-item-name{
+  font-family:'EB Garamond',serif;font-size:18px;
+  color:rgba(245,240,232,0.85);
+}
+.vs-item-name span{
+  font-family:'Raleway',sans-serif;font-size:11px;
+  color:var(--text-muted);display:block;letter-spacing:0.05em;
+}
+.vs-item-val{
+  font-family:'Playfair Display',serif;font-size:20px;
+  font-weight:600;color:var(--gold);
+}
+.vs-total{
+  padding:24px 32px;
+  background:rgba(184,150,80,0.08);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.vs-total-label{
+  font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--ivory);
+}
+.vs-total-val{
+  font-family:'Playfair Display',serif;font-size:32px;
+  font-weight:700;color:var(--gold);
+}
+.vs-price-row{
+  padding:20px 32px;
+  background:rgba(184,150,80,0.03);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.vs-price-label{
+  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.5);
+}
+.vs-price-val{
+  font-family:'Playfair Display',serif;font-size:20px;
+  font-weight:600;color:rgba(245,240,232,0.5);
+  text-decoration:line-through;
+}
+
+/* EARLY RESULTS */
+.results-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;margin-top:60px;
+}
+.result-card{
+  padding:48px 36px;
+  background:rgba(245,240,232,0.02);
+  border:1px solid rgba(245,240,232,0.06);
+  position:relative;overflow:hidden;
+  transition:all 0.3s;
+}
+.result-card:hover{
+  background:rgba(184,150,80,0.05);
+  border-color:rgba(184,150,80,0.25);
+}
+.result-num{
+  font-family:'Playfair Display',serif;
+  font-size:52px;font-weight:700;
+  color:var(--gold);display:block;
+  margin-bottom:8px;line-height:1;
+}
+.result-label{
+  font-family:'Raleway',sans-serif;font-size:11px;
+  font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(245,240,232,0.5);margin-bottom:16px;
+}
+.result-quote{
+  font-size:16px;color:rgba(245,240,232,0.7);
+  line-height:1.65;font-style:italic;
+}
+.result-author{
+  font-family:'Raleway',sans-serif;font-size:12px;
+  font-weight:600;color:var(--gold);margin-top:16px;
+  letter-spacing:0.1em;text-transform:uppercase;
+}
+.result-bg{
+  position:absolute;top:-20px;right:-10px;
+  font-family:'Playfair Display',serif;
+  font-size:100px;font-weight:700;font-style:italic;
+  color:rgba(184,150,80,0.04);pointer-events:none;line-height:1;
+}
+
+/* TIERS */
+.tiers-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;margin-top:60px;
+  align-items:start;
+}
+.tier-card{
+  border:1px solid rgba(245,240,232,0.08);
+  position:relative;overflow:hidden;
+  transition:all 0.3s;
+}
+.tier-card.featured{
+  border-color:var(--gold);
+  transform:translateY(-8px);
+}
+.tier-badge{
+  position:absolute;top:20px;right:20px;
+  font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink);
+  padding:4px 10px;
+}
+.tier-head{
+  padding:40px 36px 28px;
+  background:rgba(245,240,232,0.02);
+  border-bottom:1px solid rgba(184,150,80,0.15);
+}
+.tier-card.featured .tier-head{background:rgba(184,150,80,0.08)}
+.tier-name{
+  font-family:'Playfair Display',serif;font-size:28px;
+  font-weight:700;color:var(--ivory);margin-bottom:8px;
+}
+.tier-tagline{
+  font-family:'Raleway',sans-serif;font-size:12px;
+  color:var(--text-muted);letter-spacing:0.08em;
+  margin-bottom:24px;
+}
+.tier-cta{
+  display:block;
+  font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  background:transparent;border:1px solid rgba(184,150,80,0.4);
+  color:var(--gold);padding:14px 24px;text-align:center;
+  text-decoration:none;transition:all 0.3s;cursor:none;
+}
+.tier-card.featured .tier-cta{
+  background:var(--gold);color:var(--ink);border-color:var(--gold);
+}
+.tier-cta:hover{background:var(--gold);color:var(--ink)}
+.tier-body{padding:32px 36px}
+.tier-section-label{
+  font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin:20px 0 12px;
+}
+.tier-section-label:first-child{margin-top:0}
+.tier-feature{
+  display:flex;align-items:flex-start;gap:10px;
+  margin-bottom:10px;font-size:15px;
+  color:rgba(245,240,232,0.75);line-height:1.5;
+}
+.tier-feature::before{
+  content:'—';color:var(--gold);
+  font-family:'Raleway',sans-serif;font-size:13px;
+  flex-shrink:0;margin-top:1px;
+}
+.tier-feature.carried{color:rgba(245,240,232,0.4)}
+.tier-feature.carried::before{content:'✓';color:rgba(184,150,80,0.4)}
+
+/* FAQ */
+.faq-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2px;margin-top:60px;
+}
+.faq-item{
+  padding:36px 40px;
+  background:rgba(245,240,232,0.02);
+  border:1px solid rgba(245,240,232,0.06);
+}
+.faq-q{
+  font-family:'Playfair Display',serif;font-size:18px;
+  font-weight:600;color:var(--ivory);margin-bottom:14px;
+}
+.faq-a{
+  font-size:16px;color:rgba(245,240,232,0.6);line-height:1.7;
+}
+
+/* FORM */
+.form-section{
+  padding:100px 8%;
+  background:rgba(184,150,80,0.04);
+  border-top:1px solid rgba(184,150,80,0.15);
+  border-bottom:1px solid rgba(184,150,80,0.15);
+}
+.form-wrap{
+  max-width:760px;margin:0 auto;
+}
+.form-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;margin-top:48px;
+}
+.form-field{display:flex;flex-direction:column;gap:8px}
+.form-field.full{grid-column:span 2}
+.form-label{
+  font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(245,240,232,0.5);
+}
+.form-input,.form-select{
+  background:rgba(245,240,232,0.04);
+  border:1px solid rgba(184,150,80,0.2);
+  color:var(--ivory);padding:14px 16px;
+  font-family:'EB Garamond',serif;font-size:16px;
+  outline:none;transition:border-color 0.3s;
+  border-radius:0;
+  -webkit-appearance:none;appearance:none;
+}
+.form-input{cursor:text}
+.form-select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B89650' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;
+  padding-right:40px;cursor:pointer;
+}
+.form-select option{
+  background:#1a1a1a;
+  color:#F5F0E8;
+  padding:10px 12px;
+  font-family:'EB Garamond',serif;
+  font-size:16px;
+}
+.form-input:focus,.form-select:focus{border-color:var(--gold)}
+.form-input::placeholder{color:rgba(245,240,232,0.25)}
+.form-submit{
+  width:100%;margin-top:24px;
+  font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink);
+  border:none;padding:20px;cursor:none;
+  transition:all 0.3s;
+}
+.form-submit:hover{background:var(--ivory);transform:translateY(-2px)}
+.form-note{
+  font-family:'Raleway',sans-serif;font-size:11px;
+  color:rgba(245,240,232,0.35);text-align:center;
+  margin-top:16px;letter-spacing:0.08em;
+}
+
+/* GUARANTEE */
+.guarantee-section{
+  text-align:center;padding:80px 8%;
+  position:relative;
+}
+.guarantee-box{
+  max-width:700px;margin:0 auto;
+  border:1px solid rgba(184,150,80,0.25);
+  padding:64px;position:relative;
+}
+.guarantee-box::before,.guarantee-box::after{
+  content:'';position:absolute;
+  width:20px;height:20px;
+  border-color:var(--gold);border-style:solid;
+}
+.guarantee-box::before{top:-1px;left:-1px;border-width:1px 0 0 1px}
+.guarantee-box::after{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+.guarantee-icon{
+  font-size:48px;display:block;margin-bottom:24px;
+}
+.guarantee-title{
+  font-family:'Playfair Display',serif;font-size:32px;
+  font-weight:700;color:var(--ivory);margin-bottom:20px;
+}
+.guarantee-body{
+  font-size:18px;color:rgba(245,240,232,0.7);
+  line-height:1.8;
+}
+
+/* FOOTER */
+footer{
+  padding:64px 8%;
+  border-top:1px solid rgba(184,150,80,0.15);
+  display:flex;flex-wrap:wrap;gap:40px;
+  justify-content:space-between;align-items:center;
+}
+.footer-brand{
+  font-family:'Playfair Display',serif;font-size:22px;
+  font-weight:700;color:var(--gold);
+}
+.footer-brand span{color:var(--ivory);font-weight:400;font-style:italic}
+.footer-contact{
+  font-family:'Raleway',sans-serif;font-size:13px;
+  color:rgba(245,240,232,0.5);line-height:2;text-align:right;
+}
+.footer-contact a{color:var(--gold);text-decoration:none}
+.footer-bottom{
+  width:100%;
+  border-top:1px solid rgba(245,240,232,0.06);
+  padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-legal{
+  font-family:'Raleway',sans-serif;font-size:11px;
+  color:rgba(245,240,232,0.25);letter-spacing:0.08em;
+}
+
+/* DIVIDER */
+.gold-divider{
+  width:100%;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);
+  margin:0;
+  transform-origin:left;
+  transition:transform 0.8s ease;
+}
+.gold-divider.fade-up{opacity:1;transform:scaleX(0)}
+.gold-divider.fade-up.visible{transform:scaleX(1)}
+
+/* MID CTA BAND */
+.cta-band{
+  padding:80px 8%;text-align:center;
+  background:rgba(184,150,80,0.06);
+  border-top:1px solid rgba(184,150,80,0.15);
+  border-bottom:1px solid rgba(184,150,80,0.15);
+}
+.cta-band h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,3.5vw,48px);
+  font-weight:700;color:var(--ivory);margin-bottom:16px;
+}
+.cta-band h2 em{color:var(--gold);font-style:italic}
+.cta-band p{
+  font-size:18px;color:rgba(245,240,232,0.6);
+  max-width:520px;margin:0 auto 36px;
+}
+
+/* SCROLL ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.fade-up-d1{transition-delay:0.1s}
+.fade-up-d2{transition-delay:0.2s}
+.fade-up-d3{transition-delay:0.3s}
+.fade-up-d4{transition-delay:0.4s}
+.fade-up-d5{transition-delay:0.5s}
+.fade-up-d6{transition-delay:0.6s}
+.fade-up-d7{transition-delay:0.7s}
+.fade-up-d8{transition-delay:0.8s}
+
+/* MOBILE */
+@media(max-width:900px){
+  body{cursor:auto}
+  #cursor,#cursor-ring{display:none}
+  .hero{grid-template-columns:1fr;padding-top:100px}
+  .hero::after{display:none}
+  .hero-left{padding:6% 5% 5%}
+  .hero-right{display:none}
+  .hero-stat{gap:20px;flex-wrap:wrap}
+  nav{top:16px;padding:0 5%}
+  .nav-logo{font-size:17px}
+  .problems-grid,.before-after,.tiers-grid,.results-grid,.faq-grid{grid-template-columns:1fr}
+  .mechanism-steps{grid-template-columns:1fr 1fr;gap:2px}
+  .img-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .img-grid-item:first-child{grid-row:span 1;grid-column:span 2}
+  .dash-body{grid-template-columns:1fr 1fr}
+  .dash-chart{grid-column:span 2}
+  .dash-pipeline{grid-column:span 2}
+  .form-grid{grid-template-columns:1fr}
+  .form-field.full{grid-column:span 1}
+  .tier-card.featured{transform:none}
+  .guarantee-box{padding:40px 28px}
+  footer{text-align:center}
+  .footer-contact{text-align:center}
+  .footer-bottom{flex-direction:column;text-align:center}
+  section{padding:70px 5%}
+  .form-section{padding:70px 5%}
+  .value-story{padding:70px 5%}
+  .guarantee-section{padding:70px 5%}
+}
+@media(max-width:500px){
+  .mechanism-steps{grid-template-columns:1fr}
+  .hero-h1{font-size:34px}
+  .img-grid{grid-template-columns:1fr}
+  .img-grid-item:first-child{grid-column:span 1}
+  .hero-stat{justify-content:space-between}
+  .hero-cta-row{flex-direction:column;align-items:stretch}
+  .btn-primary,.btn-ghost{text-align:center}
+}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ticker-inner{animation:none}
+  .conv-badge::before{animation:none;opacity:1}
+  .fade-up,.hero-reveal,.msg-reveal,.leak-banner,.gold-divider.draw-in,.gold-divider.visible{opacity:1;transform:none;transition:none}
+  .hero-loaded .hero-reveal{opacity:1;transform:none}
+  .conv-card.msg-visible .msg-reveal,.conv-card.msg-visible .msg-time{opacity:1;transform:none}
+  .bar,.pipeline-fill{transition:none}
+  .nav{transition:none}
+  .btn-primary,.btn-ghost,.problem-card,.step-card,.result-card,.tier-card,.img-grid-item img,.vs-item{transition-duration:0.01ms}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span>73% of travel inquiries are lost after 6 hours of no response</span>
+    <span>Average group tour booking: ₹45,000–₹3,20,000 per package</span>
+    <span>67% of travel buyers compare 3+ operators before deciding</span>
+    <span>Peak season lasts 90 days — your system must capture every lead</span>
+    <span>First responder wins 78% of bookings in tours & travel</span>
+    <span>73% of travel inquiries are lost after 6 hours of no response</span>
+    <span>Average group tour booking: ₹45,000–₹3,20,000 per package</span>
+    <span>67% of travel buyers compare 3+ operators before deciding</span>
+    <span>Peak season lasts 90 days — your system must capture every lead</span>
+    <span>First responder wins 78% of bookings in tours & travel</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Lead<span>Matrix</span></div>
+  <a href="#audit-form" class="nav-cta">Claim Free Audit</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow hero-reveal hero-reveal-delay-0">Tours & Travel Revenue System</div>
+    <h1 class="hero-h1 hero-reveal hero-reveal-delay-1">
+      She booked a ₹1.8L <em>Manali package</em> at 11:42 PM.<br>
+      You were asleep.
+    </h1>
+    <p class="hero-sub hero-reveal hero-reveal-delay-2">
+      Every day, qualified travel buyers message you on Instagram, WhatsApp, and your website. Most never hear back fast enough. That's not a leads problem. That's a systems problem.
+    </p>
+    <div class="hero-cta-row hero-reveal hero-reveal-delay-3">
+      <a href="#audit-form" class="btn-primary">Show Me My Revenue Leak</a>
+      <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="hero-stat hero-reveal hero-reveal-delay-4">
+      <div class="hero-stat-item">
+        <span class="num">47 sec</span>
+        <span class="label">Avg response time</span>
+      </div>
+      <div class="hero-stat-item">
+        <span class="num">3.2×</span>
+        <span class="label">Booking conversion lift</span>
+      </div>
+      <div class="hero-stat-item">
+        <span class="num">₹0</span>
+        <span class="label">Cost to find your gap</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="conv-card">
+      <div class="conv-header">
+        <div class="conv-avatar">P</div>
+        <div>
+          <div class="conv-name">Priya Sharma</div>
+          <div class="conv-time">11:42 PM</div>
+        </div>
+      </div>
+      <div class="conv-msgs">
+        <div class="msg msg-in msg-reveal msg-reveal-delay-0">Hi, I'm interested in a 7-day Spiti Valley trek for 8 people. Can you share the package details and price? Dates: 14th March.</div>
+        <div class="msg-time">11:42 PM</div>
+        <div class="msg msg-out msg-reveal msg-reveal-delay-1">Hi Priya! Great choice — Spiti in March is spectacular. Our 7N/8D Spiti Valley Expedition starts at ₹22,000/person for groups of 8+. Let me send you the complete itinerary right now 🏔️</div>
+        <div class="msg-time">11:43 PM ✓✓</div>
+        <div class="msg msg-in msg-reveal msg-reveal-delay-2">Wow so fast! Yes please send details. Can we book a call tomorrow morning?</div>
+        <div class="msg-time">11:44 PM</div>
+        <div class="msg msg-out msg-reveal msg-reveal-delay-3">Absolutely! I've sent the full itinerary to this number. You can book a slot here → [link]. Morning slots are open. See you then! 🗓️</div>
+        <div class="msg-time">11:44 PM ✓✓</div>
+      </div>
+      <div class="conv-badge">
+        LeadMatrix responded in 61 seconds — while you slept
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEAK COUNTER -->
+<div class="leak-banner fade-up">
+  <div>
+    <div class="leak-label">Estimated Revenue Leaking Right Now</div>
+    <div class="leak-sub">Based on avg. ₹8L/mo tour operator, 40% lead leak rate</div>
+  </div>
+  <div>
+    <div class="leak-number" id="leakCounter">₹0.00</div>
+  </div>
+  <a href="#audit-form" class="btn-primary">Find My Actual Number</a>
+</div>
+
+<!-- INDUSTRY IMAGES -->
+<section>
+  <div class="section-eyebrow fade-up">The Opportunity You're Missing</div>
+  <h2 class="section-h2 fade-up fade-up-d1">Your clients are <em>out there,</em><br>looking for exactly what you offer.</h2>
+  <p class="section-lead fade-up fade-up-d2">They're scrolling through Reels of Ladakh sunsets, WhatsApp-ing their friends about Rajasthan road trips, filling out three inquiry forms at midnight. The question isn't whether the demand exists. The question is — when they reach out to you, what happens next?</p>
+  <div class="img-grid fade-up fade-up-d2">
+    <div class="img-grid-item fade-up fade-up-d2">
+      <img src="Peak_Season_Windows_Are_Short._Systems_Capture_All_of_It.-removebg-preview.png" alt="Peak season windows are short — systems capture all of it">
+    </div>
+    <div class="img-grid-item fade-up fade-up-d3">
+      <img src="Group_Bookings___Highest_Revenue_Per_Lead-removebg-preview.png" alt="Group bookings equal highest revenue per lead">
+    </div>
+    <div class="img-grid-item fade-up fade-up-d3">
+      <img src="Every_Inquiry_Deserves_a_Premium_Response-removebg-preview.png" alt="Every inquiry deserves a premium response">
+    </div>
+    <div class="img-grid-item fade-up fade-up-d4">
+      <img src="LeadMatrix_Dashboard___Your_Command_Center-removebg-preview.png" alt="LeadMatrix Dashboard — Your Command Center">
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section>
+  <div class="section-eyebrow fade-up">Why Revenue Stays Stuck</div>
+  <h2 class="section-h2 fade-up fade-up-d1">Four ways your travel business <em>leaks money</em> every single day.</h2>
+  <div class="problems-grid">
+    <div class="problem-card fade-up">
+      <div class="problem-num">I</div>
+      <div class="problem-title">The 6-Hour Response Gap</div>
+      <p class="problem-body">A travel buyer who inquires at 7 PM and doesn't hear back until morning has already called three other operators. Studies show 78% of bookings go to the first responder. Your competitor who replies in 2 minutes wins the ₹1.5L group booking you never knew you lost.</p>
+    </div>
+    <div class="problem-card fade-up fade-up-d1">
+      <div class="problem-num">II</div>
+      <div class="problem-title">No Qualification Layer</div>
+      <p class="problem-body">You spend 45 minutes on a call only to discover they want a budget of ₹8,000 when your packages start at ₹22,000. Or they're planning for 18 months from now. Without automatic qualification, your best time goes to the worst leads — and the serious buyers don't get the attention they deserve.</p>
+    </div>
+    <div class="problem-card fade-up fade-up-d2">
+      <div class="problem-num">III</div>
+      <div class="problem-title">Dead Leads That Weren't Dead</div>
+      <p class="problem-body">They said "I'll think about it" three months ago. You moved on. But that lead just booked a ₹2.8L family Europe package with someone else — someone who kept following up automatically. Your CRM has hundreds of "cold" leads that just needed the right nudge at the right time.</p>
+    </div>
+    <div class="problem-card fade-up fade-up-d3">
+      <div class="problem-num">IV</div>
+      <div class="problem-title">Peak Season Chaos</div>
+      <p class="problem-body">December to February. April to June. These 90 days determine your entire year. But this is also when your team is most overwhelmed, response rates drop, and the highest-value inquiries — the ones for Bhutan, Europe, custom itineraries — fall through the cracks. You can't scale humans. You can scale systems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE AFTER -->
+<section>
+  <div class="section-eyebrow fade-up">The Transformation</div>
+  <h2 class="section-h2 fade-up fade-up-d1">What running on a system <em>actually looks like</em></h2>
+  <div class="before-after">
+    <div class="ba-col ba-before fade-up">
+      <div class="ba-watermark">Before</div>
+      <div class="ba-label">✕ Before LeadMatrix</div>
+      <div class="ba-item"><span class="ba-icon">✕</span>Inquiry comes in at 10 PM — replied next morning, buyer already gone</div>
+      <div class="ba-item"><span class="ba-icon">✕</span>No qualification — spending hours with window shoppers</div>
+      <div class="ba-item"><span class="ba-icon">✕</span>Peak season = missed calls, no follow-up, chaos</div>
+      <div class="ba-item"><span class="ba-icon">✕</span>WhatsApp is personal number — no tracking, no reports</div>
+      <div class="ba-item"><span class="ba-icon">✕</span>"Cold" leads sit forgotten for months</div>
+      <div class="ba-item"><span class="ba-icon">✕</span>Revenue completely dependent on 1–2 people</div>
+      <div class="ba-item"><span class="ba-icon">✕</span>No idea which channel generates best bookings</div>
+      <div class="ba-item"><span class="ba-icon">✕</span>Payment collection is manual, delayed, awkward</div>
+    </div>
+    <div class="ba-col ba-after fade-up fade-up-d1">
+      <div class="ba-watermark">After</div>
+      <div class="ba-label">✓ After LeadMatrix</div>
+      <div class="ba-item"><span class="ba-icon">✓</span>Every inquiry answered in under 60 seconds — 24/7, automatic</div>
+      <div class="ba-item"><span class="ba-icon">✓</span>Lead scoring routes high-intent buyers to your phone instantly</div>
+      <div class="ba-item"><span class="ba-icon">✓</span>Peak season handled — system doesn't sleep, doesn't panic</div>
+      <div class="ba-item"><span class="ba-icon">✓</span>WhatsApp Business API — every conversation tracked and logged</div>
+      <div class="ba-item"><span class="ba-icon">✓</span>Automated re-engagement sequences revive "dead" leads</div>
+      <div class="ba-item"><span class="ba-icon">✓</span>Revenue runs even when your team is on leave</div>
+      <div class="ba-item"><span class="ba-icon">✓</span>Channel attribution — you know exactly where your best leads come from</div>
+      <div class="ba-item"><span class="ba-icon">✓</span>Razorpay links sent automatically — advance collected in minutes</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE STORY -->
+<div class="value-story fade-up">
+  <span class="qs-large">"</span>
+  <p>The <strong>real bottleneck</strong> in a travel business isn't the number of leads. It's what happens to leads after they arrive. Most operators have perfectly good demand — they just don't have the infrastructure to convert it.</p>
+  <p>One missed Ladakh group inquiry in October is ₹1.76L you never collect. Over a 90-day peak season, that math becomes brutal. <strong>LeadMatrix doesn't add leads. It captures the ones you're already losing.</strong></p>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="section-eyebrow fade-up">The Mechanism</div>
+  <h2 class="section-h2 fade-up fade-up-d1">Five steps that turn <em>inquiries into advance payments</em></h2>
+  <div class="mechanism-steps">
+    <div class="step-card fade-up">
+      <span class="step-num">01</span>
+      <div class="step-title">Capture Every Inquiry</div>
+      <p class="step-body">WhatsApp, Instagram DM, website form, Google — every channel funnels into one unified inbox. Nothing slips.</p>
+    </div>
+    <div class="step-card fade-up fade-up-d1">
+      <span class="step-num">02</span>
+      <div class="step-title">Respond in Your Voice</div>
+      <p class="step-body">Automated responses that sound like you wrote them. Destination-specific, warm, professional. Under 60 seconds. Every time.</p>
+    </div>
+    <div class="step-card fade-up fade-up-d2">
+      <span class="step-num">03</span>
+      <div class="step-title">Score & Qualify</div>
+      <p class="step-body">15-point scoring system identifies serious buyers instantly. HOT leads (budget confirmed, dates fixed, group size known) get escalated to your phone in real time.</p>
+    </div>
+    <div class="step-card fade-up fade-up-d3">
+      <span class="step-num">04</span>
+      <div class="step-title">Book the Consultation</div>
+      <p class="step-body">Calendly integration sends a booking link automatically. Your calendar fills with qualified discovery calls — no chasing, no manual coordination.</p>
+    </div>
+    <div class="step-card fade-up fade-up-d4">
+      <span class="step-num">05</span>
+      <div class="step-title">Collect Advance</div>
+      <p class="step-body">Post-call, Razorpay payment link triggered automatically. 25–30% advance collected before the conversation ends. Cash flow secured.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section>
+  <div class="section-eyebrow fade-up">Your Command Centre</div>
+  <h2 class="section-h2 fade-up fade-up-d1">Everything you need to see, <em>in one place.</em></h2>
+  <div class="dashboard-wrap fade-up fade-up-d2">
+    <div class="dash-header">
+      <div class="dash-dot" style="background:#ff5f57"></div>
+      <div class="dash-dot" style="background:#febc2e"></div>
+      <div class="dash-dot" style="background:#28c840"></div>
+      <div class="dash-title">LeadMatrix — Tours & Travel Pipeline</div>
+    </div>
+    <div class="dash-body">
+      <div class="dash-metric">
+        <div class="dash-metric-val" data-count-to="47" data-suffix="">47</div>
+        <div class="dash-metric-label">Active Leads This Week</div>
+      </div>
+      <div class="dash-metric">
+        <div class="dash-metric-val" data-count-to="8.4" data-prefix="₹" data-suffix="L">₹8.4L</div>
+        <div class="dash-metric-label">Pipeline Value</div>
+      </div>
+      <div class="dash-metric">
+        <div class="dash-metric-val" data-count-to="34" data-suffix="%">34%</div>
+        <div class="dash-metric-label">Conversion Rate</div>
+      </div>
+      <div class="dash-metric">
+        <div class="dash-metric-val" data-count-to="58" data-suffix="s">58s</div>
+        <div class="dash-metric-label">Avg Response Time</div>
+      </div>
+      <div class="dash-chart">
+        <div class="dash-chart-title">Weekly Bookings Confirmed</div>
+        <div class="bars">
+          <div class="bar bar--initial" style="height:40%"></div>
+          <div class="bar bar--initial" style="height:55%"></div>
+          <div class="bar bar--initial" style="height:45%"></div>
+          <div class="bar bar--initial" style="height:70%"></div>
+          <div class="bar bar--initial" style="height:60%"></div>
+          <div class="bar bar--initial active" style="height:85%"></div>
+          <div class="bar bar--initial" style="height:30%"></div>
+        </div>
+      </div>
+      <div class="dash-chart">
+        <div class="dash-chart-title">Lead Source Breakdown</div>
+        <div class="bars">
+          <div class="bar bar--initial active" style="height:90%"></div>
+          <div class="bar bar--initial" style="height:65%"></div>
+          <div class="bar bar--initial" style="height:50%"></div>
+          <div class="bar bar--initial" style="height:40%"></div>
+        </div>
+      </div>
+      <div class="dash-pipeline">
+        <div class="dash-chart-title" style="font-family:Raleway,sans-serif;font-size:11px;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase">Revenue Pipeline Progress</div>
+        <div class="pipeline-stages">
+          <div class="pipeline-stage"><div class="pipeline-fill pipeline-fill--anim" style="width:0" data-width="100"></div><div class="pipeline-label">New</div></div>
+          <div class="pipeline-stage"><div class="pipeline-fill pipeline-fill--anim" style="width:0" data-width="75"></div><div class="pipeline-label">Qualified</div></div>
+          <div class="pipeline-stage"><div class="pipeline-fill pipeline-fill--anim" style="width:0" data-width="55"></div><div class="pipeline-label">Proposal</div></div>
+          <div class="pipeline-stage"><div class="pipeline-fill pipeline-fill--anim" style="width:0" data-width="38"></div><div class="pipeline-label">Advance</div></div>
+          <div class="pipeline-stage"><div class="pipeline-fill pipeline-fill--anim" style="width:0" data-width="22"></div><div class="pipeline-label">Confirmed</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE STACK -->
+<section>
+  <div class="section-eyebrow fade-up">What You Actually Get</div>
+  <h2 class="section-h2 fade-up fade-up-d1">The complete <em>value stack</em> — before we discuss price</h2>
+  <div class="value-stack">
+    <div class="vs-header fade-up fade-up-d2">
+      <span>What LeadMatrix Delivers</span>
+      <span>Real-World Value</span>
+    </div>
+    <div class="vs-item fade-up fade-up-d2">
+      <div class="vs-item-name">24/7 WhatsApp Lead Capture & Auto-Response<span>Never lose an off-hours inquiry again</span></div>
+      <div class="vs-item-val">₹15,000/mo</div>
+    </div>
+    <div class="vs-item fade-up fade-up-d3">
+      <div class="vs-item-name">15-Point Lead Scoring Engine<span>Your time goes only to serious buyers</span></div>
+      <div class="vs-item-val">₹12,000/mo</div>
+    </div>
+    <div class="vs-item fade-up fade-up-d3">
+      <div class="vs-item-name">Automated 7-Touch Follow-Up Sequence<span>Revive cold leads on autopilot</span></div>
+      <div class="vs-item-val">₹10,000/mo</div>
+    </div>
+    <div class="vs-item fade-up fade-up-d4">
+      <div class="vs-item-name">Booking & Calendar Automation<span>Qualified calls in your calendar daily</span></div>
+      <div class="vs-item-val">₹8,000/mo</div>
+    </div>
+    <div class="vs-item fade-up fade-up-d4">
+      <div class="vs-item-name">Advance Payment Collection (Razorpay)<span>30% advance auto-triggered post consultation</span></div>
+      <div class="vs-item-val">₹8,000/mo</div>
+    </div>
+    <div class="vs-item fade-up fade-up-d5">
+      <div class="vs-item-name">Revenue Analytics Dashboard<span>Know exactly where your best bookings come from</span></div>
+      <div class="vs-item-val">₹6,000/mo</div>
+    </div>
+    <div class="vs-item fade-up fade-up-d5">
+      <div class="vs-item-name">Peak Season Overflow Handling<span>System capacity never breaks during rush</span></div>
+      <div class="vs-item-val">₹10,000/mo</div>
+    </div>
+    <div class="vs-total fade-up fade-up-d6">
+      <span class="vs-total-label">Total Real-World Value</span>
+      <span class="vs-total-val">₹69,000/mo</span>
+    </div>
+    <div class="vs-price-row fade-up fade-up-d6">
+      <span class="vs-price-label">You don't pay that</span>
+      <span class="vs-price-val">₹69,000/mo</span>
+    </div>
+  </div>
+  <p style="text-align:center;font-family:Raleway,sans-serif;font-size:13px;color:var(--text-muted);margin-top:24px;letter-spacing:0.1em">See tier pricing below — inquiry-based access only.</p>
+</section>
+
+<!-- MID CTA BAND -->
+<div class="cta-band fade-up">
+  <h2>Still wondering if your numbers <em>justify the investment?</em></h2>
+  <p>We calculate your actual revenue leak before you spend a single rupee. Free. No pitch until you've seen the gap yourself.</p>
+  <a href="#audit-form" class="btn-primary">Get My Free Revenue Audit</a>
+</div>
+
+<!-- EARLY RESULTS -->
+<section>
+  <div class="section-eyebrow fade-up">Early Results</div>
+  <h2 class="section-h2 fade-up fade-up-d1">What operators saw <em>in the first 60 days</em></h2>
+  <div class="results-grid">
+    <div class="result-card fade-up">
+      <div class="result-bg">₹</div>
+      <span class="result-num">₹4.2L</span>
+      <div class="result-label">Additional Revenue — Month 2</div>
+      <p class="result-quote">"We used to miss 15–20 WhatsApp inquiries a week. Now the system catches everything. Three of those revived leads became confirmed bookings in the first 45 days."</p>
+      <div class="result-author">Tour Operator — Manali-based, Group Treks</div>
+    </div>
+    <div class="result-card fade-up fade-up-d1">
+      <div class="result-bg">%</div>
+      <span class="result-num">3.1×</span>
+      <div class="result-label">Booking Conversion Rate Increase</div>
+      <p class="result-quote">"Before, our close rate was around 12%. After qualification filtering, we're only talking to people who are genuinely ready. Close rate jumped to 38% in 6 weeks."</p>
+      <div class="result-author">Travel Agency — Pune, International Packages</div>
+    </div>
+    <div class="result-card fade-up fade-up-d2">
+      <div class="result-bg">h</div>
+      <span class="result-num">11hrs</span>
+      <div class="result-label">Saved Per Week — Founder's Time</div>
+      <p class="result-quote">"I was manually replying to every WhatsApp, every night. Now I only get notified when someone is hot — budget confirmed, dates set. The rest is handled automatically."</p>
+      <div class="result-author">Adventure Travel Founder — Delhi, 8 years running</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section id="tiers">
+  <div class="section-eyebrow fade-up">Tier Selection</div>
+  <h2 class="section-h2 fade-up fade-up-d1">Choose your operating <em>infrastructure level</em></h2>
+  <p class="section-lead fade-up fade-up-d2">All tiers are cumulative. Tier 2 includes everything in Tier 1. Tier 3 includes everything in Tier 2. You never lose what you've built.</p>
+  <div class="tiers-grid">
+    <!-- TIER 1 -->
+    <div class="tier-card fade-up">
+      <div class="tier-head">
+        <div class="tier-name">Presence</div>
+        <div class="tier-tagline">Tier 1 — Entry Infrastructure</div>
+        <a href="#audit-form" class="tier-cta">Inquire for Tier 1</a>
+      </div>
+      <div class="tier-body">
+        <div class="tier-section-label">Core Features</div>
+        <div class="tier-feature">WhatsApp Business API Integration</div>
+        <div class="tier-feature">24/7 Auto-Response (Under 60 Seconds)</div>
+        <div class="tier-feature">Lead Capture Form (Tally/Website)</div>
+        <div class="tier-feature">Basic Lead Qualification (Budget, Dates, Group Size)</div>
+        <div class="tier-feature">CRM Pipeline Dashboard (Google Sheets)</div>
+        <div class="tier-feature">3-Touch Nurture Sequence (WhatsApp + Email)</div>
+        <div class="tier-feature">Business Hours Human Escalation</div>
+        <div class="tier-feature">Single Landing Page Setup</div>
+        <div class="tier-section-label">Reporting</div>
+        <div class="tier-feature">Monthly Lead Report</div>
+        <div class="tier-feature">Channel Performance Overview</div>
+      </div>
+    </div>
+    <!-- TIER 2 -->
+    <div class="tier-card featured fade-up fade-up-d1">
+      <div class="tier-badge">Most Popular</div>
+      <div class="tier-head">
+        <div class="tier-name">Distinction</div>
+        <div class="tier-tagline">Tier 2 — Tier 1 + Advanced Conversion</div>
+        <a href="#audit-form" class="tier-cta">Inquire for Tier 2</a>
+      </div>
+      <div class="tier-body">
+        <div class="tier-section-label">Everything in Tier 1, plus:</div>
+        <div class="tier-feature carried">WhatsApp Business API Integration</div>
+        <div class="tier-feature carried">24/7 Auto-Response + Lead Capture</div>
+        <div class="tier-feature carried">CRM Pipeline + 3-Touch Nurture</div>
+        <div class="tier-section-label">Tier 2 Additions</div>
+        <div class="tier-feature">15-Point Lead Scoring Engine</div>
+        <div class="tier-feature">HOT / WARM / COLD Auto-Routing</div>
+        <div class="tier-feature">7-Touch Nurture Sequence (Multi-Channel)</div>
+        <div class="tier-feature">Calendly Booking Automation</div>
+        <div class="tier-feature">Razorpay Advance Payment Link (Auto-Triggered)</div>
+        <div class="tier-feature">2 Landing Pages + A/B Testing Setup</div>
+        <div class="tier-feature">Real-Time HOT Lead Mobile Alerts</div>
+        <div class="tier-section-label">Reporting</div>
+        <div class="tier-feature">Weekly Performance Dashboard</div>
+        <div class="tier-feature">Booking Source Attribution</div>
+        <div class="tier-feature">Conversion Funnel Report</div>
+      </div>
+    </div>
+    <!-- TIER 3 -->
+    <div class="tier-card fade-up fade-up-d2">
+      <div class="tier-head">
+        <div class="tier-name">Mastery</div>
+        <div class="tier-tagline">Tier 3 — Tier 2 + Full Revenue OS</div>
+        <a href="#audit-form" class="tier-cta">Inquire for Tier 3</a>
+      </div>
+      <div class="tier-body">
+        <div class="tier-section-label">Everything in Tier 2, plus:</div>
+        <div class="tier-feature carried">Lead Scoring + HOT Routing</div>
+        <div class="tier-feature carried">7-Touch Nurture + Booking Automation</div>
+        <div class="tier-feature carried">Payment Integration + Landing Pages</div>
+        <div class="tier-section-label">Tier 3 Additions</div>
+        <div class="tier-feature">AI Qualification Agent (Intent Detection)</div>
+        <div class="tier-feature">Full Revenue Analytics Dashboard</div>
+        <div class="tier-feature">Upsell & Cross-Sell Automation (Post-Booking)</div>
+        <div class="tier-feature">Referral Trigger System (Day 30 Post-Booking)</div>
+        <div class="tier-feature">Retention & Repeat-Booking Sequences</div>
+        <div class="tier-feature">Dedicated System Manager (Yours, Not Shared)</div>
+        <div class="tier-feature">Unlimited WhatsApp Template Creation</div>
+        <div class="tier-feature">Custom API Integrations (Your Tools)</div>
+        <div class="tier-section-label">Support</div>
+        <div class="tier-feature">Priority 4-Hour Response SLA</div>
+        <div class="tier-feature">Quarterly Revenue Strategy Review Call</div>
+        <div class="tier-feature">Ongoing System Optimisation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<hr class="gold-divider fade-up" aria-hidden="true">
+<div class="guarantee-section">
+  <div class="guarantee-box fade-up">
+    <span class="guarantee-icon">⚲</span>
+    <div class="guarantee-title">The Zero-Risk Audit Promise</div>
+    <p class="guarantee-body">Before you spend a single rupee, we calculate your exact revenue leak — which leads you're losing, from which channels, and what they're worth. If the number is zero, we say so and part as friends. No pitch until you've seen the gap yourself. <strong style="color:var(--gold)">Your numbers. Our calculation. Zero obligation.</strong></p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section>
+  <div class="section-eyebrow fade-up">Common Questions</div>
+  <h2 class="section-h2 fade-up fade-up-d1">Answered <em>directly.</em></h2>
+  <div class="faq-grid">
+    <div class="faq-item fade-up">
+      <div class="faq-q">How fast does the system actually respond?</div>
+      <p class="faq-a">Under 60 seconds. We use WhatsApp Business API — a platform-approved automation layer, not a workaround. Your response goes out before your competitor has even read the notification.</p>
+    </div>
+    <div class="faq-item fade-up fade-up-d1">
+      <div class="faq-q">Will it sound generic or bot-like?</div>
+      <p class="faq-a">No. Every response template is built specifically for your business, your destinations, and your voice. We run it with you before going live. If it doesn't sound like you, we don't launch it.</p>
+    </div>
+    <div class="faq-item fade-up fade-up-d2">
+      <div class="faq-q">What if a lead needs human attention?</div>
+      <p class="faq-a">That's what the routing logic is for. When a lead scores high (budget confirmed, dates set, group ready), you get a real-time alert. The system handles the first pass. You handle the close. That's the division of work.</p>
+    </div>
+    <div class="faq-item fade-up fade-up-d3">
+      <div class="faq-q">How long does setup take?</div>
+      <p class="faq-a">Standard setup is 7–10 business days from kickoff call to go-live. We handle everything — WhatsApp API onboarding, template approvals, CRM setup, automation builds. You onboard your team in a single 30-minute call.</p>
+    </div>
+    <div class="faq-item fade-up fade-up-d4">
+      <div class="faq-q">We're seasonal. Does this work during off-season?</div>
+      <p class="faq-a">Perfectly. Off-season is when the system runs nurture sequences on warm leads — keeping you top of mind so when peak season opens, your pipeline is already warm. Seasonality becomes an advantage, not a limitation.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q">What does the audit include?</div>
+      <p class="faq-a">A 20-minute call where we walk through your current inquiry volume, response time, close rate, and average booking value. We calculate the monthly number you're leaving on the table — to the rupee. You keep that number whether you move forward or not.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<div class="form-section" id="audit-form">
+  <div class="form-wrap">
+    <div class="section-eyebrow fade-up" style="justify-content:center">Free Revenue Leak Audit</div>
+    <h2 class="section-h2 fade-up fade-up-d1" style="text-align:center">Claim your <em>free 20-minute audit.</em><br>Find out exactly what you're leaking.</h2>
+    <p style="text-align:center;font-size:17px;color:rgba(245,240,232,0.6);margin-bottom:8px;font-family:Raleway,sans-serif">Takes 3 minutes to fill. We do the math.</p>
+    <form id="auditForm" class="form-grid" onsubmit="return handleToursSubmit(event)">
+      <div class="form-field fade-up fade-up-d2">
+        <label class="form-label">Your Name</label>
+        <input type="text" name="Name" class="form-input" placeholder="e.g. Rajesh Sharma" required>
+      </div>
+      <div class="form-field fade-up fade-up-d2">
+        <label class="form-label">Business / Franchise Name</label>
+        <input type="text" name="Business Name" class="form-input" placeholder="e.g. Sharma's Bakery" required>
+      </div>
+      <div class="form-field fade-up fade-up-d3">
+        <label class="form-label">Email</label>
+        <input type="email" name="Email" class="form-input" placeholder="you@yourbusiness.com" required>
+      </div>
+      <div class="form-field fade-up fade-up-d3">
+        <label class="form-label">WhatsApp Number</label>
+        <input type="tel" name="WhatsApp Number" class="form-input" placeholder="+91 98XXXXXXXX" required>
+      </div>
+      <div class="form-field fade-up fade-up-d4">
+        <label class="form-label">Your Role</label>
+        <select name="Your Role" class="form-select" required>
+          <option value="">Select your role</option>
+          <option>Founder / Owner</option>
+          <option>Operations Head</option>
+          <option>Sales Manager</option>
+          <option>Marketing Lead</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field fade-up fade-up-d4">
+        <label class="form-label">Business Type</label>
+        <select name="Business Type" class="form-select" required>
+          <option value="">Select type</option>
+          <option>Travel Agency (B2C)</option>
+          <option>Tour Operator</option>
+          <option>DMC (Destination Management)</option>
+          <option>Corporate Travel</option>
+          <option>Adventure / Niche Tourism</option>
+          <option>Luxury Travel</option>
+          <option>Online Travel (OTA)</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field fade-up fade-up-d5">
+        <label class="form-label">Number of Locations</label>
+        <select name="Number of Locations" class="form-select" required>
+          <option value="">Select range</option>
+          <option>1 location</option>
+          <option>2-3 locations</option>
+          <option>4-6 locations</option>
+          <option>7-10 locations</option>
+          <option>10+ locations</option>
+        </select>
+      </div>
+      <div class="form-field fade-up fade-up-d5">
+        <label class="form-label">Monthly Revenue (₹)</label>
+        <select name="Monthly Revenue" class="form-select" required>
+          <option value="">Select range</option>
+          <option>Under ₹5 Lakhs</option>
+          <option>₹5L - ₹15L</option>
+          <option>₹15L - ₹30L</option>
+          <option>₹30L - ₹50L</option>
+          <option>₹50L+</option>
+        </select>
+      </div>
+      <div class="form-field full fade-up fade-up-d6">
+        <label class="form-label">Which Level Interests You?</label>
+        <select name="Which Level Interests You?" class="form-select" id="levelSelect">
+          <option value="">Not sure yet — help me decide</option>
+          <option value="visibility">Tier 1 — Presence (Entry Infrastructure)</option>
+          <option value="control">Tier 2 — Distinction (Advanced Conversion)</option>
+          <option value="autonomy">Tier 3 — Mastery (Full Revenue OS)</option>
+        </select>
+      </div>
+      <div class="form-field full fade-up fade-up-d6">
+        <button type="submit" class="form-submit">Claim My Free Revenue Leak Audit →</button>
+        <p class="form-note">20-minute call. No pitch before your numbers. No obligation to proceed.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="fade-up">
+  <div>
+    <div class="footer-brand">Lead<span>Matrix</span></div>
+    <p style="font-family:Raleway,sans-serif;font-size:13px;color:rgba(245,240,232,0.4);margin-top:8px;max-width:320px">Revenue infrastructure for tour operators and travel companies that are ready to stop leaking bookings.</p>
+  </div>
+  <div class="footer-contact">
+    <div>Email: <a href="mailto:team@hypex.org.in">team@hypex.org.in</a></div>
+    <div>Contact: <a href="tel:+916289109099">+91 6289109099</a> / <a href="tel:+918444815643">8444815643</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-legal">© 2025 LeadMatrix. All rights reserved. Built for operators who are done leaving revenue on the table.</span>
+    <a href="#audit-form" class="btn-primary" style="font-size:11px;padding:12px 24px">Get Free Audit →</a>
+  </div>
+</footer>
+
+<script>
+// Ticker: pixel-perfect loop (measure first half width so seam is exact)
+(function(){
+  var inner=document.querySelector('.ticker-inner');
+  if(!inner)return;
+  var spans=inner.querySelectorAll('span');
+  var n=spans.length;
+  if(n<2)return;
+  var half=n/2;
+  var temp=document.createElement('div');
+  temp.setAttribute('class','ticker-inner');
+  temp.style.cssText='position:absolute;visibility:hidden;top:0;left:0;pointer-events:none';
+  for(var i=0;i<half;i++)temp.appendChild(spans[i].cloneNode(true));
+  document.body.appendChild(temp);
+  var w=temp.offsetWidth;
+  document.body.removeChild(temp);
+  inner.style.setProperty('--ticker-dx','-'+w+'px');
+})();
+
+// Hero load + conv message reveal
+setTimeout(()=>{
+  const hero=document.querySelector('.hero');
+  if(hero){hero.classList.add('hero-loaded');}
+  const convCard=document.querySelector('.conv-card');
+  if(convCard){convCard.classList.add('msg-visible');}
+},150);
+
+// Nav scroll
+const nav=document.querySelector('nav');
+if(nav){
+  const onScroll=()=>{nav.classList.toggle('nav--scrolled',window.scrollY>80);};
+  onScroll();
+  window.addEventListener('scroll',onScroll,{passive:true});
+}
+
+// Cursor
+const cursor=document.getElementById('cursor');
+const ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+if(window.innerWidth>900){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
+  function animRing(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)}
+  animRing();
+  document.querySelectorAll('a,button,[class*="btn"]').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.style.width='16px';cursor.style.height='16px';cursor.style.background='transparent';cursor.style.border='1px solid var(--gold)'});
+    el.addEventListener('mouseleave',()=>{cursor.style.width='8px';cursor.style.height='8px';cursor.style.background='var(--gold)';cursor.style.border='none'});
+  });
+}
+
+// Leak counter (eased start)
+let leaked=0;const rate=6.09;
+const el=document.getElementById('leakCounter');
+const leakStart=performance.now();
+const easeIn=2.5;
+function leakTick(now){
+  const t=(now-leakStart)/1000;
+  const mult=t<easeIn?0.15+0.85*(1-Math.pow(1-t/easeIn,2)):1;
+  leaked+=(rate/10)*mult;
+  el.textContent='₹'+leaked.toFixed(2);
+}
+setInterval(()=>{leakTick(performance.now());},100);
+
+// Scroll animations
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// Dashboard: bars, pipeline (run once), metric count-up
+let dashDone=false;
+const dashObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting||dashDone)return;
+    dashDone=true;
+    const wrap=e.target;
+    wrap.classList.add('dash-visible');
+    wrap.querySelectorAll('.bar.bar--initial').forEach(b=>b.classList.remove('bar--initial'));
+    wrap.querySelectorAll('.pipeline-fill--anim').forEach(f=>{
+      const w=f.getAttribute('data-width')+'%';
+      requestAnimationFrame(()=>{f.style.width=w;});
+    });
+    wrap.querySelectorAll('.dash-metric-val[data-count-to]').forEach(el=>{
+      const to=+el.getAttribute('data-count-to');
+      const prefix=el.getAttribute('data-prefix')||'';
+      const suffix=el.getAttribute('data-suffix')||'';
+      const start=0;
+      const duration=1000;
+      const startT=performance.now();
+      function tick(now){
+        const t=Math.min((now-startT)/duration,1);
+        const eased=1-Math.pow(1-t,2);
+        const v=start+(to-start)*eased;
+        el.textContent=prefix+(Number.isInteger(to)?Math.round(v):v.toFixed(1))+suffix;
+        if(t<1)requestAnimationFrame(tick);
+        else el.textContent=prefix+(Number.isInteger(to)?to:to.toFixed(1))+suffix;
+      }
+      requestAnimationFrame(tick);
+    });
+    dashObs.disconnect();
+  });
+},{threshold:0.25});
+const dw=document.querySelector('.dashboard-wrap');
+if(dw)dashObs.observe(dw);
+
+// Form submit — sends to Node server (/api/submit), which writes to Airtable using .env
+function handleToursSubmit(e) {
+  e.preventDefault();
+  var form = document.getElementById('auditForm');
+  if (!form) return false;
+  var btn = form.querySelector('button[type="submit"]');
+  var data = new FormData(form);
+  var payload = {
+    'Name': data.get('Name') || '',
+    'Business Name': data.get('Business Name') || '',
+    'Email': data.get('Email') || '',
+    'WhatsApp Number': data.get('WhatsApp Number') || '',
+    'Your Role': data.get('Your Role') || '',
+    'Business Type': data.get('Business Type') || '',
+    'Number of Locations': data.get('Number of Locations') || '',
+    'Monthly Revenue': data.get('Monthly Revenue') || '',
+    'Which Level Interests You?': data.get('Which Level Interests You?') || '',
+    'Source': 'tours'
+  };
+  if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+  fetch('/api/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(function(r) {
+    if (r.ok) {
+      if (btn) { btn.style.background = 'var(--coral)'; btn.textContent = '✓ Audit Request Sent! We\'ll call within 4 hours.'; btn.disabled = true; }
+      form.reset();
+    } else {
+      if (btn) { btn.disabled = false; btn.textContent = 'Claim My Free Revenue Leak Audit →'; }
+      alert('Something went wrong. Please try again or contact us directly.');
+    }
+  }).catch(function() {
+    if (btn) { btn.disabled = false; btn.textContent = 'Claim My Free Revenue Leak Audit →'; }
+    alert('Something went wrong. Please try again or contact us directly.');
+  });
+  return false;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>Axiom OS — Business Command Centre for Food Franchises | HypeX</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D0D0D;--surface:#131313;--card:#181818;
+    --amber:#F59E0B;--orange:#EA580C;--green:#10B981;--red:#EF4444;
+    --text:#F5F0E8;--muted:rgba(245,240,232,0.45);--border:rgba(255,255,255,0.07);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Barlow',sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    touch-action:pan-y;
+  }
+
+  /* NAV */
+  nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    padding:clamp(12px,2vw,18px) clamp(16px,5vw,56px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(13,13,13,0.85);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(245,158,11,0.15);
+    transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change:transform,background,backdrop-filter,border-color,box-shadow;
+  }
+  nav.scrolled{
+    background:rgba(13,13,13,0.98);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    border-bottom-color:rgba(245,158,11,0.3);
+    box-shadow:0 4px 24px rgba(0,0,0,0.3),0 0 0 1px rgba(245,158,11,0.1) inset;
+    padding-top:clamp(10px,1.5vw,14px);
+    padding-bottom:clamp(10px,1.5vw,14px);
+  }
+  nav.scrolled::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(245,158,11,0.5),transparent);
+    opacity:0.6;
+  }
+  .logo{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:clamp(20px,2.5vw,26px);
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--text);
+    transition:transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),opacity 0.3s;
+    cursor:pointer;
+    position:relative;
+  }
+  .logo::after{
+    content:'';
+    position:absolute;
+    bottom:-2px;
+    left:0;
+    width:0;
+    height:2px;
+    background:var(--amber);
+    transition:width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .logo:hover::after{
+    width:100%;
+  }
+  .logo:hover{
+    transform:translateY(-1px);
+  }
+  .logo span{
+    color:var(--amber);
+    transition:transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display:inline-block;
+  }
+  .logo:hover span{
+    transform:scale(1.1) rotate(5deg);
+  }
+  .logo .sub{
+    font-size:clamp(9px,1vw,11px);
+    font-weight:400;
+    letter-spacing:3px;
+    color:var(--muted);
+    margin-left:8px;
+    transition:opacity 0.3s;
+  }
+  .logo:hover .sub{
+    opacity:0.8;
+  }
+  .nav-cta{
+    background:var(--amber);
+    color:#000;
+    padding:10px clamp(16px,2.2vw,24px);
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:clamp(11px,1.2vw,13px);
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-decoration:none;
+    white-space:nowrap;
+    border-radius:6px;
+    transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(245,158,11,0.2);
+  }
+  .nav-cta::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+    transition:left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .nav-cta:hover{
+    background:#fbbf24;
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(245,158,11,0.4);
+  }
+  .nav-cta:hover::before{
+    left:100%;
+  }
+  .nav-cta:active{
+    transform:translateY(0);
+    box-shadow:0 2px 8px rgba(245,158,11,0.3);
+  }
+
+  /* HERO */
+  .hero{background:var(--bg);padding:clamp(100px,14vw,160px) clamp(16px,5vw,56px) clamp(56px,8vw,100px);position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 20% 50%,rgba(245,158,11,0.05) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(16,185,129,0.03) 0%,transparent 50%);animation:bgPulse 8s ease-in-out infinite;pointer-events:none;}
+  @keyframes bgPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.8;transform:scale(1.1);}}
+  .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,60px);align-items:start;}
+  .hero-tag{font-family:'Barlow Condensed',sans-serif;font-size:clamp(10px,1vw,12px);font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);border:1px solid rgba(245,158,11,0.3);display:inline-block;padding:4px 12px;margin-bottom:clamp(16px,2vw,28px);}
+  .hero-headline{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,9vw,110px);font-weight:900;line-height:0.92;text-transform:uppercase;color:var(--text);margin-bottom:8px;letter-spacing:-1px;}
+  .hero-headline .amber{color:var(--amber);}
+  .hero-headline .outlined{-webkit-text-stroke:2px var(--text);color:transparent;}
+  .hero-body{font-size:clamp(15px,1.5vw,18px);color:var(--muted);line-height:1.65;margin:clamp(16px,2vw,24px) 0 clamp(28px,3vw,40px);max-width:520px;}
+  .hero-body strong{color:var(--text);}
+  .cta-stack{display:flex;flex-direction:column;gap:10px;max-width:480px;}
+  .primary-cta{display:block;background:var(--amber);color:#000;padding:clamp(15px,1.8vw,20px) clamp(20px,2.5vw,32px);font-family:'Barlow Condensed',sans-serif;font-size:clamp(14px,1.5vw,17px);font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;text-align:center;width:100%;transition:all 0.3s;position:relative;overflow:hidden;transform:translateZ(0);}
+  .primary-cta::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,0.3);transform:translate(-50%,-50%);transition:width 0.6s,height 0.6s;}
+  .primary-cta:hover{background:#fbbf24;transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,158,11,0.4);}
+  .primary-cta:hover::before{width:300px;height:300px;}
+  .primary-cta:active{transform:translateY(0);}
+  .cta-note{font-size:clamp(11px,1.1vw,13px);color:var(--muted);}
+  .cta-note span{color:var(--amber);}
+
+  /* COMMAND CENTRE */
+  .command-centre{background:var(--card);border:1px solid var(--border);}
+  .cc-topbar{display:flex;align-items:center;gap:7px;padding:clamp(12px,1.5vw,16px) clamp(14px,1.8vw,20px);border-bottom:1px solid var(--border);}
+  .cc-dot{width:9px;height:9px;border-radius:50%;}
+  .cc-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(9px,1vw,11px);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-left:6px;}
+  .cc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+  .cc-metric{background:var(--card);padding:clamp(12px,1.5vw,16px) clamp(14px,1.8vw,18px);}
+  .cc-metric-lbl{font-size:clamp(9px,0.9vw,10px);letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+  .cc-metric-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:900;line-height:1;margin-bottom:2px;}
+  .cc-metric-sub{font-size:clamp(9px,0.9vw,10px);color:var(--muted);}
+  .cc-bars{padding:clamp(12px,1.5vw,16px) clamp(14px,1.8vw,20px);border-bottom:1px solid var(--border);}
+  .cc-bars-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+  .bar-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+  .bar-label{font-size:clamp(10px,1vw,11px);color:var(--muted);min-width:80px;flex-shrink:0;}
+  .bar-track{flex:1;height:6px;background:rgba(255,255,255,0.06);}
+  .bar-fill{height:100%;animation:barGrow 1.2s ease forwards;width:0;}
+  @keyframes barGrow{to{width:var(--w,100%)}}
+  .bar-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(11px,1.1vw,13px);font-weight:700;min-width:32px;text-align:right;}
+  .cc-alerts{padding:clamp(10px,1.2vw,14px) clamp(14px,1.8vw,20px);}
+  .alert-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border);}
+  .alert-row:last-child{border-bottom:none;}
+  .alert-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+  .alert-text{flex:1;font-size:clamp(10px,1vw,12px);color:var(--muted);line-height:1.3;}
+  .alert-loc{font-size:clamp(9px,0.9vw,10px);color:var(--muted);white-space:nowrap;}
+
+  /* PROBLEMS */
+  .problems{background:var(--surface);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);}
+  .section-tag{font-family:'Barlow Condensed',sans-serif;font-size:clamp(10px,1vw,12px);font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:clamp(12px,1.5vw,20px);}
+  .section-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,7vw,88px);font-weight:900;line-height:0.95;text-transform:uppercase;color:var(--text);margin-bottom:clamp(32px,4vw,56px);}
+  .section-h .amber{color:var(--amber);}
+  .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+  .problem-card{background:var(--card);border:1px solid var(--border);padding:clamp(24px,3vw,36px) clamp(20px,2.5vw,28px);}
+  .prob-icon{font-size:clamp(24px,3vw,32px);margin-bottom:clamp(12px,1.5vw,16px);}
+  .prob-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(16px,1.8vw,20px);font-weight:700;letter-spacing:0.5px;color:var(--text);margin-bottom:10px;}
+  .prob-body{font-size:clamp(13px,1.3vw,15px);color:var(--muted);line-height:1.6;}
+
+  /* WHAT IT IS */
+  .what-is{background:var(--bg);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);}
+  .what-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px);align-items:start;}
+  .what-quote{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,52px);font-weight:900;text-transform:uppercase;line-height:1;color:var(--text);margin-bottom:clamp(16px,2vw,24px);}
+  .what-quote .amber{color:var(--amber);}
+  .what-body{font-size:clamp(14px,1.4vw,17px);color:var(--muted);line-height:1.65;margin-bottom:clamp(10px,1.2vw,14px);}
+  .levels{display:flex;flex-direction:column;gap:2px;}
+  .level-row{display:flex;align-items:center;gap:clamp(14px,1.8vw,24px);padding:clamp(16px,2vw,22px) clamp(16px,2vw,22px);background:var(--card);border:1px solid var(--border);}
+  .level-num{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,4vw,48px);font-weight:900;color:var(--amber);line-height:1;width:clamp(36px,3.5vw,48px);flex-shrink:0;}
+  .level-content{flex:1;min-width:0;}
+  .level-name{font-family:'Barlow Condensed',sans-serif;font-size:clamp(15px,1.6vw,18px);font-weight:700;letter-spacing:0.5px;color:var(--text);margin-bottom:3px;}
+  .level-desc{font-size:clamp(12px,1.2vw,13px);color:var(--muted);}
+  .level-badge{font-family:'Barlow Condensed',sans-serif;font-size:clamp(9px,0.9vw,10px);font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;white-space:nowrap;}
+
+  /* VALUE STACK */
+  .value-stack{background:var(--surface);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);}
+  .tier-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:clamp(28px,3vw,48px) 0;}
+  .tier-block{background:var(--card);border:1px solid var(--border);padding:clamp(24px,3vw,40px) clamp(20px,2.5vw,28px);position:relative;display:flex;flex-direction:column;}
+  .tier-block.featured{border-color:var(--amber);}
+  .tier-badge-block{position:absolute;top:-1px;right:16px;background:var(--amber);color:#000;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 12px;}
+  .tier-lvl{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+  .tier-level-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+  .tier-name{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,2.8vw,32px);font-weight:900;text-transform:uppercase;color:var(--text);margin-bottom:6px;}
+  .tier-desc{font-size:clamp(12px,1.2vw,14px);color:var(--muted);margin-bottom:clamp(16px,2vw,22px);padding-bottom:clamp(14px,1.8vw,20px);border-bottom:1px solid var(--border);}
+  .tier-features{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .tier-features li{font-size:clamp(12px,1.2vw,14px);color:var(--text);line-height:1.4;padding-left:16px;position:relative;}
+  .tier-features li::before{content:'→';color:var(--amber);position:absolute;left:0;font-weight:700;}
+
+  /* GUARANTEE */
+  .guarantee{background:var(--bg);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);text-align:center;}
+  .guarantee-inner{max-width:760px;margin:0 auto;background:rgba(245,158,11,0.04);border:1px solid rgba(245,158,11,0.25);padding:clamp(36px,5vw,72px) clamp(24px,4vw,64px);}
+  .guarantee-inner h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,7vw,88px);font-weight:900;text-transform:uppercase;line-height:0.95;color:var(--text);margin-bottom:clamp(16px,2vw,24px);}
+  .guarantee-inner p{font-size:clamp(15px,1.5vw,18px);color:var(--muted);line-height:1.65;margin-bottom:12px;}
+
+  /* FINAL CTA */
+  .final-cta{background:var(--surface);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);text-align:center;}
+  .final-cta h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,9vw,110px);font-weight:900;text-transform:uppercase;line-height:0.93;color:var(--text);margin-bottom:clamp(16px,2vw,28px);}
+  .final-cta h2 .amber{color:var(--amber);}
+  .final-desc{font-size:clamp(15px,1.5vw,18px);color:var(--muted);max-width:520px;margin:0 auto clamp(28px,3.5vw,48px);line-height:1.6;}
+  .cta-form{display:flex;flex-direction:column;max-width:480px;margin:0 auto clamp(14px,1.8vw,18px);}
+  .cta-form input{padding:clamp(14px,1.6vw,18px) clamp(16px,2vw,22px);background:rgba(255,255,255,0.04);border:1px solid var(--border);border-bottom:none;color:var(--text);font-family:'Barlow',sans-serif;font-size:15px;outline:none;}
+  .cta-form input::placeholder{color:var(--muted);}
+  .cta-form button{padding:clamp(14px,1.6vw,18px) clamp(20px,2.5vw,28px);background:var(--amber);color:#000;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(13px,1.4vw,15px);letter-spacing:2px;text-transform:uppercase;cursor:pointer;width:100%;}
+  .cta-form button:hover{background:#fbbf24;}
+  .trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,1.5vw,24px);margin-top:clamp(12px,1.5vw,16px);}
+  .trust-item{font-size:clamp(11px,1.1vw,13px);color:var(--muted);}
+  .trust-item::before{content:'✓ ';color:var(--amber);font-weight:700;}
+
+  /* FAQ */
+  .faq{background:var(--bg);padding:clamp(40px,6vw,80px) clamp(16px,5vw,56px);max-width:800px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--border);padding:clamp(16px,2vw,24px) 0;cursor:pointer;}
+  .faq-q{font-family:'Barlow Condensed',sans-serif;font-size:clamp(15px,1.5vw,18px);font-weight:700;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:14px;letter-spacing:0.3px;}
+  .faq-q::after{content:'+';color:var(--amber);font-size:22px;flex-shrink:0;}
+  .faq-a{font-size:clamp(13px,1.3vw,15px);color:var(--muted);line-height:1.7;margin-top:12px;display:none;}
+  .faq-item.open .faq-q::after{content:'−';}
+  .faq-item.open .faq-a{display:block;}
+
+  /* FOOTER */
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:clamp(24px,3vw,40px) clamp(16px,5vw,56px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;}
+  footer p{font-size:clamp(11px,1.1vw,13px);color:var(--muted);}
+
+  .fade-up{opacity:1;transform:translateY(0);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+
+  /* ANIMATION ENHANCEMENTS */
+  @media (prefers-reduced-motion: no-preference) {
+    nav{will-change:transform,opacity,backdrop-filter;}
+    .logo{will-change:transform,opacity;}
+    .hero-headline{will-change:transform,opacity;}
+    .command-centre{will-change:transform,opacity;}
+    .problem-card{will-change:transform,opacity;}
+    .tier-block{will-change:transform,opacity;}
+  }
+  
+  /* NAV ANIMATIONS - Enhanced */
+  nav.animate-in{transform:translateY(0);}
+  
+  /* HERO ANIMATIONS */
+  .hero-tag{opacity:1;transform:translateY(0);}
+  .hero-headline{opacity:1;}
+  .hero-headline .line{display:inline-block;overflow:visible;}
+  .hero-body{opacity:1;transform:translateY(0);}
+  .cta-stack{opacity:1;transform:translateY(0);}
+  .command-centre{opacity:1;transform:translateX(0) scale(1);}
+  
+  /* Animation-ready classes (applied by JS) - NO HIDING, just for tracking */
+  
+  /* COMMAND CENTRE ANIMATIONS */
+  .cc-dot{animation:pulse 2s ease-in-out infinite;position:relative;}
+  .cc-dot::after{content:'';position:absolute;top:50%;left:50%;width:100%;height:100%;border-radius:50%;transform:translate(-50%,-50%);opacity:0.6;animation:ripple 2s ease-out infinite;}
+  .cc-dot:nth-child(1){animation-delay:0s;}
+  .cc-dot:nth-child(1)::after{animation-delay:0s;}
+  .cc-dot:nth-child(2){animation-delay:0.3s;}
+  .cc-dot:nth-child(2)::after{animation-delay:0.3s;}
+  .cc-dot:nth-child(3){animation-delay:0.6s;}
+  .cc-dot:nth-child(3)::after{animation-delay:0.6s;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.7;transform:scale(0.9);}}
+  @keyframes ripple{0%{transform:translate(-50%,-50%) scale(1);opacity:0.6;}100%{transform:translate(-50%,-50%) scale(2);opacity:0;}}
+  .cc-metric{transition:transform 0.3s,box-shadow 0.3s;}
+  .cc-metric:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(245,158,11,0.15);}
+  .alert-row{opacity:1;transform:translateX(0);}
+  
+  /* PROBLEM CARD ANIMATIONS */
+  .problem-card{transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;}
+  .problem-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 8px 24px rgba(245,158,11,0.1);}
+  .prob-icon{transition:transform 0.3s;display:inline-block;}
+  .problem-card:hover .prob-icon{transform:rotate(5deg) scale(1.1);}
+  
+  /* LEVEL ROW ANIMATIONS */
+  .level-row{opacity:1;transform:translateX(0);}
+  .level-num{transition:transform 0.3s;}
+  .level-row:hover .level-num{transform:scale(1.2) rotate(5deg);}
+  .level-badge{transition:transform 0.3s,box-shadow 0.3s;}
+  .level-row:hover .level-badge{transform:scale(1.1);box-shadow:0 0 12px currentColor;}
+  
+  /* TIER BLOCK ANIMATIONS */
+  .tier-block{transition:transform 0.4s,box-shadow 0.4s;transform-style:preserve-3d;}
+  .tier-block:hover{transform:translateY(-8px) rotateX(2deg);box-shadow:0 12px 32px rgba(245,158,11,0.2);}
+  .tier-block.featured:hover{box-shadow:0 12px 32px rgba(245,158,11,0.3);}
+  .tier-featured-badge{animation:glow 2s ease-in-out infinite;}
+  @keyframes glow{0%,100%{box-shadow:0 0 8px rgba(245,158,11,0.5);}50%{box-shadow:0 0 16px rgba(245,158,11,0.8);}}
+  .tier-features li{opacity:1;transform:translateX(0);}
+  .tier-features li::before{transition:transform 0.3s;}
+  .tier-block:hover .tier-features li::before{transform:translateX(4px);}
+  
+  /* GUARANTEE ANIMATIONS */
+  .guarantee-inner{position:relative;overflow:hidden;}
+  .guarantee-inner::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(245,158,11,0.1) 0%,transparent 70%);animation:rotate 20s linear infinite;}
+  @keyframes rotate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+  .guarantee-inner h2{opacity:1;transform:scale(1);}
+  .guarantee-inner p{opacity:1;transform:translateY(0);}
+  
+  /* FORM STYLES - Enhanced */
+  .form-wrap{
+    max-width:600px;
+    margin:40px auto 0;
+    background:var(--card);
+    border:1px solid rgba(245,158,11,0.15);
+    border-radius:20px;
+    padding:clamp(32px,4vw,48px) clamp(24px,3vw,40px);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  }
+  .form-wrap::before{
+    content:'';
+    position:absolute;
+    top:-50%;
+    right:-50%;
+    width:100%;
+    height:100%;
+    background:radial-gradient(circle,rgba(245,158,11,0.05),transparent 70%);
+    pointer-events:none;
+    animation:formGlow 8s ease-in-out infinite;
+  }
+  @keyframes formGlow{
+    0%,100%{opacity:0.5;transform:translate(0,0) scale(1);}
+    50%{opacity:0.8;transform:translate(-5%,5%) scale(1.1);}
+  }
+  .form-wrap h3{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:clamp(20px,2.2vw,24px);
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:8px;
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  .form-wrap>p{
+    text-align:center;
+    margin-bottom:clamp(20px,2.5vw,28px);
+    font-size:clamp(13px,1.3vw,15px);
+    color:var(--muted);
+  }
+  .form-group{
+    margin-bottom:clamp(14px,1.8vw,20px);
+    opacity:0;
+    transform:translateY(10px);
+  }
+  .form-group.animate-ready{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .form-group label{
+    display:block;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:clamp(10px,1vw,12px);
+    color:var(--amber);
+    font-weight:700;
+    margin-bottom:6px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+  }
+  .form-group input,
+  .form-group select{
+    width:100%;
+    padding:clamp(12px,1.5vw,16px) clamp(14px,1.8vw,18px);
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:10px;
+    color:var(--text);
+    font-family:'Barlow',sans-serif;
+    font-size:clamp(14px,1.4vw,16px);
+    transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline:none;
+  }
+  .form-group input:focus,
+  .form-group select:focus{
+    border-color:var(--amber);
+    background:rgba(255,255,255,0.08);
+    box-shadow:0 0 0 3px rgba(245,158,11,0.1),0 4px 12px rgba(245,158,11,0.15);
+    transform:translateY(-1px);
+  }
+  .form-group input::placeholder{
+    color:var(--muted);
+  }
+  .form-group select{
+    cursor:pointer;
+    appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23F59E0B' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+    padding-right:clamp(36px,4vw,40px);
+  }
+  .form-group select option{
+    background:var(--card);
+    color:var(--text);
+    padding:10px;
+  }
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(12px,1.5vw,16px);
+  }
+  .form-submit{
+    width:100%;
+    margin-top:clamp(20px,2.5vw,28px);
+    padding:clamp(16px,1.8vw,20px);
+    font-size:clamp(14px,1.4vw,16px);
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+  }
+  
+  /* Button Classes */
+  .btn-gold{
+    background:var(--amber);
+    color:#000;
+  }
+  .btn-gold:hover{
+    background:#fbbf24;
+  }
+  .form-submit::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.15);
+    transform:translateX(-100%);
+    transition:transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .form-submit:hover::after{
+    transform:translateX(0);
+  }
+  .form-trust{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-top:clamp(12px,1.5vw,16px);
+    font-size:clamp(11px,1.1vw,13px);
+    color:var(--muted);
+  }
+  .form-trust span:first-child{
+    color:var(--amber);
+    font-size:clamp(14px,1.4vw,16px);
+  }
+  
+  /* Legacy CTA Form (for backward compatibility) */
+  .cta-form{display:flex;flex-direction:column;max-width:480px;margin:0 auto clamp(14px,1.8vw,18px);}
+  .cta-form input{transition:all 0.3s;will-change:border-color,box-shadow;}
+  .cta-form input:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,158,11,0.1),0 0 20px rgba(245,158,11,0.2);transform:scale(1.02);}
+  .cta-form button{position:relative;overflow:hidden;transition:all 0.3s;}
+  .cta-form button::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,0.3);transform:translate(-50%,-50%);transition:width 0.6s,height 0.6s;}
+  .cta-form button:hover::before{width:300px;height:300px;}
+  .cta-form button:active{transform:scale(0.98);}
+  .trust-item{opacity:1;transform:translateY(0);}
+  
+  /* FAQ ANIMATIONS */
+  .faq-q::after{transition:transform 0.3s;}
+  .faq-item.open .faq-q::after{transform:rotate(180deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s ease,margin-top 0.3s ease;opacity:0;margin-top:0;}
+  .faq-item.open .faq-a{max-height:500px;opacity:1;margin-top:12px;display:block;}
+  
+  /* FINAL CTA HEADLINE */
+  .final-cta h2{opacity:1;}
+  .final-cta h2 .line{display:inline-block;overflow:visible;}
+  .final-desc{opacity:1;transform:translateY(0);}
+  
+  /* PARALLAX EFFECTS */
+  .hero{position:relative;}
+  .problems{position:relative;}
+  .what-is{position:relative;}
+  .value-stack{position:relative;}
+  
+  /* CURSOR EFFECTS (optional) */
+  @media (hover: hover) and (pointer: fine) {
+    .primary-cta,.nav-cta,.tier-block,.problem-card{cursor:pointer;}
+  }
+
+  /* TABLET */
+  @media(max-width:960px){
+    nav{
+      padding:clamp(10px,1.5vw,14px) clamp(16px,3vw,32px);
+    }
+    .nav-cta{
+      padding:8px clamp(14px,2vw,20px);
+      font-size:clamp(10px,1.1vw,12px);
+    }
+    .hero-inner{
+      grid-template-columns:1fr;
+      gap:clamp(24px,3vw,40px);
+    }
+    .command-centre{
+      display:none;
+    }
+    .problem-grid{
+      grid-template-columns:repeat(2,1fr);
+      gap:2px;
+    }
+    .what-inner{
+      grid-template-columns:1fr;
+      gap:clamp(32px,4vw,56px);
+    }
+    .tier-blocks{
+      grid-template-columns:1fr;
+      gap:2px;
+    }
+    .section-h{
+      font-size:clamp(36px,6vw,72px);
+    }
+    .guarantee-inner{
+      padding:clamp(32px,4vw,56px) clamp(20px,3vw,48px);
+    }
+  }
+
+  /* MOBILE */
+  @media(max-width:640px){
+    /* Navigation */
+    nav{
+      padding:clamp(10px,1.2vw,14px) clamp(12px,2.5vw,20px);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+    }
+    nav.scrolled{
+      padding-top:clamp(8px,1vw,12px);
+      padding-bottom:clamp(8px,1vw,12px);
+    }
+    .logo{
+      font-size:clamp(18px,2.2vw,22px);
+    }
+    .logo .sub{
+      display:none;
+    }
+    .nav-cta{
+      padding:8px clamp(12px,1.8vw,18px);
+      font-size:clamp(10px,1vw,11px);
+      letter-spacing:1.5px;
+    }
+    
+    /* Hero Section */
+    .hero{
+      padding:clamp(80px,12vw,120px) clamp(16px,4vw,24px) clamp(40px,6vw,60px);
+      padding-top:clamp(90px,14vw,130px);
+    }
+    .hero-tag{
+      font-size:clamp(9px,0.9vw,11px);
+      padding:3px 10px;
+      margin-bottom:clamp(12px,1.5vw,20px);
+    }
+    .hero-headline{
+      font-size:clamp(40px,10vw,72px);
+      line-height:0.95;
+      margin-bottom:clamp(12px,1.5vw,20px);
+    }
+    .hero-body{
+      font-size:clamp(14px,1.3vw,16px);
+      margin:clamp(14px,1.8vw,20px) 0 clamp(24px,2.5vw,32px);
+    }
+    .cta-stack{
+      max-width:100%;
+    }
+    .primary-cta{
+      padding:clamp(14px,1.6vw,18px) clamp(18px,2.2vw,24px);
+      font-size:clamp(13px,1.3vw,15px);
+    }
+    .cta-note{
+      font-size:clamp(10px,1vw,12px);
+    }
+    
+    /* Problems Section */
+    .problems{
+      padding:clamp(40px,6vw,80px) clamp(16px,4vw,24px);
+    }
+    .section-tag{
+      font-size:clamp(9px,0.9vw,11px);
+      margin-bottom:clamp(10px,1.2vw,16px);
+    }
+    .section-h{
+      font-size:clamp(32px,8vw,56px);
+      margin-bottom:clamp(24px,3vw,40px);
+    }
+    .problem-grid{
+      grid-template-columns:1fr;
+      gap:2px;
+    }
+    .problem-card{
+      padding:clamp(20px,2.5vw,28px) clamp(16px,2vw,20px);
+    }
+    .prob-icon{
+      font-size:clamp(20px,2.5vw,28px);
+      margin-bottom:clamp(10px,1.2vw,14px);
+    }
+    .prob-title{
+      font-size:clamp(14px,1.6vw,18px);
+      margin-bottom:8px;
+    }
+    .prob-body{
+      font-size:clamp(12px,1.2vw,14px);
+      line-height:1.65;
+    }
+    
+    /* What Is Section */
+    .what-is{
+      padding:clamp(40px,6vw,80px) clamp(16px,4vw,24px);
+    }
+    .what-quote{
+      font-size:clamp(24px,6vw,40px);
+      margin-bottom:clamp(14px,1.8vw,20px);
+    }
+    .what-body{
+      font-size:clamp(13px,1.3vw,15px);
+      margin-bottom:clamp(8px,1vw,12px);
+    }
+    .level-row{
+      padding:clamp(14px,1.8vw,18px) clamp(14px,1.8vw,18px);
+      flex-wrap:wrap;
+      gap:clamp(12px,1.5vw,20px);
+    }
+    .level-num{
+      font-size:clamp(28px,3.5vw,40px);
+      width:clamp(32px,3vw,40px);
+    }
+    .level-name{
+      font-size:clamp(14px,1.5vw,16px);
+    }
+    .level-desc{
+      font-size:clamp(11px,1.1vw,12px);
+    }
+    .level-badge{
+      font-size:clamp(8px,0.8vw,9px);
+      padding:2px 6px;
+    }
+    
+    /* Value Stack */
+    .value-stack{
+      padding:clamp(40px,6vw,80px) clamp(16px,4vw,24px);
+    }
+    .tier-block{
+      padding:clamp(20px,2.5vw,32px) clamp(16px,2vw,24px);
+    }
+    .tier-name{
+      font-size:clamp(20px,2.5vw,28px);
+    }
+    .tier-desc{
+      font-size:clamp(11px,1.1vw,13px);
+      margin-bottom:clamp(14px,1.8vw,20px);
+      padding-bottom:clamp(12px,1.5vw,18px);
+    }
+    .tier-features li{
+      font-size:clamp(11px,1.1vw,13px);
+      padding-left:14px;
+    }
+    
+    /* Form Mobile Styles */
+    .form-wrap{
+      padding:clamp(24px,3vw,32px) clamp(16px,2.5vw,24px);
+      border-radius:16px;
+    }
+    .form-wrap h3{
+      font-size:clamp(18px,2vw,22px);
+      margin-bottom:6px;
+    }
+    .form-wrap>p{
+      font-size:clamp(12px,1.2vw,14px);
+      margin-bottom:clamp(16px,2vw,24px);
+    }
+    .form-group{
+      margin-bottom:clamp(12px,1.5vw,16px);
+    }
+    .form-group label{
+      font-size:clamp(9px,0.9vw,11px);
+      margin-bottom:5px;
+    }
+    .form-group input,
+    .form-group select{
+      padding:clamp(11px,1.3vw,14px) clamp(12px,1.6vw,16px);
+      font-size:clamp(13px,1.3vw,15px);
+      border-radius:8px;
+    }
+    .form-row{
+      grid-template-columns:1fr;
+      gap:clamp(10px,1.2vw,14px);
+    }
+    .form-submit{
+      padding:clamp(14px,1.6vw,18px);
+      font-size:clamp(13px,1.3vw,15px);
+      margin-top:clamp(16px,2vw,24px);
+      min-height:48px;
+    }
+    .form-trust{
+      font-size:clamp(10px,1vw,12px);
+      margin-top:clamp(10px,1.2vw,14px);
+      flex-wrap:wrap;
+      text-align:center;
+    }
+    
+    /* Guarantee */
+    .guarantee{
+      padding:clamp(40px,6vw,80px) clamp(16px,4vw,24px);
+    }
+    .guarantee-inner{
+      padding:clamp(28px,4vw,48px) clamp(20px,3vw,32px);
+    }
+    .guarantee-inner h2{
+      font-size:clamp(32px,7vw,56px);
+      margin-bottom:clamp(14px,1.8vw,20px);
+    }
+    .guarantee-inner p{
+      font-size:clamp(13px,1.3vw,16px);
+      margin-bottom:10px;
+    }
+    .guarantee-inner p:last-of-type{
+      font-size:clamp(16px,1.6vw,18px);
+    }
+    
+    /* Final CTA */
+    .final-cta{
+      padding:clamp(40px,6vw,80px) clamp(16px,4vw,24px);
+    }
+    .final-cta h2{
+      font-size:clamp(36px,9vw,64px);
+      margin-bottom:clamp(14px,1.8vw,20px);
+    }
+    .final-desc{
+      font-size:clamp(13px,1.3vw,16px);
+      margin-bottom:clamp(24px,3vw,36px);
+    }
+    .cta-form{
+      max-width:100%;
+      margin-bottom:clamp(12px,1.5vw,16px);
+    }
+    .cta-form input{
+      padding:clamp(13px,1.5vw,16px) clamp(14px,1.8vw,20px);
+      font-size:14px;
+      border:1px solid var(--border);
+      border-radius:0;
+    }
+    .cta-form input:first-child{
+      border-radius:6px 6px 0 0;
+    }
+    .cta-form button{
+      padding:clamp(13px,1.5vw,16px) clamp(18px,2.2vw,24px);
+      font-size:clamp(12px,1.2vw,14px);
+      border-radius:0 0 6px 6px;
+      min-height:48px; /* Better touch target */
+    }
+    .trust-row{
+      flex-direction:column;
+      align-items:center;
+      gap:clamp(8px,1vw,12px);
+      margin-top:clamp(10px,1.2vw,14px);
+    }
+    .trust-item{
+      font-size:clamp(10px,1vw,12px);
+    }
+    
+    /* FAQ */
+    .faq{
+      padding:clamp(32px,5vw,60px) clamp(16px,4vw,24px);
+    }
+    .faq-item{
+      padding:clamp(14px,1.8vw,20px) 0;
+    }
+    .faq-q{
+      font-size:clamp(14px,1.4vw,16px);
+      gap:10px;
+    }
+    .faq-q::after{
+      font-size:20px;
+    }
+    .faq-a{
+      font-size:clamp(12px,1.2vw,14px);
+      margin-top:10px;
+    }
+    
+    /* Footer */
+    footer{
+      padding:clamp(20px,2.5vw,32px) clamp(16px,4vw,24px);
+      flex-direction:column;
+      text-align:center;
+      gap:clamp(8px,1vw,12px);
+    }
+    footer .logo{
+      font-size:20px;
+    }
+    footer p{
+      font-size:clamp(10px,1vw,12px);
+    }
+    
+    /* Disable hover effects on mobile */
+    .problem-card:hover,
+    .tier-block:hover,
+    .cc-metric:hover{
+      transform:none;
+      box-shadow:none;
+    }
+    
+    /* Reduce animations on mobile for performance */
+    .cc-dot::after{
+      display:none;
+    }
+  }
+  
+  /* Small Mobile */
+  @media(max-width:400px){
+    nav{
+      padding:10px 12px;
+    }
+    .logo{
+      font-size:18px;
+    }
+    .nav-cta{
+      padding:7px 12px;
+      font-size:10px;
+    }
+    .hero{
+      padding-top:85px;
+    }
+    .hero-headline{
+      font-size:clamp(36px,9vw,48px);
+      letter-spacing:-0.5px;
+    }
+    .hero-body{
+      font-size:13px;
+    }
+    .section-h{
+      font-size:clamp(28px,7vw,40px);
+    }
+    .what-quote{
+      font-size:clamp(20px,5vw,32px);
+    }
+    .tier-name{
+      font-size:clamp(18px,2.2vw,24px);
+    }
+    .guarantee-inner h2{
+      font-size:clamp(28px,6vw,44px);
+    }
+    .final-cta h2{
+      font-size:clamp(32px,8vw,52px);
+    }
+    .primary-cta{
+      font-size:13px;
+      padding:14px 18px;
+    }
+  }
+  
+  /* Landscape Mobile */
+  @media(max-width:960px) and (orientation:landscape) and (max-height:500px){
+    nav{
+      padding:8px clamp(12px,2vw,20px);
+    }
+    .hero{
+      padding-top:clamp(70px,10vw,90px);
+      padding-bottom:clamp(30px,4vw,40px);
+    }
+    .hero-headline{
+      font-size:clamp(32px,6vw,48px);
+      margin-bottom:12px;
+    }
+    .hero-body{
+      margin:12px 0 20px;
+    }
+    .problems,
+    .what-is,
+    .value-stack,
+    .guarantee,
+    .final-cta{
+      padding-top:clamp(30px,4vw,50px);
+      padding-bottom:clamp(30px,4vw,50px);
+    }
+  }
+  
+  /* Touch Device Optimizations */
+  @media (hover: none) and (pointer: coarse){
+    .primary-cta,
+    .nav-cta,
+    .cta-form button{
+      min-height:44px; /* iOS touch target minimum */
+      min-width:44px;
+    }
+    .faq-item{
+      min-height:44px;
+      display:flex;
+      align-items:center;
+    }
+    .problem-card,
+    .tier-block{
+      cursor:default;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="logo" id="logo">
+    Hype<span>X</span>
+    <span class="sub">Axiom OS</span>
+  </div>
+  <a href="#audit" class="nav-cta">Free Ops Audit →</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag" data-animate="tag">For Multi-Location Food & Bakery Franchises</div>
+      <h1 class="hero-headline" data-animate="headline">
+        <span class="line">YOU OWN THE</span><br>
+        <span class="line amber">OUTLETS.</span><br>
+        <span class="line outlined">AXIOM</span><br>
+        <span class="line">RUNS THEM.</span>
+      </h1>
+      <p class="hero-body" data-animate="body">
+        You built a food franchise. You're managing it on WhatsApp groups and spreadsheets. <strong>Inventory is a guesswork. Margin leakage is invisible. One location is underperforming — and you find out at month-end.</strong>
+      </p>
+      <div class="cta-stack" data-animate="cta">
+        <a href="#audit" class="primary-cta">Get Free Operations Audit — ₹0</a>
+        <div class="cta-note">30 minutes. We map what's <span>invisible</span> across your locations — in rupees.</div>
+      </div>
+    </div>
+
+    <div class="command-centre" data-animate="dashboard">
+      <div class="cc-topbar">
+        <div class="cc-dot" style="background:#EF4444"></div>
+        <div class="cc-dot" style="background:#F59E0B"></div>
+        <div class="cc-dot" style="background:#10B981"></div>
+        <span class="cc-title">Axiom Business Command Centre — Live</span>
+      </div>
+
+      <div class="cc-grid">
+        <div class="cc-metric" data-metric="revenue">
+          <div class="cc-metric-lbl">Total Revenue Today</div>
+          <div class="cc-metric-val" style="color:var(--amber)" data-count="210000" data-suffix="L" data-prefix="₹">₹2.1L</div>
+          <div class="cc-metric-sub" style="color:var(--green)">↑ 18% vs. yesterday</div>
+        </div>
+        <div class="cc-metric" data-metric="alerts">
+          <div class="cc-metric-lbl">Inventory Alerts</div>
+          <div class="cc-metric-val" style="color:var(--red)" data-count="3">3</div>
+          <div class="cc-metric-sub">Stock critical — Outlet 2</div>
+        </div>
+        <div class="cc-metric" data-metric="margin">
+          <div class="cc-metric-lbl">Margin This Month</div>
+          <div class="cc-metric-val" style="color:var(--green)" data-count="31.4" data-suffix="%">31.4%</div>
+          <div class="cc-metric-sub" style="color:var(--green)">↑ vs 26.8% last month</div>
+        </div>
+        <div class="cc-metric" data-metric="locations">
+          <div class="cc-metric-lbl">Active Locations</div>
+          <div class="cc-metric-val" style="color:var(--text)" data-count="4" data-suffix="/4">4/4</div>
+          <div class="cc-metric-sub" style="color:var(--green)">All operational</div>
+        </div>
+      </div>
+
+      <div class="cc-bars" style="background:var(--card);">
+        <div class="cc-bars-title">Location Performance</div>
+        <div class="bar-row">
+          <div class="bar-label">Connaught Pl</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:88%;background:var(--amber);animation-delay:0.3s"></div>
+          </div>
+          <div class="bar-val" style="color:var(--amber)">88%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Lajpat Nagar</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:74%;background:var(--green);animation-delay:0.5s"></div>
+          </div>
+          <div class="bar-val" style="color:var(--green)">74%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Saket</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:91%;background:var(--amber);animation-delay:0.7s"></div>
+          </div>
+          <div class="bar-val" style="color:var(--amber)">91%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Vasant Kunj</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:52%;background:var(--red);animation-delay:0.9s"></div>
+          </div>
+          <div class="bar-val" style="color:var(--red)">52%</div>
+        </div>
+      </div>
+
+      <div class="cc-alerts">
+        <div class="alert-row" data-alert="1">
+          <div class="alert-dot" style="background:var(--red)"></div>
+          <div class="alert-text">Flour stock critical — Vasant Kunj. Auto-reorder triggered.</div>
+          <div class="alert-loc">VK · 2m ago</div>
+        </div>
+        <div class="alert-row" data-alert="2">
+          <div class="alert-dot" style="background:var(--amber)"></div>
+          <div class="alert-text">Weekend demand spike predicted — Saket. Prep +40%.</div>
+          <div class="alert-loc">SKT · 5m ago</div>
+        </div>
+        <div class="alert-row" data-alert="3">
+          <div class="alert-dot" style="background:var(--green)"></div>
+          <div class="alert-text">Margin compression resolved — Lajpat pricing updated by AI.</div>
+          <div class="alert-loc">LN · 12m ago</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="problems" id="problem">
+  <div class="section-tag">The Multi-Location Trap</div>
+  <h2 class="section-h">You SCALED.<br>YOUR SYSTEMS <span class="amber">DIDN'T.</span></h2>
+
+  <div class="problem-grid">
+    <div class="problem-card fade-up">
+      <div class="prob-icon">📱</div>
+      <div class="prob-title">WhatsApp Is Not an OS</div>
+      <div class="prob-body">Inventory updates, sales numbers, staff issues — all in WhatsApp groups. Information is delayed, informal, and impossible to act on systematically. You're running a business on a messaging app.</div>
+    </div>
+    <div class="problem-card fade-up">
+      <div class="prob-icon">📊</div>
+      <div class="prob-title">Invisible Margin Leaks</div>
+      <div class="prob-body">Food waste, over-ordering, pricing gaps, vendor inefficiency — you don't see any of it until month-end. By then, thousands of rupees have leaked silently across multiple locations.</div>
+    </div>
+    <div class="problem-card fade-up">
+      <div class="prob-icon">🏪</div>
+      <div class="prob-title">One Location Drags the Rest</div>
+      <div class="prob-body">One underperforming outlet reduces overall profitability. You know something's wrong. You don't know exactly what or where — because you're looking at aggregated numbers, not location intelligence.</div>
+    </div>
+    <div class="problem-card fade-up">
+      <div class="prob-icon">📦</div>
+      <div class="prob-title">Inventory Managed by Guesswork</div>
+      <div class="prob-body">You find out you're out of stock when a manager calls. You find out you've over-ordered when it expires. Both cost you money. Neither is visible before the damage is done.</div>
+    </div>
+    <div class="problem-card fade-up">
+      <div class="prob-icon">🚀</div>
+      <div class="prob-title">Expansion Feels Dangerous</div>
+      <div class="prob-body">You want to open another outlet. But you can't confidently replicate what's working — because you're not sure exactly what is working. Expansion without intelligence is just adding more chaos.</div>
+    </div>
+    <div class="problem-card fade-up">
+      <div class="prob-icon">👤</div>
+      <div class="prob-title">Operations Depend on You</div>
+      <div class="prob-body">When you're not watching, execution drifts. Standards slip. Numbers suffer. Your business runs better when you're present — which means you can't scale without replicating yourself. That's a systems problem.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT IS -->
+<section class="what-is" id="how">
+  <div class="what-inner">
+    <div class="fade-up">
+      <div class="section-tag">What Axiom Is</div>
+      <div class="what-quote">
+        Not software.<br>
+        Not a dashboard.<br>
+        <em>Your Business Brain.</em>
+      </div>
+      <p class="what-body">
+        Axiom is an AI-powered Business Operating System deployed specifically for your food franchise. It connects every location, every function — <strong>inventory, revenue, cash, staff, margin, compliance</strong> — into a single command centre with AI agents that don't just show you data. They act on it.
+      </p>
+      <p class="what-body">
+        When stock at Location 3 is about to run out, Axiom's AI triggers the reorder. When weekend demand at Location 1 is projected to spike, it prepares the alert 72 hours before. When a location's margin compresses below threshold, it flags it in real time.
+      </p>
+      <p class="what-body">
+        <strong>You stop managing. You start commanding.</strong>
+      </p>
+    </div>
+
+    <div class="levels fade-up">
+      <div class="level-row">
+        <div class="level-num">1</div>
+        <div class="level-content">
+          <div class="level-name">Operational Visibility</div>
+          <div class="level-desc">See your entire business — inventory, cash, revenue, performance — in one real-time view</div>
+        </div>
+        <div class="level-badge" style="background:rgba(245,158,11,0.1);color:var(--amber)">SEE</div>
+      </div>
+      <div class="level-row">
+        <div class="level-num">2</div>
+        <div class="level-content">
+          <div class="level-name">Operational Control</div>
+          <div class="level-desc">AI suggests and automates: reorders, routing, forecasting, compliance, staff tracking</div>
+        </div>
+        <div class="level-badge" style="background:rgba(16,185,129,0.1);color:var(--green)">CONTROL</div>
+      </div>
+      <div class="level-row">
+        <div class="level-num">3</div>
+        <div class="level-content">
+          <div class="level-name">Operational Autonomy</div>
+          <div class="level-desc">AI agents run your operations — detecting anomalies, making decisions, predicting revenue</div>
+        </div>
+        <div class="level-badge" style="background:rgba(245,158,11,0.15);color:var(--amber)">AUTONOMY</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE STACK -->
+<section class="value-stack">
+  <div class="section-tag fade-up">What You Get</div>
+  <h2 class="section-h fade-up">Three Levels.<br>Total <span class="amber">Command.</span></h2>
+
+  <div class="tier-blocks">
+    <div class="tier-block fade-up">
+      <div class="tier-lvl">Level 01</div>
+      <div class="tier-name">Visibility</div>
+      <div class="tier-desc">Stop managing blind. See every location in real time.</div>
+      <ul class="tier-features">
+        <li>Unified revenue + ops dashboard — all locations</li>
+        <li>Real-time inventory visibility per outlet</li>
+        <li>Order flow tracking — what's moving, what's stalling</li>
+        <li>Branch performance comparison side-by-side</li>
+        <li>Basic P&L snapshot + cash flow overview</li>
+        <li>Bottleneck detection across locations</li>
+        <li>Low stock notifications + basic reorder alerts</li>
+      </ul>
+      <div style="margin-top:auto;padding-top:20px;">
+        <a href="#audit" class="primary-cta" data-level="visibility" style="display:block;text-align:center;">Inquire About Level 01</a>
+      </div>
+    </div>
+    <div class="tier-block featured fade-up">
+      <div class="tier-featured-badge">Most Popular</div>
+      <div class="tier-lvl">Level 02</div>
+      <div class="tier-name">Control</div>
+      <div class="tier-desc">Prescriptive AI tells you what to fix and acts on it.</div>
+      <ul class="tier-features">
+        <li>Everything in Visibility, plus:</li>
+        <li>Demand forecasting by SKU and location</li>
+        <li>Auto-reorder logic with expiry tracking</li>
+        <li>Inter-branch stock transfer intelligence</li>
+        <li>Real-time P&L per location with unit economics</li>
+        <li>GST and compliance tracking — automated</li>
+        <li>Vendor payment automation</li>
+        <li>Staff attendance + productivity dashboards</li>
+        <li>Cash flow forecasting per outlet</li>
+      </ul>
+      <div style="margin-top:auto;padding-top:20px;">
+        <a href="#audit" class="primary-cta" data-level="control" style="display:block;text-align:center;background:var(--green);">Inquire About Level 02</a>
+      </div>
+    </div>
+    <div class="tier-block fade-up">
+      <div class="tier-lvl">Level 03</div>
+      <div class="tier-name">Autonomy</div>
+      <div class="tier-desc">AI agents run operations. You read the weekly summary and expand.</div>
+      <ul class="tier-features">
+        <li>Everything in Control, plus:</li>
+        <li>Inventory prediction + revenue escalation AI agents</li>
+        <li>Demand spike alerts 72 hours in advance</li>
+        <li>Automated vendor decision triggers</li>
+        <li>Revenue anomaly detection — real-time</li>
+        <li>Location profitability simulation</li>
+        <li>Expansion readiness score per outlet</li>
+        <li>New-location deployment template</li>
+        <li>AI-generated weekly executive summary</li>
+      </ul>
+      <div style="margin-top:auto;padding-top:20px;">
+        <a href="#audit" class="primary-cta" data-level="autonomy" style="display:block;text-align:center;">Inquire About Level 03</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;" class="fade-up">
+    <a href="#audit" class="primary-cta" style="display:inline-block;max-width:480px;">
+      Get Free Ops Audit — See What's Leaking →
+    </a>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="guarantee-inner fade-up" data-animate="guarantee">
+    <h2 data-animate="guarantee-h2">WE MAP THE<br><em>INVISIBLE</em><br>FOR FREE.</h2>
+    <p data-animate="guarantee-p1">We run a Business Operations Audit — free, 30 minutes — where we map what's currently invisible across your locations and put a rupee number on it.</p>
+    <p data-animate="guarantee-p2"><strong>Inventory leakage. Margin compression. Location underperformance. Expansion readiness.</strong> All quantified. All in one call.</p>
+    <p data-animate="guarantee-p3" style="color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">If the number is zero, we say so. If it's not — you'll know exactly what Axiom fixes.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="final-cta" id="audit">
+  <h2 data-animate="cta-headline">
+    <span class="line">STOP RUNNING</span><br>
+    <span class="line">BLIND.</span>
+  </h2>
+  <p class="final-desc" data-animate="cta-desc">30 minutes. Free. We show you what's leaking across every location — in rupees. No obligation.</p>
+
+  <div class="form-wrap" data-animate="form-wrap">
+    <h3>Start Your Operations Audit</h3>
+    <p>Fill in the details. Our team will reach out within 4 hours with your personalized audit.</p>
+    <form id="auditForm" onsubmit="handleAuditSubmit(event)">
+      <div class="form-group" data-form-field="1">
+        <label>Your Name</label>
+        <input type="text" placeholder="e.g. Rajesh Sharma" required>
+      </div>
+      <div class="form-group" data-form-field="2">
+        <label>Business / Franchise Name</label>
+        <input type="text" placeholder="e.g. Sharma's Bakery" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group" data-form-field="3">
+          <label>Email</label>
+          <input type="email" placeholder="you@yourbusiness.com" required>
+        </div>
+        <div class="form-group" data-form-field="4">
+          <label>WhatsApp Number</label>
+          <input type="tel" placeholder="+91 98XXXXXXXX" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group" data-form-field="5">
+          <label>Your Role</label>
+          <select required>
+            <option value="">Select your role</option>
+            <option>Owner / Founder</option>
+            <option>Operations Manager</option>
+            <option>Franchise Manager</option>
+            <option>Business Development</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group" data-form-field="6">
+          <label>Business Type</label>
+          <select required>
+            <option value="">Select type</option>
+            <option>Restaurant / Cafe</option>
+            <option>Bakery / Confectionery</option>
+            <option>Food Franchise</option>
+            <option>Multi-Location Food Business</option>
+            <option>Cloud Kitchen</option>
+            <option>Food Delivery Chain</option>
+            <option>Other Food Business</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group" data-form-field="7">
+          <label>Number of Locations</label>
+          <select required>
+            <option value="">Select range</option>
+            <option>1 location</option>
+            <option>2-3 locations</option>
+            <option>4-6 locations</option>
+            <option>7-10 locations</option>
+            <option>10+ locations</option>
+          </select>
+        </div>
+        <div class="form-group" data-form-field="8">
+          <label>Monthly Revenue (₹)</label>
+          <select required>
+            <option value="">Select range</option>
+            <option>Under ₹5 Lakhs</option>
+            <option>₹5L - ₹15L</option>
+            <option>₹15L - ₹30L</option>
+            <option>₹30L - ₹50L</option>
+            <option>₹50L+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group" data-form-field="9">
+        <label>Which Level Interests You?</label>
+        <select id="levelSelect">
+          <option value="">Not sure yet — help me decide</option>
+          <option value="visibility">Level 01 — Visibility (See Everything)</option>
+          <option value="control">Level 02 — Control (AI Acts on It)</option>
+          <option value="autonomy">Level 03 — Autonomy (AI Runs Operations)</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-gold form-submit primary-cta">
+        <span>Get My Free Operations Audit →</span>
+      </button>
+      <div class="form-trust">
+        <span>🔒</span>
+        <span>No spam. No obligation. Your data stays private.</span>
+      </div>
+    </form>
+  </div>
+
+  <div class="trust-row">
+    <div class="trust-item" data-trust="1">No credit card</div>
+    <div class="trust-item" data-trust="2">30-minute call</div>
+    <div class="trust-item" data-trust="3">Zero obligation</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<div class="faq">
+  <div class="section-tag" style="margin-bottom:40px;">Common Questions</div>
+
+  <div class="faq-item">
+    <div class="faq-q">We already use a food management / POS system. Is Axiom an additional tool?</div>
+    <div class="faq-a">Axiom integrates with your existing POS and management tools — it doesn't replace them. It adds an intelligence layer on top: AI that reads all your operational data, connects the dots across locations, forecasts, detects anomalies, and acts. It's not a new tool. It's the brain that makes your existing tools work together.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">We only have 2 locations. Is Axiom overkill?</div>
+    <div class="faq-a">The audit will tell you. Two-location operators are often the ones where we find the most invisible leakage — because the problems are big enough to matter but not yet obvious enough to trigger manual intervention. If your two-location operation generates ₹30L+ per month, the audit is worth your time.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How long does setup take?</div>
+    <div class="faq-a">Level 1 is typically live in 4 to 6 weeks. Level 2 takes 8 to 12 weeks depending on the complexity of your current tech stack and number of locations. Level 3 is a 3 to 5 month full deployment. All levels are live and generating intelligence before full deployment is complete.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What happens to my data?</div>
+    <div class="faq-a">All operational data is encrypted, stored securely, and exclusively under your control. HypeX has no access to your business data except for the purpose of system tuning and support — and never for any third party. Full data processing agreement available before any engagement.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What does the free audit actually involve?</div>
+    <div class="faq-a">A 30-minute video call with a HypeX operations analyst. We ask about your current systems, location count, revenue, pain points, and what's currently invisible. By the end of the call, we give you a preliminary assessment of where your operational leakage is concentrated and what it costs you monthly. No slides. No pitch. Just numbers.</div>
+  </div>
+</div>
+
+<footer>
+  <div class="logo" style="font-size:22px;">HypeX <span style="color:var(--amber)">|</span> Axiom</div>
+  <p>© 2025 HypeX. Revenue Operating Systems for Indian Businesses.</p>
+  <p style="color:var(--amber);">Axiom OS | Food & Bakery Franchises</p>
+</footer>
+
+
+
+<!-- GSAP Animation Libraries - Loaded at end for better performance -->
+<!-- Note: "Tracking Prevention" warnings in console are harmless - scripts still load and work correctly -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  // Initialize GSAP animations after libraries load
+  (function() {
+    'use strict';
+    
+    // Wait for GSAP to load
+    function initAnimations() {
+      try {
+        if (typeof gsap === 'undefined') {
+          // GSAP not loaded, content is already visible
+          console.log('GSAP not loaded - showing content without animations');
+          return;
+        }
+
+        // Register GSAP plugins
+        try {
+          gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
+          console.log('GSAP plugins registered successfully');
+        } catch (e) {
+          console.warn('Some GSAP plugins failed to load:', e);
+          return; // Don't proceed if plugins fail
+        }
+
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Helper function to split text into lines
+        function splitTextIntoLines(element) {
+          try {
+            const text = element.innerHTML;
+            const lines = text.split('<br>');
+            element.innerHTML = '';
+            lines.forEach((line, index) => {
+              const lineSpan = document.createElement('span');
+              lineSpan.className = 'line';
+              lineSpan.innerHTML = line || '&nbsp;';
+              element.appendChild(lineSpan);
+              if (index < lines.length - 1) element.appendChild(document.createElement('br'));
+            });
+            return element.querySelectorAll('.line');
+          } catch (e) {
+            console.warn('Error splitting text:', e);
+            return [];
+          }
+        }
+
+        // Helper function to animate counter
+        function animateCounter(element, target, duration = 2, prefix = '', suffix = '') {
+          try {
+        const isPercentage = suffix === '%';
+        const isCurrency = prefix === '₹';
+        const isFraction = suffix.includes('/');
+        const hasL = suffix === 'L' || suffix.includes('L');
+        
+        let start = 0;
+        const end = parseFloat(target);
+        const increment = end / (duration * 60);
+        let current = start;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= end) {
+            current = end;
+            clearInterval(timer);
+          }
+          
+          let displayValue;
+          if (isPercentage) {
+            displayValue = current.toFixed(1) + suffix;
+          } else if (hasL && isCurrency) {
+            displayValue = (current / 100000).toFixed(1) + suffix;
+          } else if (isFraction) {
+            displayValue = Math.round(current) + suffix;
+          } else if (hasL) {
+            displayValue = (current / 100000).toFixed(1) + suffix;
+          } else {
+            displayValue = Math.round(current) + (suffix ? suffix : '');
+          }
+          
+            element.textContent = prefix + displayValue;
+          }, 1000 / 60);
+          } catch (e) {
+            console.warn('Error animating counter:', e);
+          }
+        }
+
+        // Initialize animations on page load
+        function setupAnimations() {
+          try {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (prefersReducedMotion) {
+              // Simple fade-in for reduced motion
+              gsap.set('.fade-up', { opacity: 1, y: 0 });
+              return;
+            }
+
+            // Safety timeout - ensure content is visible after 3 seconds even if animations fail
+            setTimeout(() => {
+              document.querySelectorAll('.animate-ready').forEach(el => {
+                if (window.getComputedStyle(el).opacity === '0') {
+                  el.style.opacity = '1';
+                  el.style.transform = '';
+                  console.log('Safety fallback: Made element visible', el);
+                }
+              });
+            }, 3000);
+
+            // NAVIGATION ANIMATIONS - Enhanced with mobile optimizations
+            const isMobile = window.innerWidth <= 640;
+            const logo = document.getElementById('logo');
+            if (logo) {
+              // Logo animation - faster on mobile
+              gsap.set(logo, { opacity: 0, x: isMobile ? -20 : -30 });
+              gsap.to(logo, {
+                opacity: 1,
+                x: 0,
+                duration: isMobile ? 0.5 : 0.8,
+                ease: 'power3.out',
+                delay: isMobile ? 0.05 : 0.1
+              });
+              
+              // Animate the "X" separately - reduced on mobile
+              const logoX = logo.querySelector('span');
+              if (logoX && !isMobile) {
+                gsap.from(logoX, {
+                  scale: 0,
+                  rotation: -180,
+                  duration: 0.6,
+                  ease: 'back.out(1.7)',
+                  delay: 0.3
+                });
+              } else if (logoX) {
+                // Simple fade on mobile
+                gsap.from(logoX, {
+                  opacity: 0,
+                  duration: 0.4,
+                  delay: 0.2
+                });
+              }
+            }
+
+            const mainNav = document.getElementById('mainNav');
+            if (mainNav) {
+              // Nav slides down from top - faster on mobile
+              gsap.set(mainNav, { y: isMobile ? -80 : -100, opacity: 0 });
+              gsap.to(mainNav, {
+                y: 0,
+                opacity: 1,
+                duration: isMobile ? 0.5 : 0.7,
+                ease: 'power3.out',
+                delay: 0.05,
+                onComplete: () => {
+                  mainNav.classList.add('visible');
+                }
+              });
+
+              // Enhanced scroll effect with smooth transitions
+              let lastScroll = 0;
+              let ticking = false;
+              
+              function updateNavOnScroll() {
+                try {
+                  const currentScroll = window.pageYOffset || window.scrollY;
+                  const scrollThreshold = 30;
+                  
+                  if (currentScroll > scrollThreshold) {
+                    if (!mainNav.classList.contains('scrolled')) {
+                      mainNav.classList.add('scrolled');
+                      // Animate the transition
+                      gsap.to(mainNav, {
+                        background: 'rgba(13,13,13,0.98)',
+                        duration: 0.3,
+                        ease: 'power2.out'
+                      });
+                    }
+                  } else {
+                    if (mainNav.classList.contains('scrolled')) {
+                      mainNav.classList.remove('scrolled');
+                      gsap.to(mainNav, {
+                        background: 'rgba(13,13,13,0.85)',
+                        duration: 0.3,
+                        ease: 'power2.out'
+                      });
+                    }
+                  }
+                  
+                  lastScroll = currentScroll;
+                  ticking = false;
+                } catch (e) {
+                  console.warn('Scroll handler error:', e);
+                  ticking = false;
+                }
+              }
+              
+              window.addEventListener('scroll', () => {
+                if (!ticking) {
+                  window.requestAnimationFrame(updateNavOnScroll);
+                  ticking = true;
+                }
+              }, { passive: true });
+              
+              // Initial check
+              updateNavOnScroll();
+            }
+
+            const navCta = document.querySelector('.nav-cta');
+            if (navCta) {
+              // CTA button slides in from right with scale - simpler on mobile
+              gsap.set(navCta, { opacity: 0, x: isMobile ? 20 : 30, scale: isMobile ? 0.9 : 0.8 });
+              gsap.to(navCta, {
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                duration: isMobile ? 0.4 : 0.6,
+                ease: isMobile ? 'power2.out' : 'back.out(1.4)',
+                delay: isMobile ? 0.2 : 0.4
+              });
+              
+              // Add pulse animation on load - disabled on mobile for performance
+              if (!isMobile) {
+                gsap.to(navCta, {
+                  boxShadow: '0 4px 16px rgba(245, 158, 11, 0.4)',
+                  duration: 1.5,
+                  repeat: 1,
+                  yoyo: true,
+                  ease: 'power2.inOut',
+                  delay: 1.2
+                });
+              }
+            }
+            
+            // Logo click to scroll to top
+            if (logo) {
+              logo.style.cursor = 'pointer';
+              logo.addEventListener('click', (e) => {
+                e.preventDefault();
+                try {
+                  if (typeof gsap !== 'undefined' && gsap.to && typeof ScrollToPlugin !== 'undefined') {
+                    gsap.to(window, {
+                      duration: 1,
+                      scrollTo: { y: 0 },
+                      ease: 'power2.inOut'
+                    });
+                  } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                } catch (e) {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              });
+            }
+
+            // HERO SECTION ANIMATIONS
+            const heroTag = document.querySelector('.hero-tag');
+            const heroHeadline = document.querySelector('.hero-headline');
+            const heroBody = document.querySelector('.hero-body');
+            const heroCTA = document.querySelector('.cta-stack');
+            const commandCentre = document.querySelector('.command-centre');
+
+            // Animate hero elements - set initial state then animate
+            if (heroTag) {
+              gsap.set(heroTag, { opacity: 0, y: -10 });
+              heroTag.classList.add('animate-ready');
+              gsap.to(heroTag, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'power2.out',
+                delay: 0.5
+              });
+            }
+
+            // Hero headline split animation
+            if (heroHeadline) {
+              const headlineLines = heroHeadline.querySelectorAll('.line');
+              headlineLines.forEach((line) => {
+                gsap.set(line, { opacity: 0, y: 50 });
+              });
+              heroHeadline.classList.add('animate-ready');
+              headlineLines.forEach((line, index) => {
+                gsap.to(line, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: 0.8 + (index * 0.15)
+                });
+              });
+            }
+
+            // Hero body animation
+            if (heroBody) {
+              gsap.set(heroBody, { opacity: 0, y: 20 });
+              heroBody.classList.add('animate-ready');
+              gsap.to(heroBody, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power2.out',
+                delay: 1.4
+              });
+            }
+
+            // CTA stack animation
+            if (heroCTA) {
+              gsap.set(heroCTA, { opacity: 0, y: 20 });
+              heroCTA.classList.add('animate-ready');
+              gsap.to(heroCTA, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power2.out',
+                delay: 1.6
+              });
+            }
+
+            // Command Centre Dashboard Animation
+            if (commandCentre) {
+              gsap.set(commandCentre, { opacity: 0, x: 50, scale: 0.95 });
+              commandCentre.classList.add('animate-ready');
+              gsap.to(commandCentre, {
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                duration: 1,
+                ease: 'power3.out',
+                delay: 1.2,
+                onComplete: () => {
+                  try {
+                    // Animate metrics with counters
+                    const metrics = document.querySelectorAll('.cc-metric-val');
+                    metrics.forEach((metric, index) => {
+                      const count = metric.getAttribute('data-count');
+                      const prefix = metric.getAttribute('data-prefix') || '';
+                      let suffix = metric.getAttribute('data-suffix') || '';
+                      const originalText = metric.textContent;
+                      
+                      if (count) {
+                        // Check if original text has "L" for lakhs
+                        if (originalText.includes('L') && !suffix.includes('L')) {
+                          suffix = 'L';
+                        }
+                        
+                        setTimeout(() => {
+                          animateCounter(metric, count, 1.5, prefix, suffix);
+                        }, index * 200);
+                      }
+                    });
+
+                    // Animate alert rows
+                    const alerts = document.querySelectorAll('.alert-row');
+                    alerts.forEach((alert, index) => {
+                      gsap.from(alert, {
+                        opacity: 0,
+                        x: -20,
+                        duration: 0.5,
+                        ease: 'power2.out',
+                        delay: 2 + (index * 0.2)
+                      });
+                    });
+                  } catch (e) {
+                    console.warn('Error in command centre animation:', e);
+                  }
+                }
+              });
+            }
+
+            // Progress bars animation (enhanced with GSAP)
+            const barFills = document.querySelectorAll('.bar-fill');
+            barFills.forEach((bar, index) => {
+              try {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                gsap.to(bar, {
+                  width: width,
+                  duration: 1.2,
+                  ease: 'power2.out',
+                  delay: 2.5 + (index * 0.1)
+                });
+              } catch (e) {
+                console.warn('Error animating progress bar:', e);
+              }
+            });
+
+            // PROBLEMS SECTION ANIMATIONS
+            try {
+              const problemCards = document.querySelectorAll('.problem-card');
+              if (problemCards.length > 0 && gsap.utils) {
+                gsap.utils.toArray(problemCards).forEach((card, index) => {
+                  try {
+                    const direction = index % 2 === 0 ? -50 : 50;
+                    gsap.set(card, { opacity: 1, x: 0, y: 0, scale: 1 }); // Ensure visible first
+                    gsap.from(card, {
+                      opacity: 0,
+                      x: direction,
+                      y: 30,
+                      scale: 0.9,
+                      duration: 0.6,
+                      ease: 'power2.out',
+                      scrollTrigger: {
+                        trigger: card,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                      }
+                    });
+                  } catch (e) {
+                    console.warn('Error animating problem card:', e);
+                    // Ensure card is visible on error
+                    card.style.opacity = '1';
+                  }
+                });
+              }
+            } catch (e) {
+              console.warn('Error in problems section:', e);
+            }
+
+            // WHAT IT IS SECTION ANIMATIONS
+            try {
+              const whatQuote = document.querySelector('.what-quote');
+              if (whatQuote) {
+                gsap.set(whatQuote, { opacity: 1, y: 0 }); // Ensure visible
+                gsap.from(whatQuote, {
+                  opacity: 0,
+                  y: 30,
+                  duration: 0.8,
+                  ease: 'power2.out',
+                  scrollTrigger: {
+                    trigger: whatQuote,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              }
+
+              // Level rows animation
+              const levelRows = document.querySelectorAll('.level-row');
+              levelRows.forEach((row, index) => {
+                try {
+                  gsap.set(row, { opacity: 1, x: 0 }); // Ensure visible
+                  gsap.from(row, {
+                    opacity: 0,
+                    x: 30,
+                    duration: 0.6,
+                    ease: 'power2.out',
+                    delay: index * 0.15,
+                    scrollTrigger: {
+                      trigger: row,
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                } catch (e) {
+                  console.warn('Error animating level row:', e);
+                  row.style.opacity = '1';
+                }
+              });
+            } catch (e) {
+              console.warn('Error in what-is section:', e);
+            }
+
+            // VALUE STACK SECTION ANIMATIONS
+            try {
+              const tierBlocks = document.querySelectorAll('.tier-block');
+              tierBlocks.forEach((block, index) => {
+                try {
+                  gsap.set(block, { opacity: 1, y: 0, scale: 1 }); // Ensure visible
+                  gsap.from(block, {
+                    opacity: 0,
+                    y: 50,
+                    scale: 0.95,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    delay: index * 0.1,
+                    scrollTrigger: {
+                      trigger: block,
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+
+                  // Animate tier features on scroll
+                  const features = block.querySelectorAll('.tier-features li');
+                  features.forEach((feature, featIndex) => {
+                    try {
+                      gsap.set(feature, { opacity: 1, x: 0 }); // Ensure visible
+                      gsap.from(feature, {
+                        opacity: 0,
+                        x: -10,
+                        duration: 0.4,
+                        ease: 'power2.out',
+                        delay: featIndex * 0.05,
+                        scrollTrigger: {
+                          trigger: block,
+                          start: 'top 85%',
+                          toggleActions: 'play none none none'
+                        }
+                      });
+                    } catch (e) {
+                      console.warn('Error animating tier feature:', e);
+                      feature.style.opacity = '1';
+                    }
+                  });
+                } catch (e) {
+                  console.warn('Error animating tier block:', e);
+                  block.style.opacity = '1';
+                }
+              });
+            } catch (e) {
+              console.warn('Error in value stack section:', e);
+            }
+
+            // GUARANTEE SECTION ANIMATIONS
+            try {
+              const guaranteeH2 = document.querySelector('.guarantee-inner h2');
+              if (guaranteeH2) {
+                gsap.set(guaranteeH2, { opacity: 1, scale: 1 }); // Ensure visible
+                guaranteeH2.classList.add('animate-ready');
+                gsap.from(guaranteeH2, {
+                  opacity: 0,
+                  scale: 0.9,
+                  duration: 0.8,
+                  ease: 'power2.out',
+                  scrollTrigger: {
+                    trigger: '.guarantee-inner',
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              }
+
+              const guaranteePs = document.querySelectorAll('.guarantee-inner p');
+              guaranteePs.forEach((p, index) => {
+                try {
+                  gsap.set(p, { opacity: 1, y: 0 }); // Ensure visible
+                  p.classList.add('animate-ready');
+                  gsap.from(p, {
+                    opacity: 0,
+                    y: 10,
+                    duration: 0.6,
+                    ease: 'power2.out',
+                    delay: index * 0.2,
+                    scrollTrigger: {
+                      trigger: '.guarantee-inner',
+                      start: 'top 80%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                } catch (e) {
+                  console.warn('Error animating guarantee paragraph:', e);
+                  p.style.opacity = '1';
+                }
+              });
+            } catch (e) {
+              console.warn('Error in guarantee section:', e);
+            }
+
+            // FINAL CTA SECTION ANIMATIONS
+            try {
+              const ctaHeadline = document.querySelector('.final-cta h2');
+              if (ctaHeadline) {
+                gsap.set(ctaHeadline, { opacity: 1 }); // Ensure visible
+                ctaHeadline.classList.add('animate-ready');
+                const ctaLines = ctaHeadline.querySelectorAll('.line');
+                ctaLines.forEach((line) => {
+                  gsap.set(line, { opacity: 1, y: 0 }); // Ensure visible
+                });
+                ctaLines.forEach((line, index) => {
+                  try {
+                    gsap.from(line, {
+                      opacity: 0,
+                      y: 30,
+                      duration: 0.6,
+                      ease: 'power3.out',
+                      delay: index * 0.15,
+                      scrollTrigger: {
+                        trigger: ctaHeadline,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                      }
+                    });
+                  } catch (e) {
+                    console.warn('Error animating CTA line:', e);
+                    line.style.opacity = '1';
+                  }
+                });
+              }
+
+              const finalDesc = document.querySelector('.final-desc');
+              if (finalDesc) {
+                gsap.set(finalDesc, { opacity: 1, y: 0 }); // Ensure visible
+                finalDesc.classList.add('animate-ready');
+                gsap.from(finalDesc, {
+                  opacity: 0,
+                  y: 20,
+                  duration: 0.6,
+                  ease: 'power2.out',
+                  scrollTrigger: {
+                    trigger: '.final-cta',
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              }
+
+              // Trust items animation
+              const trustItems = document.querySelectorAll('.trust-item');
+              trustItems.forEach((item, index) => {
+                try {
+                  gsap.set(item, { opacity: 1, y: 0 }); // Ensure visible
+                  item.classList.add('animate-ready');
+                  gsap.from(item, {
+                    opacity: 0,
+                    y: 10,
+                    duration: 0.4,
+                    ease: 'power2.out',
+                    delay: index * 0.1,
+                    scrollTrigger: {
+                      trigger: '.trust-row',
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                } catch (e) {
+                  console.warn('Error animating trust item:', e);
+                  item.style.opacity = '1';
+                }
+              });
+            } catch (e) {
+              console.warn('Error in final CTA section:', e);
+            }
+
+            // FORM ANIMATIONS
+            try {
+              const formWrap = document.querySelector('.form-wrap');
+              if (formWrap) {
+                // Animate form wrapper
+                gsap.set(formWrap, { opacity: 1, scale: 1, y: 0 }); // Ensure visible
+                formWrap.classList.add('animate-ready');
+                gsap.from(formWrap, {
+                  opacity: 0,
+                  scale: 0.95,
+                  y: 30,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  scrollTrigger: {
+                    trigger: formWrap,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+
+                // Animate form fields with stagger
+                const formGroups = formWrap.querySelectorAll('.form-group');
+                formGroups.forEach((group, index) => {
+                  try {
+                    gsap.set(group, { opacity: 1, y: 0 }); // Ensure visible
+                    group.classList.add('animate-ready');
+                    gsap.from(group, {
+                      opacity: 0,
+                      y: 20,
+                      duration: 0.5,
+                      ease: 'power2.out',
+                      delay: index * 0.08,
+                      scrollTrigger: {
+                        trigger: formWrap,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                      }
+                    });
+                  } catch (e) {
+                    console.warn('Error animating form group:', e);
+                    group.style.opacity = '1';
+                  }
+                });
+
+                // Animate submit button
+                const submitBtn = formWrap.querySelector('.form-submit');
+                if (submitBtn) {
+                  gsap.set(submitBtn, { opacity: 1, scale: 1 }); // Ensure visible
+                  gsap.from(submitBtn, {
+                    opacity: 0,
+                    scale: 0.9,
+                    duration: 0.6,
+                    ease: 'back.out(1.4)',
+                    delay: formGroups.length * 0.08 + 0.2,
+                    scrollTrigger: {
+                      trigger: formWrap,
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                }
+              }
+            } catch (e) {
+              console.warn('Error in form animations:', e);
+            }
+
+            // FAQ ANIMATIONS (smooth accordion)
+            try {
+              document.querySelectorAll('.faq-item').forEach(item => {
+                try {
+                  const question = item.querySelector('.faq-q');
+                  const answer = item.querySelector('.faq-a');
+                  
+                  if (answer) {
+                    // Set initial state
+                    gsap.set(answer, { maxHeight: 0, opacity: 0, marginTop: 0 });
+                  }
+                  
+                  if (question) {
+                    question.addEventListener('click', () => {
+                      try {
+                        const isOpen = item.classList.contains('open');
+                        
+                        // Close all items
+                        document.querySelectorAll('.faq-item').forEach(i => {
+                          if (i !== item && i.classList.contains('open')) {
+                            i.classList.remove('open');
+                            const otherAnswer = i.querySelector('.faq-a');
+                            if (otherAnswer) {
+                              gsap.to(otherAnswer, {
+                                maxHeight: 0,
+                                opacity: 0,
+                                marginTop: 0,
+                                duration: 0.4,
+                                ease: 'power2.inOut'
+                              });
+                            }
+                          }
+                        });
+                        
+                        // Toggle current item
+                        if (!isOpen) {
+                          item.classList.add('open');
+                          if (answer) {
+                            gsap.to(answer, {
+                              maxHeight: '500px',
+                              opacity: 1,
+                              marginTop: 12,
+                              duration: 0.4,
+                              ease: 'power2.inOut'
+                            });
+                          }
+                        } else {
+                          item.classList.remove('open');
+                          if (answer) {
+                            gsap.to(answer, {
+                              maxHeight: 0,
+                              opacity: 0,
+                              marginTop: 0,
+                              duration: 0.4,
+                              ease: 'power2.inOut'
+                            });
+                          }
+                        }
+                      } catch (e) {
+                        console.warn('Error in FAQ toggle:', e);
+                      }
+                    });
+                  }
+                } catch (e) {
+                  console.warn('Error setting up FAQ item:', e);
+                }
+              });
+            } catch (e) {
+              console.warn('Error in FAQ section:', e);
+            }
+
+            // PARALLAX EFFECTS (subtle) - Disabled on mobile for performance
+            try {
+              const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+              const isMobile = window.innerWidth <= 960 || ('ontouchstart' in window);
+              
+              if (!prefersReducedMotion && !isMobile && gsap.utils) {
+                gsap.utils.toArray('.hero, .problems, .what-is, .value-stack').forEach(section => {
+                  try {
+                    gsap.to(section, {
+                      yPercent: -10,
+                      ease: 'none',
+                      scrollTrigger: {
+                        trigger: section,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1
+                      }
+                    });
+                  } catch (e) {
+                    console.warn('Error in parallax:', e);
+                  }
+                });
+              }
+            } catch (e) {
+              console.warn('Error setting up parallax:', e);
+            }
+
+            // CTA BUTTON PULSE ANIMATION - Reduced on mobile
+            try {
+              const isMobile = window.innerWidth <= 640;
+              const primaryCTAs = document.querySelectorAll('.primary-cta');
+              primaryCTAs.forEach(cta => {
+                try {
+                  if (!isMobile) {
+                    // Full pulse animation on desktop
+                    gsap.to(cta, {
+                      boxShadow: '0 0 20px rgba(245, 158, 11, 0.5)',
+                      duration: 2,
+                      repeat: -1,
+                      yoyo: true,
+                      ease: 'power2.inOut'
+                    });
+                  } else {
+                    // Subtle pulse on mobile (better battery life)
+                    gsap.to(cta, {
+                      boxShadow: '0 0 12px rgba(245, 158, 11, 0.3)',
+                      duration: 3,
+                      repeat: -1,
+                      yoyo: true,
+                      ease: 'power2.inOut'
+                    });
+                  }
+                } catch (e) {
+                  console.warn('Error animating CTA button:', e);
+                }
+              });
+            } catch (e) {
+              console.warn('Error in CTA pulse animation:', e);
+            }
+
+            // SECTION TAG ANIMATIONS
+            try {
+              const sectionTags = document.querySelectorAll('.section-tag');
+              sectionTags.forEach(tag => {
+                try {
+                  gsap.set(tag, { opacity: 1, x: 0 }); // Ensure visible
+                  gsap.from(tag, {
+                    opacity: 0,
+                    x: -20,
+                    duration: 0.6,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                      trigger: tag,
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                } catch (e) {
+                  console.warn('Error animating section tag:', e);
+                  tag.style.opacity = '1';
+                }
+              });
+            } catch (e) {
+              console.warn('Error in section tag animations:', e);
+            }
+
+            // SECTION HEADLINE ANIMATIONS
+            try {
+              const sectionHeadlines = document.querySelectorAll('.section-h');
+              sectionHeadlines.forEach(headline => {
+                try {
+                  gsap.set(headline, { opacity: 1, y: 0 }); // Ensure visible
+                  gsap.from(headline, {
+                    opacity: 0,
+                    y: 30,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                      trigger: headline,
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                } catch (e) {
+                  console.warn('Error animating section headline:', e);
+                  headline.style.opacity = '1';
+                }
+              });
+            } catch (e) {
+              console.warn('Error in section headline animations:', e);
+            }
+
+            // Keep existing fade-up observer for backward compatibility
+            try {
+  const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { 
+                  if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                  }
+                });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+            } catch (e) {
+              console.warn('Error setting up intersection observer:', e);
+            }
+          } catch (e) {
+            console.error('Error in setupAnimations:', e);
+          }
+        }
+
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', setupAnimations);
+        } else {
+          // DOM is already ready
+          setupAnimations();
+        }
+
+        // Smooth scroll for anchor links (works even if GSAP didn't load)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              try {
+                if (typeof gsap !== 'undefined' && gsap.to && typeof ScrollToPlugin !== 'undefined') {
+                  gsap.to(window, {
+                    duration: 1,
+                    scrollTo: {
+                      y: target,
+                      offsetY: 80
+                    },
+                    ease: 'power2.inOut'
+                  });
+                } else {
+                  // Fallback to native smooth scroll
+                  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              } catch (e) {
+                // Fallback to native smooth scroll on error
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }
+          });
+        });
+      } catch (e) {
+        console.error('Error initializing animations:', e);
+      }
+    }
+
+    // Try to initialize immediately if GSAP is already loaded
+    try {
+      if (typeof gsap !== 'undefined') {
+        initAnimations();
+      } else {
+        // Wait for GSAP to load
+        window.addEventListener('load', function() {
+          setTimeout(initAnimations, 100);
+        });
+      }
+    } catch (e) {
+      console.error('Error in animation initialization wrapper:', e);
+    }
+  })();
+
+  // Form Submit Handler
+  function handleAuditSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const btnSpan = btn.querySelector('span');
+    
+    if (btn && btnSpan) {
+      // Animate button success state
+      if (typeof gsap !== 'undefined') {
+        gsap.to(btn, {
+          background: 'var(--green)',
+          duration: 0.3,
+          ease: 'power2.out',
+          onComplete: () => {
+            btnSpan.textContent = '✓ Audit Request Sent! We\'ll call you within 4 hours.';
+            btn.disabled = true;
+            
+            // Reset after 4 seconds
+            setTimeout(() => {
+              gsap.to(btn, {
+                background: 'var(--amber)',
+                duration: 0.3,
+                ease: 'power2.out',
+                onComplete: () => {
+                  btnSpan.textContent = 'Get My Free Operations Audit →';
+                  btn.disabled = false;
+                }
+              });
+            }, 4000);
+          }
+        });
+      } else {
+        // Fallback without GSAP
+        btn.style.background = 'var(--green)';
+        btnSpan.textContent = '✓ Audit Request Sent! We\'ll call you within 4 hours.';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.style.background = '';
+          btnSpan.textContent = 'Get My Free Operations Audit →';
+          btn.disabled = false;
+        }, 4000);
+      }
+    }
+  }
+
+  // Level selection from tier blocks
+  document.querySelectorAll('[data-level]').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const level = this.getAttribute('data-level');
+      const levelSelect = document.getElementById('levelSelect');
+      if (levelSelect) {
+        levelSelect.value = level;
+        // Scroll to form
+        const formSection = document.getElementById('audit');
+        if (formSection) {
+          if (typeof gsap !== 'undefined' && gsap.to && typeof ScrollToPlugin !== 'undefined') {
+            gsap.to(window, {
+              duration: 1,
+              scrollTo: {
+                y: formSection,
+                offsetY: 80
+              },
+              ease: 'power2.inOut'
+            });
+          } else {
+            formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+    });
+  });
+
+  // Form field focus animations
+  document.querySelectorAll('.form-group input, .form-group select').forEach(field => {
+    field.addEventListener('focus', function() {
+      if (typeof gsap !== 'undefined') {
+        gsap.to(this, {
+          scale: 1.01,
+          duration: 0.2,
+          ease: 'power2.out'
+        });
+      }
+    });
+    
+    field.addEventListener('blur', function() {
+      if (typeof gsap !== 'undefined') {
+        gsap.to(this, {
+          scale: 1,
+          duration: 0.2,
+          ease: 'power2.out'
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>
