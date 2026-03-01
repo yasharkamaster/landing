@@ -326,6 +326,35 @@
 
   .fade-up{opacity:1;transform:translateY(0);transition:opacity 0.6s ease,transform 0.6s ease;}
   .fade-up.visible{opacity:1;transform:translateY(0);}
+  
+  /* Comparison Visual Image */
+  .comparison-visual-section{
+    position:relative;
+  }
+  .comparison-visual{
+    opacity:0;
+    transform:translateY(40px) scale(0.94);
+    transition:opacity 0.8s ease,transform 0.8s ease;
+  }
+  .comparison-visual.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+  .comparison-image-wrapper:hover{
+    transform:translateY(-6px);
+    box-shadow:0 30px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(245,158,11,0.2),0 0 40px rgba(245,158,11,0.15);
+  }
+  .comparison-image-wrapper:hover .comparison-image{
+    transform:scale(1.02);
+  }
+  @media(max-width:640px){
+    .comparison-visual-section{
+      padding:clamp(32px,6vw,60px) clamp(16px,4vw,24px);
+    }
+    .comparison-image-wrapper{
+      padding:6px;
+    }
+  }
 
   /* ANIMATION ENHANCEMENTS */
   @media (prefers-reduced-motion: no-preference) {
@@ -1193,6 +1222,21 @@
   </div>
 </section>
 
+<!-- BEFORE/AFTER VISUAL COMPARISON -->
+<section class="comparison-visual-section" style="background:var(--bg);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);">
+  <div class="comparison-visual fade-up" style="max-width:1200px;margin:0 auto;">
+    <div class="comparison-image-wrapper" style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(245,158,11,0.1);border:2px solid rgba(245,158,11,0.15);background:var(--card);padding:clamp(8px,1vw,12px);transition:transform 0.4s ease,box-shadow 0.4s ease;">
+      <img 
+        src="Food_Franchise.jpeg" 
+        alt="Locations Exist. Growth Doesn't. - Before and After Food Franchise Comparison" 
+        class="comparison-image" 
+        style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);"
+        loading="lazy"
+      >
+    </div>
+  </div>
+</section>
+
 <!-- VALUE STACK -->
 <section class="value-stack">
   <div class="section-tag fade-up">What You Get</div>
@@ -1432,6 +1476,10 @@
         if (typeof gsap === 'undefined') {
           // GSAP not loaded, content is already visible
           console.log('GSAP not loaded - showing content without animations');
+          const comparisonVisual = document.querySelector('.comparison-visual');
+          if (comparisonVisual) {
+            comparisonVisual.classList.add('visible');
+          }
           return;
         }
 
@@ -1515,6 +1563,12 @@
             if (prefersReducedMotion) {
               // Simple fade-in for reduced motion
               gsap.set('.fade-up', { opacity: 1, y: 0 });
+              const comparisonVisual = document.querySelector('.comparison-visual');
+              if (comparisonVisual) {
+                comparisonVisual.style.opacity = '1';
+                comparisonVisual.style.transform = 'none';
+                comparisonVisual.classList.add('visible');
+              }
               return;
             }
 
@@ -1527,6 +1581,13 @@
                   console.log('Safety fallback: Made element visible', el);
                 }
               });
+              const comparisonVisual = document.querySelector('.comparison-visual');
+              if (comparisonVisual && window.getComputedStyle(comparisonVisual).opacity === '0') {
+                comparisonVisual.style.opacity = '1';
+                comparisonVisual.style.transform = 'none';
+                comparisonVisual.classList.add('visible');
+                console.log('Safety fallback: Made comparison visual visible');
+              }
             }, 3000);
 
             // NAVIGATION ANIMATIONS - Enhanced with mobile optimizations
@@ -1880,6 +1941,38 @@
               });
             } catch (e) {
               console.warn('Error in what-is section:', e);
+            }
+
+            // COMPARISON VISUAL ANIMATION
+            try {
+              const comparisonVisual = document.querySelector('.comparison-visual');
+              if (comparisonVisual) {
+                gsap.set(comparisonVisual, { opacity: 0, y: 50, scale: 0.92 });
+                gsap.to(comparisonVisual, {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  duration: 1.2,
+                  ease: 'power3.out',
+                  scrollTrigger: {
+                    trigger: comparisonVisual,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none',
+                    once: true
+                  },
+                  onComplete: function() {
+                    comparisonVisual.classList.add('visible');
+                  }
+                });
+              }
+            } catch (e) {
+              console.warn('Error in comparison visual animation:', e);
+              const comparisonVisual = document.querySelector('.comparison-visual');
+              if (comparisonVisual) {
+                comparisonVisual.style.opacity = '1';
+                comparisonVisual.style.transform = 'none';
+                comparisonVisual.classList.add('visible');
+              }
             }
 
             // VALUE STACK SECTION ANIMATIONS

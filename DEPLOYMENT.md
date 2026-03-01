@@ -100,12 +100,10 @@ AIRTABLE_TABLE_NAME=Leads
 Once deployed, Dokploy will provide you with a URL. Your landing pages will be accessible at:
 
 - **Clinic Landing:** `http://your-dokploy-url/Clinic/clinic_landing.html`
-- **Food Franchises:** `http://your-dokploy-url/Food Francises/food_landing.html`
-- **Luxury Fashion Boutiques:** `http://your-dokploy-url/Luxury Fashion Boutiques/luxury_boutique_landing_v2 (1).html`
-- **Professional Services:** `http://your-dokploy-url/Professional Services/[filename].html`
-- **Tours & Travels:** `http://your-dokploy-url/Tours & Travels/tours_v3.html`
-
-**Note:** Folder names with spaces work fine in URLs - they will be URL-encoded automatically.
+- **Food Franchises:** `http://your-dokploy-url/Food_Francises/food_landing.html`
+- **Luxury Fashion Boutiques:** `http://your-dokploy-url/Luxury_Fashion_Boutiques/luxury_boutique_landing_v2 (1).html`
+- **Professional Services:** `http://your-dokploy-url/Professional_Services/Professional_Real.html`
+- **Tours & Travels:** `http://your-dokploy-url/Tours_&_Travels/tours_v3.html`
 
 ## Step 5: Verify API Endpoint
 

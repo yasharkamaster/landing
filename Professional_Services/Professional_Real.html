@@ -71,6 +71,18 @@
   .pain-text h3{font-size:clamp(16px,1.6vw,20px);font-weight:700;color:var(--cream);margin-bottom:10px;}
   .pain-text p{font-size:clamp(14px,1.4vw,17px);color:var(--muted);line-height:1.65;}
 
+  /* BEFORE / AFTER TRANSFORMATION */
+  .transformation{background:var(--surface);padding:clamp(48px,8vw,100px) clamp(16px,5vw,56px);}
+  .transformation .section-eyebrow{margin-bottom:clamp(16px,2vw,24px);}
+  .transformation .section-headline{margin-bottom:clamp(36px,4vw,52px);}
+  .transformation-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,3vw,40px);max-width:1100px;margin:0 auto;align-items:stretch;}
+  .transformation-card{background:var(--card);border:1px solid var(--border);overflow:hidden;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);transition:transform 0.4s ease,box-shadow 0.4s ease;}
+  .transformation-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(201,168,76,0.12);}
+  .transformation-card .img-wrap{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;}
+  .transformation-card .img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+  .transformation-card .caption{padding:clamp(14px,1.6vw,20px) clamp(16px,2vw,24px);font-size:clamp(12px,1.2vw,14px);color:var(--muted);line-height:1.5;text-align:center;}
+  .transformation-card .caption strong{color:var(--cream);}
+
   /* MECHANISM */
   .mechanism{background:var(--surface);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);}
   .mech-intro{max-width:760px;margin:0 auto clamp(40px,5vw,72px);text-align:center;}
@@ -161,6 +173,7 @@
     .hero-grid{grid-template-columns:1fr;}
     .enquiry-visual{display:none;}
     .prof-grid{grid-template-columns:repeat(3,1fr);}
+    .transformation-grid{grid-template-columns:1fr;}
     .steps-grid{grid-template-columns:1fr;}
     .tier-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
   }
@@ -351,6 +364,26 @@
         <h3>Invisible Revenue Loss</h3>
         <p>You don't know how many enquiries you got last month. You don't know what your response time is. You don't know which platform sends the best clients. The money is leaking — silently — and you don't have the data to know how much.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Before / After transformation visuals -->
+<section class="transformation">
+  <div class="section-eyebrow fade-up">The Reality</div>
+  <h2 class="section-headline fade-up">Presence Isn't Enough.<br><em>Response Wins.</em></h2>
+  <div class="transformation-grid">
+    <div class="transformation-card fade-up" data-transformation="gym">
+      <div class="img-wrap">
+        <img src="Gym.jpeg" alt="Members Exist. Competition Wins. — From struggling gym to thriving business with LeadMatrix." loading="lazy">
+      </div>
+      <p class="caption"><strong>Fitness &amp; gyms:</strong> Members exist. Competition wins. Turn response lag into booked sessions.</p>
+    </div>
+    <div class="transformation-card fade-up" data-transformation="ecom">
+      <div class="img-wrap">
+        <img src="Ecom.jpeg" alt="Website Exists. Customers Don't. — From unsold inventory to happy customers with the right system." loading="lazy">
+      </div>
+      <p class="caption"><strong>Professional services &amp; retail:</strong> Website exists. Customers don't. Turn visibility into conversions.</p>
     </div>
   </div>
 </section>
@@ -1002,6 +1035,78 @@
                     scrollTrigger: {
                       trigger: row,
                       start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                }
+              });
+            }
+
+            // TRANSFORMATION SECTION (Before/After images)
+            const transformationEyebrow = document.querySelector('.transformation .section-eyebrow');
+            const transformationHeadline = document.querySelector('.transformation .section-headline');
+            const transformationCards = document.querySelectorAll('.transformation-card');
+
+            if (transformationEyebrow) {
+              gsap.set(transformationEyebrow, { opacity: 1, y: 0 });
+              gsap.from(transformationEyebrow, {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: transformationEyebrow,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (transformationHeadline) {
+              const headlineLines = splitTextIntoLines(transformationHeadline);
+              headlineLines.forEach((line) => { gsap.set(line, { opacity: 1, y: 0 }); });
+              headlineLines.forEach((line, index) => {
+                gsap.from(line, {
+                  opacity: 0,
+                  y: 30,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: index * 0.15,
+                  scrollTrigger: {
+                    trigger: transformationHeadline,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            if (transformationCards.length > 0) {
+              transformationCards.forEach((card, index) => {
+                gsap.set(card, { opacity: 1, y: 0, scale: 1 });
+                gsap.from(card, {
+                  opacity: 0,
+                  y: 50,
+                  scale: 0.96,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: index * 0.2,
+                  scrollTrigger: {
+                    trigger: card,
+                    start: 'top 88%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+                const img = card.querySelector('.img-wrap img');
+                if (img && !isMobile) {
+                  gsap.from(img, {
+                    scale: 1.15,
+                    duration: 1,
+                    ease: 'power2.out',
+                    delay: index * 0.2,
+                    scrollTrigger: {
+                      trigger: card,
+                      start: 'top 88%',
                       toggleActions: 'play none none none'
                     }
                   });

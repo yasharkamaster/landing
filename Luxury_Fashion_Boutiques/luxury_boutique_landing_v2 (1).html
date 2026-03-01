@@ -1055,6 +1055,37 @@ input:focus, select:focus {
   font-weight: 700;
 }
 
+/* Comparison Visual Image */
+.comparison-visual-section {
+  position: relative;
+}
+.comparison-visual {
+  opacity: 0;
+  transform: translateY(50px) scale(0.92);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.comparison-visual.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.comparison-image-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow:0 32px 80px rgba(0,0,0,0.5),0 0 0 1px var(--border-strong),0 0 50px rgba(184,150,80,0.2);
+  border-color:var(--gold);
+}
+.comparison-image-wrapper:hover .comparison-image {
+  transform: scale(1.02);
+  filter: brightness(1.02);
+}
+@media (max-width: 900px) {
+  .comparison-visual-section {
+    padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px);
+  }
+  .comparison-image-wrapper {
+    padding:8px;
+  }
+}
+
 /* ─── FAQ ─────────────────────────────────────────────────────────────── */
 .faq {
   background: var(--ink-light);
@@ -1315,6 +1346,21 @@ footer {
         <strong>The rupee leak is invisible — which means it compounds silently</strong>, month after month,
         until someone shows you the number.
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BEFORE/AFTER VISUAL COMPARISON ──────────────────────────────────────── -->
+<section class="comparison-visual-section" style="background:var(--ink);padding:clamp(56px,8vw,120px) clamp(20px,5vw,72px);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="comparison-visual reveal" style="max-width:1400px;margin:0 auto;">
+    <div class="comparison-image-wrapper" style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 1px var(--border-strong);border:2px solid var(--border-strong);background:var(--ink-light);padding:clamp(10px,1.2vw,14px);transition:transform 0.4s ease,box-shadow 0.4s ease;">
+      <img 
+        src="Luxury.jpeg" 
+        alt="FROM CHAOS TO LUXURY - Before and After Luxury Boutique Transformation" 
+        class="comparison-image" 
+        style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);filter:brightness(0.98);"
+        loading="lazy"
+      >
     </div>
   </div>
 </section>
@@ -1752,6 +1798,12 @@ if (leakEl) {
             el.style.opacity = '1';
             el.style.transform = 'none';
           });
+          const comparisonVisual = document.querySelector('.comparison-visual');
+          if (comparisonVisual) {
+            comparisonVisual.style.opacity = '1';
+            comparisonVisual.style.transform = 'none';
+            comparisonVisual.classList.add('visible');
+          }
         }, 100);
         return;
       }
@@ -1771,6 +1823,12 @@ if (leakEl) {
         gsap.set('.hero-issue, .hero-headline, .hero-headline .line, .hero-sub, .hero-cta-block, .hero-stats, .enquiry-thread', { opacity: 1, x: 0, y: 0, scale: 1 });
         gsap.set('.truth-quote, .truth-attribution, .section-eyebrow, .section-title, .prob-cell, .mech-intro, .mech-body, .step-item, .tiers-intro, .tier-card', { opacity: 1, x: 0, y: 0, scale: 1 });
         gsap.set('.guarantee-ornament, .guarantee-title, .guarantee-body, .form-headline, .form-desc, .promise-item, .faq-side-title, .faq-side-body, .faq-item', { opacity: 1, y: 0, scale: 1 });
+        const comparisonVisual = document.querySelector('.comparison-visual');
+        if (comparisonVisual) {
+          comparisonVisual.style.opacity = '1';
+          comparisonVisual.style.transform = 'none';
+          comparisonVisual.classList.add('visible');
+        }
         return;
       }
 
@@ -1801,6 +1859,7 @@ if (leakEl) {
       gsap.set('.faq-side-title', { opacity: 0, y: 25, force3D: true });
       gsap.set('.faq-side-body', { opacity: 0, force3D: true });
       gsap.set('.faq-item', { opacity: 0, y: 15, force3D: true });
+      gsap.set('.comparison-visual', { opacity: 0, y: 60, scale: 0.88, force3D: true });
 
     // Animate all .reveal elements (only those not already targeted by specific animations)
     const specificTargets = new Set([
@@ -2247,6 +2306,31 @@ if (leakEl) {
       });
     });
 
+    // Comparison Visual Animation
+    const comparisonVisual = document.querySelector('.comparison-visual');
+    if (comparisonVisual) {
+      gsap.set(comparisonVisual, { opacity: 0, y: 60, scale: 0.88 });
+      gsap.to(comparisonVisual, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.4,
+        ease: 'power3.out',
+        force3D: true,
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: comparisonVisual,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+          once: true,
+          markers: false
+        },
+        onComplete: function() {
+          comparisonVisual.classList.add('visible');
+        }
+      });
+    }
+
     // Form wrap + form-group reveal (same pattern as clinic/food)
     const formWrap = document.querySelector('.form-wrap');
     if (formWrap && typeof ScrollTrigger !== 'undefined') {
@@ -2305,6 +2389,12 @@ if (leakEl) {
             el.style.transform = 'none';
           }
         });
+        const comparisonVisual = document.querySelector('.comparison-visual');
+        if (comparisonVisual && window.getComputedStyle(comparisonVisual).opacity === '0') {
+          comparisonVisual.style.opacity = '1';
+          comparisonVisual.style.transform = 'none';
+          comparisonVisual.classList.add('visible');
+        }
       }, 3500);
 
     } catch (e) {
@@ -2313,6 +2403,12 @@ if (leakEl) {
         el.style.opacity = '1';
         el.style.transform = 'none';
       });
+      const comparisonVisual = document.querySelector('.comparison-visual');
+      if (comparisonVisual) {
+        comparisonVisual.style.opacity = '1';
+        comparisonVisual.style.transform = 'none';
+        comparisonVisual.classList.add('visible');
+      }
     }
   }
 

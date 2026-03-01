@@ -353,6 +353,43 @@ section{padding:100px 8%;position:relative}
   font-size:16px;color:rgba(245,240,232,0.6);line-height:1.7;
 }
 
+/* TRANSFORMATION VISUAL (Before/After image) */
+.transformation-visual-wrap{
+  max-width:1000px;margin:60px auto 0;
+  border:1px solid rgba(184,150,80,0.2);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.35);
+  position:relative;
+}
+.transformation-visual-wrap .img-inner{
+  position:relative;width:100%;
+  overflow:hidden;border-radius:16px;
+}
+.transformation-visual-wrap .img-inner img{
+  width:100%;height:auto;
+  display:block;vertical-align:middle;
+  object-fit:contain;object-position:center;
+  transition:transform 1s ease;
+  transform:scale(1.06);
+}
+.transformation-visual-wrap.visible .img-inner img{
+  transform:scale(1);
+}
+.transformation-visual-wrap .img-caption-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(12,11,8,0.75) 20%,rgba(12,11,8,0.95));
+  padding:20px 24px 18px;
+  font-family:'Raleway',sans-serif;font-size:13px;
+  font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--ivory);
+  text-shadow:0 1px 2px rgba(0,0,0,0.5);
+  border-radius:0 0 16px 16px;
+}
+.transformation-visual-wrap .img-caption-overlay strong{
+  color:var(--ivory);font-weight:700;
+}
+
 /* BEFORE AFTER */
 .before-after{
   display:grid;grid-template-columns:1fr 1fr;
@@ -1059,6 +1096,19 @@ footer{
       <div class="problem-num">IV</div>
       <div class="problem-title">Peak Season Chaos</div>
       <p class="problem-body">December to February. April to June. These 90 days determine your entire year. But this is also when your team is most overwhelmed, response rates drop, and the highest-value inquiries — the ones for Bhutan, Europe, custom itineraries — fall through the cracks. You can't scale humans. You can scale systems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION IMAGE: Profits Go Elsewhere. Not Passengers. -->
+<section>
+  <div class="section-eyebrow fade-up">The Reality</div>
+  <h2 class="section-h2 fade-up fade-up-d1">Profits go elsewhere. <em>Not passengers.</em></h2>
+  <p class="section-lead fade-up fade-up-d2">When response is slow and systems fail, your revenue walks to the operator who answers first. Here's the shift that changes everything.</p>
+  <div class="transformation-visual-wrap fade-up fade-up-d2">
+    <div class="img-inner">
+      <img src="Travel.jpeg" alt="Profits Go Elsewhere. Not Passengers. — From chaotic booking errors to a modern, customer-first travel experience." loading="lazy">
+      <div class="img-caption-overlay">Before: chaos &amp; lost bookings → After: smooth operations &amp; happy travellers</div>
     </div>
   </div>
 </section>
