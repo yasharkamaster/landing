@@ -347,6 +347,12 @@
   .comparison-image-wrapper:hover .comparison-image{
     transform:scale(1.02);
   }
+  .comparison-image-wrapper video{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:12px;
+  }
   @media(max-width:640px){
     .comparison-visual-section{
       padding:clamp(32px,6vw,60px) clamp(16px,4vw,24px);
@@ -1233,6 +1239,20 @@
         style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);"
         loading="lazy"
       >
+    </div>
+  </div>
+  <div class="comparison-visual fade-up" style="max-width:1200px;margin:40px auto 0;">
+    <div class="comparison-image-wrapper" style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(245,158,11,0.1);border:2px solid rgba(245,158,11,0.15);background:var(--card);padding:clamp(8px,1vw,12px);transition:transform 0.4s ease,box-shadow 0.4s ease;">
+      <video 
+        src="LBusiness.mp4" 
+        class="comparison-image" 
+        style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);"
+        controls
+        playsinline
+        preload="metadata"
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </section>

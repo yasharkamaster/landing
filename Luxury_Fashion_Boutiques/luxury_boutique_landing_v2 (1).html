@@ -1077,6 +1077,12 @@ input:focus, select:focus {
   transform: scale(1.02);
   filter: brightness(1.02);
 }
+.comparison-image-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
 @media (max-width: 900px) {
   .comparison-visual-section {
     padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px);
@@ -1361,6 +1367,20 @@ footer {
         style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);filter:brightness(0.98);"
         loading="lazy"
       >
+    </div>
+  </div>
+  <div class="comparison-visual reveal" style="max-width:1400px;margin:40px auto 0;">
+    <div class="comparison-image-wrapper" style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 1px var(--border-strong);border:2px solid var(--border-strong);background:var(--ink-light);padding:clamp(10px,1.2vw,14px);transition:transform 0.4s ease,box-shadow 0.4s ease;">
+      <video 
+        src="LHotel.mp4" 
+        class="comparison-image" 
+        style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);filter:brightness(0.98);"
+        controls
+        playsinline
+        preload="metadata"
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </section>

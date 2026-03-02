@@ -375,6 +375,16 @@ section{padding:100px 8%;position:relative}
 .transformation-visual-wrap.visible .img-inner img{
   transform:scale(1);
 }
+.transformation-visual-wrap .img-inner video{
+  width:100%;height:auto;
+  display:block;vertical-align:middle;
+  object-fit:contain;object-position:center;
+  transition:transform 1s ease;
+  transform:scale(1.06);
+}
+.transformation-visual-wrap.visible .img-inner video{
+  transform:scale(1);
+}
 .transformation-visual-wrap .img-caption-overlay{
   position:absolute;bottom:0;left:0;right:0;
   background:linear-gradient(transparent,rgba(12,11,8,0.75) 20%,rgba(12,11,8,0.95));
@@ -1109,6 +1119,14 @@ footer{
     <div class="img-inner">
       <img src="Travel.jpeg" alt="Profits Go Elsewhere. Not Passengers. — From chaotic booking errors to a modern, customer-first travel experience." loading="lazy">
       <div class="img-caption-overlay">Before: chaos &amp; lost bookings → After: smooth operations &amp; happy travellers</div>
+    </div>
+  </div>
+  <div class="transformation-visual-wrap fade-up fade-up-d3" style="margin-top:60px;">
+    <div class="img-inner">
+      <video src="LTravel.mp4" controls playsinline preload="metadata" style="width:100%;height:auto;display:block;border-radius:16px;">
+        Your browser does not support the video tag.
+      </video>
+      <div class="img-caption-overlay">See LeadMatrix in action for tours &amp; travel businesses</div>
     </div>
   </div>
 </section>
