@@ -1,0 +1,13 @@
+# Ignore nested repo - we're tracking the whole project
+Landing_Pages-master/.git/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Env
+.env
+.env.local

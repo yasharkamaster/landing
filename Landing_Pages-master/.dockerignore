@@ -1,0 +1,22 @@
+node_modules
+npm-debug.log
+.env
+.git
+.gitignore
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Excluded landing pages
+clinic_v2.html
+financial_services.html
+luxury_landing.html
+professional_v3.html
+tours_landing.html
+tours_travel.html
+tours_v3 (1).html

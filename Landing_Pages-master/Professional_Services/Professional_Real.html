@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeadMatrix for Professional Services — HypeX</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#111111;--surface:#1A1A1A;--card:#1F1F1F;
+    --gold:#C9A84C;--gold-light:#E8C97A;--cream:#F5F0E8;
+    --muted:rgba(245,240,232,0.45);--border:rgba(255,255,255,0.07);
+    --green:#22C55E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:clamp(12px,2vw,20px) clamp(16px,5vw,56px);display:flex;justify-content:space-between;align-items:center;background:rgba(17,17,17,0.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);transition:all 0.3s ease;will-change:background,backdrop-filter;}
+  nav.scrolled{background:rgba(17,17,17,0.98);backdrop-filter:blur(20px);border-bottom-color:rgba(201,168,76,0.25);}
+  .logo{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.5vw,26px);color:var(--cream);letter-spacing:1px;will-change:transform,opacity;cursor:pointer;}
+  .logo em{color:var(--gold);font-style:normal;}
+  .nav-right{display:flex;align-items:center;gap:clamp(12px,2vw,28px);}
+  .nav-link{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:0.5px;transition:color 0.2s;will-change:color;}
+  .nav-link:hover{color:var(--cream);}
+  .nav-cta{background:var(--gold);color:#111;padding:9px clamp(14px,2vw,22px);font-size:clamp(11px,1.2vw,13px);font-weight:700;letter-spacing:0.5px;text-decoration:none;white-space:nowrap;transition:all 0.3s ease;will-change:transform,box-shadow;}
+  .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 4px 12px rgba(201,168,76,0.3);}
+
+  /* HERO */
+  .hero{background:var(--bg);padding:clamp(100px,14vw,160px) clamp(16px,5vw,56px) clamp(56px,8vw,100px);}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,60px);align-items:center;}
+  .profession-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:clamp(20px,2.5vw,32px);}
+  .profession-tag{font-size:clamp(9px,0.9vw,11px);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.3);padding:4px 12px;}
+  .hero-headline{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,60px);line-height:1.1;color:var(--cream);margin-bottom:clamp(16px,2vw,28px);}
+  .hero-headline em{color:var(--gold);font-style:italic;}
+  .hero-subhead{font-size:clamp(15px,1.5vw,18px);color:var(--muted);line-height:1.65;margin-bottom:clamp(28px,3vw,40px);max-width:520px;}
+  .hero-subhead strong{color:var(--cream);}
+  .hero-cta-primary{display:inline-block;background:var(--gold);color:#111;padding:clamp(14px,1.6vw,18px) clamp(24px,2.5vw,36px);font-size:clamp(13px,1.3vw,15px);font-weight:700;text-decoration:none;letter-spacing:0.3px;transition:all 0.3s ease;will-change:transform,box-shadow;}
+  .hero-cta-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.4);}
+  .hero-cta-note{font-size:clamp(11px,1.1vw,13px);color:var(--muted);margin-top:10px;}
+  .visual-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+  .enquiry-visual{display:flex;flex-direction:column;gap:2px;}
+  .enquiry-card{background:var(--card);border:1px solid var(--border);padding:clamp(16px,1.8vw,20px) clamp(18px,2vw,24px);}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;}
+  .card-name{font-size:clamp(13px,1.3vw,15px);font-weight:600;color:var(--cream);margin-bottom:3px;}
+  .card-type{font-size:clamp(11px,1.1vw,13px);color:var(--muted);}
+  .card-status{font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 9px;white-space:nowrap;}
+  .card-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:10px;}
+  .card-response{font-size:clamp(11px,1.1vw,13px);color:var(--green);}
+  .card-time{font-size:clamp(11px,1.1vw,12px);color:var(--muted);}
+
+  /* PROFESSIONS */
+  .professions{background:var(--surface);padding:clamp(32px,4vw,60px) clamp(16px,5vw,56px);}
+  .prof-label{font-size:clamp(10px,1vw,12px);letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:clamp(20px,2.5vw,32px);}
+  .prof-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;}
+  .prof-item{background:var(--card);padding:clamp(18px,2vw,28px) clamp(14px,1.5vw,20px);text-align:center;border:1px solid var(--border);transition:all 0.3s ease;will-change:transform,box-shadow;}
+  .prof-icon{width:100%;height:clamp(100px,14vw,160px);margin-bottom:12px;display:flex;align-items:center;justify-content:center;background:transparent;}
+  .prof-icon img{max-width:100%;max-height:100%;object-fit:contain;}
+  .prof-name{font-size:clamp(12px,1.2vw,15px);font-weight:700;color:var(--cream);margin-bottom:6px;}
+  .prof-prob{font-size:clamp(10px,1vw,12px);color:var(--muted);line-height:1.4;}
+
+  /* PAIN */
+  .pain{background:var(--bg);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);}
+  .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:clamp(12px,1.5vw,20px);}
+  .section-headline{font-family:'DM Serif Display',serif;font-size:clamp(28px,4.5vw,56px);line-height:1.1;color:var(--cream);margin-bottom:clamp(32px,4vw,56px);}
+  .section-headline em{color:var(--gold);}
+  .pain-list{display:flex;flex-direction:column;gap:0;}
+  .pain-row{display:grid;grid-template-columns:80px 1fr;align-items:start;padding:clamp(24px,3vw,40px) 0;border-bottom:1px solid var(--border);}
+  .pain-num{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--muted);padding-top:4px;}
+  .pain-text h3{font-size:clamp(16px,1.6vw,20px);font-weight:700;color:var(--cream);margin-bottom:10px;}
+  .pain-text p{font-size:clamp(14px,1.4vw,17px);color:var(--muted);line-height:1.65;}
+
+  /* BEFORE / AFTER TRANSFORMATION */
+  .transformation{background:var(--surface);padding:clamp(48px,8vw,100px) clamp(16px,5vw,56px);}
+  .transformation .section-eyebrow{margin-bottom:clamp(16px,2vw,24px);}
+  .transformation .section-headline{margin-bottom:clamp(36px,4vw,52px);}
+  .transformation-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,3vw,40px);max-width:1100px;margin:0 auto;align-items:stretch;}
+  .transformation-grid-videos{grid-template-columns:repeat(3,1fr);}
+  .transformation-card{background:var(--card);border:1px solid var(--border);overflow:hidden;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);transition:transform 0.4s ease,box-shadow 0.4s ease;}
+  .transformation-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(201,168,76,0.12);}
+  .transformation-card .img-wrap{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;}
+  .transformation-card .img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+  .transformation-card .img-wrap video{width:100%;height:100%;object-fit:cover;display:block;}
+  .transformation-card .caption{padding:clamp(14px,1.6vw,20px) clamp(16px,2vw,24px);font-size:clamp(12px,1.2vw,14px);color:var(--muted);line-height:1.5;text-align:center;}
+  .transformation-card .caption strong{color:var(--cream);}
+
+  /* MECHANISM */
+  .mechanism{background:var(--surface);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);}
+  .mech-intro{max-width:760px;margin:0 auto clamp(40px,5vw,72px);text-align:center;}
+  .mech-intro p{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.5vw,32px);line-height:1.45;color:var(--cream);border-left:3px solid var(--gold);padding-left:clamp(16px,2vw,28px);text-align:left;}
+  .mech-intro p strong{color:var(--gold);}
+  .mech-visual{max-width:560px;margin:0 auto clamp(40px,5vw,64px);text-align:center;}
+  .mech-visual img{max-width:100%;height:auto;object-fit:contain;}
+  .steps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
+  .step-box{background:var(--card);border:1px solid var(--border);padding:clamp(24px,3vw,40px) clamp(20px,2.5vw,32px);position:relative;transition:all 0.3s ease;will-change:transform,box-shadow;}
+  .step-box::before{content:attr(data-step);font-size:80px;font-weight:900;color:rgba(201,168,76,0.05);position:absolute;top:10px;right:16px;line-height:1;}
+  .step-box-icon{width:100%;height:clamp(120px,18vw,200px);margin-bottom:14px;display:flex;align-items:center;justify-content:center;background:transparent;}
+  .step-box-icon img{max-width:100%;max-height:100%;object-fit:contain;}
+  .step-box h3{font-size:clamp(15px,1.5vw,18px);font-weight:700;color:var(--cream);margin-bottom:10px;}
+  .step-box p{font-size:clamp(13px,1.3vw,15px);color:var(--muted);line-height:1.65;}
+
+  /* VALUE STACK */
+  .value-stack{background:var(--bg);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);}
+  .tier-table{width:100%;border-collapse:collapse;margin:clamp(28px,3vw,48px) 0;}
+  .tier-table th,.tier-table td{padding:clamp(12px,1.5vw,18px) clamp(14px,1.8vw,24px);border-bottom:1px solid var(--border);text-align:left;font-size:clamp(12px,1.2vw,14px);}
+  .tier-table thead th{font-weight:700;color:var(--cream);background:var(--surface);}
+  .tier-table tbody td:first-child{color:var(--muted);}
+  .tier-tag{font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 10px;display:inline-block;}
+  .check{color:var(--gold);font-weight:700;}
+
+  /* GUARANTEE */
+  .guarantee{background:var(--surface);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);}
+  .guarantee-inner{max-width:720px;margin:0 auto;text-align:center;}
+  .g-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,60px);line-height:1.1;color:var(--cream);margin-bottom:clamp(20px,2.5vw,32px);}
+  .g-title em{color:var(--gold);}
+  .g-body{font-size:clamp(15px,1.5vw,19px);color:var(--muted);line-height:1.7;margin-bottom:clamp(12px,1.5vw,18px);}
+  .g-body strong{color:var(--cream);}
+
+  /* FINAL CTA */
+  .final-cta{background:var(--bg);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);text-align:center;}
+  .final-cta h2{font-family:'DM Serif Display',serif;font-size:clamp(32px,5.5vw,68px);line-height:1.1;color:var(--cream);margin-bottom:clamp(16px,2vw,28px);}
+  .final-cta h2 em{color:var(--gold);}
+  .final-desc{font-size:clamp(15px,1.5vw,18px);color:var(--muted);margin-bottom:clamp(28px,3.5vw,48px);max-width:520px;margin-left:auto;margin-right:auto;}
+  .cta-form{display:flex;flex-direction:column;max-width:500px;margin:0 auto clamp(16px,2vw,20px);}
+  .cta-form input{padding:clamp(14px,1.6vw,18px) clamp(16px,2vw,22px);background:rgba(255,255,255,0.04);border:1px solid var(--border);border-bottom:none;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:15px;outline:none;}
+  .cta-form input::placeholder{color:var(--muted);}
+  .cta-form button{padding:clamp(14px,1.6vw,18px) clamp(20px,2.5vw,28px);background:var(--gold);color:#111;border:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(13px,1.3vw,14px);letter-spacing:0.5px;cursor:pointer;width:100%;transition:all 0.3s ease;will-change:transform,box-shadow;}
+  .cta-form button:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.4);}
+  .trust-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,1.5vw,24px);margin-top:clamp(14px,2vw,20px);}
+  .trust-item{font-size:clamp(11px,1.1vw,13px);color:var(--muted);}
+  .trust-item::before{content:'✓ ';color:var(--gold);font-weight:700;}
+
+  /* FORM WRAP - Full audit form like other pages */
+  .form-wrap{max-width:600px;margin:40px auto 0;background:var(--card);border:1px solid rgba(201,168,76,0.2);border-radius:20px;padding:clamp(32px,4vw,48px) clamp(24px,3vw,40px);position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+  .form-wrap::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(201,168,76,0.06),transparent 70%);pointer-events:none;}
+  .form-wrap h3{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:600;color:var(--cream);margin-bottom:8px;text-align:center;}
+  .form-wrap>p{text-align:center;margin-bottom:clamp(20px,2.5vw,28px);font-size:clamp(13px,1.3vw,15px);color:var(--muted);}
+  .form-group{margin-bottom:clamp(14px,1.8vw,20px);}
+  .form-group label{display:block;font-size:clamp(10px,1vw,12px);color:var(--gold);font-weight:700;margin-bottom:6px;letter-spacing:0.5px;}
+  .form-group input,.form-group select{width:100%;padding:clamp(12px,1.5vw,16px) clamp(14px,1.8vw,18px);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:clamp(14px,1.4vw,16px);transition:all 0.3s ease;outline:none;}
+  .form-group input:focus,.form-group select:focus{border-color:var(--gold);background:rgba(255,255,255,0.08);box-shadow:0 0 0 3px rgba(201,168,76,0.15);}
+  .form-group input::placeholder{color:var(--muted);}
+  .form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23C9A84C' d='M6 9L1 4h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:clamp(36px,4vw,40px);}
+  .form-group select option{background:var(--card);color:var(--cream);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,16px);}
+  .form-submit{width:100%;margin-top:clamp(20px,2.5vw,28px);padding:clamp(16px,1.8vw,20px);font-size:clamp(14px,1.4vw,16px);background:var(--gold);color:#111;border:none;font-family:'DM Sans',sans-serif;font-weight:700;cursor:pointer;transition:all 0.3s ease;position:relative;overflow:hidden;}
+  .form-submit:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.4);}
+  .form-trust{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:clamp(12px,1.5vw,16px);font-size:clamp(11px,1.1vw,13px);color:var(--muted);}
+  .form-trust span:first-child{color:var(--gold);font-size:clamp(14px,1.4vw,16px);}
+
+  /* FAQ */
+  .faq{background:var(--surface);padding:clamp(40px,6vw,80px) clamp(16px,5vw,56px);max-width:800px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--border);padding:clamp(16px,2vw,24px) 0;cursor:pointer;}
+  .faq-q{font-size:clamp(13px,1.4vw,16px);font-weight:600;color:var(--cream);display:flex;justify-content:space-between;align-items:center;gap:14px;}
+  .faq-q::after{content:'+';color:var(--gold);font-size:20px;flex-shrink:0;}
+  .faq-a{font-size:clamp(13px,1.3vw,15px);color:var(--muted);line-height:1.7;margin-top:12px;display:none;}
+  .faq-item.open .faq-q::after{content:'−';}
+  .faq-item.open .faq-a{display:block;}
+
+  /* FOOTER */
+  footer{background:var(--surface);border-top:1px solid var(--border);padding:clamp(24px,3vw,40px) clamp(16px,5vw,56px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;}
+  footer p{font-size:clamp(11px,1.1vw,13px);color:var(--muted);}
+
+  .fade-up{opacity:1;transform:translateY(0);transition:opacity 0.6s ease,transform 0.6s ease;will-change:opacity,transform;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+  
+  /* Animation performance optimizations */
+  @media (prefers-reduced-motion: no-preference) {
+    nav, .logo, .hero-headline, .prof-item, .step-box, .enquiry-card{will-change:transform,opacity;}
+  }
+
+  /* TABLET */
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .enquiry-visual{display:none;}
+    .prof-grid{grid-template-columns:repeat(3,1fr);}
+    .transformation-grid{grid-template-columns:1fr;}
+    .transformation-grid-videos{grid-template-columns:1fr;}
+    .steps-grid{grid-template-columns:1fr;}
+    .tier-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  }
+
+  /* MOBILE */
+  @media(max-width:640px){
+    .nav-right .nav-link{display:none;}
+    .nav-cta{font-size:11px;padding:8px 14px;}
+    .hero{padding-top:88px;}
+    .prof-grid{grid-template-columns:repeat(2,1fr);}
+    .prof-icon{height:clamp(80px,22vw,120px);}
+    .step-box-icon{height:clamp(100px,28vw,160px);}
+    .mech-visual{max-width:100%;margin-bottom:32px;}
+    .pain-row{grid-template-columns:56px 1fr;}
+    .steps-grid{grid-template-columns:1fr;}
+    .form-wrap{padding:clamp(24px,3vw,32px) clamp(16px,2.5vw,24px);border-radius:16px;}
+    .form-row{grid-template-columns:1fr;}
+    .trust-bar{flex-direction:column;align-items:center;}
+    footer{flex-direction:column;text-align:center;}
+  }
+
+  @media(max-width:400px){
+    .prof-grid{grid-template-columns:1fr 1fr;}
+    .hero-headline{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">LeadMatrix</div>
+  <div class="nav-right">
+    <a href="#pain" class="nav-link">The Problem</a>
+    <a href="#how" class="nav-link">How It Works</a>
+    <a href="#audit" class="nav-cta">Free Audit →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="profession-tags">
+        <span class="profession-tag">CA Firms</span>
+        <span class="profession-tag">Financial Consultants</span>
+        <span class="profession-tag">Fitness Coaches</span>
+        <span class="profession-tag">Dietitians</span>
+        <span class="profession-tag">Salons</span>
+      </div>
+      <h1 class="hero-headline">
+        You're Good Enough That<br>
+        Clients Want You.<br>
+        You're <em>Busy Enough</em><br>
+        That They Go Elsewhere.
+      </h1>
+      <p class="hero-subhead">
+        When you're with a client, a new enquiry just arrived. <strong>Nobody responded.</strong> That prospect waited 3 hours, got impatient, and booked with someone who replied in 5 minutes. This happens every single day.
+      </p>
+      <a href="#audit" class="hero-cta-primary">
+        Get My Free Revenue Leak Audit — ₹0
+      </a><br>
+      <div class="hero-cta-note">20 minutes. Zero obligation. We show you the rupee number you're losing monthly.</div>
+    </div>
+
+    <div>
+      <div class="visual-label">Live Enquiry Feed</div>
+      <div class="enquiry-visual">
+        <div class="enquiry-card">
+          <div class="card-top">
+            <div>
+              <div class="card-name">Ananya R. — Fitness Enquiry</div>
+              <div class="card-type">Instagram DM · Weight loss program</div>
+            </div>
+            <div class="card-status" style="background:rgba(34,197,94,0.1);color:#22c55e">HOT</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-response">⚡ Auto-responded · 68 seconds</div>
+            <div class="card-time">Just now</div>
+          </div>
+        </div>
+        <div class="enquiry-card">
+          <div class="card-top">
+            <div>
+              <div class="card-name">Sunita Patel — CA Services</div>
+              <div class="card-type">WhatsApp · GST filing query</div>
+            </div>
+            <div class="card-status" style="background:rgba(201,168,76,0.1);color:#C9A84C">WARM</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-response">⚡ Auto-responded · 1m 12s</div>
+            <div class="card-time">3 mins ago</div>
+          </div>
+        </div>
+        <div class="enquiry-card">
+          <div class="card-top">
+            <div>
+              <div class="card-name">Ramesh K. — Dietitian</div>
+              <div class="card-type">Google · Diabetes management plan</div>
+            </div>
+            <div class="card-status" style="background:rgba(34,197,94,0.1);color:#22c55e">HOT</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-response">⚡ Auto-responded · 94 seconds</div>
+            <div class="card-time">7 mins ago</div>
+          </div>
+        </div>
+        <div class="enquiry-card" style="border-color:rgba(201,168,76,0.2);background:rgba(201,168,76,0.04)">
+          <div class="card-top">
+            <div>
+              <div class="card-name" style="color:#C9A84C">Discovery call booked</div>
+              <div class="card-type">Calendar synced · No manual effort</div>
+            </div>
+            <div class="card-status" style="background:rgba(201,168,76,0.12);color:#C9A84C">BOOKED</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-response" style="color:var(--muted)">Zero team involvement required</div>
+            <div class="card-time">Auto</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONS -->
+<section class="professions">
+  <div class="prof-label">If you're in any of these professions — this is for you</div>
+  <div class="prof-grid">
+    <div class="prof-item">
+      <div class="prof-icon"><img src="CA_Furms-removebg-preview.png" alt="CA Firms"></div>
+      <div class="prof-name">CA Firms</div>
+      <div class="prof-prob">Lose clients who called during busy tax season</div>
+    </div>
+    <div class="prof-item">
+      <div class="prof-icon"><img src="Financial_consulting-removebg-preview.png" alt="Financial Consultants"></div>
+      <div class="prof-name">Financial Consultants</div>
+      <div class="prof-prob">Prospects go cold before callback happens</div>
+    </div>
+    <div class="prof-item">
+      <div class="prof-icon"><img src="Fitness.png" alt="Fitness Coaches"></div>
+      <div class="prof-name">Fitness Coaches</div>
+      <div class="prof-prob">DMs arrive during sessions — seen 6 hours later</div>
+    </div>
+    <div class="prof-item">
+      <div class="prof-icon"><img src="Nutrition.png" alt="Dietitians"></div>
+      <div class="prof-name">Dietitians</div>
+      <div class="prof-prob">Enquiries during consultations go unanswered</div>
+    </div>
+    <div class="prof-item">
+      <div class="prof-icon"><img src="Saloon.png" alt="Salons"></div>
+      <div class="prof-name">Salons</div>
+      <div class="prof-prob">Booking requests overnight: seen in morning, gone by then</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain" id="pain">
+  <div class="section-eyebrow">The Problem</div>
+  <h2 class="section-headline">
+    You Don't Have<br>a <em>Lead Problem.</em><br>You Have a Response Problem.
+  </h2>
+
+  <div class="pain-list">
+    <div class="pain-row fade-up">
+      <div class="pain-num">01</div>
+      <div class="pain-text">
+        <h3>The Attention Gap</h3>
+        <p>You're with Client A. Client B just enquired on Instagram. By the time you're free — 2 hours later — Client B has booked with someone who responded in 4 minutes. You didn't lose them on price. You lost them on availability of attention.</p>
+      </div>
+    </div>
+    <div class="pain-row fade-up">
+      <div class="pain-num">02</div>
+      <div class="pain-text">
+        <h3>The 8 PM Problem</h3>
+        <p>Professionals typically close their workday. Their potential clients make decisions in the evening — after work, after dinner. That's when your best leads arrive. And that's exactly when nobody's monitoring the inbox.</p>
+      </div>
+    </div>
+    <div class="pain-row fade-up">
+      <div class="pain-num">03</div>
+      <div class="pain-text">
+        <h3>No Qualification Layer</h3>
+        <p>Even when your team does respond, there's no system to separate serious prospects from browsers. Time gets spent equally on everyone. The high-value client who was ready to pay gets the same slow attention as someone who was just curious.</p>
+      </div>
+    </div>
+    <div class="pain-row fade-up">
+      <div class="pain-num">04</div>
+      <div class="pain-text">
+        <h3>Invisible Revenue Loss</h3>
+        <p>You don't know how many enquiries you got last month. You don't know what your response time is. You don't know which platform sends the best clients. The money is leaking — silently — and you don't have the data to know how much.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Before / After transformation visuals -->
+<section class="transformation">
+  <div class="section-eyebrow fade-up">The Reality</div>
+  <h2 class="section-headline fade-up">Presence Isn't Enough.<br><em>Response Wins.</em></h2>
+  <div class="transformation-grid">
+    <div class="transformation-card fade-up" data-transformation="gym">
+      <div class="img-wrap">
+        <img src="Gym.jpeg" alt="Members Exist. Competition Wins. — From struggling gym to thriving business with LeadMatrix." loading="lazy">
+      </div>
+      <p class="caption"><strong>Fitness &amp; gyms:</strong> Members exist. Competition wins. Turn response lag into booked sessions.</p>
+    </div>
+    <div class="transformation-card fade-up" data-transformation="ecom">
+      <div class="img-wrap">
+        <img src="Ecom.jpeg" alt="Website Exists. Customers Don't. — From unsold inventory to happy customers with the right system." loading="lazy">
+      </div>
+      <p class="caption"><strong>Professional services &amp; retail:</strong> Website exists. Customers don't. Turn visibility into conversions.</p>
+    </div>
+  </div>
+  <div class="transformation-grid transformation-grid-videos" style="margin-top:clamp(24px,3vw,40px);">
+    <div class="transformation-card fade-up" data-transformation="gym-video">
+      <div class="img-wrap">
+        <video src="LGym.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="caption"><strong>Fitness &amp; gyms:</strong> See how LeadMatrix transforms gym operations.</p>
+    </div>
+    <div class="transformation-card fade-up" data-transformation="ecom-video">
+      <div class="img-wrap">
+        <video src="LEcommerce.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="caption"><strong>E-commerce &amp; retail:</strong> Watch the transformation in action.</p>
+    </div>
+    <div class="transformation-card fade-up" data-transformation="finance-video">
+      <div class="img-wrap">
+        <video src="LFinance.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="caption"><strong>Financial services &amp; CA firms:</strong> Experience the LeadMatrix difference for professional services.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section class="mechanism" id="how">
+  <div class="mech-intro fade-up">
+    <div class="section-eyebrow">The Fix</div>
+    <p>"The answer isn't to hire more people to manage WhatsApp. The answer is to <strong>build a system that never sleeps, never forgets, and never lets a serious prospect go cold.</strong>"</p>
+  </div>
+
+  <div class="mech-visual fade-up">
+    <img src="Gemini_Generated_Image_awfceiawfceiawfc-removebg-preview.png" alt="LeadMatrix — One system for every lead touchpoint">
+  </div>
+
+  <div class="steps-grid">
+    <div class="step-box fade-up" data-step="1">
+      <div class="step-box-icon"><img src="Capture_Everything_Everywhere-removebg-preview.png" alt="Capture Everything, Everywhere"></div>
+      <h3>Capture Everything, Everywhere</h3>
+      <p>Every enquiry — WhatsApp, Instagram DMs, Google, website forms, calls — captured in a single dashboard. Nothing falls through the cracks, even at 11 PM on a Sunday.</p>
+    </div>
+    <div class="step-box fade-up" data-step="2">
+      <div class="step-box-icon"><img src="Respond_in_Under_2_Minutes_Always.-removebg-preview.png" alt="Respond in Under 2 Minutes. Always."></div>
+      <h3>Respond in Under 2 Minutes. Always.</h3>
+      <p>Automated, personalised response fires immediately. It's not a generic bot — it acknowledges the specific enquiry, matches your professional tone, and keeps the conversation alive until your team picks it up.</p>
+    </div>
+    <div class="step-box fade-up" data-step="3">
+      <div class="step-box-icon"><img src="QualifyWithout_Your_Team-removebg-preview.png" alt="Qualify Without Your Team"></div>
+      <h3>Qualify Without Your Team</h3>
+      <p>LeadMatrix asks the right questions: services needed, budget, urgency. It scores each lead hot, warm, or cold. Your team only touches the ones that are ready to hire you.</p>
+    </div>
+    <div class="step-box fade-up" data-step="4">
+      <div class="step-box-icon"><img src="Appointment_in_Calendar_Automatically-removebg-preview.png" alt="Appointment in Calendar. Automatically."></div>
+      <h3>Appointment in Calendar. Automatically.</h3>
+      <p>High-intent leads get direct booking links. Discovery calls land in your calendar with full context — no back-and-forth scheduling, no manual coordination.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE STACK -->
+<section class="value-stack">
+  <div class="section-eyebrow fade-up">What You Get</div>
+  <h2 class="section-headline fade-up">Three Levels.<br>One System.<br><em>Zero Lost Clients.</em></h2>
+
+  <table class="tier-table fade-up">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th><div class="tier-tag" style="background:rgba(255,255,255,0.04);color:var(--muted)">Visibility</div></th>
+        <th><div class="tier-tag" style="background:rgba(201,168,76,0.1);color:var(--gold)">Control ⭐</div></th>
+        <th><div class="tier-tag" style="background:rgba(255,255,255,0.04);color:var(--muted)">Autonomous</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Unified Lead Dashboard</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Under 2-min Auto Response (24/7)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Revenue Leak Detection</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Lead Scoring (Hot/Warm/Cold)</td><td style="color:var(--muted)">—</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Automated Discovery Call Booking</td><td style="color:var(--muted)">—</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Multi-Step Follow-Up Sequences</td><td style="color:var(--muted)">—</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>AI-Personalised Message Copy</td><td style="color:var(--muted)">—</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>24/7 AI Agents (Zero Human Trigger)</td><td style="color:var(--muted)">—</td><td style="color:var(--muted)">—</td><td><span class="check">✓</span></td></tr>
+      <tr><td>Revenue Forecasting</td><td style="color:var(--muted)">—</td><td style="color:var(--muted)">—</td><td><span class="check">✓</span></td></tr>
+      <tr><td>Repeat Client Recognition</td><td style="color:var(--muted)">—</td><td style="color:var(--muted)">—</td><td><span class="check">✓</span></td></tr>
+    </tbody>
+  </table>
+
+  <div style="text-align:center;" class="fade-up">
+    <a href="#audit" class="hero-cta-primary" style="display:inline-block;">
+      Find Out Which Level You Need → Free Audit
+    </a>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="guarantee-inner fade-up">
+    <div class="section-eyebrow" style="justify-content:center;margin-bottom:28px;">Our Commitment</div>
+    <h2 class="g-title">We Show You the<br>Leak <em>Before</em> You<br>Spend Anything.</h2>
+    <p class="g-body">
+      We run a free Revenue Leak Audit on your current setup. We map your enquiry flow, your response times, and your drop-off points.
+    </p>
+    <p class="g-body">
+      At the end, you get one number: <strong>how much revenue you're losing monthly.</strong> If it's zero — we'll tell you straight. Nothing to fix.
+    </p>
+    <p class="g-body" style="color:var(--gold);font-weight:600;">
+      If it's not zero — and it's always not zero — you'll know exactly what LeadMatrix fixes and what it costs versus what it recovers.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="final-cta" id="audit">
+  <div class="section-eyebrow" style="justify-content:center;margin-bottom:24px;">Book Your Free Audit</div>
+  <h2>Stop Losing Clients<br>to <em>Your Own Calendar.</em></h2>
+  <p class="final-desc">20 minutes. Free. We hand you the rupee number and a clear path to stop the leak.</p>
+
+  <div class="form-wrap">
+    <h3>Start Your Revenue Leak Audit</h3>
+    <p>Fill in the details. Our team will reach out within 4 hours with your personalized audit.</p>
+    <form id="auditForm" onsubmit="handleAuditSubmit(event)">
+      <div class="form-group" data-form-field="1">
+        <label>Your Name</label>
+        <input type="text" name="Name" placeholder="e.g. Rajesh Sharma" required>
+      </div>
+      <div class="form-group" data-form-field="2">
+        <label>Business / Franchise Name</label>
+        <input type="text" name="Business Name" placeholder="e.g. Sharma's Bakery" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group" data-form-field="3">
+          <label>Email</label>
+          <input type="email" name="Email" placeholder="you@yourbusiness.com" required>
+        </div>
+        <div class="form-group" data-form-field="4">
+          <label>WhatsApp Number</label>
+          <input type="tel" name="WhatsApp Number" placeholder="+91 98XXXXXXXX" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group" data-form-field="5">
+          <label>Your Role</label>
+          <select name="Your Role" required>
+            <option value="">Select your role</option>
+            <option>Owner / Founder</option>
+            <option>Partner</option>
+            <option>Solo Practitioner</option>
+            <option>Practice Manager</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group" data-form-field="6">
+          <label>Business Type</label>
+          <select name="Business Type" required>
+            <option value="">Select type</option>
+            <option>CA Firm</option>
+            <option>Financial Consultant</option>
+            <option>Fitness Coach</option>
+            <option>Dietitian</option>
+            <option>Salon / Spa</option>
+            <option>Other Professional Service</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group" data-form-field="7">
+          <label>Number of Locations</label>
+          <select name="Number of Locations" required>
+            <option value="">Select range</option>
+            <option>1 location</option>
+            <option>2-3 locations</option>
+            <option>4-6 locations</option>
+            <option>7-10 locations</option>
+            <option>10+ locations</option>
+          </select>
+        </div>
+        <div class="form-group" data-form-field="8">
+          <label>Monthly Revenue (₹)</label>
+          <select name="Monthly Revenue" required>
+            <option value="">Select range</option>
+            <option>Under ₹5 Lakhs</option>
+            <option>₹5L - ₹15L</option>
+            <option>₹15L - ₹30L</option>
+            <option>₹30L - ₹50L</option>
+            <option>₹50L+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group" data-form-field="9">
+        <label>Which Level Interests You?</label>
+        <select id="levelSelect" name="Which Level Interests You?">
+          <option value="">Not sure yet — help me decide</option>
+          <option value="visibility">Visibility — See every lead</option>
+          <option value="control">Control — Auto-respond & qualify</option>
+          <option value="autonomy">Autonomous — AI runs it 24/7</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit">
+        <span>Get My Free Revenue Leak Audit →</span>
+      </button>
+      <div class="form-trust">
+        <span>🔒</span>
+        <span>No spam. No obligation. Your data stays private.</span>
+      </div>
+    </form>
+  </div>
+
+  <div class="trust-bar">
+    <div class="trust-item">No credit card</div>
+    <div class="trust-item">20-minute commitment</div>
+    <div class="trust-item">Zero obligation</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<div class="faq">
+  <div class="section-eyebrow" style="margin-bottom:40px;">Common Questions</div>
+
+  <div class="faq-item">
+    <div class="faq-q">I'm a solo practitioner. Is this overkill?</div>
+    <div class="faq-a">The Visibility tier was built specifically for solo operators. It's one dashboard and one automated response. The audit will tell you if your enquiry volume justifies it — and we've found that even solo practitioners with 20 enquiries per month are losing 6 to 8 of them to response lag.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Will automated responses feel impersonal to my clients?</div>
+    <div class="faq-a">No. LeadMatrix responses are written in your voice, acknowledge the specific enquiry, and are designed to feel like a thoughtful first message from your practice — not a generic autoresponse. Most prospects can't tell the difference between a well-crafted automated response and a human one sent within 90 seconds.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How does the booking automation work with my calendar?</div>
+    <div class="faq-a">We integrate with Google Calendar, Calendly, or your existing booking system. High-intent leads receive a direct scheduling link. The confirmation, reminder, and pre-consultation information are also automated. You open your calendar and find confirmed appointments with full client context.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How long until I see results?</div>
+    <div class="faq-a">You'll see the first impact within the first week — specifically, the number of enquiries that received a response versus before. Most clients report a measurable increase in appointment bookings within the first 30 days of the Visibility tier being live.</div>
+  </div>
+</div>
+
+<footer>
+  <div class="logo">LeadMatrix</div>
+  <p>© 2025 HypeX. Revenue Operating Systems for Indian Businesses.</p>
+  <p style="color:var(--gold);font-size:13px;">LeadMatrix | Professional Services</p>
+</footer>
+
+<!-- GSAP Animation Libraries - Loaded at end for better performance -->
+<!-- Note: "Tracking Prevention" warnings in console are harmless - scripts still load and work correctly -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  // Initialize GSAP animations after libraries load
+  (function() {
+    'use strict';
+    
+    // Wait for GSAP to load
+    function initAnimations() {
+      try {
+        if (typeof gsap === 'undefined') {
+          console.log('GSAP not loaded - showing content without animations');
+          // Fallback to basic observer
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+          return;
+        }
+
+        // Register GSAP plugins
+        try {
+          gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
+          console.log('GSAP plugins registered successfully');
+        } catch (e) {
+          console.warn('Some GSAP plugins failed to load:', e);
+          return;
+        }
+
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Helper function to split text into lines
+        function splitTextIntoLines(element) {
+          try {
+            const text = element.innerHTML;
+            const lines = text.split('<br>');
+            element.innerHTML = '';
+            lines.forEach((line, index) => {
+              const lineSpan = document.createElement('span');
+              lineSpan.className = 'line';
+              lineSpan.innerHTML = line || '&nbsp;';
+              element.appendChild(lineSpan);
+              if (index < lines.length - 1) element.appendChild(document.createElement('br'));
+            });
+            return element.querySelectorAll('.line');
+          } catch (e) {
+            console.warn('Error splitting text:', e);
+            return [];
+          }
+        }
+
+        // Initialize animations on page load
+        function setupAnimations() {
+          try {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const isMobile = window.innerWidth <= 640;
+            
+            if (prefersReducedMotion) {
+              gsap.set('.fade-up', { opacity: 1, y: 0 });
+              return;
+            }
+
+            // Safety timeout - ensure content is visible after 3 seconds
+            setTimeout(() => {
+              document.querySelectorAll('body *').forEach(el => {
+                if (window.getComputedStyle(el).opacity === '0' && el.tagName !== 'SCRIPT') {
+                  el.style.opacity = '1';
+                  el.style.transform = '';
+                }
+              });
+            }, 3000);
+
+            // NAVIGATION ANIMATIONS
+            const nav = document.querySelector('nav');
+            const logo = nav ? nav.querySelector('.logo') : null;
+            const navLinks = nav ? nav.querySelectorAll('.nav-link') : [];
+            const navCta = nav ? nav.querySelector('.nav-cta') : null;
+
+            if (logo) {
+              gsap.set(logo, { opacity: 0, x: -30, scale: 0.95 });
+              gsap.to(logo, {
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                duration: isMobile ? 0.5 : 0.8,
+                ease: 'power3.out',
+                delay: 0.1
+              });
+            }
+
+            if (navLinks.length > 0) {
+              navLinks.forEach((link, index) => {
+                gsap.set(link, { opacity: 0, x: 20 });
+                gsap.to(link, {
+                  opacity: 1,
+                  x: 0,
+                  duration: 0.5,
+                  ease: 'power2.out',
+                  delay: 0.3 + (index * 0.1)
+                });
+              });
+            }
+
+            if (navCta) {
+              gsap.set(navCta, { opacity: 0, x: 20, scale: 0.9 });
+              gsap.to(navCta, {
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                duration: 0.6,
+                ease: 'back.out(1.4)',
+                delay: 0.5
+              });
+            }
+
+            // Nav scroll effect
+            if (nav) {
+              let lastScroll = 0;
+              let ticking = false;
+              
+              function updateNavOnScroll() {
+                try {
+                  const currentScroll = window.pageYOffset || window.scrollY;
+                  const scrollThreshold = 30;
+                  
+                  if (currentScroll > scrollThreshold) {
+                    if (!nav.classList.contains('scrolled')) {
+                      nav.classList.add('scrolled');
+                      gsap.to(nav, {
+                        background: 'rgba(17,17,17,0.98)',
+                        backdropFilter: 'blur(20px)',
+                        duration: 0.3,
+                        ease: 'power2.out'
+                      });
+                    }
+                  } else {
+                    if (nav.classList.contains('scrolled')) {
+                      nav.classList.remove('scrolled');
+                      gsap.to(nav, {
+                        background: 'rgba(17,17,17,0.93)',
+                        backdropFilter: 'blur(12px)',
+                        duration: 0.3,
+                        ease: 'power2.out'
+                      });
+                    }
+                  }
+                  
+                  lastScroll = currentScroll;
+                  ticking = false;
+                } catch (e) {
+                  console.warn('Scroll handler error:', e);
+                  ticking = false;
+                }
+              }
+              
+              window.addEventListener('scroll', () => {
+                if (!ticking) {
+                  window.requestAnimationFrame(updateNavOnScroll);
+                  ticking = true;
+                }
+              }, { passive: true });
+              
+              updateNavOnScroll();
+            }
+
+            // HERO SECTION ANIMATIONS
+            const professionTags = document.querySelectorAll('.profession-tag');
+            const heroHeadline = document.querySelector('.hero-headline');
+            const heroSubhead = document.querySelector('.hero-subhead');
+            const heroCTA = document.querySelector('.hero-cta-primary');
+            const heroCTANote = document.querySelector('.hero-cta-note');
+            const visualLabel = document.querySelector('.visual-label');
+            const enquiryCards = document.querySelectorAll('.enquiry-card');
+
+            // Profession tags stagger
+            if (professionTags.length > 0) {
+              professionTags.forEach((tag, index) => {
+                gsap.set(tag, { opacity: 0, y: -10 });
+                gsap.to(tag, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.5,
+                  ease: 'power2.out',
+                  delay: 0.6 + (index * 0.1)
+                });
+              });
+            }
+
+            // Hero headline line-by-line reveal
+            if (heroHeadline) {
+              const headlineLines = splitTextIntoLines(heroHeadline);
+              headlineLines.forEach((line) => {
+                gsap.set(line, { opacity: 0, y: 30 });
+              });
+              headlineLines.forEach((line, index) => {
+                gsap.to(line, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: 0.8 + (index * 0.15)
+                });
+              });
+            }
+
+            // Hero subhead
+            if (heroSubhead) {
+              gsap.set(heroSubhead, { opacity: 0, y: 20 });
+              gsap.to(heroSubhead, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power2.out',
+                delay: 1.4
+              });
+            }
+
+            // Hero CTA button
+            if (heroCTA) {
+              gsap.set(heroCTA, { opacity: 0, scale: 0.8 });
+              gsap.to(heroCTA, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.6,
+                ease: 'back.out(1.4)',
+                delay: 1.6
+              });
+            }
+
+            // Hero CTA note
+            if (heroCTANote) {
+              gsap.set(heroCTANote, { opacity: 0 });
+              gsap.to(heroCTANote, {
+                opacity: 1,
+                duration: 0.6,
+                ease: 'power2.out',
+                delay: 1.8
+              });
+            }
+
+            // Visual label
+            if (visualLabel) {
+              gsap.set(visualLabel, { opacity: 0, y: -10 });
+              gsap.to(visualLabel, {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: 'power2.out',
+                delay: 0.7
+              });
+            }
+
+            // Enquiry cards sequential reveal
+            if (enquiryCards.length > 0) {
+              enquiryCards.forEach((card, index) => {
+                gsap.set(card, { opacity: 0, x: 50 });
+                gsap.to(card, {
+                  opacity: 1,
+                  x: 0,
+                  duration: 0.6,
+                  ease: 'power2.out',
+                  delay: 0.9 + (index * 0.2),
+                  onComplete: () => {
+                    // Pulse animation for status badges
+                    const status = card.querySelector('.card-status');
+                    if (status && !isMobile) {
+                      gsap.to(status, {
+                        scale: 1.1,
+                        duration: 0.3,
+                        repeat: 1,
+                        yoyo: true,
+                        ease: 'power2.inOut'
+                      });
+                    }
+                  }
+                });
+              });
+            }
+
+            // PROFESSIONS SECTION ANIMATIONS
+            const profLabel = document.querySelector('.prof-label');
+            const profItems = document.querySelectorAll('.prof-item');
+
+            if (profLabel) {
+              gsap.set(profLabel, { opacity: 1, y: 0 });
+              gsap.from(profLabel, {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: profLabel,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (profItems.length > 0) {
+              profItems.forEach((item, index) => {
+                gsap.set(item, { opacity: 1, scale: 1, y: 0 });
+                gsap.from(item, {
+                  opacity: 0,
+                  scale: 0.9,
+                  y: 30,
+                  duration: 0.6,
+                  ease: 'power2.out',
+                  delay: index * 0.1,
+                  scrollTrigger: {
+                    trigger: item,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+
+                // Icon rotate-in
+                const icon = item.querySelector('.prof-icon');
+                if (icon) {
+                  gsap.from(icon, {
+                    rotation: -180,
+                    scale: 0,
+                    duration: 0.6,
+                    ease: 'back.out(1.7)',
+                    delay: index * 0.1,
+                    scrollTrigger: {
+                      trigger: item,
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                }
+
+                // Hover effects
+                if (!isMobile) {
+                  item.addEventListener('mouseenter', () => {
+                    gsap.to(item, {
+                      y: -4,
+                      boxShadow: '0 8px 24px rgba(201,168,76,0.15)',
+                      duration: 0.3,
+                      ease: 'power2.out'
+                    });
+                  });
+                  item.addEventListener('mouseleave', () => {
+                    gsap.to(item, {
+                      y: 0,
+                      boxShadow: '0 0 0 rgba(201,168,76,0)',
+                      duration: 0.3,
+                      ease: 'power2.out'
+                    });
+                  });
+                }
+              });
+            }
+
+            // PAIN SECTION ANIMATIONS
+            const painEyebrow = document.querySelector('.pain .section-eyebrow');
+            const painHeadline = document.querySelector('.pain .section-headline');
+            const painRows = document.querySelectorAll('.pain-row');
+
+            if (painEyebrow) {
+              gsap.set(painEyebrow, { opacity: 1, x: 0 });
+              gsap.from(painEyebrow, {
+                opacity: 0,
+                x: -30,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: painEyebrow,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (painHeadline) {
+              const headlineLines = splitTextIntoLines(painHeadline);
+              headlineLines.forEach((line) => {
+                gsap.set(line, { opacity: 1, y: 0 });
+              });
+              headlineLines.forEach((line, index) => {
+                gsap.from(line, {
+                  opacity: 0,
+                  y: 30,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: index * 0.15,
+                  scrollTrigger: {
+                    trigger: painHeadline,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            if (painRows.length > 0) {
+              painRows.forEach((row, index) => {
+                gsap.set(row, { opacity: 1, x: 0 });
+                gsap.from(row, {
+                  opacity: 0,
+                  x: -30,
+                  duration: 0.6,
+                  ease: 'power2.out',
+                  delay: index * 0.15,
+                  scrollTrigger: {
+                    trigger: row,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+
+                // Pain number animation
+                const painNum = row.querySelector('.pain-num');
+                if (painNum) {
+                  gsap.from(painNum, {
+                    opacity: 0,
+                    scale: 0.8,
+                    duration: 0.4,
+                    ease: 'back.out(1.7)',
+                    delay: index * 0.15,
+                    scrollTrigger: {
+                      trigger: row,
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                }
+              });
+            }
+
+            // TRANSFORMATION SECTION (Before/After images)
+            const transformationEyebrow = document.querySelector('.transformation .section-eyebrow');
+            const transformationHeadline = document.querySelector('.transformation .section-headline');
+            const transformationCards = document.querySelectorAll('.transformation-card');
+
+            if (transformationEyebrow) {
+              gsap.set(transformationEyebrow, { opacity: 1, y: 0 });
+              gsap.from(transformationEyebrow, {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: transformationEyebrow,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (transformationHeadline) {
+              const headlineLines = splitTextIntoLines(transformationHeadline);
+              headlineLines.forEach((line) => { gsap.set(line, { opacity: 1, y: 0 }); });
+              headlineLines.forEach((line, index) => {
+                gsap.from(line, {
+                  opacity: 0,
+                  y: 30,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: index * 0.15,
+                  scrollTrigger: {
+                    trigger: transformationHeadline,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            if (transformationCards.length > 0) {
+              transformationCards.forEach((card, index) => {
+                gsap.set(card, { opacity: 1, y: 0, scale: 1 });
+                gsap.from(card, {
+                  opacity: 0,
+                  y: 50,
+                  scale: 0.96,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: index * 0.2,
+                  scrollTrigger: {
+                    trigger: card,
+                    start: 'top 88%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+                const img = card.querySelector('.img-wrap img');
+                if (img && !isMobile) {
+                  gsap.from(img, {
+                    scale: 1.15,
+                    duration: 1,
+                    ease: 'power2.out',
+                    delay: index * 0.2,
+                    scrollTrigger: {
+                      trigger: card,
+                      start: 'top 88%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                }
+              });
+            }
+
+            // MECHANISM SECTION ANIMATIONS
+            const mechIntro = document.querySelector('.mech-intro');
+            const stepBoxes = document.querySelectorAll('.step-box');
+
+            if (mechIntro) {
+              const introP = mechIntro.querySelector('p');
+              if (introP) {
+                gsap.set(introP, { opacity: 1, x: 0 });
+                gsap.from(introP, {
+                  opacity: 0,
+                  x: -20,
+                  duration: 0.8,
+                  ease: 'power2.out',
+                  scrollTrigger: {
+                    trigger: mechIntro,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  },
+                  onComplete: () => {
+                    // Border highlight animation
+                    gsap.to(introP, {
+                      borderLeftColor: 'var(--gold)',
+                      duration: 0.5,
+                      ease: 'power2.out'
+                    });
+                  }
+                });
+              }
+            }
+
+            if (stepBoxes.length > 0) {
+              stepBoxes.forEach((box, index) => {
+                gsap.set(box, { opacity: 1, scale: 1, y: 0 });
+                gsap.from(box, {
+                  opacity: 0,
+                  scale: 0.95,
+                  y: 30,
+                  duration: 0.7,
+                  ease: 'power2.out',
+                  delay: index * 0.12,
+                  scrollTrigger: {
+                    trigger: box,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+
+                // Step icon animation
+                const icon = box.querySelector('.step-box-icon');
+                if (icon) {
+                  gsap.from(icon, {
+                    rotation: -180,
+                    scale: 0,
+                    duration: 0.6,
+                    ease: 'back.out(1.7)',
+                    delay: index * 0.12,
+                    scrollTrigger: {
+                      trigger: box,
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                }
+
+                // Hover effects
+                if (!isMobile) {
+                  box.addEventListener('mouseenter', () => {
+                    gsap.to(box, {
+                      y: -6,
+                      boxShadow: '0 12px 32px rgba(201,168,76,0.2)',
+                      duration: 0.3,
+                      ease: 'power2.out'
+                    });
+                  });
+                  box.addEventListener('mouseleave', () => {
+                    gsap.to(box, {
+                      y: 0,
+                      boxShadow: '0 0 0 rgba(201,168,76,0)',
+                      duration: 0.3,
+                      ease: 'power2.out'
+                    });
+                  });
+                }
+              });
+            }
+
+            // VALUE STACK SECTION ANIMATIONS
+            const valueEyebrow = document.querySelector('.value-stack .section-eyebrow');
+            const valueHeadline = document.querySelector('.value-stack .section-headline');
+            const tierTable = document.querySelector('.tier-table');
+            const tierRows = tierTable ? tierTable.querySelectorAll('tbody tr') : [];
+            const tierTags = document.querySelectorAll('.tier-tag');
+            const valueCTA = document.querySelector('.value-stack .hero-cta-primary');
+
+            if (valueEyebrow) {
+              gsap.set(valueEyebrow, { opacity: 1, y: 0 });
+              gsap.from(valueEyebrow, {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: valueEyebrow,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (valueHeadline) {
+              const headlineLines = splitTextIntoLines(valueHeadline);
+              headlineLines.forEach((line) => {
+                gsap.set(line, { opacity: 1, y: 0 });
+              });
+              headlineLines.forEach((line, index) => {
+                gsap.from(line, {
+                  opacity: 0,
+                  y: 30,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: index * 0.15,
+                  scrollTrigger: {
+                    trigger: valueHeadline,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            if (tierTable) {
+              gsap.set(tierTable, { opacity: 1, y: 0 });
+              gsap.from(tierTable, {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: tierTable,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (tierRows.length > 0) {
+              tierRows.forEach((row, index) => {
+                gsap.set(row, { opacity: 1, x: 0 });
+                gsap.from(row, {
+                  opacity: 0,
+                  x: -20,
+                  duration: 0.4,
+                  ease: 'power2.out',
+                  delay: index * 0.08,
+                  scrollTrigger: {
+                    trigger: tierTable,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+
+                // Check marks scale-in
+                const checks = row.querySelectorAll('.check');
+                checks.forEach((check, checkIndex) => {
+                  gsap.from(check, {
+                    scale: 0,
+                    duration: 0.3,
+                    ease: 'back.out(1.7)',
+                    delay: (index * 0.08) + (checkIndex * 0.05),
+                    scrollTrigger: {
+                      trigger: tierTable,
+                      start: 'top 85%',
+                      toggleActions: 'play none none none'
+                    }
+                  });
+                });
+              });
+            }
+
+            if (tierTags.length > 0) {
+              tierTags.forEach((tag, index) => {
+                gsap.set(tag, { opacity: 1, scale: 1 });
+                gsap.from(tag, {
+                  opacity: 0,
+                  scale: 0.8,
+                  duration: 0.5,
+                  ease: 'back.out(1.4)',
+                  delay: index * 0.1,
+                  scrollTrigger: {
+                    trigger: tierTable,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            if (valueCTA) {
+              gsap.set(valueCTA, { opacity: 1, scale: 1 });
+              gsap.from(valueCTA, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.6,
+                ease: 'back.out(1.4)',
+                scrollTrigger: {
+                  trigger: valueCTA,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            // GUARANTEE SECTION ANIMATIONS
+            const guaranteeInner = document.querySelector('.guarantee-inner');
+            const gTitle = document.querySelector('.g-title');
+            const gBodies = document.querySelectorAll('.g-body');
+
+            if (guaranteeInner) {
+              gsap.set(guaranteeInner, { opacity: 1, scale: 1 });
+              gsap.from(guaranteeInner, {
+                opacity: 0,
+                scale: 0.95,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                  trigger: guaranteeInner,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (gTitle) {
+              const titleLines = splitTextIntoLines(gTitle);
+              titleLines.forEach((line) => {
+                gsap.set(line, { opacity: 1, y: 0 });
+              });
+              titleLines.forEach((line, index) => {
+                gsap.from(line, {
+                  opacity: 0,
+                  y: 30,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: index * 0.15,
+                  scrollTrigger: {
+                    trigger: gTitle,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            if (gBodies.length > 0) {
+              gBodies.forEach((body, index) => {
+                gsap.set(body, { opacity: 1, y: 0 });
+                gsap.from(body, {
+                  opacity: 0,
+                  y: 20,
+                  duration: 0.6,
+                  ease: 'power2.out',
+                  delay: index * 0.2,
+                  scrollTrigger: {
+                    trigger: guaranteeInner,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            // FINAL CTA SECTION ANIMATIONS
+            const finalEyebrow = document.querySelector('.final-cta .section-eyebrow');
+            const finalHeadline = document.querySelector('.final-cta h2');
+            const finalDesc = document.querySelector('.final-desc');
+            const formWrap = document.querySelector('.form-wrap');
+            const ctaForm = document.getElementById('auditForm');
+            const ctaButton = ctaForm ? ctaForm.querySelector('.form-submit') : null;
+            const trustItems = document.querySelectorAll('.trust-item');
+
+            if (finalEyebrow) {
+              gsap.set(finalEyebrow, { opacity: 1, y: 0 });
+              gsap.from(finalEyebrow, {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: finalEyebrow,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (finalHeadline) {
+              const headlineLines = splitTextIntoLines(finalHeadline);
+              headlineLines.forEach((line) => {
+                gsap.set(line, { opacity: 1, y: 0 });
+              });
+              headlineLines.forEach((line, index) => {
+                gsap.from(line, {
+                  opacity: 0,
+                  y: 30,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  delay: index * 0.15,
+                  scrollTrigger: {
+                    trigger: finalHeadline,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            if (finalDesc) {
+              gsap.set(finalDesc, { opacity: 1, y: 0 });
+              gsap.from(finalDesc, {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: finalDesc,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (formWrap) {
+              gsap.set(formWrap, { opacity: 1, y: 0 });
+              gsap.from(formWrap, {
+                opacity: 0,
+                y: 30,
+                scale: 0.98,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                  trigger: formWrap,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+              const formGroups = formWrap.querySelectorAll('.form-group');
+              formGroups.forEach((group, index) => {
+                gsap.from(group, {
+                  opacity: 0,
+                  y: 16,
+                  duration: 0.5,
+                  ease: 'power2.out',
+                  delay: index * 0.05,
+                  scrollTrigger: {
+                    trigger: formWrap,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            if (ctaButton) {
+              gsap.set(ctaButton, { opacity: 1, scale: 1 });
+              gsap.from(ctaButton, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.6,
+                ease: 'back.out(1.4)',
+                scrollTrigger: {
+                  trigger: formWrap || ctaButton,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+              if (!isMobile) {
+                gsap.to(ctaButton, {
+                  boxShadow: '0 0 20px rgba(201,168,76,0.4)',
+                  duration: 2,
+                  repeat: -1,
+                  yoyo: true,
+                  ease: 'power2.inOut',
+                  delay: 1
+                });
+              }
+            }
+
+            if (trustItems.length > 0) {
+              trustItems.forEach((item, index) => {
+                gsap.set(item, { opacity: 1, y: 0 });
+                gsap.from(item, {
+                  opacity: 0,
+                  y: 10,
+                  duration: 0.4,
+                  ease: 'power2.out',
+                  delay: index * 0.1,
+                  scrollTrigger: {
+                    trigger: '.trust-bar',
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            // FAQ SECTION ANIMATIONS
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            if (faqItems.length > 0) {
+              faqItems.forEach((item, index) => {
+                gsap.set(item, { opacity: 1, y: 0 });
+                gsap.from(item, {
+                  opacity: 0,
+                  y: 20,
+                  duration: 0.5,
+                  ease: 'power2.out',
+                  delay: index * 0.1,
+                  scrollTrigger: {
+                    trigger: item,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+
+                const question = item.querySelector('.faq-q');
+                const answer = item.querySelector('.faq-a');
+                
+                if (answer) {
+                  gsap.set(answer, { maxHeight: 0, opacity: 0, marginTop: 0 });
+                }
+                
+                if (question) {
+                  question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+                    
+                    // Close all items
+                    document.querySelectorAll('.faq-item').forEach(i => {
+                      if (i !== item && i.classList.contains('open')) {
+                        i.classList.remove('open');
+                        const otherAnswer = i.querySelector('.faq-a');
+                        if (otherAnswer) {
+                          gsap.to(otherAnswer, {
+                            maxHeight: 0,
+                            opacity: 0,
+                            marginTop: 0,
+                            duration: 0.4,
+                            ease: 'power2.inOut'
+                          });
+                        }
+                      }
+                    });
+                    
+                    // Toggle current item
+                    if (!isOpen) {
+                      item.classList.add('open');
+                      if (answer) {
+                        gsap.to(answer, {
+                          maxHeight: '500px',
+                          opacity: 1,
+                          marginTop: 12,
+                          duration: 0.4,
+                          ease: 'power2.inOut'
+                        });
+                      }
+                    } else {
+                      item.classList.remove('open');
+                      if (answer) {
+                        gsap.to(answer, {
+                          maxHeight: 0,
+                          opacity: 0,
+                          marginTop: 0,
+                          duration: 0.4,
+                          ease: 'power2.inOut'
+                        });
+                      }
+                    }
+                  });
+                }
+              });
+            }
+
+            // FOOTER ANIMATIONS
+            const footer = document.querySelector('footer');
+            const footerLogo = footer ? footer.querySelector('.logo') : null;
+            const footerTexts = footer ? footer.querySelectorAll('p') : [];
+
+            if (footerLogo) {
+              gsap.set(footerLogo, { opacity: 1, y: 0 });
+              gsap.from(footerLogo, {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: footer,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none'
+                }
+              });
+            }
+
+            if (footerTexts.length > 0) {
+              footerTexts.forEach((text, index) => {
+                gsap.set(text, { opacity: 1, y: 0 });
+                gsap.from(text, {
+                  opacity: 0,
+                  y: 10,
+                  duration: 0.5,
+                  ease: 'power2.out',
+                  delay: index * 0.1,
+                  scrollTrigger: {
+                    trigger: footer,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                  }
+                });
+              });
+            }
+
+            // PARALLAX EFFECTS (disabled on mobile)
+            if (!isMobile && !prefersReducedMotion) {
+              try {
+                gsap.utils.toArray('.hero, .pain, .mechanism, .value-stack, .guarantee, .final-cta').forEach(section => {
+                  gsap.to(section, {
+                    yPercent: -10,
+                    ease: 'none',
+                    scrollTrigger: {
+                      trigger: section,
+                      start: 'top bottom',
+                      end: 'bottom top',
+                      scrub: 1
+                    }
+                  });
+                });
+              } catch (e) {
+                console.warn('Error in parallax:', e);
+              }
+            }
+
+            // SMOOTH SCROLL FOR ANCHOR LINKS
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                  try {
+                    if (typeof gsap !== 'undefined' && gsap.to && typeof ScrollToPlugin !== 'undefined') {
+                      gsap.to(window, {
+                        duration: 1,
+                        scrollTo: {
+                          y: target,
+                          offsetY: 80
+                        },
+                        ease: 'power2.inOut'
+                      });
+                    } else {
+                      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  } catch (e) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }
+              });
+            });
+
+            // ENHANCED HOVER EFFECTS
+            if (!isMobile) {
+              // Button hover effects
+              document.querySelectorAll('.hero-cta-primary, .nav-cta, .form-submit').forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                  gsap.to(btn, {
+                    scale: 1.05,
+                    boxShadow: '0 8px 24px rgba(201,168,76,0.4)',
+                    duration: 0.3,
+                    ease: 'power2.out'
+                  });
+                });
+                btn.addEventListener('mouseleave', () => {
+                  gsap.to(btn, {
+                    scale: 1,
+                    boxShadow: '0 0 0 rgba(201,168,76,0)',
+                    duration: 0.3,
+                    ease: 'power2.out'
+                  });
+                });
+              });
+
+              // Link hover underline animation
+              document.querySelectorAll('.nav-link').forEach(link => {
+                link.style.position = 'relative';
+                link.addEventListener('mouseenter', () => {
+                  gsap.to(link, {
+                    color: 'var(--cream)',
+                    duration: 0.2,
+                    ease: 'power2.out'
+                  });
+                });
+                link.addEventListener('mouseleave', () => {
+                  gsap.to(link, {
+                    color: 'var(--muted)',
+                    duration: 0.2,
+                    ease: 'power2.out'
+                  });
+                });
+              });
+            }
+
+          } catch (e) {
+            console.error('Error in setupAnimations:', e);
+            // Fallback to basic observer
+            const observer = new IntersectionObserver(entries => {
+              entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+          }
+        }
+
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', setupAnimations);
+        } else {
+          setupAnimations();
+        }
+
+      } catch (e) {
+        console.error('Error initializing animations:', e);
+        // Fallback to basic observer
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+      }
+    }
+
+    // Try to initialize immediately if GSAP is already loaded
+    try {
+      if (typeof gsap !== 'undefined') {
+        initAnimations();
+      } else {
+        // Wait for GSAP to load
+        window.addEventListener('load', function() {
+          setTimeout(initAnimations, 100);
+        });
+      }
+    } catch (e) {
+      console.error('Error in animation initialization wrapper:', e);
+    }
+  })();
+
+  // Form submit handler — sends to Node server (/api/submit), which writes to Airtable using .env
+  function handleAuditSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const btnSpan = btn ? btn.querySelector('span') : null;
+    var data = new FormData(form);
+    var payload = {
+      'Name': data.get('Name') || '',
+      'Business Name': data.get('Business Name') || '',
+      'Email': data.get('Email') || '',
+      'WhatsApp Number': data.get('WhatsApp Number') || '',
+      'Your Role': data.get('Your Role') || '',
+      'Business Type': data.get('Business Type') || '',
+      'Number of Locations': '',
+      'Monthly Revenue': data.get('Monthly Revenue') || '',
+      'Which Level Interests You?': data.get('Which Level Interests You?') || '',
+      'Source': 'professional'
+    };
+    if (btn && btnSpan) { btn.disabled = true; btnSpan.textContent = 'Sending…'; }
+    fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(r) {
+      if (r.ok) {
+        if (btn && btnSpan) {
+          if (typeof gsap !== 'undefined') {
+            gsap.to(btn, { background: 'var(--green)', duration: 0.3, ease: 'power2.out', onComplete: function() {
+              btnSpan.textContent = '✓ Audit Request Sent! We\'ll reach out within 4 hours.';
+              btn.disabled = true;
+            } });
+          } else {
+            btn.style.background = 'var(--green)';
+            btnSpan.textContent = '✓ Audit Request Sent! We\'ll reach out within 4 hours.';
+            btn.disabled = true;
+          }
+        }
+        form.reset();
+      } else {
+        if (btn && btnSpan) { btn.disabled = false; btnSpan.textContent = 'Get My Free Revenue Leak Audit →'; }
+        alert('Something went wrong. Please try again or contact us directly.');
+      }
+    }).catch(function() {
+      if (btn && btnSpan) { btn.disabled = false; btnSpan.textContent = 'Get My Free Revenue Leak Audit →'; }
+      alert('Something went wrong. Please try again or contact us directly.');
+    });
+  }
+</script>
+</body>
+</html>
