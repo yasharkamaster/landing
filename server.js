@@ -13,7 +13,23 @@ const PORT = process.env.PORT || 4000;
 app.use(express.json());
 
 // Serve static files (HTML, assets) from project root
-app.use(express.static(path.join(__dirname)));
+// Configure headers for video files to support range requests
+app.use(express.static(path.join(__dirname), {
+  setHeaders: (res, filePath) => {
+    // Enable range requests for video files (required for video playback)
+    if (filePath.endsWith('.mp4')) {
+      res.setHeader('Accept-Ranges', 'bytes');
+      res.setHeader('Content-Type', 'video/mp4');
+      res.setHeader('Cache-Control', 'public, max-age=31536000');
+    }
+    // Ensure images are served with correct MIME types
+    if (filePath.endsWith('.jpeg') || filePath.endsWith('.jpg')) {
+      res.setHeader('Content-Type', 'image/jpeg');
+    } else if (filePath.endsWith('.png')) {
+      res.setHeader('Content-Type', 'image/png');
+    }
+  }
+}));
 
 // CORS: allow same origin (pages served from this server)
 app.use('/api', (req, res, next) => {
