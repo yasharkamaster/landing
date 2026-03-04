@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>LeadMatrix for Luxury Fashion Boutiques — HypeX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@200;300;400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -1188,6 +1191,8 @@ footer {
   .problem-grid { grid-template-columns: 1fr; }
   .cursor, .cursor-ring { display: none; }
   body { cursor: auto; }
+  footer > div { flex-direction: column; text-align: center; align-items: center; }
+  footer > div > div[style*="text-align:right"] { text-align: center !important; }
 }
 </style>
 </head>
@@ -1278,10 +1283,25 @@ footer {
       </div>
     </div>
   </div>
-</section>
+  </section>
 
-<!-- ─── TICKER BAR ──────────────────────────────────────────────────────── -->
-<div class="ticker-bar">
+  <!-- HERO VISUAL IMAGE -->
+  <section class="comparison-visual-section" style="background:var(--ink);padding:clamp(48px,7vw,90px) clamp(20px,5vw,72px) 0;border-top:1px solid var(--border);">
+    <div class="comparison-visual reveal" style="max-width:1400px;margin:0 auto;">
+      <div class="comparison-image-wrapper" style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 1px var(--border-strong);border:2px solid var(--border-strong);background:var(--ink-light);padding:clamp(10px,1.2vw,14px);">
+        <img 
+          src="Luxury.jpeg" 
+          alt="FROM CHAOS TO LUXURY - Before and After Luxury Boutique Transformation" 
+          class="comparison-image" 
+          style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;filter:brightness(0.98);"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TICKER BAR ──────────────────────────────────────────────────────── -->
+  <div class="ticker-bar">
   <div class="ticker-inner">
     <div class="ticker-item">After-hours enquiries go unanswered for 8+ hours on average</div>
     <div class="ticker-item">LeadMatrix responds in under 90 seconds — every time</div>
@@ -1358,18 +1378,11 @@ footer {
 
 <!-- ─── BEFORE/AFTER VISUAL COMPARISON ──────────────────────────────────────── -->
 <section class="comparison-visual-section" style="background:var(--ink);padding:clamp(56px,8vw,120px) clamp(20px,5vw,72px);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="comparison-visual reveal" style="max-width:1400px;margin:0 auto;">
-    <div class="comparison-image-wrapper" style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 1px var(--border-strong);border:2px solid var(--border-strong);background:var(--ink-light);padding:clamp(10px,1.2vw,14px);transition:transform 0.4s ease,box-shadow 0.4s ease;">
-      <img 
-        src="Luxury.jpeg" 
-        alt="FROM CHAOS TO LUXURY - Before and After Luxury Boutique Transformation" 
-        class="comparison-image" 
-        style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);filter:brightness(0.98);"
-        loading="lazy"
-      >
-    </div>
-  </div>
   <div class="comparison-visual reveal" style="max-width:1400px;margin:40px auto 0;">
+    <div style="text-align:center;margin-bottom:16px;">
+      <span style="font-family:var(--font-sans);font-size:clamp(9px,0.9vw,10px);font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);">▶ Watch the Transformation</span>
+      <h3 style="font-family:var(--font-display);font-size:clamp(20px,2.5vw,30px);font-weight:400;color:var(--parchment);margin-top:8px;font-style:italic;">See LeadMatrix in Action</h3>
+    </div>
     <div class="comparison-image-wrapper" style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 1px var(--border-strong);border:2px solid var(--border-strong);background:var(--ink-light);padding:clamp(10px,1.2vw,14px);transition:transform 0.4s ease,box-shadow 0.4s ease;">
       <video 
         src="LHotel.mp4" 
@@ -1378,6 +1391,7 @@ footer {
         controls
         playsinline
         preload="metadata"
+        poster="Luxury.jpeg"
       >
         Your browser does not support the video tag.
       </video>
@@ -1706,8 +1720,21 @@ footer {
 
 <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
 <footer>
-  <div class="footer-brand">LeadMatrix · Revenue Operating Systems</div>
-  <div class="footer-note">Every enquiry deserves an answer worthy of your boutique.</div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:24px;width:100%;">
+    <div>
+      <div class="footer-brand">LeadMatrix · Revenue Operating Systems</div>
+      <div class="footer-note">Every enquiry deserves an answer worthy of your boutique.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <span style="font-family:var(--font-sans);font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Contact Us</span>
+      <a href="mailto:hypexofficial.team@gmail.com" style="font-family:var(--font-sans);font-size:12px;color:rgba(245,239,228,0.5);text-decoration:none;transition:color 0.2s;">📧 hypexofficial.team@gmail.com</a>
+      <a href="tel:+916289109099" style="font-family:var(--font-sans);font-size:12px;color:rgba(245,239,228,0.5);text-decoration:none;transition:color 0.2s;">📞 +91 6289109099</a>
+      <a href="tel:+918444815643" style="font-family:var(--font-sans);font-size:12px;color:rgba(245,239,228,0.5);text-decoration:none;transition:color 0.2s;">📞 +91 8444815643</a>
+    </div>
+    <div style="text-align:right;">
+      <p style="font-family:var(--font-sans);font-size:11px;color:rgba(245,239,228,0.3);letter-spacing:1px;">© 2025 HypeX. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
 
 <!-- ─── SCRIPTS ────────────────────────────────────────────────────────── -->

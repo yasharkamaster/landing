@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>LeadMatrix for Professional Services — HypeX</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -298,9 +301,21 @@
       </div>
     </div>
   </div>
-</section>
+  </section>
 
-<!-- PROFESSIONS -->
+  <!-- HERO VISUAL IMAGE -->
+  <section class="mechanism-hero-visual" style="background:var(--bg);padding:clamp(32px,4vw,48px) clamp(16px,5vw,56px) 0;">
+    <div style="max-width:900px;margin:0 auto;">
+      <img
+        src="Gemini_Generated_Image_awfceiawfceiawfc-removebg-preview.png"
+        alt="LeadMatrix — One system for every lead touchpoint"
+        style="width:100%;height:auto;display:block;object-fit:contain;border-radius:16px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.35);"
+        loading="lazy"
+      >
+    </div>
+  </section>
+
+  <!-- PROFESSIONS -->
 <section class="professions">
   <div class="prof-label">If you're in any of these professions — this is for you</div>
   <div class="prof-grid">
@@ -392,7 +407,7 @@
   <div class="transformation-grid transformation-grid-videos" style="margin-top:clamp(24px,3vw,40px);">
     <div class="transformation-card fade-up" data-transformation="gym-video">
       <div class="img-wrap">
-        <video src="LGym.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <video src="LGym.mp4" controls playsinline preload="metadata" poster="Gym.jpeg" style="width:100%;height:100%;object-fit:cover;display:block;">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -400,7 +415,7 @@
     </div>
     <div class="transformation-card fade-up" data-transformation="ecom-video">
       <div class="img-wrap">
-        <video src="LEcommerce.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <video src="LEcommerce.mp4" controls playsinline preload="metadata" poster="Ecom.jpeg" style="width:100%;height:100%;object-fit:cover;display:block;">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -408,7 +423,7 @@
     </div>
     <div class="transformation-card fade-up" data-transformation="finance-video">
       <div class="img-wrap">
-        <video src="LFinance.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <video src="LFinance.mp4" controls playsinline preload="metadata" poster="Financial_consulting-removebg-preview.png" style="width:100%;height:100%;object-fit:cover;display:block;">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -422,10 +437,6 @@
   <div class="mech-intro fade-up">
     <div class="section-eyebrow">The Fix</div>
     <p>"The answer isn't to hire more people to manage WhatsApp. The answer is to <strong>build a system that never sleeps, never forgets, and never lets a serious prospect go cold.</strong>"</p>
-  </div>
-
-  <div class="mech-visual fade-up">
-    <img src="Gemini_Generated_Image_awfceiawfceiawfc-removebg-preview.png" alt="LeadMatrix — One system for every lead touchpoint">
   </div>
 
   <div class="steps-grid">
@@ -631,8 +642,16 @@
 
 <footer>
   <div class="logo">LeadMatrix</div>
-  <p>© 2025 HypeX. Revenue Operating Systems for Indian Businesses.</p>
-  <p style="color:var(--gold);font-size:13px;">LeadMatrix | Professional Services</p>
+  <div style="display:flex;flex-direction:column;gap:6px;text-align:center;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Contact Us</div>
+    <a href="mailto:hypexofficial.team@gmail.com" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s;">📧 hypexofficial.team@gmail.com</a>
+    <a href="tel:+916289109099" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s;">📞 +91 6289109099</a>
+    <a href="tel:+918444815643" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s;">📞 +91 8444815643</a>
+  </div>
+  <div style="text-align:right;">
+    <p style="color:var(--gold);font-size:13px;">LeadMatrix | Professional Services</p>
+    <p>© 2025 HypeX. Revenue Operating Systems for Indian Businesses.</p>
+  </div>
 </footer>
 
 <!-- GSAP Animation Libraries - Loaded at end for better performance -->

@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Axiom OS — Business Command Centre for Food Franchises | HypeX</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -914,13 +917,16 @@
       padding:clamp(20px,2.5vw,32px) clamp(16px,4vw,24px);
       flex-direction:column;
       text-align:center;
-      gap:clamp(8px,1vw,12px);
+      gap:clamp(12px,1.5vw,16px);
     }
     footer .logo{
       font-size:20px;
     }
     footer p{
       font-size:clamp(10px,1vw,12px);
+    }
+    footer div[style*="text-align:right"]{
+      text-align:center !important;
     }
     
     /* Disable hover effects on mobile */
@@ -1139,6 +1145,21 @@
   </div>
 </section>
 
+<!-- HERO VISUAL IMAGE -->
+<section style="background:var(--bg);padding:clamp(16px,3vw,32px) clamp(16px,5vw,56px) 0;">
+  <div class="comparison-visual fade-up" style="max-width:1200px;margin:0 auto;">
+    <div class="comparison-image-wrapper" style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(245,158,11,0.1);border:2px solid rgba(245,158,11,0.15);background:var(--card);padding:clamp(8px,1vw,12px);">
+      <img 
+        src="Food_Franchise.jpeg" 
+        alt="Axiom OS — Business Command Centre for Food Franchises" 
+        class="comparison-image" 
+        style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;"
+        loading="eager"
+      >
+    </div>
+  </div>
+</section>
+
 <!-- PROBLEMS -->
 <section class="problems" id="problem">
   <div class="section-tag">The Multi-Location Trap</div>
@@ -1226,22 +1247,15 @@
       </div>
     </div>
   </div>
-</section>
+  </section>
 
-<!-- BEFORE/AFTER VISUAL COMPARISON -->
+<!-- BEFORE/AFTER VISUAL COMPARISON (video only; image now in hero visual above) -->
 <section class="comparison-visual-section" style="background:var(--bg);padding:clamp(48px,8vw,120px) clamp(16px,5vw,56px);">
   <div class="comparison-visual fade-up" style="max-width:1200px;margin:0 auto;">
-    <div class="comparison-image-wrapper" style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(245,158,11,0.1);border:2px solid rgba(245,158,11,0.15);background:var(--card);padding:clamp(8px,1vw,12px);transition:transform 0.4s ease,box-shadow 0.4s ease;">
-      <img 
-        src="Food_Franchise.jpeg" 
-        alt="Locations Exist. Growth Doesn't. - Before and After Food Franchise Comparison" 
-        class="comparison-image" 
-        style="width:100%;height:auto;object-fit:contain;display:block;border-radius:12px;transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);"
-        loading="lazy"
-      >
+    <div style="text-align:center;margin-bottom:16px;">
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(10px,1vw,12px);font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);">▶ Watch How It Works</span>
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(18px,2.2vw,24px);font-weight:900;color:var(--text);margin-top:4px;">See Axiom OS in Action</h3>
     </div>
-  </div>
-  <div class="comparison-visual fade-up" style="max-width:1200px;margin:40px auto 0;">
     <div class="comparison-image-wrapper" style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(245,158,11,0.1);border:2px solid rgba(245,158,11,0.15);background:var(--card);padding:clamp(8px,1vw,12px);transition:transform 0.4s ease,box-shadow 0.4s ease;">
       <video 
         src="LBusiness.mp4" 
@@ -1250,6 +1264,7 @@
         controls
         playsinline
         preload="metadata"
+        poster="Food_Franchise.jpeg"
       >
         Your browser does not support the video tag.
       </video>
@@ -1472,8 +1487,16 @@
 
 <footer>
   <div class="logo" style="font-size:22px;">HypeX <span style="color:var(--amber)">|</span> Axiom</div>
-  <p>© 2025 HypeX. Revenue Operating Systems for Indian Businesses.</p>
-  <p style="color:var(--amber);">Axiom OS | Food & Bakery Franchises</p>
+  <div style="display:flex;flex-direction:column;gap:6px;text-align:center;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:4px;">Contact Us</div>
+    <a href="mailto:hypexofficial.team@gmail.com" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s;">📧 hypexofficial.team@gmail.com</a>
+    <a href="tel:+916289109099" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s;">📞 +91 6289109099</a>
+    <a href="tel:+918444815643" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s;">📞 +91 8444815643</a>
+  </div>
+  <div style="text-align:right;">
+    <p style="color:var(--amber);font-size:13px;">Axiom OS | Food & Bakery Franchises</p>
+    <p>© 2025 HypeX. Revenue Operating Systems for Indian Businesses.</p>
+  </div>
 </footer>
 
 
