@@ -1,0 +1,490 @@
+{
+  "D:\\5-Landing-Pages\\landing\\next-env.d.ts": {
+    "mtime": 1781172765.6872215,
+    "hash": "90426577ad8f38459f3e566411c85589"
+  },
+  "D:\\5-Landing-Pages\\landing\\next.config.ts": {
+    "mtime": 1781172765.6829596,
+    "hash": "9d5b14dc62fc4052a69ff1f98d7fd054"
+  },
+  "D:\\5-Landing-Pages\\landing\\app\\layout.tsx": {
+    "mtime": 1781172765.6773899,
+    "hash": "56297a7777a406aaca7a75c14cb95c45"
+  },
+  "D:\\5-Landing-Pages\\landing\\app\\not-found.tsx": {
+    "mtime": 1781172765.6627014,
+    "hash": "3f42aea1cd45cd06f42931a22380eba4"
+  },
+  "D:\\5-Landing-Pages\\landing\\app\\page.tsx": {
+    "mtime": 1781172765.6606803,
+    "hash": "505a6d16efea3d0902a213aab8b060c5"
+  },
+  "D:\\5-Landing-Pages\\landing\\app\\api\\submit\\route.ts": {
+    "mtime": 1781172765.6677964,
+    "hash": "4ea0b8e26007f2f5e800867414bbb962"
+  },
+  "D:\\5-Landing-Pages\\landing\\app\\[slug]\\layout.tsx": {
+    "mtime": 1781172765.658661,
+    "hash": "7997f5c0e315fc75cc9c34b3ef9e882b"
+  },
+  "D:\\5-Landing-Pages\\landing\\app\\[slug]\\page.tsx": {
+    "mtime": 1781178333.2818599,
+    "hash": "3a60ed3b0b39e7349bb60c9a0afe991a"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\registry.ts": {
+    "mtime": 1781178325.9777038,
+    "hash": "758c45f880f1b37f402a3764926601e6"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\clinic\\ClinicLanding.tsx": {
+    "mtime": 1781177972.169582,
+    "hash": "2e420ba92a05290e4e762cb2f940334a"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\food\\FoodLanding.tsx": {
+    "mtime": 1781177972.1994164,
+    "hash": "b443a5ae0ad6cc9aea4d775eb3f6706c"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\luxury\\LuxuryClient.tsx": {
+    "mtime": 1781175972.9320455,
+    "hash": "111194151ebd1e23c43161185a80e754"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\luxury\\LuxuryLanding.tsx": {
+    "mtime": 1781175453.3925333,
+    "hash": "79797671674884b5daa3a001e3806bd0"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\professional\\ProfessionalLanding.tsx": {
+    "mtime": 1781177972.1929567,
+    "hash": "bab6f67423d68cb40e30db79605b3c37"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\AuditForm.tsx": {
+    "mtime": 1781175196.8633225,
+    "hash": "b6295c6c5faaf95eb691a6315f2d67ea"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\LandingAuditForm.tsx": {
+    "mtime": 1781177990.7263553,
+    "hash": "7f00525a65aaf41676bdf99919eae517"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\LandingFrame.tsx": {
+    "mtime": 1781175177.0134525,
+    "hash": "6b1c77f234e1cad7ebf327c0161a5368"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\LeadmatrixClient.tsx": {
+    "mtime": 1781177642.4622593,
+    "hash": "6d12bc0a10ae0946d4bcefbd18992a6a"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\tours\\ToursClient.tsx": {
+    "mtime": 1781175437.8661618,
+    "hash": "37265a5308cc4268acc3cc1f15b239cf"
+  },
+  "D:\\5-Landing-Pages\\landing\\components\\landings\\tours\\ToursLanding.tsx": {
+    "mtime": 1781175647.4605296,
+    "hash": "a237010df9a0825b69f8ee719051b561"
+  },
+  "D:\\5-Landing-Pages\\landing\\lib\\landing-assets.ts": {
+    "mtime": 1781175156.4154847,
+    "hash": "fb5048dcd4f0aa0385a01408d6f519c4"
+  },
+  "D:\\5-Landing-Pages\\landing\\lib\\landings.ts": {
+    "mtime": 1781172765.653848,
+    "hash": "6ba783818a3a5fcbf2154fafa547e28f"
+  },
+  "D:\\5-Landing-Pages\\landing\\scripts\\convert-landings.mjs": {
+    "mtime": 1781172765.6336372,
+    "hash": "b0f0eb3db68f3797f117c1a8d2ed1a8a"
+  },
+  "D:\\5-Landing-Pages\\landing\\scripts\\html-to-tsx.mjs": {
+    "mtime": 1781174212.7196534,
+    "hash": "c780b0ca3b0f1f89bdc6c3728b91dc4f"
+  },
+  "D:\\5-Landing-Pages\\landing\\DEPLOYMENT.md": {
+    "mtime": 1780915605.834038,
+    "hash": "494b744fcee2390d8b4c2edbc18b3086"
+  },
+  "D:\\5-Landing-Pages\\landing\\DOKPLOY_SETUP.md": {
+    "mtime": 1780915605.8737779,
+    "hash": "3b549d5bceba397f439a1c5d1f52c543"
+  },
+  "D:\\5-Landing-Pages\\landing\\food_landing.html": {
+    "mtime": 1780918838.491028,
+    "hash": "a261ac3157208d55602a7e2a26500052"
+  },
+  "D:\\5-Landing-Pages\\landing\\TROUBLESHOOTING.md": {
+    "mtime": 1780915611.1454613,
+    "hash": "e0ebb0a1c874516ec92be50b337f1b52"
+  },
+  "D:\\5-Landing-Pages\\landing\\Clinic\\clinic_landing.html": {
+    "mtime": 1781172765.6919942,
+    "hash": "074931cbec147438f098ecd9404b62fe"
+  },
+  "D:\\5-Landing-Pages\\landing\\content\\landings\\clinic\\body.html": {
+    "mtime": 1781026066.1733122,
+    "hash": "9c4486c69801d6049c4f2a9b784e1032"
+  },
+  "D:\\5-Landing-Pages\\landing\\content\\landings\\food\\body.html": {
+    "mtime": 1781026065.3623476,
+    "hash": "d3b529610053e9b366a244cc1d03b3d8"
+  },
+  "D:\\5-Landing-Pages\\landing\\content\\landings\\luxury\\body.html": {
+    "mtime": 1781026066.8868246,
+    "hash": "955e861588415edbdf7f549441f81007"
+  },
+  "D:\\5-Landing-Pages\\landing\\content\\landings\\professional\\body.html": {
+    "mtime": 1781026067.817104,
+    "hash": "1879fe3592f200b540b56577743c03c2"
+  },
+  "D:\\5-Landing-Pages\\landing\\content\\landings\\tours\\body.html": {
+    "mtime": 1781026069.6274827,
+    "hash": "18eccf160a71af16f0604138972e5936"
+  },
+  "D:\\5-Landing-Pages\\landing\\Food_Francises\\food_landing.html": {
+    "mtime": 1780918838.5572386,
+    "hash": "c09f358c6738edb0b08a925c72d54c0f"
+  },
+  "D:\\5-Landing-Pages\\landing\\Luxury_Fashion_Boutiques\\luxury_boutique_landing_v2 (1).html": {
+    "mtime": 1780918838.5797963,
+    "hash": "f2be1d33d3246106cb2499599ac8749c"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Professional_Real.html": {
+    "mtime": 1780918838.602569,
+    "hash": "04118da66e18e6f173325d15a3f74617"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\tours_v3.html": {
+    "mtime": 1781173886.7995741,
+    "hash": "4feca97495e6e8d31296af0e2412d95e"
+  },
+  "D:\\5-Landing-Pages\\landing\\Clinic\\Book-removebg-preview.png": {
+    "mtime": 1780915604.714311,
+    "hash": "e2908d5e2728856212d5a3bc22eb2419"
+  },
+  "D:\\5-Landing-Pages\\landing\\Clinic\\Capture-removebg-preview.png": {
+    "mtime": 1780915604.720698,
+    "hash": "491d23c05d214d22ea83bd2d55a93014"
+  },
+  "D:\\5-Landing-Pages\\landing\\Clinic\\clinic.jpeg": {
+    "mtime": 1780915605.7942367,
+    "hash": "1e411d35d378b3d8caac1dadbbc17e01"
+  },
+  "D:\\5-Landing-Pages\\landing\\Clinic\\Qualify-removebg-preview.png": {
+    "mtime": 1780915605.6674948,
+    "hash": "2737926a9e57db91df213bae86416bb7"
+  },
+  "D:\\5-Landing-Pages\\landing\\Clinic\\Remind-removebg-preview.png": {
+    "mtime": 1780915605.6833096,
+    "hash": "3d574834f1c8477a7b48d77c46828a5f"
+  },
+  "D:\\5-Landing-Pages\\landing\\Clinic\\Respond-removebg-preview.png": {
+    "mtime": 1780915605.73446,
+    "hash": "07794217b67bf8b202400758f5749748"
+  },
+  "D:\\5-Landing-Pages\\landing\\Food_Francises\\Expansion_Feels_Dangerous.png": {
+    "mtime": 1780915606.002138,
+    "hash": "856f8b3754952212c9ababc12a571292"
+  },
+  "D:\\5-Landing-Pages\\landing\\Food_Francises\\Food_Franchise.jpeg": {
+    "mtime": 1780915606.065858,
+    "hash": "cb7fd656b41f90953b928c06dd33762b"
+  },
+  "D:\\5-Landing-Pages\\landing\\Food_Francises\\Inventory_Managed_by_Guesswork.png": {
+    "mtime": 1780915606.0817876,
+    "hash": "97ede56b84fbcba5af49a116b872d71c"
+  },
+  "D:\\5-Landing-Pages\\landing\\Food_Francises\\Invisible_Margin_Leak.png": {
+    "mtime": 1780915606.1152039,
+    "hash": "3b7b0d20aa4f17baacd4a8df6854e3c5"
+  },
+  "D:\\5-Landing-Pages\\landing\\Food_Francises\\One_Location_Drags_the_Rest.png": {
+    "mtime": 1780915607.1194522,
+    "hash": "6ffc6e01565065c895e08f4c266708eb"
+  },
+  "D:\\5-Landing-Pages\\landing\\Food_Francises\\Operations_Depend_on _You.png": {
+    "mtime": 1780915607.1516364,
+    "hash": "3ba4644a7ecf9a5e8ae4df53de2e4358"
+  },
+  "D:\\5-Landing-Pages\\landing\\Food_Francises\\Whatsapp_OS.png": {
+    "mtime": 1780915607.1760924,
+    "hash": "422801377c51c3898359e58046d08775"
+  },
+  "D:\\5-Landing-Pages\\landing\\Luxury_Fashion_Boutiques\\Inconsistent_First_Impressions-removebg-preview.png": {
+    "mtime": 1780915607.201325,
+    "hash": "ed1fece8043cbb864e396769cde9c5a2"
+  },
+  "D:\\5-Landing-Pages\\landing\\Luxury_Fashion_Boutiques\\Luxury.jpeg": {
+    "mtime": 1780915608.3448553,
+    "hash": "a54b955abcc929f0dbbd54c9d5107fc2"
+  },
+  "D:\\5-Landing-Pages\\landing\\Luxury_Fashion_Boutiques\\No_Qualification_Layer-removebg-preview.png": {
+    "mtime": 1780915608.3767896,
+    "hash": "9a376788487d97df6510010eacab2a1f"
+  },
+  "D:\\5-Landing-Pages\\landing\\Luxury_Fashion_Boutiques\\Revenue-That_Cannot_Be_Counted-removebg-preview.png": {
+    "mtime": 1780915608.3927386,
+    "hash": "046da427d98a172bb8537365d1f5fe93"
+  },
+  "D:\\5-Landing-Pages\\landing\\Luxury_Fashion_Boutiques\\The_11_PM_Enquiry-removebg-preview.png": {
+    "mtime": 1780915608.4247007,
+    "hash": "7982989660146be99f1b6dc6e8a1d2ff"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Appointment_in_Calendar_Automatically-removebg-preview.png": {
+    "mtime": 1780915608.4496965,
+    "hash": "d266bdbb7e1445b3913c5f74cfa0c5d7"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Capture_Everything_Everywhere-removebg-preview.png": {
+    "mtime": 1780915608.4887264,
+    "hash": "7bfd64aa6c71bb3cdc6c550e61fc1c19"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\CA_Furms-removebg-preview.png": {
+    "mtime": 1780915608.4630618,
+    "hash": "73d4a3e8cb7c471c77b8240f1ced8354"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Ecom.jpeg": {
+    "mtime": 1780915608.5205128,
+    "hash": "bc9c48624aa36a8a53d05cca2f355aa8"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Financial_consulting-removebg-preview.png": {
+    "mtime": 1780915608.542209,
+    "hash": "9077c0bd10300d9a8a437c667372e84f"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Fitness.png": {
+    "mtime": 1780915608.5679712,
+    "hash": "09751cbcbd746470b8fa363123f5f4d5"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Gemini_Generated_Image_awfceiawfceiawfc-removebg-preview.png": {
+    "mtime": 1780915608.5853293,
+    "hash": "7bfd64aa6c71bb3cdc6c550e61fc1c19"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Gym.jpeg": {
+    "mtime": 1780915608.5994396,
+    "hash": "6604810656b29981c9f31674b53898bb"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Nutrition.png": {
+    "mtime": 1780915610.8746562,
+    "hash": "bb75e14fc3138cc9730e4d39b98ae92d"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\QualifyWithout_Your_Team-removebg-preview.png": {
+    "mtime": 1780915610.9381127,
+    "hash": "e2b79531b2d2db992dbf35e4c3affbd6"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Respond_in_Under_2_Minutes_Always.-removebg-preview.png": {
+    "mtime": 1780915611.0338728,
+    "hash": "03868be1855277847a79d98b63e6ed32"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\Saloon.png": {
+    "mtime": 1780915611.1151867,
+    "hash": "0e6121983bdc17ad9e74e505da7e18b0"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\clinic\\Book-removebg-preview.png": {
+    "mtime": 1780915604.714311,
+    "hash": "e2908d5e2728856212d5a3bc22eb2419"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\clinic\\Capture-removebg-preview.png": {
+    "mtime": 1780915604.720698,
+    "hash": "491d23c05d214d22ea83bd2d55a93014"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\clinic\\clinic.jpeg": {
+    "mtime": 1780915605.7942367,
+    "hash": "1e411d35d378b3d8caac1dadbbc17e01"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\clinic\\Qualify-removebg-preview.png": {
+    "mtime": 1780915605.6674948,
+    "hash": "2737926a9e57db91df213bae86416bb7"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\clinic\\Remind-removebg-preview.png": {
+    "mtime": 1780915605.6833096,
+    "hash": "3d574834f1c8477a7b48d77c46828a5f"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\clinic\\Respond-removebg-preview.png": {
+    "mtime": 1780915605.73446,
+    "hash": "07794217b67bf8b202400758f5749748"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\food\\Expansion_Feels_Dangerous.png": {
+    "mtime": 1780915606.002138,
+    "hash": "856f8b3754952212c9ababc12a571292"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\food\\Food_Franchise.jpeg": {
+    "mtime": 1780915606.065858,
+    "hash": "cb7fd656b41f90953b928c06dd33762b"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\food\\Inventory_Managed_by_Guesswork.png": {
+    "mtime": 1780915606.0817876,
+    "hash": "97ede56b84fbcba5af49a116b872d71c"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\food\\Invisible_Margin_Leak.png": {
+    "mtime": 1780915606.1152039,
+    "hash": "3b7b0d20aa4f17baacd4a8df6854e3c5"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\food\\One_Location_Drags_the_Rest.png": {
+    "mtime": 1780915607.1194522,
+    "hash": "6ffc6e01565065c895e08f4c266708eb"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\food\\Operations_Depend_on _You.png": {
+    "mtime": 1780915607.1516364,
+    "hash": "3ba4644a7ecf9a5e8ae4df53de2e4358"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\food\\Whatsapp_OS.png": {
+    "mtime": 1780915607.1760924,
+    "hash": "422801377c51c3898359e58046d08775"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\luxury\\Inconsistent_First_Impressions-removebg-preview.png": {
+    "mtime": 1780915607.201325,
+    "hash": "ed1fece8043cbb864e396769cde9c5a2"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\luxury\\Luxury.jpeg": {
+    "mtime": 1780915608.3448553,
+    "hash": "a54b955abcc929f0dbbd54c9d5107fc2"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\luxury\\No_Qualification_Layer-removebg-preview.png": {
+    "mtime": 1780915608.3767896,
+    "hash": "9a376788487d97df6510010eacab2a1f"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\luxury\\Revenue-That_Cannot_Be_Counted-removebg-preview.png": {
+    "mtime": 1780915608.3927386,
+    "hash": "046da427d98a172bb8537365d1f5fe93"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\luxury\\The_11_PM_Enquiry-removebg-preview.png": {
+    "mtime": 1780915608.4247007,
+    "hash": "7982989660146be99f1b6dc6e8a1d2ff"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Appointment_in_Calendar_Automatically-removebg-preview.png": {
+    "mtime": 1780915608.4496965,
+    "hash": "d266bdbb7e1445b3913c5f74cfa0c5d7"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Capture_Everything_Everywhere-removebg-preview.png": {
+    "mtime": 1780915608.4887264,
+    "hash": "7bfd64aa6c71bb3cdc6c550e61fc1c19"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\CA_Furms-removebg-preview.png": {
+    "mtime": 1780915608.4630618,
+    "hash": "73d4a3e8cb7c471c77b8240f1ced8354"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Ecom.jpeg": {
+    "mtime": 1780915608.5205128,
+    "hash": "bc9c48624aa36a8a53d05cca2f355aa8"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Financial_consulting-removebg-preview.png": {
+    "mtime": 1780915608.542209,
+    "hash": "9077c0bd10300d9a8a437c667372e84f"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Fitness.png": {
+    "mtime": 1780915608.5679712,
+    "hash": "09751cbcbd746470b8fa363123f5f4d5"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Gemini_Generated_Image_awfceiawfceiawfc-removebg-preview.png": {
+    "mtime": 1780915608.5853293,
+    "hash": "7bfd64aa6c71bb3cdc6c550e61fc1c19"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Gym.jpeg": {
+    "mtime": 1780915608.5994396,
+    "hash": "6604810656b29981c9f31674b53898bb"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Nutrition.png": {
+    "mtime": 1780915610.8746562,
+    "hash": "bb75e14fc3138cc9730e4d39b98ae92d"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\QualifyWithout_Your_Team-removebg-preview.png": {
+    "mtime": 1780915610.9381127,
+    "hash": "e2b79531b2d2db992dbf35e4c3affbd6"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Respond_in_Under_2_Minutes_Always.-removebg-preview.png": {
+    "mtime": 1780915611.0338728,
+    "hash": "03868be1855277847a79d98b63e6ed32"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\Saloon.png": {
+    "mtime": 1780915611.1151867,
+    "hash": "0e6121983bdc17ad9e74e505da7e18b0"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\Every_Inquiry_Deserves_a_Premium_Response-removebg-preview.png": {
+    "mtime": 1780915611.1771314,
+    "hash": "d897b1c95d745ddf3166473b7ee2de80"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\Group_Bookings___Highest_Revenue_Per_Lead-removebg-preview.png": {
+    "mtime": 1780915611.1950364,
+    "hash": "79946d2670982b00753e7750c1339b11"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\LeadMatrix_Dashboard___Your_Command_Center-removebg-preview.png": {
+    "mtime": 1780915612.5661077,
+    "hash": "4040e8b1d3df339711f53a802c71c8c0"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\Peak_Season_Windows_Are_Short._Systems_Capture_All_of_It.-removebg-preview.png": {
+    "mtime": 1780915612.5985365,
+    "hash": "c1544edd83a07efb4cdf3a8d539eed06"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\Travel.jpeg": {
+    "mtime": 1780915612.6363108,
+    "hash": "58a2567d1110e4d01b1825851a3a5ec4"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\Every_Inquiry_Deserves_a_Premium_Response-removebg-preview.png": {
+    "mtime": 1780915611.1771314,
+    "hash": "d897b1c95d745ddf3166473b7ee2de80"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\Group_Bookings___Highest_Revenue_Per_Lead-removebg-preview.png": {
+    "mtime": 1780915611.1950364,
+    "hash": "79946d2670982b00753e7750c1339b11"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\LeadMatrix_Dashboard___Your_Command_Center-removebg-preview.png": {
+    "mtime": 1780915612.5661077,
+    "hash": "4040e8b1d3df339711f53a802c71c8c0"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\Peak_Season_Windows_Are_Short._Systems_Capture_All_of_It.-removebg-preview.png": {
+    "mtime": 1780915612.5985365,
+    "hash": "c1544edd83a07efb4cdf3a8d539eed06"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\Travel.jpeg": {
+    "mtime": 1780915612.6363108,
+    "hash": "58a2567d1110e4d01b1825851a3a5ec4"
+  },
+  "D:\\5-Landing-Pages\\landing\\Clinic\\LHealth.mp4": {
+    "mtime": 1780915605.5715775,
+    "hash": "fd04108b9c0608dd1574541b1839c4c5"
+  },
+  "D:\\5-Landing-Pages\\landing\\Food_Francises\\LBusiness.mp4": {
+    "mtime": 1780915607.0391874,
+    "hash": "4c9cf41f063e088335a582bce1ebac71"
+  },
+  "D:\\5-Landing-Pages\\landing\\Luxury_Fashion_Boutiques\\LHotel.mp4": {
+    "mtime": 1780915608.282487,
+    "hash": "a444e8fe9560f780a2115020097f36eb"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\LEcommerce.mp4": {
+    "mtime": 1780915609.3788354,
+    "hash": "7051bfcf89e9591d763625f52fc62da2"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\LFinance.mp4": {
+    "mtime": 1780915610.1207,
+    "hash": "4ebe6a00eec9ad3207bc82f19bace9a5"
+  },
+  "D:\\5-Landing-Pages\\landing\\Professional_Services\\LGym.mp4": {
+    "mtime": 1780915610.8640049,
+    "hash": "b05cb6b83a6661a644f5636d534cb635"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\clinic\\LHealth.mp4": {
+    "mtime": 1780915605.5715775,
+    "hash": "fd04108b9c0608dd1574541b1839c4c5"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\food\\LBusiness.mp4": {
+    "mtime": 1780915607.0391874,
+    "hash": "4c9cf41f063e088335a582bce1ebac71"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\luxury\\LHotel.mp4": {
+    "mtime": 1780915608.282487,
+    "hash": "a444e8fe9560f780a2115020097f36eb"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\LEcommerce.mp4": {
+    "mtime": 1780915609.3788354,
+    "hash": "7051bfcf89e9591d763625f52fc62da2"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\LFinance.mp4": {
+    "mtime": 1780915610.1207,
+    "hash": "4ebe6a00eec9ad3207bc82f19bace9a5"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\professional\\LGym.mp4": {
+    "mtime": 1780915610.8640049,
+    "hash": "b05cb6b83a6661a644f5636d534cb635"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\LTravel.mp4": {
+    "mtime": 1780915612.4700675,
+    "hash": "cd8a9ae20ca9c116ca19400a85459b03"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\LTravel.mp4": {
+    "mtime": 1780915612.4700675,
+    "hash": "cd8a9ae20ca9c116ca19400a85459b03"
+  }
+}

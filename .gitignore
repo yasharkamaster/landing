@@ -12,6 +12,9 @@ tours_landing.html
 tours_travel.html
 tours_v3 (1).html
 node_modules/
+.next/
+out/
+content/
 
 .env
 

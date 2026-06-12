@@ -7,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>LeadMatrix for Clinics — HypeX</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -15,7 +15,7 @@
       extend: {
         colors: {
           dark: '#0A3D62',
-          teal: '#0E6655',
+          orange: '#EA580C',
           sky: '#2980B9',
           alert: '#E74C3C',
           muted: '#6B7F8E',
@@ -72,7 +72,7 @@
   /* FAQ */
   .faq-a { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.2s ease; }
   .faq-item.open .faq-a { max-height: 280px; opacity: 1; }
-  .faq-q::after { content: '+'; color: #0E6655; font-size: 20px; flex-shrink: 0; }
+  .faq-q::after { content: '+'; color: #EA580C; font-size: 20px; flex-shrink: 0; }
   .faq-item.open .faq-q::after { content: '−'; }
   /* Pseudo checkmarks – SVG so they render correctly in any font */
   .tier-list { padding-left: 0; }
@@ -83,14 +83,14 @@
     width: 1rem;
     height: 1rem;
     margin-top: 0.15em;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E6655' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") no-repeat center;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EA580C' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") no-repeat center;
     background-size: contain;
   }
-  .trust-item::before { content: '✓ '; color: #0E6655; font-weight: 700; }
+  .trust-item::before { content: '✓ '; color: #EA580C; font-weight: 700; }
   /* Interactive hover/active */
   .primary-cta:active, .nav-cta:active { transform: scale(0.97); }
   .process-circle { transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; }
-  .process-step:hover .process-circle { transform: scale(1.08); box-shadow: 0 0 0 4px rgba(14, 102, 85, 0.25); background: rgba(255,255,255,0.12); }
+  .process-step:hover .process-circle { transform: scale(1.08); box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.25); background: rgba(255,255,255,0.12); }
   .process-step-img { width: 100%; height: 100%; object-fit: contain; display: block; }
   /* Mechanism horizontal scroll (CSS only, no GSAP) */
   .mechanism-horizontal-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -99,10 +99,10 @@
   .data-point:hover { transform: translateY(-2px); }
   .tier-card { transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease; }
   .guarantee-card { transition: transform 0.4s ease, box-shadow 0.4s ease; }
-  .guarantee-card:hover { transform: scale(1.01); box-shadow: 0 20px 40px rgba(14, 102, 85, 0.12); }
+  .guarantee-card:hover { transform: scale(1.01); box-shadow: 0 20px 40px rgba(234, 88, 12, 0.12); }
   .faq-item { transition: background 0.2s ease; }
-  .faq-item:hover { background: rgba(14, 102, 85, 0.04); }
-  .faq-item.open { background: rgba(14, 102, 85, 0.06); }
+  .faq-item:hover { background: rgba(234, 88, 12, 0.04); }
+  .faq-item.open { background: rgba(234, 88, 12, 0.06); }
   nav.nav-hidden { transform: translateY(-100%); opacity: 0; pointer-events: none; }
   nav { transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease; }
   .form-group select option { background: #0A3D62; color: #fff; }
@@ -111,7 +111,7 @@
     max-width: 600px;
     margin: 40px auto 0;
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(14, 102, 85, 0.25);
+    border: 1px solid rgba(234, 88, 12, 0.25);
     border-radius: 20px;
     padding: clamp(32px, 4vw, 48px) clamp(24px, 3vw, 40px);
     position: relative;
@@ -125,7 +125,7 @@
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(14, 102, 85, 0.08), transparent 70%);
+    background: radial-gradient(circle, rgba(234, 88, 12, 0.08), transparent 70%);
     pointer-events: none;
     animation: formGlow 8s ease-in-out infinite;
   }
@@ -162,7 +162,7 @@
     display: block;
     font-family: 'Poppins', sans-serif;
     font-size: clamp(10px, 1vw, 12px);
-    color: #0E6655;
+    color: #EA580C;
     font-weight: 700;
     margin-bottom: 6px;
     text-transform: uppercase;
@@ -183,9 +183,9 @@
   }
   .form-wrap .form-group input:focus,
   .form-wrap .form-group select:focus {
-    border-color: #0E6655;
+    border-color: #EA580C;
     background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 0 3px rgba(14, 102, 85, 0.15), 0 4px 12px rgba(14, 102, 85, 0.2);
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15), 0 4px 12px rgba(234, 88, 12, 0.2);
     transform: translateY(-1px);
   }
   .form-wrap .form-group input::placeholder {
@@ -194,7 +194,7 @@
   .form-wrap .form-group select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230E6655' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23EA580C' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 14px center;
     padding-right: clamp(36px, 4vw, 40px);
@@ -211,7 +211,7 @@
     font-size: clamp(14px, 1.4vw, 16px);
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    background: #0E6655;
+    background: #EA580C;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -224,7 +224,7 @@
     transition: all 0.3s ease;
   }
   .form-wrap .form-submit:hover {
-    background: #0b5144;
+    background: #C2410C;
   }
   .form-wrap .form-submit::after {
     content: '';
@@ -253,7 +253,7 @@
   }
   .trust-row .trust-item::before {
     content: '✓ ';
-    color: #0E6655;
+    color: #EA580C;
     font-weight: 700;
   }
   .form-trust {
@@ -266,7 +266,7 @@
     color: rgba(255, 255, 255, 0.5);
   }
   .form-trust span:first-child {
-    color: #0E6655;
+    color: #EA580C;
     font-size: clamp(14px, 1.4vw, 16px);
   }
   /* Comparison Visual Image */
@@ -285,7 +285,7 @@
   }
   .comparison-image-wrapper:hover {
     transform: translateY(-4px);
-    box-shadow: 0 25px 60px rgba(14, 102, 85, 0.2);
+    box-shadow: 0 25px 60px rgba(234, 88, 12, 0.2);
   }
   .comparison-image {
     display: block;
@@ -384,16 +384,16 @@
 
 <nav class="fixed top-0 left-0 right-0 z-[100] py-3 px-4 md:px-7 lg:px-14 flex justify-between items-center bg-[#F8FAFB]/95 backdrop-blur-md border-b border-[#E2EBF0] shadow-md opacity-0 -translate-y-3">
   <div class="logo font-sans text-lg md:text-xl lg:text-2xl font-extrabold text-dark tracking-tight">LeadMatrix<sub class="text-[10px] md:text-[11px] font-normal text-muted ml-1 align-middle hidden sm:inline">for Healthcare</sub></div>
-  <a href="#audit" class="nav-cta bg-dark text-white py-2 px-3 md:px-5 font-sans text-xs md:text-[13px] font-bold tracking-wide no-underline whitespace-nowrap rounded-lg focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2 transition-all duration-200 hover:scale-[1.03] hover:shadow-lg hover:shadow-teal/35">Free Patient Audit →</a>
+  <a href="#audit" class="nav-cta bg-dark text-white py-2 px-3 md:px-5 font-sans text-xs md:text-[13px] font-bold tracking-wide no-underline whitespace-nowrap rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2 transition-all duration-200 hover:scale-[1.03] hover:shadow-lg hover:shadow-orange/35">Free Patient Audit →</a>
 </nav>
 
 <section class="hero bg-dark pt-24 md:pt-[14vw] lg:pt-40 pb-14 md:pb-[8vw] lg:pb-24 px-4 md:px-7 lg:px-14">
   <div class="hero-inner grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-start" id="hero-inner">
     <div class="hero-left">
-      <div class="clinical-badge hero-seq inline-flex items-center gap-1.5 bg-teal/15 border border-teal/30 text-[#7DCEA0] font-sans text-[10px] md:text-xs font-bold tracking-widest uppercase py-1 pl-1.5 pr-3 md:pr-3.5 mb-4 md:mb-6 rounded"><span class="bg-teal/30 px-2 py-0.5 rounded">Healthcare</span> Patient Acquisition System</div>
+      <div class="clinical-badge hero-seq inline-flex items-center gap-1.5 bg-orange/15 border border-orange/30 text-[#FDBA74] font-sans text-[10px] md:text-xs font-bold tracking-widest uppercase py-1 pl-1.5 pr-3 md:pr-3.5 mb-4 md:mb-6 rounded"><span class="bg-orange/30 px-2 py-0.5 rounded">Healthcare</span> Patient Acquisition System</div>
       <h1 class="hero-headline hero-seq font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.2] text-white mb-4 md:mb-6">
         Your OPD is Full.<br>
-        Your <span class="inline-block bg-teal/30 text-[#7DCEA0] px-3 py-1 rounded-lg leading-none">
+        Your <span class="inline-block bg-orange/30 text-[#FDBA74] px-3 py-1 rounded-lg leading-none">
   New Patient Pipeline
 </span><br>
         Is Silently Leaking.
@@ -402,7 +402,7 @@
         Every day your front desk misses calls, WhatsApp messages go unanswered for hours, and new patients find another clinic — <strong class="text-white">before your team even sees the enquiry.</strong>
       </p>
       <div class="cta-block hero-seq">
-        <a href="#audit" class="primary-cta inline-block bg-teal text-white py-3.5 md:py-4 px-5 md:px-8 font-sans text-sm md:text-[15px] font-bold tracking-wide no-underline rounded-lg focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2 transition-all duration-200 hover:bg-[#0b5144] hover:scale-[1.03] hover:shadow-lg hover:shadow-teal/35">Get Free Patient Enquiry Audit — ₹0</a>
+        <a href="#audit" class="primary-cta inline-block bg-orange text-white py-3.5 md:py-4 px-5 md:px-8 font-sans text-sm md:text-[15px] font-bold tracking-wide no-underline rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2 transition-all duration-200 hover:bg-[#C2410C] hover:scale-[1.03] hover:shadow-lg hover:shadow-orange/35">Get Free Patient Enquiry Audit — ₹0</a>
         <div class="cta-proof text-xs md:text-[13px] text-white/50 mt-2.5">Free. 20 minutes. Zero obligation. Just the leak number.</div>
       </div>
     </div>
@@ -425,11 +425,11 @@
         </div>
       </div>
       <div class="stat-card flex gap-3 md:gap-4 p-4 md:p-5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/[0.09] hover:border-white/20 hover:-translate-y-1 hover:shadow-xl transition-all duration-200">
-        <div class="stat-icon w-10 h-10 md:w-12 md:h-12 flex items-center justify-center flex-shrink-0 rounded-lg text-xl md:text-2xl bg-teal/10">📅</div>
+        <div class="stat-icon w-10 h-10 md:w-12 md:h-12 flex items-center justify-center flex-shrink-0 rounded-lg text-xl md:text-2xl bg-orange/10">📅</div>
         <div>
           <div class="stat-card-lbl text-xs md:text-[13px] text-white/50 mb-1 leading-snug">No-show reduction with automated reminders</div>
-          <div class="stat-card-val font-sans text-xl md:text-2xl lg:text-3xl font-extrabold leading-none text-teal">Up to 60%</div>
-          <div class="stat-card-detail text-[10px] md:text-xs mt-0.5 text-teal">LeadMatrix reminder system</div>
+          <div class="stat-card-val font-sans text-xl md:text-2xl lg:text-3xl font-extrabold leading-none text-orange">Up to 60%</div>
+          <div class="stat-card-detail text-[10px] md:text-xs mt-0.5 text-orange">LeadMatrix reminder system</div>
         </div>
       </div>
     </div>
@@ -449,7 +449,7 @@
 </section>
 
 <!-- DIVIDER -->
-<div class="divider-banner bg-teal py-3.5 md:py-5 px-4 md:px-7 lg:px-14">
+<div class="divider-banner bg-orange py-3.5 md:py-5 px-4 md:px-7 lg:px-14">
   <div class="banner-reveal fade-up flex flex-wrap gap-3 md:gap-6 items-center justify-center md:justify-start">
     <div class="banner-item font-sans text-xs md:text-[13px] font-bold tracking-wide text-white">Responds in under 2 minutes, 24/7</div>
     <div class="banner-item font-sans text-xs md:text-[13px] font-bold tracking-wide text-white">Automatic appointment booking</div>
@@ -463,8 +463,8 @@
 <section class="pain bg-[#F8FAFB] py-12 md:py-20 lg:py-28 px-4 md:px-7 lg:px-14" id="problem">
   <div class="two-col grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
     <div>
-      <div class="eyebrow fade-up font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-teal mb-3 md:mb-5">The Problem</div>
-      <h2 class="section-h2 fade-up font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-dark mb-5 md:mb-8">Your Front Desk Is Managing 40 Patients. <em class="text-teal italic">Not Your Pipeline.</em></h2>
+      <div class="eyebrow fade-up font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-orange mb-3 md:mb-5">The Problem</div>
+      <h2 class="section-h2 fade-up font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-dark mb-5 md:mb-8">Your Front Desk Is Managing 40 Patients. <em class="text-orange italic">Not Your Pipeline.</em></h2>
       <p class="pain-body fade-up text-base md:text-lg text-muted leading-relaxed mb-3 md:mb-4">
         This is not a front desk problem. It's a systems problem. Your front desk staff are doing exactly what they should — <strong class="text-dark">managing the patients who are already there.</strong>
       </p>
@@ -473,29 +473,29 @@
       </p>
     </div>
     <div class="data-points stagger-children flex flex-col gap-2.5 md:gap-3.5">
-      <div class="data-point fade-up flex gap-4 md:gap-5 items-start bg-surface border border-[#E2EBF0] p-4 md:p-5 rounded-xl hover:border-teal hover:shadow-lg hover:shadow-teal/10 transition-all duration-200">
-        <div class="data-point-num font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-teal min-w-12 md:min-w-16 flex-shrink-0">38%</div>
+      <div class="data-point fade-up flex gap-4 md:gap-5 items-start bg-surface border border-[#E2EBF0] p-4 md:p-5 rounded-xl hover:border-orange hover:shadow-lg hover:shadow-orange/10 transition-all duration-200">
+        <div class="data-point-num font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-orange min-w-12 md:min-w-16 flex-shrink-0">38%</div>
         <div>
           <div class="data-point-label text-xs md:text-[13px] font-bold text-dark mb-0.5">Missed enquiries</div>
           <div class="data-point-text text-xs md:text-sm text-muted leading-snug">of all new patient enquiries go unanswered during peak OPD hours</div>
         </div>
       </div>
-      <div class="data-point fade-up flex gap-4 md:gap-5 items-start bg-surface border border-[#E2EBF0] p-4 md:p-5 rounded-xl hover:border-teal hover:shadow-lg hover:shadow-teal/10 transition-all duration-200">
-        <div class="data-point-num font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-teal min-w-12 md:min-w-16 flex-shrink-0">4–8h</div>
+      <div class="data-point fade-up flex gap-4 md:gap-5 items-start bg-surface border border-[#E2EBF0] p-4 md:p-5 rounded-xl hover:border-orange hover:shadow-lg hover:shadow-orange/10 transition-all duration-200">
+        <div class="data-point-num font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-orange min-w-12 md:min-w-16 flex-shrink-0">4–8h</div>
         <div>
           <div class="data-point-label text-xs md:text-[13px] font-bold text-dark mb-0.5">Avg response time</div>
           <div class="data-point-text text-xs md:text-sm text-muted leading-snug">average response lag for after-hours WhatsApp/website enquiries</div>
         </div>
       </div>
-      <div class="data-point fade-up flex gap-4 md:gap-5 items-start bg-surface border border-[#E2EBF0] p-4 md:p-5 rounded-xl hover:border-teal hover:shadow-lg hover:shadow-teal/10 transition-all duration-200">
-        <div class="data-point-num font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-teal min-w-12 md:min-w-16 flex-shrink-0">25%</div>
+      <div class="data-point fade-up flex gap-4 md:gap-5 items-start bg-surface border border-[#E2EBF0] p-4 md:p-5 rounded-xl hover:border-orange hover:shadow-lg hover:shadow-orange/10 transition-all duration-200">
+        <div class="data-point-num font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-orange min-w-12 md:min-w-16 flex-shrink-0">25%</div>
         <div>
           <div class="data-point-label text-xs md:text-[13px] font-bold text-dark mb-0.5">No-show rate</div>
           <div class="data-point-text text-xs md:text-sm text-muted leading-snug">average no-show rate for clinics without automated reminder systems</div>
         </div>
       </div>
-      <div class="data-point fade-up flex gap-4 md:gap-5 items-start bg-surface border border-[#E2EBF0] p-4 md:p-5 rounded-xl hover:border-teal hover:shadow-lg hover:shadow-teal/10 transition-all duration-200">
-        <div class="data-point-num font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-teal min-w-12 md:min-w-16 flex-shrink-0">0</div>
+      <div class="data-point fade-up flex gap-4 md:gap-5 items-start bg-surface border border-[#E2EBF0] p-4 md:p-5 rounded-xl hover:border-orange hover:shadow-lg hover:shadow-orange/10 transition-all duration-200">
+        <div class="data-point-num font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-orange min-w-12 md:min-w-16 flex-shrink-0">0</div>
         <div>
           <div class="data-point-label text-xs md:text-[13px] font-bold text-dark mb-0.5">Data visibility</div>
           <div class="data-point-text text-xs md:text-sm text-muted leading-snug">most clinics have zero visibility into enquiry-to-appointment conversion rate</div>
@@ -508,7 +508,7 @@
 <!-- MECHANISM -->
 <section class="mechanism bg-dark py-12 md:py-20 lg:py-28 px-4 md:px-7 lg:px-14" id="how">
   <div class="mech-header fade-up text-center mb-10 md:mb-16 lg:mb-20">
-    <div class="eyebrow font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-teal mb-3 flex justify-center">How It Works</div>
+    <div class="eyebrow font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-orange mb-3 flex justify-center">How It Works</div>
     <h2 class="section-h2 font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white text-center">LeadMatrix Handles<br>Every Patient Touchpoint<br>Before They Walk In.</h2>
   </div>
 
@@ -555,7 +555,7 @@
   <!-- Video Section -->
   <div class="comparison-visual fade-up mb-10 md:mb-16 lg:mb-20">
     <div class="text-center mb-4 md:mb-6">
-      <div class="eyebrow font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-teal/70 mb-2 flex justify-center">▶ Watch How It Works</div>
+      <div class="eyebrow font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-orange/70 mb-2 flex justify-center">▶ Watch How It Works</div>
       <h3 class="font-sans text-lg md:text-2xl font-extrabold text-white">See LeadMatrix in Action for Clinics</h3>
     </div>
     <div class="comparison-image-wrapper max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 bg-white/5 p-2 md:p-4">
@@ -603,12 +603,12 @@
 
 <!-- VALUE STACK -->
 <section class="value-stack bg-[#F8FAFB] py-12 md:py-20 lg:py-28 px-4 md:px-7 lg:px-14">
-  <div class="eyebrow fade-up font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-teal mb-3 md:mb-5">What You Get</div>
+  <div class="eyebrow fade-up font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-orange mb-3 md:mb-5">What You Get</div>
   <h2 class="section-h2 fade-up font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-dark mb-5 md:mb-8">Three Levels.<br>Every Patient Attended To.</h2>
 
   <div class="tier-cards stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 my-7 md:my-10 lg:my-12">
     <div class="tier-card fade-up bg-surface border border-[#E2EBF0] p-6 md:p-8 lg:p-9 rounded-xl relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-dark/10">
-      <div class="tier-level font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-teal mb-2">Level 01</div>
+      <div class="tier-level font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-orange mb-2">Level 01</div>
       <div class="tier-title font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-dark mb-1.5">Visibility</div>
       <div class="tier-sub text-xs md:text-sm text-muted mb-4 md:mb-6 pb-4 md:pb-6 border-b border-[#E2EBF0]">See every patient enquiry in one place</div>
       <ul class="tier-list list-none flex flex-col gap-2">
@@ -620,9 +620,9 @@
         <li class="text-xs md:text-sm text-[#1A2530] leading-snug">Basic enquiry tagging and routing</li>
       </ul>
     </div>
-    <div class="tier-card featured fade-up bg-surface border-2 border-teal p-6 md:p-8 lg:p-9 rounded-xl relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-dark/10">
-      <div class="tier-badge-card absolute -top-px right-4 bg-teal text-white font-sans text-[10px] font-bold tracking-widest py-1 px-3 rounded-b">Most Popular</div>
-      <div class="tier-level font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-teal mb-2">Level 02</div>
+    <div class="tier-card featured fade-up bg-surface border-2 border-orange p-6 md:p-8 lg:p-9 rounded-xl relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-dark/10">
+      <div class="tier-badge-card absolute -top-px right-4 bg-orange text-white font-sans text-[10px] font-bold tracking-widest py-1 px-3 rounded-b">Most Popular</div>
+      <div class="tier-level font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-orange mb-2">Level 02</div>
       <div class="tier-title font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-dark mb-1.5">Control</div>
       <div class="tier-sub text-xs md:text-sm text-muted mb-4 md:mb-6 pb-4 md:pb-6 border-b border-[#E2EBF0]">Book appointments without front desk involvement</div>
       <ul class="tier-list list-none flex flex-col gap-2">
@@ -637,7 +637,7 @@
       </ul>
     </div>
     <div class="tier-card fade-up bg-surface border border-[#E2EBF0] p-6 md:p-8 lg:p-9 rounded-xl relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-dark/10">
-      <div class="tier-level font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-teal mb-2">Level 03</div>
+      <div class="tier-level font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-orange mb-2">Level 03</div>
       <div class="tier-title font-sans text-xl md:text-2xl lg:text-3xl font-extrabold text-dark mb-1.5">Autonomous</div>
       <div class="tier-sub text-xs md:text-sm text-muted mb-4 md:mb-6 pb-4 md:pb-6 border-b border-[#E2EBF0]">AI manages your patient pipeline, 24/7</div>
       <ul class="tier-list list-none flex flex-col gap-2">
@@ -654,14 +654,14 @@
   </div>
 
   <div class="text-center fade-up">
-    <a href="#audit" class="primary-cta inline-block max-w-[460px] bg-teal text-white py-3.5 md:py-4 px-5 md:px-8 font-sans text-sm md:text-[15px] font-bold tracking-wide no-underline rounded-lg focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2 transition-all duration-200 hover:bg-[#0b5144] hover:scale-[1.03] hover:shadow-lg hover:shadow-teal/35">Find Out Which Level You Need — Free Audit →</a>
+    <a href="#audit" class="primary-cta inline-block max-w-[460px] bg-orange text-white py-3.5 md:py-4 px-5 md:px-8 font-sans text-sm md:text-[15px] font-bold tracking-wide no-underline rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2 transition-all duration-200 hover:bg-[#C2410C] hover:scale-[1.03] hover:shadow-lg hover:shadow-orange/35">Find Out Which Level You Need — Free Audit →</a>
   </div>
 </section>
 
 <!-- GUARANTEE -->
 <section class="guarantee bg-surface py-12 md:py-20 lg:py-28 px-4 md:px-7 lg:px-14">
-  <div class="guarantee-card fade-up max-w-[680px] mx-auto bg-teal/5 border-2 border-teal py-9 md:py-14 lg:py-16 px-6 md:px-12 lg:px-16 text-center rounded-2xl origin-center">
-    <h2 class="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[52px] font-extrabold text-dark mb-4 md:mb-6 leading-tight">We Show You the <em class="text-teal italic">Leak</em><br>Before You Spend Anything.</h2>
+  <div class="guarantee-card fade-up max-w-[680px] mx-auto bg-orange/5 border-2 border-orange py-9 md:py-14 lg:py-16 px-6 md:px-12 lg:px-16 text-center rounded-2xl origin-center">
+    <h2 class="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[52px] font-extrabold text-dark mb-4 md:mb-6 leading-tight">We Show You the <em class="text-orange italic">Leak</em><br>Before You Spend Anything.</h2>
     <p class="text-base md:text-lg text-muted leading-relaxed mb-2.5 md:mb-3.5">Free Patient Enquiry Audit. 20 minutes. We map your current enquiry flow, response times, and drop-off points across all channels.</p>
     <p class="text-base md:text-lg text-muted leading-relaxed mb-2.5 md:mb-3.5">You receive one number at the end: <strong class="text-dark">how many patients you're losing monthly and what that costs your clinic in rupees.</strong></p>
     <p class="text-sky font-sans font-bold">If the number is zero, we'll say so. Nothing to fix. If it's not — you'll know exactly what LeadMatrix fixes and what it saves.</p>
@@ -671,7 +671,7 @@
 <!-- CTA -->
 <section class="final-cta stagger-children bg-dark py-12 md:py-20 lg:py-28 px-4 md:px-7 lg:px-14 text-center" id="audit">
   <div class="eyebrow fade-up font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-white/40 mb-6 flex justify-center">Book Free Audit</div>
-  <h2 class="fade-up font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-extrabold text-white mb-4 md:mb-6 leading-tight">Stop Losing Patients<br>to <em class="text-teal italic">Slow Response Times.</em></h2>
+  <h2 class="fade-up font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-extrabold text-white mb-4 md:mb-6 leading-tight">Stop Losing Patients<br>to <em class="text-orange italic">Slow Response Times.</em></h2>
   <p class="final-desc fade-up text-base md:text-lg text-white/60 mx-auto mb-7 md:mb-10 lg:mb-12 max-w-[500px] leading-relaxed">20 minutes. Free. A rupee number and a clear fix. No obligation.</p>
 
   <div class="form-wrap fade-up mb-3.5 md:mb-4" data-animate="form-wrap">
@@ -777,20 +777,20 @@
 <!-- FAQ -->
 <div class="bg-[#F8FAFB]">
   <div class="faq py-10 md:py-16 lg:py-20 px-4 md:px-7 lg:px-14 max-w-[800px] mx-auto">
-    <div class="eyebrow fade-up font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-teal mb-10">Frequently Asked Questions</div>
-    <div class="faq-item border-b border-[#E2EBF0] py-4 md:py-6 cursor-pointer focus-within:ring-2 focus-within:ring-teal/30 focus-within:ring-inset rounded outline-none" tabindex="0">
+    <div class="eyebrow fade-up font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-orange mb-10">Frequently Asked Questions</div>
+    <div class="faq-item border-b border-[#E2EBF0] py-4 md:py-6 cursor-pointer focus-within:ring-2 focus-within:ring-orange/30 focus-within:ring-inset rounded outline-none" tabindex="0">
       <div class="faq-q font-sans text-sm md:text-base font-bold text-dark flex justify-between items-center gap-3">Will this work with our existing hospital management software?</div>
       <div class="faq-a text-sm md:text-[15px] text-muted leading-relaxed mt-3">Yes. LeadMatrix is an engagement and qualification layer that sits on top of your existing setup — not a replacement for it. We integrate with most common HMS and calendar systems. The audit call will tell you exactly what the integration looks like for your setup.</div>
     </div>
-    <div class="faq-item border-b border-[#E2EBF0] py-4 md:py-6 cursor-pointer focus-within:ring-2 focus-within:ring-teal/30 focus-within:ring-inset rounded outline-none" tabindex="0">
+    <div class="faq-item border-b border-[#E2EBF0] py-4 md:py-6 cursor-pointer focus-within:ring-2 focus-within:ring-orange/30 focus-within:ring-inset rounded outline-none" tabindex="0">
       <div class="faq-q font-sans text-sm md:text-base font-bold text-dark flex justify-between items-center gap-3">We have a reception team. Why do we need automation?</div>
       <div class="faq-a text-sm md:text-[15px] text-muted leading-relaxed mt-3">Your reception team is essential — for patients who are already in front of them. LeadMatrix handles the volume that arrives while your team is occupied: after-hours WhatsApp messages, enquiries during peak OPD, overnight website form submissions. It extends your team's capacity without adding headcount.</div>
     </div>
-    <div class="faq-item border-b border-[#E2EBF0] py-4 md:py-6 cursor-pointer focus-within:ring-2 focus-within:ring-teal/30 focus-within:ring-inset rounded outline-none" tabindex="0">
+    <div class="faq-item border-b border-[#E2EBF0] py-4 md:py-6 cursor-pointer focus-within:ring-2 focus-within:ring-orange/30 focus-within:ring-inset rounded outline-none" tabindex="0">
       <div class="faq-q font-sans text-sm md:text-base font-bold text-dark flex justify-between items-center gap-3">Is patient data secure?</div>
       <div class="faq-a text-sm md:text-[15px] text-muted leading-relaxed mt-3">Yes. LeadMatrix is built with data security standards appropriate for healthcare. Patient information is never shared, sold, or used outside your clinic's account. Full details available in our data processing agreement, which we share before any engagement begins.</div>
     </div>
-    <div class="faq-item border-b border-[#E2EBF0] py-4 md:py-6 cursor-pointer focus-within:ring-2 focus-within:ring-teal/30 focus-within:ring-inset rounded outline-none" tabindex="0">
+    <div class="faq-item border-b border-[#E2EBF0] py-4 md:py-6 cursor-pointer focus-within:ring-2 focus-within:ring-orange/30 focus-within:ring-inset rounded outline-none" tabindex="0">
       <div class="faq-q font-sans text-sm md:text-base font-bold text-dark flex justify-between items-center gap-3">How quickly will we see a drop in no-shows?</div>
       <div class="faq-a text-sm md:text-[15px] text-muted leading-relaxed mt-3">Most clinics see measurable no-show reduction within the first 2 to 3 weeks of the reminder system being live. The sequence typically includes a 48-hour reminder, a 24-hour reminder, and a same-day confirmation — all automated, all trackable.</div>
     </div>
@@ -805,15 +805,15 @@
         <p class="text-xs md:text-sm text-white/40">Revenue Operating Systems for Indian Businesses.</p>
       </div>
       <div>
-        <div class="font-sans text-xs font-bold tracking-widest uppercase text-teal mb-3">Contact Us</div>
+        <div class="font-sans text-xs font-bold tracking-widest uppercase text-orange mb-3">Contact Us</div>
         <div class="flex flex-col gap-2">
-          <a href="mailto:hypexofficial.team@gmail.com" class="text-sm text-white/60 hover:text-teal transition-colors duration-200 flex items-center justify-center md:justify-start gap-2">
+          <a href="mailto:hypexofficial.team@gmail.com" class="text-sm text-white/60 hover:text-orange transition-colors duration-200 flex items-center justify-center md:justify-start gap-2">
             <span>📧</span> hypexofficial.team@gmail.com
           </a>
-          <a href="tel:+916289109099" class="text-sm text-white/60 hover:text-teal transition-colors duration-200 flex items-center justify-center md:justify-start gap-2">
+          <a href="tel:+916289109099" class="text-sm text-white/60 hover:text-orange transition-colors duration-200 flex items-center justify-center md:justify-start gap-2">
             <span>📞</span> +91 6289109099
           </a>
-          <a href="tel:+918444815643" class="text-sm text-white/60 hover:text-teal transition-colors duration-200 flex items-center justify-center md:justify-start gap-2">
+          <a href="tel:+918444815643" class="text-sm text-white/60 hover:text-orange transition-colors duration-200 flex items-center justify-center md:justify-start gap-2">
             <span>📞</span> +91 8444815643
           </a>
         </div>

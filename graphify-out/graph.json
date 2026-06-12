@@ -1,0 +1,4090 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "next-env.d.ts",
+      "source_location": "L1",
+      "id": "next_env_d_ts",
+      "community": 17,
+      "norm_label": "next-env.d.ts"
+    },
+    {
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "next.config.ts",
+      "source_location": "L1",
+      "id": "next_config_ts",
+      "community": 18,
+      "norm_label": "next.config.ts"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L1",
+      "id": "app_layout_tsx",
+      "community": 14,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L18",
+      "id": "app_layout_rootlayout",
+      "community": 14,
+      "norm_label": "rootlayout()"
+    },
+    {
+      "label": "not-found.tsx",
+      "file_type": "code",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L1",
+      "id": "app_not_found_tsx",
+      "community": 19,
+      "norm_label": "not-found.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L1",
+      "id": "app_page_tsx",
+      "community": 16,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/submit/route.ts",
+      "source_location": "L1",
+      "id": "app_api_submit_route_ts",
+      "community": 10,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "sanitize()",
+      "file_type": "code",
+      "source_file": "app/api/submit/route.ts",
+      "source_location": "L5",
+      "id": "submit_route_sanitize",
+      "community": 10,
+      "norm_label": "sanitize()"
+    },
+    {
+      "label": "OPTIONS()",
+      "file_type": "code",
+      "source_file": "app/api/submit/route.ts",
+      "source_location": "L10",
+      "id": "submit_route_options",
+      "community": 10,
+      "norm_label": "options()"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "app/api/submit/route.ts",
+      "source_location": "L21",
+      "id": "submit_route_post",
+      "community": 10,
+      "norm_label": "post()"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/[slug]/layout.tsx",
+      "source_location": "L1",
+      "id": "app_slug_layout_tsx",
+      "community": 15,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "LandingLayout()",
+      "file_type": "code",
+      "source_file": "app/[slug]/layout.tsx",
+      "source_location": "L3",
+      "id": "slug_layout_landinglayout",
+      "community": 15,
+      "norm_label": "landinglayout()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L1",
+      "id": "app_slug_page_tsx",
+      "community": 6,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "generateStaticParams()",
+      "file_type": "code",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L9",
+      "id": "slug_page_generatestaticparams",
+      "community": 6,
+      "norm_label": "generatestaticparams()"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L13",
+      "id": "slug_page_generatemetadata",
+      "community": 6,
+      "norm_label": "generatemetadata()"
+    },
+    {
+      "label": "LandingRoutePage()",
+      "file_type": "code",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L20",
+      "id": "slug_page_landingroutepage",
+      "community": 6,
+      "norm_label": "landingroutepage()"
+    },
+    {
+      "label": "registry.ts",
+      "file_type": "code",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L1",
+      "id": "components_landings_registry_ts",
+      "community": 2,
+      "norm_label": "registry.ts"
+    },
+    {
+      "label": "getLandingComponent()",
+      "file_type": "code",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L33",
+      "id": "landings_registry_getlandingcomponent",
+      "community": 6,
+      "norm_label": "getlandingcomponent()"
+    },
+    {
+      "label": "getAllLandingSlugs()",
+      "file_type": "code",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L37",
+      "id": "landings_registry_getalllandingslugs",
+      "community": 6,
+      "norm_label": "getalllandingslugs()"
+    },
+    {
+      "label": "ClinicLanding.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L1",
+      "id": "components_landings_clinic_cliniclanding_tsx",
+      "community": 2,
+      "norm_label": "cliniclanding.tsx"
+    },
+    {
+      "label": "a()",
+      "file_type": "code",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L7",
+      "id": "clinic_cliniclanding_a",
+      "community": 2,
+      "norm_label": "a()"
+    },
+    {
+      "label": "FoodLanding.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L1",
+      "id": "components_landings_food_foodlanding_tsx",
+      "community": 2,
+      "norm_label": "foodlanding.tsx"
+    },
+    {
+      "label": "a()",
+      "file_type": "code",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L7",
+      "id": "food_foodlanding_a",
+      "community": 2,
+      "norm_label": "a()"
+    },
+    {
+      "label": "LuxuryClient.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/luxury/LuxuryClient.tsx",
+      "source_location": "L1",
+      "id": "components_landings_luxury_luxuryclient_tsx",
+      "community": 12,
+      "norm_label": "luxuryclient.tsx"
+    },
+    {
+      "label": "formatInr()",
+      "file_type": "code",
+      "source_file": "components/landings/luxury/LuxuryClient.tsx",
+      "source_location": "L39",
+      "id": "luxury_luxuryclient_formatinr",
+      "community": 12,
+      "norm_label": "formatinr()"
+    },
+    {
+      "label": "LuxuryClient()",
+      "file_type": "code",
+      "source_file": "components/landings/luxury/LuxuryClient.tsx",
+      "source_location": "L45",
+      "id": "luxury_luxuryclient_luxuryclient",
+      "community": 12,
+      "norm_label": "luxuryclient()"
+    },
+    {
+      "label": "LuxuryLanding.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/luxury/LuxuryLanding.tsx",
+      "source_location": "L1",
+      "id": "components_landings_luxury_luxurylanding_tsx",
+      "community": 2,
+      "norm_label": "luxurylanding.tsx"
+    },
+    {
+      "label": "a()",
+      "file_type": "code",
+      "source_file": "components/landings/luxury/LuxuryLanding.tsx",
+      "source_location": "L7",
+      "id": "luxury_luxurylanding_a",
+      "community": 2,
+      "norm_label": "a()"
+    },
+    {
+      "label": "ProfessionalLanding.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L1",
+      "id": "components_landings_professional_professionallanding_tsx",
+      "community": 2,
+      "norm_label": "professionallanding.tsx"
+    },
+    {
+      "label": "a()",
+      "file_type": "code",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L7",
+      "id": "professional_professionallanding_a",
+      "community": 2,
+      "norm_label": "a()"
+    },
+    {
+      "label": "AuditForm.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/shared/AuditForm.tsx",
+      "source_location": "L1",
+      "id": "components_landings_shared_auditform_tsx",
+      "community": 2,
+      "norm_label": "auditform.tsx"
+    },
+    {
+      "label": "onSubmit()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/AuditForm.tsx",
+      "source_location": "L46",
+      "id": "shared_auditform_onsubmit",
+      "community": 2,
+      "norm_label": "onsubmit()"
+    },
+    {
+      "label": "LandingAuditForm.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingAuditForm.tsx",
+      "source_location": "L1",
+      "id": "components_landings_shared_landingauditform_tsx",
+      "community": 2,
+      "norm_label": "landingauditform.tsx"
+    },
+    {
+      "label": "LandingFrame.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingFrame.tsx",
+      "source_location": "L1",
+      "id": "components_landings_shared_landingframe_tsx",
+      "community": 2,
+      "norm_label": "landingframe.tsx"
+    },
+    {
+      "label": "LeadmatrixClient.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LeadmatrixClient.tsx",
+      "source_location": "L1",
+      "id": "components_landings_shared_leadmatrixclient_tsx",
+      "community": 2,
+      "norm_label": "leadmatrixclient.tsx"
+    },
+    {
+      "label": "LeadmatrixClient()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LeadmatrixClient.tsx",
+      "source_location": "L12",
+      "id": "shared_leadmatrixclient_leadmatrixclient",
+      "community": 2,
+      "norm_label": "leadmatrixclient()"
+    },
+    {
+      "label": "ToursClient.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/tours/ToursClient.tsx",
+      "source_location": "L1",
+      "id": "components_landings_tours_toursclient_tsx",
+      "community": 2,
+      "norm_label": "toursclient.tsx"
+    },
+    {
+      "label": "ToursClient()",
+      "file_type": "code",
+      "source_file": "components/landings/tours/ToursClient.tsx",
+      "source_location": "L5",
+      "id": "tours_toursclient_toursclient",
+      "community": 2,
+      "norm_label": "toursclient()"
+    },
+    {
+      "label": "ToursLanding.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/tours/ToursLanding.tsx",
+      "source_location": "L1",
+      "id": "components_landings_tours_tourslanding_tsx",
+      "community": 2,
+      "norm_label": "tourslanding.tsx"
+    },
+    {
+      "label": "landing-assets.ts",
+      "file_type": "code",
+      "source_file": "lib/landing-assets.ts",
+      "source_location": "L1",
+      "id": "lib_landing_assets_ts",
+      "community": 2,
+      "norm_label": "landing-assets.ts"
+    },
+    {
+      "label": "asset()",
+      "file_type": "code",
+      "source_file": "lib/landing-assets.ts",
+      "source_location": "L1",
+      "id": "lib_landing_assets_asset",
+      "community": 2,
+      "norm_label": "asset()"
+    },
+    {
+      "label": "landings.ts",
+      "file_type": "code",
+      "source_file": "lib/landings.ts",
+      "source_location": "L1",
+      "id": "lib_landings_ts",
+      "community": 16,
+      "norm_label": "landings.ts"
+    },
+    {
+      "label": "convert-landings.mjs",
+      "file_type": "code",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L1",
+      "id": "scripts_convert_landings_mjs",
+      "community": 8,
+      "norm_label": "convert-landings.mjs"
+    },
+    {
+      "label": "extractBetween()",
+      "file_type": "code",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L45",
+      "id": "scripts_convert_landings_extractbetween",
+      "community": 8,
+      "norm_label": "extractbetween()"
+    },
+    {
+      "label": "extractAllStyles()",
+      "file_type": "code",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L54",
+      "id": "scripts_convert_landings_extractallstyles",
+      "community": 8,
+      "norm_label": "extractallstyles()"
+    },
+    {
+      "label": "extractScripts()",
+      "file_type": "code",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L64",
+      "id": "scripts_convert_landings_extractscripts",
+      "community": 8,
+      "norm_label": "extractscripts()"
+    },
+    {
+      "label": "scopeStylesToFrame()",
+      "file_type": "code",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L94",
+      "id": "scripts_convert_landings_scopestylestoframe",
+      "community": 8,
+      "norm_label": "scopestylestoframe()"
+    },
+    {
+      "label": "extractBodyClass()",
+      "file_type": "code",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L100",
+      "id": "scripts_convert_landings_extractbodyclass",
+      "community": 8,
+      "norm_label": "extractbodyclass()"
+    },
+    {
+      "label": "stripScripts()",
+      "file_type": "code",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L105",
+      "id": "scripts_convert_landings_stripscripts",
+      "community": 8,
+      "norm_label": "stripscripts()"
+    },
+    {
+      "label": "rewriteAssetPaths()",
+      "file_type": "code",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L109",
+      "id": "scripts_convert_landings_rewriteassetpaths",
+      "community": 8,
+      "norm_label": "rewriteassetpaths()"
+    },
+    {
+      "label": "copyAssets()",
+      "file_type": "code",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L124",
+      "id": "scripts_convert_landings_copyassets",
+      "community": 8,
+      "norm_label": "copyassets()"
+    },
+    {
+      "label": "html-to-tsx.mjs",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L1",
+      "id": "scripts_html_to_tsx_mjs",
+      "community": 4,
+      "norm_label": "html-to-tsx.mjs"
+    },
+    {
+      "label": "extractBetween()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L122",
+      "id": "scripts_html_to_tsx_extractbetween",
+      "community": 4,
+      "norm_label": "extractbetween()"
+    },
+    {
+      "label": "extractAllStyles()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L131",
+      "id": "scripts_html_to_tsx_extractallstyles",
+      "community": 4,
+      "norm_label": "extractallstyles()"
+    },
+    {
+      "label": "extractScripts()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L141",
+      "id": "scripts_html_to_tsx_extractscripts",
+      "community": 4,
+      "norm_label": "extractscripts()"
+    },
+    {
+      "label": "scopeStylesToFrame()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L177",
+      "id": "scripts_html_to_tsx_scopestylestoframe",
+      "community": 4,
+      "norm_label": "scopestylestoframe()"
+    },
+    {
+      "label": "extractBodyClass()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L184",
+      "id": "scripts_html_to_tsx_extractbodyclass",
+      "community": 4,
+      "norm_label": "extractbodyclass()"
+    },
+    {
+      "label": "stripScripts()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L189",
+      "id": "scripts_html_to_tsx_stripscripts",
+      "community": 4,
+      "norm_label": "stripscripts()"
+    },
+    {
+      "label": "rewriteAssetPaths()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L193",
+      "id": "scripts_html_to_tsx_rewriteassetpaths",
+      "community": 4,
+      "norm_label": "rewriteassetpaths()"
+    },
+    {
+      "label": "escapeJsxText()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L208",
+      "id": "scripts_html_to_tsx_escapejsxtext",
+      "community": 4,
+      "norm_label": "escapejsxtext()"
+    },
+    {
+      "label": "styleStringToJsx()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L219",
+      "id": "scripts_html_to_tsx_stylestringtojsx",
+      "community": 4,
+      "norm_label": "stylestringtojsx()"
+    },
+    {
+      "label": "convertAttrs()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L239",
+      "id": "scripts_html_to_tsx_convertattrs",
+      "community": 4,
+      "norm_label": "convertattrs()"
+    },
+    {
+      "label": "findMatchingClose()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L291",
+      "id": "scripts_html_to_tsx_findmatchingclose",
+      "community": 4,
+      "norm_label": "findmatchingclose()"
+    },
+    {
+      "label": "htmlToJsx()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L333",
+      "id": "scripts_html_to_tsx_htmltojsx",
+      "community": 4,
+      "norm_label": "htmltojsx()"
+    },
+    {
+      "label": "copyAssets()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L401",
+      "id": "scripts_html_to_tsx_copyassets",
+      "community": 4,
+      "norm_label": "copyassets()"
+    },
+    {
+      "label": "generateEffectsComponent()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L416",
+      "id": "scripts_html_to_tsx_generateeffectscomponent",
+      "community": 4,
+      "norm_label": "generateeffectscomponent()"
+    },
+    {
+      "label": "generateLandingComponent()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L440",
+      "id": "scripts_html_to_tsx_generatelandingcomponent",
+      "community": 4,
+      "norm_label": "generatelandingcomponent()"
+    },
+    {
+      "label": "indentJsx()",
+      "file_type": "code",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L462",
+      "id": "scripts_html_to_tsx_indentjsx",
+      "community": 4,
+      "norm_label": "indentjsx()"
+    },
+    {
+      "label": "DEPLOYMENT.md",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L1",
+      "id": "deployment_md",
+      "community": 0,
+      "norm_label": "deployment.md"
+    },
+    {
+      "label": "Deployment Guide for Dokploy",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L1",
+      "id": "landing_deployment_deployment_guide_for_dokploy",
+      "community": 0,
+      "norm_label": "deployment guide for dokploy"
+    },
+    {
+      "label": "Prerequisites",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L5",
+      "id": "landing_deployment_prerequisites",
+      "community": 0,
+      "norm_label": "prerequisites"
+    },
+    {
+      "label": "Step 1: Prepare Your GitHub Repository",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L12",
+      "id": "landing_deployment_step_1_prepare_your_github_repository",
+      "community": 0,
+      "norm_label": "step 1: prepare your github repository"
+    },
+    {
+      "label": "1.1 Initialize Git (if not already done)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L14",
+      "id": "landing_deployment_1_1_initialize_git_if_not_already_done",
+      "community": 0,
+      "norm_label": "1.1 initialize git (if not already done)"
+    },
+    {
+      "label": "code:bash (git init)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L15",
+      "id": "landing_deployment_codeblock_1",
+      "community": 0,
+      "norm_label": "code:bash (git init)"
+    },
+    {
+      "label": "1.2 Create GitHub Repository",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L21",
+      "id": "landing_deployment_1_2_create_github_repository",
+      "community": 0,
+      "norm_label": "1.2 create github repository"
+    },
+    {
+      "label": "1.3 Push to GitHub",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L26",
+      "id": "landing_deployment_1_3_push_to_github",
+      "community": 0,
+      "norm_label": "1.3 push to github"
+    },
+    {
+      "label": "code:bash (git remote add origin https://github.com/YOUR_USERNAME/YOUR_)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L27",
+      "id": "landing_deployment_codeblock_2",
+      "community": 0,
+      "norm_label": "code:bash (git remote add origin https://github.com/your_username/your_)"
+    },
+    {
+      "label": "Step 2: Configure Dokploy",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L35",
+      "id": "landing_deployment_step_2_configure_dokploy",
+      "community": 9,
+      "norm_label": "step 2: configure dokploy"
+    },
+    {
+      "label": "2.1 Access Dokploy Dashboard",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L37",
+      "id": "landing_deployment_2_1_access_dokploy_dashboard",
+      "community": 9,
+      "norm_label": "2.1 access dokploy dashboard"
+    },
+    {
+      "label": "2.2 Create New Application",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L41",
+      "id": "landing_deployment_2_2_create_new_application",
+      "community": 9,
+      "norm_label": "2.2 create new application"
+    },
+    {
+      "label": "2.3 Configure Application Settings",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L48",
+      "id": "landing_deployment_2_3_configure_application_settings",
+      "community": 9,
+      "norm_label": "2.3 configure application settings"
+    },
+    {
+      "label": "code:bash (npm install)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L54",
+      "id": "landing_deployment_codeblock_3",
+      "community": 9,
+      "norm_label": "code:bash (npm install)"
+    },
+    {
+      "label": "code:bash (npm start)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L58",
+      "id": "landing_deployment_codeblock_4",
+      "community": 9,
+      "norm_label": "code:bash (npm start)"
+    },
+    {
+      "label": "2.4 Set Environment Variables",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L73",
+      "id": "landing_deployment_2_4_set_environment_variables",
+      "community": 9,
+      "norm_label": "2.4 set environment variables"
+    },
+    {
+      "label": "code:block5 (PORT=4000)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L77",
+      "id": "landing_deployment_codeblock_5",
+      "community": 9,
+      "norm_label": "code:block5 (port=4000)"
+    },
+    {
+      "label": "Step 3: Deploy",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L89",
+      "id": "landing_deployment_step_3_deploy",
+      "community": 0,
+      "norm_label": "step 3: deploy"
+    },
+    {
+      "label": "Step 4: Access Your Landing Pages",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L98",
+      "id": "landing_deployment_step_4_access_your_landing_pages",
+      "community": 0,
+      "norm_label": "step 4: access your landing pages"
+    },
+    {
+      "label": "Step 5: Verify API Endpoint",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L108",
+      "id": "landing_deployment_step_5_verify_api_endpoint",
+      "community": 0,
+      "norm_label": "step 5: verify api endpoint"
+    },
+    {
+      "label": "Troubleshooting",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L114",
+      "id": "landing_deployment_troubleshooting",
+      "community": 0,
+      "norm_label": "troubleshooting"
+    },
+    {
+      "label": "Port Conflicts",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L116",
+      "id": "landing_deployment_port_conflicts",
+      "community": 0,
+      "norm_label": "port conflicts"
+    },
+    {
+      "label": "Environment Variables Not Working",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L121",
+      "id": "landing_deployment_environment_variables_not_working",
+      "community": 0,
+      "norm_label": "environment variables not working"
+    },
+    {
+      "label": "Folder Names with Spaces",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L126",
+      "id": "landing_deployment_folder_names_with_spaces",
+      "community": 0,
+      "norm_label": "folder names with spaces"
+    },
+    {
+      "label": "Build Errors",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L131",
+      "id": "landing_deployment_build_errors",
+      "community": 0,
+      "norm_label": "build errors"
+    },
+    {
+      "label": "Local Development",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L136",
+      "id": "landing_deployment_local_development",
+      "community": 0,
+      "norm_label": "local development"
+    },
+    {
+      "label": "Option 1: Direct Node.js",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L138",
+      "id": "landing_deployment_option_1_direct_node_js",
+      "community": 0,
+      "norm_label": "option 1: direct node.js"
+    },
+    {
+      "label": "code:bash (npm install)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L140",
+      "id": "landing_deployment_codeblock_6",
+      "community": 0,
+      "norm_label": "code:bash (npm install)"
+    },
+    {
+      "label": "Option 2: Docker",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L149",
+      "id": "landing_deployment_option_2_docker",
+      "community": 0,
+      "norm_label": "option 2: docker"
+    },
+    {
+      "label": "code:bash (# Build the Docker image)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L151",
+      "id": "landing_deployment_codeblock_7",
+      "community": 0,
+      "norm_label": "code:bash (# build the docker image)"
+    },
+    {
+      "label": "code:bash (docker-compose up)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L160",
+      "id": "landing_deployment_codeblock_8",
+      "community": 0,
+      "norm_label": "code:bash (docker-compose up)"
+    },
+    {
+      "label": "Updating Your Deployment",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L164",
+      "id": "landing_deployment_updating_your_deployment",
+      "community": 0,
+      "norm_label": "updating your deployment"
+    },
+    {
+      "label": "code:bash (git add .)",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L168",
+      "id": "landing_deployment_codeblock_9",
+      "community": 0,
+      "norm_label": "code:bash (git add .)"
+    },
+    {
+      "label": "Important Notes",
+      "file_type": "document",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L176",
+      "id": "landing_deployment_important_notes",
+      "community": 0,
+      "norm_label": "important notes"
+    },
+    {
+      "label": "DOKPLOY_SETUP.md",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L1",
+      "id": "dokploy_setup_md",
+      "community": 5,
+      "norm_label": "dokploy_setup.md"
+    },
+    {
+      "label": "Quick Dokploy Deployment Guide",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L1",
+      "id": "landing_dokploy_setup_quick_dokploy_deployment_guide",
+      "community": 5,
+      "norm_label": "quick dokploy deployment guide"
+    },
+    {
+      "label": "\ud83d\udccb Prerequisites Checklist",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L3",
+      "id": "landing_dokploy_setup_prerequisites_checklist",
+      "community": 5,
+      "norm_label": "\ud83d\udccb prerequisites checklist"
+    },
+    {
+      "label": "\ud83d\ude80 Step-by-Step Deployment",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L10",
+      "id": "landing_dokploy_setup_step_by_step_deployment",
+      "community": 7,
+      "norm_label": "\ud83d\ude80 step-by-step deployment"
+    },
+    {
+      "label": "Step 1: Access Dokploy Dashboard",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L12",
+      "id": "landing_dokploy_setup_step_1_access_dokploy_dashboard",
+      "community": 7,
+      "norm_label": "step 1: access dokploy dashboard"
+    },
+    {
+      "label": "Step 2: Create New Application",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L16",
+      "id": "landing_dokploy_setup_step_2_create_new_application",
+      "community": 7,
+      "norm_label": "step 2: create new application"
+    },
+    {
+      "label": "Step 3: Connect GitHub Repository",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L21",
+      "id": "landing_dokploy_setup_step_3_connect_github_repository",
+      "community": 7,
+      "norm_label": "step 3: connect github repository"
+    },
+    {
+      "label": "Step 4: Configure Application Type",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L28",
+      "id": "landing_dokploy_setup_step_4_configure_application_type",
+      "community": 7,
+      "norm_label": "step 4: configure application type"
+    },
+    {
+      "label": "Option A: Node.js Deployment (Recommended for simplicity)",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L32",
+      "id": "landing_dokploy_setup_option_a_node_js_deployment_recommended_for_simplicity",
+      "community": 7,
+      "norm_label": "option a: node.js deployment (recommended for simplicity)"
+    },
+    {
+      "label": "Option B: Docker Deployment (If you prefer containers)",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L38",
+      "id": "landing_dokploy_setup_option_b_docker_deployment_if_you_prefer_containers",
+      "community": 7,
+      "norm_label": "option b: docker deployment (if you prefer containers)"
+    },
+    {
+      "label": "Step 5: Set Environment Variables",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L43",
+      "id": "landing_dokploy_setup_step_5_set_environment_variables",
+      "community": 7,
+      "norm_label": "step 5: set environment variables"
+    },
+    {
+      "label": "code:block1 (PORT=4000)",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L47",
+      "id": "landing_dokploy_setup_codeblock_1",
+      "community": 7,
+      "norm_label": "code:block1 (port=4000)"
+    },
+    {
+      "label": "Step 6: Configure Port (if needed)",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L59",
+      "id": "landing_dokploy_setup_step_6_configure_port_if_needed",
+      "community": 7,
+      "norm_label": "step 6: configure port (if needed)"
+    },
+    {
+      "label": "Step 7: Deploy!",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L64",
+      "id": "landing_dokploy_setup_step_7_deploy",
+      "community": 7,
+      "norm_label": "step 7: deploy!"
+    },
+    {
+      "label": "Step 8: Access Your Application",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L72",
+      "id": "landing_dokploy_setup_step_8_access_your_application",
+      "community": 7,
+      "norm_label": "step 8: access your application"
+    },
+    {
+      "label": "\ud83c\udf10 Access Your Landing Pages",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L79",
+      "id": "landing_dokploy_setup_access_your_landing_pages",
+      "community": 5,
+      "norm_label": "\ud83c\udf10 access your landing pages"
+    },
+    {
+      "label": "\u2705 Verify Deployment",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L94",
+      "id": "landing_dokploy_setup_verify_deployment",
+      "community": 5,
+      "norm_label": "\u2705 verify deployment"
+    },
+    {
+      "label": "\ud83d\udd04 Updating Your Deployment",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L111",
+      "id": "landing_dokploy_setup_updating_your_deployment",
+      "community": 5,
+      "norm_label": "\ud83d\udd04 updating your deployment"
+    },
+    {
+      "label": "code:bash (git add .)",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L116",
+      "id": "landing_dokploy_setup_codeblock_2",
+      "community": 5,
+      "norm_label": "code:bash (git add .)"
+    },
+    {
+      "label": "\ud83d\udc1b Troubleshooting",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L128",
+      "id": "landing_dokploy_setup_troubleshooting",
+      "community": 5,
+      "norm_label": "\ud83d\udc1b troubleshooting"
+    },
+    {
+      "label": "Application Won't Start",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L130",
+      "id": "landing_dokploy_setup_application_won_t_start",
+      "community": 5,
+      "norm_label": "application won't start"
+    },
+    {
+      "label": "Can't Access Landing Pages",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L135",
+      "id": "landing_dokploy_setup_can_t_access_landing_pages",
+      "community": 5,
+      "norm_label": "can't access landing pages"
+    },
+    {
+      "label": "Form Submissions Not Working",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L140",
+      "id": "landing_dokploy_setup_form_submissions_not_working",
+      "community": 5,
+      "norm_label": "form submissions not working"
+    },
+    {
+      "label": "Build Fails",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L145",
+      "id": "landing_dokploy_setup_build_fails",
+      "community": 5,
+      "norm_label": "build fails"
+    },
+    {
+      "label": "\ud83d\udcdd Quick Reference",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L152",
+      "id": "landing_dokploy_setup_quick_reference",
+      "community": 5,
+      "norm_label": "\ud83d\udcdd quick reference"
+    },
+    {
+      "label": "\ud83d\udca1 Pro Tips",
+      "file_type": "document",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L162",
+      "id": "landing_dokploy_setup_pro_tips",
+      "community": 5,
+      "norm_label": "\ud83d\udca1 pro tips"
+    },
+    {
+      "label": "TROUBLESHOOTING.md",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L1",
+      "id": "troubleshooting_md",
+      "community": 3,
+      "norm_label": "troubleshooting.md"
+    },
+    {
+      "label": "Troubleshooting: Connection Refused Error",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L1",
+      "id": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "community": 3,
+      "norm_label": "troubleshooting: connection refused error"
+    },
+    {
+      "label": "Error: `ERR_CONNECTION_REFUSED` on `165.232.187.10:4000`",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L3",
+      "id": "landing_troubleshooting_error_err_connection_refused_on_165_232_187_10_4000",
+      "community": 3,
+      "norm_label": "error: `err_connection_refused` on `165.232.187.10:4000`"
+    },
+    {
+      "label": "\u2705 Step 1: Check Application Status in Dokploy",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L9",
+      "id": "landing_troubleshooting_step_1_check_application_status_in_dokploy",
+      "community": 3,
+      "norm_label": "\u2705 step 1: check application status in dokploy"
+    },
+    {
+      "label": "\u2705 Step 2: Verify the Correct URL/Port",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L19",
+      "id": "landing_troubleshooting_step_2_verify_the_correct_url_port",
+      "community": 3,
+      "norm_label": "\u2705 step 2: verify the correct url/port"
+    },
+    {
+      "label": "Option A: Check Dokploy's Assigned URL",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L23",
+      "id": "landing_troubleshooting_option_a_check_dokploy_s_assigned_url",
+      "community": 3,
+      "norm_label": "option a: check dokploy's assigned url"
+    },
+    {
+      "label": "Option B: Check Port Mapping",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L30",
+      "id": "landing_troubleshooting_option_b_check_port_mapping",
+      "community": 3,
+      "norm_label": "option b: check port mapping"
+    },
+    {
+      "label": "\u2705 Step 3: Check Application Logs",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L37",
+      "id": "landing_troubleshooting_step_3_check_application_logs",
+      "community": 3,
+      "norm_label": "\u2705 step 3: check application logs"
+    },
+    {
+      "label": "\u2705 Step 4: Verify Environment Variables",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L48",
+      "id": "landing_troubleshooting_step_4_verify_environment_variables",
+      "community": 3,
+      "norm_label": "\u2705 step 4: verify environment variables"
+    },
+    {
+      "label": "\u2705 Step 5: Redeploy After Fix",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L58",
+      "id": "landing_troubleshooting_step_5_redeploy_after_fix",
+      "community": 3,
+      "norm_label": "\u2705 step 5: redeploy after fix"
+    },
+    {
+      "label": "\u2705 Step 6: Test the Root URL First",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L67",
+      "id": "landing_troubleshooting_step_6_test_the_root_url_first",
+      "community": 3,
+      "norm_label": "\u2705 step 6: test the root url first"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L73",
+      "id": "landing_troubleshooting_codeblock_1",
+      "community": 3,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "\ud83d\udd0d Common Issues & Solutions",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L82",
+      "id": "landing_troubleshooting_common_issues_solutions",
+      "community": 3,
+      "norm_label": "\ud83d\udd0d common issues & solutions"
+    },
+    {
+      "label": "Issue 1: Application Not Running",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L84",
+      "id": "landing_troubleshooting_issue_1_application_not_running",
+      "community": 3,
+      "norm_label": "issue 1: application not running"
+    },
+    {
+      "label": "Issue 2: Wrong Port",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L90",
+      "id": "landing_troubleshooting_issue_2_wrong_port",
+      "community": 3,
+      "norm_label": "issue 2: wrong port"
+    },
+    {
+      "label": "Issue 3: Firewall/Security Group",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L96",
+      "id": "landing_troubleshooting_issue_3_firewall_security_group",
+      "community": 3,
+      "norm_label": "issue 3: firewall/security group"
+    },
+    {
+      "label": "Issue 4: Application Crashed",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L102",
+      "id": "landing_troubleshooting_issue_4_application_crashed",
+      "community": 3,
+      "norm_label": "issue 4: application crashed"
+    },
+    {
+      "label": "\ud83d\udccb Quick Checklist",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L110",
+      "id": "landing_troubleshooting_quick_checklist",
+      "community": 3,
+      "norm_label": "\ud83d\udccb quick checklist"
+    },
+    {
+      "label": "\ud83c\udd98 Still Not Working?",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L122",
+      "id": "landing_troubleshooting_still_not_working",
+      "community": 3,
+      "norm_label": "\ud83c\udd98 still not working?"
+    },
+    {
+      "label": "ClinicClient.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/clinic/ClinicClient.tsx",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "clinicclient.tsx",
+      "id": "components_landings_clinic_clinicclient_tsx"
+    },
+    {
+      "label": "ClinicClient()",
+      "file_type": "code",
+      "source_file": "components/landings/clinic/ClinicClient.tsx",
+      "source_location": "L5",
+      "community": 2,
+      "norm_label": "clinicclient()",
+      "id": "clinic_clinicclient_clinicclient"
+    },
+    {
+      "label": "FoodClient.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/food/FoodClient.tsx",
+      "source_location": "L1",
+      "community": 11,
+      "norm_label": "foodclient.tsx",
+      "id": "components_landings_food_foodclient_tsx"
+    },
+    {
+      "label": "FoodClient()",
+      "file_type": "code",
+      "source_file": "components/landings/food/FoodClient.tsx",
+      "source_location": "L5",
+      "community": 11,
+      "norm_label": "foodclient()",
+      "id": "food_foodclient_foodclient"
+    },
+    {
+      "label": "ProfessionalClient.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/professional/ProfessionalClient.tsx",
+      "source_location": "L1",
+      "community": 13,
+      "norm_label": "professionalclient.tsx",
+      "id": "components_landings_professional_professionalclient_tsx"
+    },
+    {
+      "label": "ProfessionalClient()",
+      "file_type": "code",
+      "source_file": "components/landings/professional/ProfessionalClient.tsx",
+      "source_location": "L5",
+      "community": 13,
+      "norm_label": "professionalclient()",
+      "id": "professional_professionalclient_professionalclient"
+    },
+    {
+      "label": "initSmoothScroll()",
+      "file_type": "code",
+      "source_file": "components/landings/food/FoodClient.tsx",
+      "source_location": "L626",
+      "community": 11,
+      "norm_label": "initsmoothscroll()",
+      "id": "food_foodclient_initsmoothscroll"
+    },
+    {
+      "label": "initFieldFocusEffects()",
+      "file_type": "code",
+      "source_file": "components/landings/food/FoodClient.tsx",
+      "source_location": "L650",
+      "community": 11,
+      "norm_label": "initfieldfocuseffects()",
+      "id": "food_foodclient_initfieldfocuseffects"
+    },
+    {
+      "label": "foodAsset()",
+      "file_type": "code",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L8",
+      "community": 2,
+      "norm_label": "foodasset()",
+      "id": "food_foodlanding_foodasset"
+    },
+    {
+      "label": "loadScript()",
+      "file_type": "code",
+      "source_file": "components/landings/professional/ProfessionalClient.tsx",
+      "source_location": "L27",
+      "community": 13,
+      "norm_label": "loadscript()",
+      "id": "professional_professionalclient_loadscript"
+    },
+    {
+      "label": "LandingEffects.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "landingeffects.tsx",
+      "id": "components_landings_shared_landingeffects_tsx"
+    },
+    {
+      "label": "initFadeUp()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L12",
+      "community": 1,
+      "norm_label": "initfadeup()",
+      "id": "shared_landingeffects_initfadeup"
+    },
+    {
+      "label": "initNavScroll()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L53",
+      "community": 1,
+      "norm_label": "initnavscroll()",
+      "id": "shared_landingeffects_initnavscroll"
+    },
+    {
+      "label": "initSmoothScroll()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L82",
+      "community": 1,
+      "norm_label": "initsmoothscroll()",
+      "id": "shared_landingeffects_initsmoothscroll"
+    },
+    {
+      "label": "initFaq()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L119",
+      "community": 1,
+      "norm_label": "initfaq()",
+      "id": "shared_landingeffects_initfaq"
+    },
+    {
+      "label": "initLuxuryFaq()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L148",
+      "community": 1,
+      "norm_label": "initluxuryfaq()",
+      "id": "shared_landingeffects_initluxuryfaq"
+    },
+    {
+      "label": "initThemeToggle()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L166",
+      "community": 1,
+      "norm_label": "initthemetoggle()",
+      "id": "shared_landingeffects_initthemetoggle"
+    },
+    {
+      "label": "initLevelSelect()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L191",
+      "community": 1,
+      "norm_label": "initlevelselect()",
+      "id": "shared_landingeffects_initlevelselect"
+    },
+    {
+      "label": "submitForm()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L229",
+      "community": 1,
+      "norm_label": "submitform()",
+      "id": "shared_landingeffects_submitform"
+    },
+    {
+      "label": "initForm()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L319",
+      "community": 1,
+      "norm_label": "initform()",
+      "id": "shared_landingeffects_initform"
+    },
+    {
+      "label": "LandingEffects()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L339",
+      "community": 1,
+      "norm_label": "landingeffects()",
+      "id": "shared_landingeffects_landingeffects"
+    },
+    {
+      "label": "LandingScripts.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingScripts.tsx",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "landingscripts.tsx",
+      "id": "components_landings_shared_landingscripts_tsx"
+    },
+    {
+      "label": "runInlineScripts()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingScripts.tsx",
+      "source_location": "L7",
+      "community": 1,
+      "norm_label": "runinlinescripts()",
+      "id": "shared_landingscripts_runinlinescripts"
+    },
+    {
+      "label": "refreshTailwind()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingScripts.tsx",
+      "source_location": "L26",
+      "community": 1,
+      "norm_label": "refreshtailwind()",
+      "id": "shared_landingscripts_refreshtailwind"
+    },
+    {
+      "label": "onExternalLoad()",
+      "file_type": "code",
+      "source_file": "components/landings/shared/LandingScripts.tsx",
+      "source_location": "L43",
+      "community": 1,
+      "norm_label": "onexternalload()",
+      "id": "shared_landingscripts_onexternalload"
+    },
+    {
+      "label": "landing-types.ts",
+      "file_type": "code",
+      "source_file": "lib/landing-types.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "landing-types.ts",
+      "id": "lib_landing_types_ts"
+    },
+    {
+      "label": "ProfessionalLandingEffects.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/professional/ProfessionalLandingEffects.tsx",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "professionallandingeffects.tsx",
+      "id": "components_landings_professional_professionallandingeffects_tsx"
+    },
+    {
+      "label": "ProfessionalLandingEffects()",
+      "file_type": "code",
+      "source_file": "components/landings/professional/ProfessionalLandingEffects.tsx",
+      "source_location": "L24",
+      "community": 1,
+      "norm_label": "professionallandingeffects()",
+      "id": "professional_professionallandingeffects_professionallandingeffects"
+    },
+    {
+      "label": "ClinicLandingEffects.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/clinic/ClinicLandingEffects.tsx",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "cliniclandingeffects.tsx",
+      "id": "components_landings_clinic_cliniclandingeffects_tsx"
+    },
+    {
+      "label": "ClinicLandingEffects()",
+      "file_type": "code",
+      "source_file": "components/landings/clinic/ClinicLandingEffects.tsx",
+      "source_location": "L23",
+      "community": 1,
+      "norm_label": "cliniclandingeffects()",
+      "id": "clinic_cliniclandingeffects_cliniclandingeffects"
+    },
+    {
+      "label": "FoodLandingEffects.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/food/FoodLandingEffects.tsx",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "foodlandingeffects.tsx",
+      "id": "components_landings_food_foodlandingeffects_tsx"
+    },
+    {
+      "label": "FoodLandingEffects()",
+      "file_type": "code",
+      "source_file": "components/landings/food/FoodLandingEffects.tsx",
+      "source_location": "L24",
+      "community": 1,
+      "norm_label": "foodlandingeffects()",
+      "id": "food_foodlandingeffects_foodlandingeffects"
+    },
+    {
+      "label": "LuxuryLandingEffects.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/luxury/LuxuryLandingEffects.tsx",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "luxurylandingeffects.tsx",
+      "id": "components_landings_luxury_luxurylandingeffects_tsx"
+    },
+    {
+      "label": "LuxuryLandingEffects()",
+      "file_type": "code",
+      "source_file": "components/landings/luxury/LuxuryLandingEffects.tsx",
+      "source_location": "L24",
+      "community": 1,
+      "norm_label": "luxurylandingeffects()",
+      "id": "luxury_luxurylandingeffects_luxurylandingeffects"
+    },
+    {
+      "label": "ToursLandingEffects.tsx",
+      "file_type": "code",
+      "source_file": "components/landings/tours/ToursLandingEffects.tsx",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "tourslandingeffects.tsx",
+      "id": "components_landings_tours_tourslandingeffects_tsx"
+    },
+    {
+      "label": "ToursLandingEffects()",
+      "file_type": "code",
+      "source_file": "components/landings/tours/ToursLandingEffects.tsx",
+      "source_location": "L19",
+      "community": 1,
+      "norm_label": "tourslandingeffects()",
+      "id": "tours_tourslandingeffects_tourslandingeffects"
+    },
+    {
+      "label": "landing-content.ts",
+      "file_type": "code",
+      "source_file": "lib/landing-content.ts",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "landing-content.ts",
+      "id": "lib_landing_content_ts"
+    },
+    {
+      "label": "getLandingContent()",
+      "file_type": "code",
+      "source_file": "lib/landing-content.ts",
+      "source_location": "L21",
+      "community": 6,
+      "norm_label": "getlandingcontent()",
+      "id": "lib_landing_content_getlandingcontent"
+    },
+    {
+      "label": "getAllLandingSlugs()",
+      "file_type": "code",
+      "source_file": "lib/landing-content.ts",
+      "source_location": "L39",
+      "community": 6,
+      "norm_label": "getalllandingslugs()",
+      "id": "lib_landing_content_getalllandingslugs"
+    },
+    {
+      "label": "LandingScripts.tsx",
+      "file_type": "code",
+      "source_file": "components/LandingScripts.tsx",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "landingscripts.tsx",
+      "id": "components_landingscripts_tsx"
+    },
+    {
+      "label": "runInlineScripts()",
+      "file_type": "code",
+      "source_file": "components/LandingScripts.tsx",
+      "source_location": "L7",
+      "community": 6,
+      "norm_label": "runinlinescripts()",
+      "id": "components_landingscripts_runinlinescripts"
+    },
+    {
+      "label": "refreshTailwind()",
+      "file_type": "code",
+      "source_file": "components/LandingScripts.tsx",
+      "source_location": "L26",
+      "community": 6,
+      "norm_label": "refreshtailwind()",
+      "id": "components_landingscripts_refreshtailwind"
+    },
+    {
+      "label": "onExternalLoad()",
+      "file_type": "code",
+      "source_file": "components/LandingScripts.tsx",
+      "source_location": "L44",
+      "community": 6,
+      "norm_label": "onexternalload()",
+      "id": "components_landingscripts_onexternalload"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_layout_tsx",
+      "target": "app_layout_rootlayout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_page_tsx",
+      "target": "lib_landings_ts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/submit/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_submit_route_ts",
+      "target": "submit_route_sanitize"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/submit/route.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_submit_route_ts",
+      "target": "submit_route_options"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/submit/route.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_submit_route_ts",
+      "target": "submit_route_post"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/submit/route.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "submit_route_post",
+      "target": "submit_route_sanitize"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_layout_tsx",
+      "target": "slug_layout_landinglayout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "components_landings_registry_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "landings_registry_getalllandingslugs"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "landings_registry_getlandingcomponent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "slug_page_generatestaticparams"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "slug_page_generatemetadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "slug_page_landingroutepage"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "components_landingscripts_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "lib_landing_content_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "lib_landing_content_getalllandingslugs"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_slug_page_tsx",
+      "target": "lib_landing_content_getlandingcontent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "slug_page_generatestaticparams",
+      "target": "landings_registry_getalllandingslugs"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "slug_page_generatestaticparams",
+      "target": "lib_landing_content_getalllandingslugs"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "slug_page_generatemetadata",
+      "target": "landings_registry_getlandingcomponent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "slug_page_generatemetadata",
+      "target": "lib_landing_content_getlandingcontent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/[slug]/page.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "slug_page_landingroutepage",
+      "target": "landings_registry_getlandingcomponent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_registry_ts",
+      "target": "landings_registry_getlandingcomponent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_registry_ts",
+      "target": "landings_registry_getalllandingslugs"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_registry_ts",
+      "target": "components_landings_food_foodlanding_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_registry_ts",
+      "target": "components_landings_clinic_cliniclanding_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_registry_ts",
+      "target": "components_landings_luxury_luxurylanding_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_registry_ts",
+      "target": "components_landings_professional_professionallanding_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/registry.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_registry_ts",
+      "target": "components_landings_tours_tourslanding_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclanding_tsx",
+      "target": "components_landings_shared_landingframe_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclanding_tsx",
+      "target": "components_landings_shared_leadmatrixclient_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclanding_tsx",
+      "target": "components_landings_shared_landingauditform_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclanding_tsx",
+      "target": "lib_landing_assets_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclanding_tsx",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclanding_tsx",
+      "target": "clinic_cliniclanding_a"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclanding_tsx",
+      "target": "components_landings_clinic_clinicclient_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclanding_tsx",
+      "target": "components_landings_shared_auditform_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclanding_tsx",
+      "target": "components_landings_clinic_cliniclandingeffects_tsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/landings/clinic/ClinicLanding.tsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "clinic_cliniclanding_a",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "components_landings_shared_landingframe_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "components_landings_shared_leadmatrixclient_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "components_landings_shared_landingauditform_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "lib_landing_assets_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "food_foodlanding_a"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "components_landings_food_foodclient_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "components_landings_shared_auditform_tsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "food_foodlanding_foodasset"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlanding_tsx",
+      "target": "components_landings_food_foodlandingeffects_tsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "food_foodlanding_a",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryClient.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxuryclient_tsx",
+      "target": "luxury_luxuryclient_formatinr"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryClient.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxuryclient_tsx",
+      "target": "luxury_luxuryclient_luxuryclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxurylanding_tsx",
+      "target": "components_landings_luxury_luxuryclient_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryLanding.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxurylanding_tsx",
+      "target": "components_landings_shared_landingframe_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxurylanding_tsx",
+      "target": "lib_landing_assets_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxurylanding_tsx",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryLanding.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxurylanding_tsx",
+      "target": "luxury_luxurylanding_a"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxurylanding_tsx",
+      "target": "components_landings_luxury_luxurylandingeffects_tsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/landings/luxury/LuxuryLanding.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "luxury_luxurylanding_a",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallanding_tsx",
+      "target": "components_landings_shared_landingframe_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallanding_tsx",
+      "target": "components_landings_shared_leadmatrixclient_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallanding_tsx",
+      "target": "components_landings_shared_landingauditform_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallanding_tsx",
+      "target": "lib_landing_assets_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallanding_tsx",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallanding_tsx",
+      "target": "professional_professionallanding_a"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallanding_tsx",
+      "target": "components_landings_professional_professionalclient_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallanding_tsx",
+      "target": "components_landings_shared_auditform_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallanding_tsx",
+      "target": "components_landings_professional_professionallandingeffects_tsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/landings/professional/ProfessionalLanding.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "professional_professionallanding_a",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/AuditForm.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_auditform_tsx",
+      "target": "shared_auditform_onsubmit"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/tours/ToursLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_tours_tourslanding_tsx",
+      "target": "components_landings_shared_landingframe_tsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LeadmatrixClient.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_leadmatrixclient_tsx",
+      "target": "shared_leadmatrixclient_leadmatrixclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/tours/ToursClient.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_tours_toursclient_tsx",
+      "target": "tours_toursclient_toursclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/tours/ToursLanding.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_tours_tourslanding_tsx",
+      "target": "components_landings_tours_toursclient_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/tours/ToursLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_tours_tourslanding_tsx",
+      "target": "lib_landing_assets_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/tours/ToursLanding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_tours_tourslanding_tsx",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/tours/ToursLanding.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_tours_tourslanding_tsx",
+      "target": "components_landings_tours_tourslandingeffects_tsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/landing-assets.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_landing_assets_ts",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/landings/food/FoodLanding.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "food_foodlanding_foodasset",
+      "target": "lib_landing_assets_asset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_convert_landings_mjs",
+      "target": "scripts_convert_landings_extractbetween"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_convert_landings_mjs",
+      "target": "scripts_convert_landings_extractallstyles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_convert_landings_mjs",
+      "target": "scripts_convert_landings_extractscripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L94",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_convert_landings_mjs",
+      "target": "scripts_convert_landings_scopestylestoframe"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_convert_landings_mjs",
+      "target": "scripts_convert_landings_extractbodyclass"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_convert_landings_mjs",
+      "target": "scripts_convert_landings_stripscripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_convert_landings_mjs",
+      "target": "scripts_convert_landings_rewriteassetpaths"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/convert-landings.mjs",
+      "source_location": "L124",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_convert_landings_mjs",
+      "target": "scripts_convert_landings_copyassets"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L122",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_extractbetween"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L131",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_extractallstyles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_extractscripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L177",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_scopestylestoframe"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L184",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_extractbodyclass"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L189",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_stripscripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L193",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_rewriteassetpaths"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L208",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_escapejsxtext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L219",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_stylestringtojsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L239",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_convertattrs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L291",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_findmatchingclose"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L333",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_htmltojsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L401",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_copyassets"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L416",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_generateeffectscomponent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L440",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_generatelandingcomponent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L462",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_mjs",
+      "target": "scripts_html_to_tsx_indentjsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L394",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_htmltojsx",
+      "target": "scripts_html_to_tsx_escapejsxtext"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L255",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_convertattrs",
+      "target": "scripts_html_to_tsx_stylestringtojsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L362",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_htmltojsx",
+      "target": "scripts_html_to_tsx_convertattrs"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L376",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_htmltojsx",
+      "target": "scripts_html_to_tsx_findmatchingclose"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/html-to-tsx.mjs",
+      "source_location": "L454",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_html_to_tsx_generatelandingcomponent",
+      "target": "scripts_html_to_tsx_indentjsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "deployment_md",
+      "target": "landing_deployment_deployment_guide_for_dokploy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_prerequisites"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_step_1_prepare_your_github_repository"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_step_2_configure_dokploy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_step_3_deploy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_step_4_access_your_landing_pages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_step_5_verify_api_endpoint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_troubleshooting"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L136",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_local_development"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L164",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_updating_your_deployment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L176",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_deployment_guide_for_dokploy",
+      "target": "landing_deployment_important_notes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_step_1_prepare_your_github_repository",
+      "target": "landing_deployment_1_1_initialize_git_if_not_already_done"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_step_1_prepare_your_github_repository",
+      "target": "landing_deployment_1_2_create_github_repository"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_step_1_prepare_your_github_repository",
+      "target": "landing_deployment_1_3_push_to_github"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_1_1_initialize_git_if_not_already_done",
+      "target": "landing_deployment_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_1_3_push_to_github",
+      "target": "landing_deployment_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_step_2_configure_dokploy",
+      "target": "landing_deployment_2_1_access_dokploy_dashboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_step_2_configure_dokploy",
+      "target": "landing_deployment_2_2_create_new_application"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_step_2_configure_dokploy",
+      "target": "landing_deployment_2_3_configure_application_settings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_step_2_configure_dokploy",
+      "target": "landing_deployment_2_4_set_environment_variables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_2_3_configure_application_settings",
+      "target": "landing_deployment_codeblock_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_2_3_configure_application_settings",
+      "target": "landing_deployment_codeblock_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_2_4_set_environment_variables",
+      "target": "landing_deployment_codeblock_5"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_troubleshooting",
+      "target": "landing_deployment_port_conflicts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L121",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_troubleshooting",
+      "target": "landing_deployment_environment_variables_not_working"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L126",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_troubleshooting",
+      "target": "landing_deployment_folder_names_with_spaces"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L131",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_troubleshooting",
+      "target": "landing_deployment_build_errors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L138",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_local_development",
+      "target": "landing_deployment_option_1_direct_node_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L149",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_local_development",
+      "target": "landing_deployment_option_2_docker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L140",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_option_1_direct_node_js",
+      "target": "landing_deployment_codeblock_6"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L151",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_option_2_docker",
+      "target": "landing_deployment_codeblock_7"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L160",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_option_2_docker",
+      "target": "landing_deployment_codeblock_8"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DEPLOYMENT.md",
+      "source_location": "L168",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_deployment_updating_your_deployment",
+      "target": "landing_deployment_codeblock_9"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dokploy_setup_md",
+      "target": "landing_dokploy_setup_quick_dokploy_deployment_guide"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_quick_dokploy_deployment_guide",
+      "target": "landing_dokploy_setup_prerequisites_checklist"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_quick_dokploy_deployment_guide",
+      "target": "landing_dokploy_setup_step_by_step_deployment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_quick_dokploy_deployment_guide",
+      "target": "landing_dokploy_setup_access_your_landing_pages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L94",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_quick_dokploy_deployment_guide",
+      "target": "landing_dokploy_setup_verify_deployment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L111",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_quick_dokploy_deployment_guide",
+      "target": "landing_dokploy_setup_updating_your_deployment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_quick_dokploy_deployment_guide",
+      "target": "landing_dokploy_setup_troubleshooting"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_quick_dokploy_deployment_guide",
+      "target": "landing_dokploy_setup_quick_reference"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L162",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_quick_dokploy_deployment_guide",
+      "target": "landing_dokploy_setup_pro_tips"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_by_step_deployment",
+      "target": "landing_dokploy_setup_step_1_access_dokploy_dashboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_by_step_deployment",
+      "target": "landing_dokploy_setup_step_2_create_new_application"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_by_step_deployment",
+      "target": "landing_dokploy_setup_step_3_connect_github_repository"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_by_step_deployment",
+      "target": "landing_dokploy_setup_step_4_configure_application_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_by_step_deployment",
+      "target": "landing_dokploy_setup_step_5_set_environment_variables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_by_step_deployment",
+      "target": "landing_dokploy_setup_step_6_configure_port_if_needed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_by_step_deployment",
+      "target": "landing_dokploy_setup_step_7_deploy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_by_step_deployment",
+      "target": "landing_dokploy_setup_step_8_access_your_application"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_4_configure_application_type",
+      "target": "landing_dokploy_setup_option_a_node_js_deployment_recommended_for_simplicity"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_4_configure_application_type",
+      "target": "landing_dokploy_setup_option_b_docker_deployment_if_you_prefer_containers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_step_5_set_environment_variables",
+      "target": "landing_dokploy_setup_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_updating_your_deployment",
+      "target": "landing_dokploy_setup_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L130",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_troubleshooting",
+      "target": "landing_dokploy_setup_application_won_t_start"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L135",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_troubleshooting",
+      "target": "landing_dokploy_setup_can_t_access_landing_pages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L140",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_troubleshooting",
+      "target": "landing_dokploy_setup_form_submissions_not_working"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DOKPLOY_SETUP.md",
+      "source_location": "L145",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_dokploy_setup_troubleshooting",
+      "target": "landing_dokploy_setup_build_fails"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "troubleshooting_md",
+      "target": "landing_troubleshooting_troubleshooting_connection_refused_error"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_error_err_connection_refused_on_165_232_187_10_4000"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_step_1_check_application_status_in_dokploy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_step_2_verify_the_correct_url_port"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_step_3_check_application_logs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_step_4_verify_environment_variables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_step_5_redeploy_after_fix"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_step_6_test_the_root_url_first"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_common_issues_solutions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L110",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_quick_checklist"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L122",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_troubleshooting_connection_refused_error",
+      "target": "landing_troubleshooting_still_not_working"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_step_2_verify_the_correct_url_port",
+      "target": "landing_troubleshooting_option_a_check_dokploy_s_assigned_url"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_step_2_verify_the_correct_url_port",
+      "target": "landing_troubleshooting_option_b_check_port_mapping"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_step_6_test_the_root_url_first",
+      "target": "landing_troubleshooting_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_common_issues_solutions",
+      "target": "landing_troubleshooting_issue_1_application_not_running"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_common_issues_solutions",
+      "target": "landing_troubleshooting_issue_2_wrong_port"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_common_issues_solutions",
+      "target": "landing_troubleshooting_issue_3_firewall_security_group"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L102",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "landing_troubleshooting_common_issues_solutions",
+      "target": "landing_troubleshooting_issue_4_application_crashed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicClient.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_clinicclient_tsx",
+      "target": "clinic_clinicclient_clinicclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodClient.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodclient_tsx",
+      "target": "food_foodclient_foodclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodClient.tsx",
+      "source_location": "L439",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodclient_tsx",
+      "target": "food_foodclient_initsmoothscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodClient.tsx",
+      "source_location": "L463",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodclient_tsx",
+      "target": "food_foodclient_initfieldfocuseffects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalClient.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionalclient_tsx",
+      "target": "professional_professionalclient_professionalclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalClient.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionalclient_tsx",
+      "target": "professional_professionalclient_loadscript"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "components_landings_shared_landingscripts_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "lib_landing_types_ts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_initfadeup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_initnavscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_initsmoothscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L119",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_initfaq"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_initluxuryfaq"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L166",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_initthemetoggle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L191",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_initlevelselect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L229",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_submitform"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L319",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_initform"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingEffects.tsx",
+      "source_location": "L339",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingeffects_tsx",
+      "target": "shared_landingeffects_landingeffects"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLandingEffects.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallandingeffects_tsx",
+      "target": "components_landings_shared_landingeffects_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLandingEffects.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclandingeffects_tsx",
+      "target": "components_landings_shared_landingeffects_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLandingEffects.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlandingeffects_tsx",
+      "target": "components_landings_shared_landingeffects_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryLandingEffects.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxurylandingeffects_tsx",
+      "target": "components_landings_shared_landingeffects_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/tours/ToursLandingEffects.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_tours_tourslandingeffects_tsx",
+      "target": "components_landings_shared_landingeffects_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingScripts.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingscripts_tsx",
+      "target": "lib_landing_types_ts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingScripts.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingscripts_tsx",
+      "target": "shared_landingscripts_runinlinescripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingScripts.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingscripts_tsx",
+      "target": "shared_landingscripts_refreshtailwind"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingScripts.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_shared_landingscripts_tsx",
+      "target": "shared_landingscripts_onexternalload"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/shared/LandingScripts.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_landingscripts_onexternalload",
+      "target": "shared_landingscripts_refreshtailwind"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLandingEffects.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallandingeffects_tsx",
+      "target": "lib_landing_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLandingEffects.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclandingeffects_tsx",
+      "target": "lib_landing_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLandingEffects.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlandingeffects_tsx",
+      "target": "lib_landing_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryLandingEffects.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxurylandingeffects_tsx",
+      "target": "lib_landing_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/tours/ToursLandingEffects.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_tours_tourslandingeffects_tsx",
+      "target": "lib_landing_types_ts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/professional/ProfessionalLandingEffects.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_professional_professionallandingeffects_tsx",
+      "target": "professional_professionallandingeffects_professionallandingeffects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/clinic/ClinicLandingEffects.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_clinic_cliniclandingeffects_tsx",
+      "target": "clinic_cliniclandingeffects_cliniclandingeffects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/food/FoodLandingEffects.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_food_foodlandingeffects_tsx",
+      "target": "food_foodlandingeffects_foodlandingeffects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/luxury/LuxuryLandingEffects.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_luxury_luxurylandingeffects_tsx",
+      "target": "luxury_luxurylandingeffects_luxurylandingeffects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/landings/tours/ToursLandingEffects.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landings_tours_tourslandingeffects_tsx",
+      "target": "tours_tourslandingeffects_tourslandingeffects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/landing-content.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_landing_content_ts",
+      "target": "lib_landing_content_getlandingcontent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/landing-content.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_landing_content_ts",
+      "target": "lib_landing_content_getalllandingslugs"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/LandingScripts.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landingscripts_tsx",
+      "target": "lib_landing_content_ts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/LandingScripts.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landingscripts_tsx",
+      "target": "components_landingscripts_runinlinescripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/LandingScripts.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landingscripts_tsx",
+      "target": "components_landingscripts_refreshtailwind"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/LandingScripts.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landingscripts_tsx",
+      "target": "components_landingscripts_onexternalload"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "components/LandingScripts.tsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landingscripts_onexternalload",
+      "target": "components_landingscripts_refreshtailwind"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "a4e739638b4e7851026ac4b30caa666af772feeb"
+}

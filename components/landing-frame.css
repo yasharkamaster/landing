@@ -1,0 +1,61 @@
+/* 8px side margin · 1370px content column · full-width backgrounds & header bar */
+body:has(.landing-frame) {
+  --landing-gutter: 8px;
+  --landing-max: 1370px;
+  /* Centers 1370px column; never less than 8px from viewport edge */
+  --landing-pad: max(var(--landing-gutter), calc((100vw - var(--landing-max)) / 2));
+  margin: 0;
+}
+
+.landing-frame {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.landing-frame #landing-root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-width header bar; logo/CTA align with the 1370px column */
+.landing-frame > nav,
+.landing-frame > .ticker-wrap,
+.landing-frame #landing-root > nav,
+.landing-frame #landing-root > .ticker-wrap {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding-left: var(--landing-pad) !important;
+  padding-right: var(--landing-pad) !important;
+  box-sizing: border-box !important;
+}
+
+/* Full-width section backgrounds; same horizontal inset as the column */
+.landing-frame #landing-root > section,
+.landing-frame #landing-root > footer,
+.landing-frame #landing-root > .faq,
+.landing-frame #landing-root > .divider-banner,
+.landing-frame #landing-root > [class*='banner']:not(.tier-badge-block) {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: var(--landing-pad) !important;
+  padding-right: var(--landing-pad) !important;
+  box-sizing: border-box;
+}
+
+/* Cancel original horizontal padding so we don't stack gaps */
+.landing-frame #landing-root > section[class*='px-'],
+.landing-frame #landing-root > footer[class*='px-'] {
+  padding-left: var(--landing-pad) !important;
+  padding-right: var(--landing-pad) !important;
+}

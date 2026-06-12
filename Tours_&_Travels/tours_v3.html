@@ -7,15 +7,13 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>LeadMatrix — Tours & Travel Revenue System</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
   --ink: #0C0B08;
-  --gold: #B89650;
-  --gold-dim: rgba(184,150,80,0.15);
-  --gold-mid: rgba(184,150,80,0.4);
+  --gold: #EA580C;
+  --gold-dim: rgba(234,88,12,0.15);
+  --gold-mid: rgba(234,88,12,0.4);
   --ivory: #F5F0E8;
   --ivory-dark: #EDE6D6;
   --text-body: #2A2720;
@@ -27,7 +25,7 @@ html{scroll-behavior:smooth}
 body{
   background:#0C0B08;
   color:var(--ivory);
-  font-family:'EB Garamond',Georgia,serif;
+  font-family:'Poppins',sans-serif;
   font-size:18px;
   line-height:1.7;
   cursor:none;
@@ -42,12 +40,12 @@ body::before{
 
 /* CURSOR */
 #cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
-#cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(184,150,80,0.6);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:all .12s ease-out}
+#cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(234,88,12,0.6);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:all .12s ease-out}
 
 /* TICKER */
-.ticker-wrap{background:var(--gold);overflow:hidden;white-space:nowrap;padding:0.5px 0;min-height:var(--ticker-height);border-bottom:1px solid rgba(184,150,80,0.3);contain:layout paint;position:relative;z-index:1}
+.ticker-wrap{background:var(--gold);overflow:hidden;white-space:nowrap;padding:0.5px 0;min-height:var(--ticker-height);border-bottom:1px solid rgba(234,88,12,0.3);contain:layout paint;position:relative;z-index:1}
 .ticker-inner{display:inline-flex;animation:ticker 40s linear infinite;will-change:transform;backface-visibility:hidden;transform:translateZ(0)}
-.ticker-inner span{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:var(--ink);padding:0 40px;text-transform:uppercase;flex-shrink:0}
+.ticker-inner span{font-family:'Poppins', sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;color:var(--ink);padding:0 40px;text-transform:uppercase;flex-shrink:0}
 .ticker-inner span::before{content:'✦';margin-right:16px;opacity:0.6}
 @keyframes ticker{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(var(--ticker-dx,-50%),0,0)}}
 
@@ -64,17 +62,17 @@ nav{
 }
 nav.nav--scrolled{
   background:rgba(12,11,8,0.85);
-  border-bottom-color:rgba(184,150,80,0.15);
+  border-bottom-color:rgba(234,88,12,0.15);
   backdrop-filter:blur(8px);
 }
 .nav-logo{
-  font-family:'Playfair Display',serif;
+  font-family:'Poppins', sans-serif;
   font-size:20px;font-weight:700;
   color:var(--gold);letter-spacing:0.05em;
 }
 .nav-logo span{color:var(--ivory);font-weight:400;font-style:italic}
 .nav-cta{
-  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  font-family:'Poppins', sans-serif;font-size:12px;font-weight:600;
   letter-spacing:0.15em;text-transform:uppercase;
   border:1px solid var(--gold);color:var(--gold);
   padding:2px 10px;text-decoration:none;
@@ -100,14 +98,14 @@ nav.nav--scrolled{
   position:relative;
 }
 .hero-eyebrow{
-  font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;
+  font-family:'Poppins', sans-serif;font-size:11px;font-weight:600;
   letter-spacing:0.25em;text-transform:uppercase;
   color:var(--gold);margin-bottom:28px;
   display:flex;align-items:center;gap:12px;
 }
 .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
 .hero-h1{
-  font-family:'Playfair Display',serif;
+  font-family:'Poppins', sans-serif;
   font-size:clamp(38px,4.5vw,64px);
   font-weight:700;line-height:1.1;
   margin-bottom:28px;
@@ -121,20 +119,20 @@ nav.nav--scrolled{
 }
 .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
 .btn-primary{
-  font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;
+  font-family:'Poppins', sans-serif;font-size:12px;font-weight:700;
   letter-spacing:0.15em;text-transform:uppercase;
   background:var(--gold);color:var(--ink);
   padding:16px 36px;text-decoration:none;
   transition:all 0.3s;border:none;cursor:none;
   display:inline-block;
 }
-.btn-primary:hover{background:var(--ivory);transform:translateY(-2px);box-shadow:0 6px 24px rgba(184,150,80,0.25)}
+.btn-primary:hover{background:var(--ivory);transform:translateY(-2px);box-shadow:0 6px 24px rgba(234,88,12,0.25)}
 .btn-primary:focus-visible,.btn-ghost:focus-visible,.form-submit:focus-visible,.nav-cta:focus-visible,.tier-cta:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .form-input:focus-visible,.form-select:focus-visible{outline:2px solid var(--gold);outline-offset:0}
 .btn-ghost{
-  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  font-family:'Poppins', sans-serif;font-size:12px;font-weight:600;
   letter-spacing:0.12em;text-transform:uppercase;
-  border:1px solid rgba(184,150,80,0.4);color:var(--ivory);
+  border:1px solid rgba(234,88,12,0.4);color:var(--ivory);
   padding:16px 36px;text-decoration:none;
   transition:all 0.3s;display:inline-block;
 }
@@ -142,22 +140,22 @@ nav.nav--scrolled{
 .hero-stat{
   display:flex;gap:36px;margin-top:48px;
   padding-top:32px;
-  border-top:1px solid rgba(184,150,80,0.2);
+  border-top:1px solid rgba(234,88,12,0.2);
 }
 .hero-stat-item{text-align:left}
 .hero-stat-item .num{
-  font-family:'Playfair Display',serif;font-size:28px;
+  font-family:'Poppins', sans-serif;font-size:28px;
   font-weight:700;color:var(--gold);display:block;
 }
 .hero-stat-item .label{
-  font-family:'Raleway',sans-serif;font-size:10px;
+  font-family:'Poppins', sans-serif;font-size:10px;
   font-weight:500;letter-spacing:0.15em;text-transform:uppercase;
   color:rgba(245,240,232,0.5);
 }
 .hero-right{
   display:flex;flex-direction:column;justify-content:center;
   align-items:center;padding:6%;
-  background:linear-gradient(135deg,rgba(184,150,80,0.05),transparent);
+  background:linear-gradient(135deg,rgba(234,88,12,0.05),transparent);
   position:relative;
 }
 /* Hero load stagger */
@@ -197,7 +195,7 @@ nav.nav--scrolled{
 /* Conversation card */
 .conv-card{
   background:rgba(245,240,232,0.04);
-  border:1px solid rgba(184,150,80,0.2);
+  border:1px solid rgba(234,88,12,0.2);
   border-radius:2px;
   padding:28px;width:100%;max-width:420px;
   position:relative;
@@ -205,26 +203,26 @@ nav.nav--scrolled{
 .conv-header{
   display:flex;align-items:center;gap:12px;
   margin-bottom:20px;padding-bottom:16px;
-  border-bottom:1px solid rgba(184,150,80,0.15);
+  border-bottom:1px solid rgba(234,88,12,0.15);
 }
 .conv-avatar{
   width:40px;height:40px;border-radius:50%;
   background:var(--gold);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Raleway',sans-serif;font-size:14px;font-weight:700;color:var(--ink);
+  font-family:'Poppins', sans-serif;font-size:14px;font-weight:700;color:var(--ink);
 }
 .conv-name{
-  font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;
+  font-family:'Poppins', sans-serif;font-size:13px;font-weight:600;
   color:var(--ivory);
 }
 .conv-time{
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   color:var(--text-muted);margin-left:auto;
 }
 .conv-msgs{display:flex;flex-direction:column;gap:10px}
 .msg{
   padding:12px 16px;border-radius:2px;
-  font-family:'Raleway',sans-serif;font-size:13px;line-height:1.5;
+  font-family:'Poppins', sans-serif;font-size:13px;line-height:1.5;
   max-width:85%;
 }
 .msg-in{
@@ -238,15 +236,15 @@ nav.nav--scrolled{
 }
 .msg-time{
   font-size:10px;color:var(--text-muted);
-  font-family:'Raleway',sans-serif;
+  font-family:'Poppins', sans-serif;
   text-align:right;margin-top:4px;
 }
 .conv-badge{
   margin-top:16px;padding:10px 14px;
-  background:rgba(184,150,80,0.1);
-  border:1px solid rgba(184,150,80,0.3);
+  background:rgba(234,88,12,0.1);
+  border:1px solid rgba(234,88,12,0.3);
   border-radius:2px;
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;
   display:flex;align-items:center;gap:8px;
 }
@@ -258,25 +256,25 @@ nav.nav--scrolled{
 
 /* LEAK COUNTER */
 .leak-banner{
-  background:rgba(184,150,80,0.08);
-  border-top:1px solid rgba(184,150,80,0.2);
-  border-bottom:1px solid rgba(184,150,80,0.2);
+  background:rgba(234,88,12,0.08);
+  border-top:1px solid rgba(234,88,12,0.2);
+  border-bottom:1px solid rgba(234,88,12,0.2);
   padding:24px 8%;
   display:flex;align-items:center;gap:24px;flex-wrap:wrap;
   justify-content:center;text-align:center;
 }
 .leak-label{
-  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  font-family:'Poppins', sans-serif;font-size:12px;font-weight:600;
   letter-spacing:0.2em;text-transform:uppercase;
   color:rgba(245,240,232,0.5);
 }
 .leak-number{
-  font-family:'Playfair Display',serif;font-size:36px;
+  font-family:'Poppins', sans-serif;font-size:36px;
   font-weight:700;color:var(--gold);
   min-width:200px;display:inline-block;
 }
 .leak-sub{
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   color:rgba(245,240,232,0.4);letter-spacing:0.1em;
   text-transform:uppercase;
 }
@@ -284,14 +282,14 @@ nav.nav--scrolled{
 /* SECTIONS */
 section{padding:100px 8%;position:relative}
 .section-eyebrow{
-  font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;
+  font-family:'Poppins', sans-serif;font-size:11px;font-weight:600;
   letter-spacing:0.25em;text-transform:uppercase;
   color:var(--gold);margin-bottom:20px;
   display:flex;align-items:center;gap:12px;
 }
 .section-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
 .section-h2{
-  font-family:'Playfair Display',serif;
+  font-family:'Poppins', sans-serif;
   font-size:clamp(32px,4vw,54px);
   font-weight:700;line-height:1.15;
   margin-bottom:20px;
@@ -321,7 +319,7 @@ section{padding:100px 8%;position:relative}
   position:absolute;bottom:0;left:0;right:0;
   background:linear-gradient(transparent,rgba(12,11,8,0.85));
   padding:20px 16px 14px;
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   letter-spacing:0.12em;text-transform:uppercase;
   color:var(--gold);
 }
@@ -339,17 +337,17 @@ section{padding:100px 8%;position:relative}
   transition:border-color 0.3s,background 0.3s;
 }
 .problem-card:hover{
-  border-color:rgba(184,150,80,0.3);
-  background:rgba(184,150,80,0.04);
+  border-color:rgba(234,88,12,0.3);
+  background:rgba(234,88,12,0.04);
 }
 .problem-num{
-  font-family:'Playfair Display',serif;font-size:100px;
-  font-weight:700;color:rgba(184,150,80,0.06);
+  font-family:'Poppins', sans-serif;font-size:100px;
+  font-weight:700;color:rgba(234,88,12,0.06);
   position:absolute;top:-10px;right:20px;
   line-height:1;pointer-events:none;font-style:italic;
 }
 .problem-title{
-  font-family:'Playfair Display',serif;font-size:22px;
+  font-family:'Poppins', sans-serif;font-size:22px;
   font-weight:600;color:var(--ivory);margin-bottom:12px;
 }
 .problem-body{
@@ -359,7 +357,7 @@ section{padding:100px 8%;position:relative}
 /* TRANSFORMATION VISUAL (Before/After image) */
 .transformation-visual-wrap{
   max-width:1000px;margin:60px auto 0;
-  border:1px solid rgba(184,150,80,0.2);
+  border:1px solid rgba(234,88,12,0.2);
   border-radius:16px;overflow:hidden;
   box-shadow:0 20px 60px rgba(0,0,0,0.35);
   position:relative;
@@ -392,7 +390,7 @@ section{padding:100px 8%;position:relative}
   position:absolute;bottom:0;left:0;right:0;
   background:linear-gradient(transparent,rgba(12,11,8,0.75) 20%,rgba(12,11,8,0.95));
   padding:20px 24px 18px;
-  font-family:'Raleway',sans-serif;font-size:13px;
+  font-family:'Poppins', sans-serif;font-size:13px;
   font-weight:600;
   letter-spacing:0.12em;text-transform:uppercase;
   color:var(--ivory);
@@ -414,11 +412,11 @@ section{padding:100px 8%;position:relative}
   border:1px solid rgba(255,100,100,0.15);
 }
 .ba-after{
-  background:rgba(184,150,80,0.05);
-  border:1px solid rgba(184,150,80,0.25);
+  background:rgba(234,88,12,0.05);
+  border:1px solid rgba(234,88,12,0.25);
 }
 .ba-label{
-  font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;
+  font-family:'Poppins', sans-serif;font-size:11px;font-weight:700;
   letter-spacing:0.2em;text-transform:uppercase;
   margin-bottom:24px;display:flex;align-items:center;gap:8px;
 }
@@ -434,9 +432,9 @@ section{padding:100px 8%;position:relative}
 .ba-icon{font-size:16px;margin-top:2px;flex-shrink:0}
 .ba-watermark{
   position:absolute;bottom:-20px;right:-10px;
-  font-family:'Playfair Display',serif;font-size:120px;
+  font-family:'Poppins', sans-serif;font-size:120px;
   font-weight:700;font-style:italic;
-  color:rgba(184,150,80,0.04);
+  color:rgba(234,88,12,0.04);
   pointer-events:none;line-height:1;
 }
 
@@ -453,18 +451,18 @@ section{padding:100px 8%;position:relative}
   transition:all 0.3s;
 }
 .step-card:hover{
-  background:rgba(184,150,80,0.05);
-  border-color:rgba(184,150,80,0.3);
+  background:rgba(234,88,12,0.05);
+  border-color:rgba(234,88,12,0.3);
   transform:translateY(-4px);
 }
 .step-num{
-  font-family:'Playfair Display',serif;font-size:48px;
-  font-weight:700;color:rgba(184,150,80,0.2);
+  font-family:'Poppins', sans-serif;font-size:48px;
+  font-weight:700;color:rgba(234,88,12,0.2);
   font-style:italic;display:block;margin-bottom:16px;
   line-height:1;
 }
 .step-title{
-  font-family:'Playfair Display',serif;font-size:16px;
+  font-family:'Poppins', sans-serif;font-size:16px;
   font-weight:600;color:var(--ivory);margin-bottom:10px;
 }
 .step-body{
@@ -474,17 +472,17 @@ section{padding:100px 8%;position:relative}
 /* DASHBOARD MOCKUP */
 .dashboard-wrap{
   margin-top:60px;
-  border:1px solid rgba(184,150,80,0.2);
+  border:1px solid rgba(234,88,12,0.2);
   border-radius:2px;overflow:hidden;
 }
 .dash-header{
-  background:rgba(184,150,80,0.1);
+  background:rgba(234,88,12,0.1);
   padding:14px 20px;display:flex;align-items:center;gap:8px;
-  border-bottom:1px solid rgba(184,150,80,0.15);
+  border-bottom:1px solid rgba(234,88,12,0.15);
 }
 .dash-dot{width:10px;height:10px;border-radius:50%}
 .dash-title{
-  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  font-family:'Poppins', sans-serif;font-size:12px;font-weight:600;
   letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-left:8px;
 }
 .dash-body{
@@ -494,33 +492,33 @@ section{padding:100px 8%;position:relative}
 }
 .dash-metric{
   background:rgba(245,240,232,0.03);
-  border:1px solid rgba(184,150,80,0.1);
+  border:1px solid rgba(234,88,12,0.1);
   padding:20px 16px;border-radius:2px;
 }
 .dash-metric-val{
-  font-family:'Playfair Display',serif;font-size:28px;
+  font-family:'Poppins', sans-serif;font-size:28px;
   font-weight:700;color:var(--gold);
 }
 .dash-metric-label{
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   color:rgba(245,240,232,0.5);letter-spacing:0.1em;
   text-transform:uppercase;margin-top:4px;
 }
 .dash-chart{
   grid-column:span 2;
   background:rgba(245,240,232,0.02);
-  border:1px solid rgba(184,150,80,0.1);
+  border:1px solid rgba(234,88,12,0.1);
   padding:20px 16px;border-radius:2px;
   display:flex;flex-direction:column;
 }
 .dash-chart-title{
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
   color:var(--gold);margin-bottom:16px;
 }
 .bars{display:flex;align-items:flex-end;gap:6px;height:80px}
 .bar{
-  flex:1;background:rgba(184,150,80,0.2);
+  flex:1;background:rgba(234,88,12,0.2);
   border-radius:2px 2px 0 0;
   position:relative;transition:height 0.8s ease-out;min-height:8px;
 }
@@ -529,14 +527,14 @@ section{padding:100px 8%;position:relative}
 .dash-pipeline{
   grid-column:span 4;
   background:rgba(245,240,232,0.02);
-  border:1px solid rgba(184,150,80,0.1);
+  border:1px solid rgba(234,88,12,0.1);
   padding:20px 16px;border-radius:2px;
 }
 .pipeline-stages{
   display:flex;gap:4px;margin-top:12px;
 }
 .pipeline-stage{
-  flex:1;height:8px;background:rgba(184,150,80,0.15);border-radius:2px;
+  flex:1;height:8px;background:rgba(234,88,12,0.15);border-radius:2px;
   position:relative;overflow:hidden;
 }
 .pipeline-fill{
@@ -544,7 +542,7 @@ section{padding:100px 8%;position:relative}
   transition:width 1s ease;
 }
 .pipeline-label{
-  font-family:'Raleway',sans-serif;font-size:10px;
+  font-family:'Poppins', sans-serif;font-size:10px;
   color:rgba(245,240,232,0.4);margin-top:6px;
   text-align:center;letter-spacing:0.08em;text-transform:uppercase;
 }
@@ -556,12 +554,12 @@ section{padding:100px 8%;position:relative}
   text-align:center;
 }
 .qs-large{
-  font-family:'Playfair Display',serif;font-size:100px;
-  color:rgba(184,150,80,0.12);line-height:0.7;
+  font-family:'Poppins', sans-serif;font-size:100px;
+  color:rgba(234,88,12,0.12);line-height:0.7;
   display:block;margin-bottom:16px;
 }
 .value-story p{
-  font-family:'EB Garamond',serif;font-size:22px;
+  font-family:'Poppins',sans-serif;font-size:22px;
   line-height:1.85;color:rgba(245,240,232,0.8);
   margin-bottom:24px;
 }
@@ -570,12 +568,12 @@ section{padding:100px 8%;position:relative}
 /* VALUE STACK */
 .value-stack{
   margin-top:60px;
-  border:1px solid rgba(184,150,80,0.2);
+  border:1px solid rgba(234,88,12,0.2);
 }
 .vs-header{
-  background:rgba(184,150,80,0.08);
+  background:rgba(234,88,12,0.08);
   padding:20px 32px;
-  font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;
+  font-family:'Poppins', sans-serif;font-size:11px;font-weight:700;
   letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);
   display:flex;justify-content:space-between;
 }
@@ -585,43 +583,43 @@ section{padding:100px 8%;position:relative}
   display:flex;justify-content:space-between;align-items:center;
   transition:background 0.2s;
 }
-.vs-item:hover{background:rgba(184,150,80,0.04)}
+.vs-item:hover{background:rgba(234,88,12,0.04)}
 .vs-item-name{
-  font-family:'EB Garamond',serif;font-size:18px;
+  font-family:'Poppins',sans-serif;font-size:18px;
   color:rgba(245,240,232,0.85);
 }
 .vs-item-name span{
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   color:var(--text-muted);display:block;letter-spacing:0.05em;
 }
 .vs-item-val{
-  font-family:'Playfair Display',serif;font-size:20px;
+  font-family:'Poppins', sans-serif;font-size:20px;
   font-weight:600;color:var(--gold);
 }
 .vs-total{
   padding:24px 32px;
-  background:rgba(184,150,80,0.08);
+  background:rgba(234,88,12,0.08);
   display:flex;justify-content:space-between;align-items:center;
 }
 .vs-total-label{
-  font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;
+  font-family:'Poppins', sans-serif;font-size:13px;font-weight:700;
   letter-spacing:0.15em;text-transform:uppercase;color:var(--ivory);
 }
 .vs-total-val{
-  font-family:'Playfair Display',serif;font-size:32px;
+  font-family:'Poppins', sans-serif;font-size:32px;
   font-weight:700;color:var(--gold);
 }
 .vs-price-row{
   padding:20px 32px;
-  background:rgba(184,150,80,0.03);
+  background:rgba(234,88,12,0.03);
   display:flex;justify-content:space-between;align-items:center;
 }
 .vs-price-label{
-  font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;
+  font-family:'Poppins', sans-serif;font-size:12px;font-weight:600;
   letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.5);
 }
 .vs-price-val{
-  font-family:'Playfair Display',serif;font-size:20px;
+  font-family:'Poppins', sans-serif;font-size:20px;
   font-weight:600;color:rgba(245,240,232,0.5);
   text-decoration:line-through;
 }
@@ -639,17 +637,17 @@ section{padding:100px 8%;position:relative}
   transition:all 0.3s;
 }
 .result-card:hover{
-  background:rgba(184,150,80,0.05);
-  border-color:rgba(184,150,80,0.25);
+  background:rgba(234,88,12,0.05);
+  border-color:rgba(234,88,12,0.25);
 }
 .result-num{
-  font-family:'Playfair Display',serif;
+  font-family:'Poppins', sans-serif;
   font-size:52px;font-weight:700;
   color:var(--gold);display:block;
   margin-bottom:8px;line-height:1;
 }
 .result-label{
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
   color:rgba(245,240,232,0.5);margin-bottom:16px;
 }
@@ -658,15 +656,15 @@ section{padding:100px 8%;position:relative}
   line-height:1.65;font-style:italic;
 }
 .result-author{
-  font-family:'Raleway',sans-serif;font-size:12px;
+  font-family:'Poppins', sans-serif;font-size:12px;
   font-weight:600;color:var(--gold);margin-top:16px;
   letter-spacing:0.1em;text-transform:uppercase;
 }
 .result-bg{
   position:absolute;top:-20px;right:-10px;
-  font-family:'Playfair Display',serif;
+  font-family:'Poppins', sans-serif;
   font-size:100px;font-weight:700;font-style:italic;
-  color:rgba(184,150,80,0.04);pointer-events:none;line-height:1;
+  color:rgba(234,88,12,0.04);pointer-events:none;line-height:1;
 }
 
 /* TIERS */
@@ -686,7 +684,7 @@ section{padding:100px 8%;position:relative}
 }
 .tier-badge{
   position:absolute;top:20px;right:20px;
-  font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;
+  font-family:'Poppins', sans-serif;font-size:10px;font-weight:700;
   letter-spacing:0.15em;text-transform:uppercase;
   background:var(--gold);color:var(--ink);
   padding:4px 10px;
@@ -694,23 +692,23 @@ section{padding:100px 8%;position:relative}
 .tier-head{
   padding:40px 36px 28px;
   background:rgba(245,240,232,0.02);
-  border-bottom:1px solid rgba(184,150,80,0.15);
+  border-bottom:1px solid rgba(234,88,12,0.15);
 }
-.tier-card.featured .tier-head{background:rgba(184,150,80,0.08)}
+.tier-card.featured .tier-head{background:rgba(234,88,12,0.08)}
 .tier-name{
-  font-family:'Playfair Display',serif;font-size:28px;
+  font-family:'Poppins', sans-serif;font-size:28px;
   font-weight:700;color:var(--ivory);margin-bottom:8px;
 }
 .tier-tagline{
-  font-family:'Raleway',sans-serif;font-size:12px;
+  font-family:'Poppins', sans-serif;font-size:12px;
   color:var(--text-muted);letter-spacing:0.08em;
   margin-bottom:24px;
 }
 .tier-cta{
   display:block;
-  font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;
+  font-family:'Poppins', sans-serif;font-size:11px;font-weight:700;
   letter-spacing:0.15em;text-transform:uppercase;
-  background:transparent;border:1px solid rgba(184,150,80,0.4);
+  background:transparent;border:1px solid rgba(234,88,12,0.4);
   color:var(--gold);padding:14px 24px;text-align:center;
   text-decoration:none;transition:all 0.3s;cursor:none;
 }
@@ -720,7 +718,7 @@ section{padding:100px 8%;position:relative}
 .tier-cta:hover{background:var(--gold);color:var(--ink)}
 .tier-body{padding:32px 36px}
 .tier-section-label{
-  font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;
+  font-family:'Poppins', sans-serif;font-size:10px;font-weight:700;
   letter-spacing:0.2em;text-transform:uppercase;
   color:var(--gold);margin:20px 0 12px;
 }
@@ -732,11 +730,11 @@ section{padding:100px 8%;position:relative}
 }
 .tier-feature::before{
   content:'—';color:var(--gold);
-  font-family:'Raleway',sans-serif;font-size:13px;
+  font-family:'Poppins', sans-serif;font-size:13px;
   flex-shrink:0;margin-top:1px;
 }
 .tier-feature.carried{color:rgba(245,240,232,0.4)}
-.tier-feature.carried::before{content:'✓';color:rgba(184,150,80,0.4)}
+.tier-feature.carried::before{content:'✓';color:rgba(234,88,12,0.4)}
 
 /* FAQ */
 .faq-grid{
@@ -749,7 +747,7 @@ section{padding:100px 8%;position:relative}
   border:1px solid rgba(245,240,232,0.06);
 }
 .faq-q{
-  font-family:'Playfair Display',serif;font-size:18px;
+  font-family:'Poppins', sans-serif;font-size:18px;
   font-weight:600;color:var(--ivory);margin-bottom:14px;
 }
 .faq-a{
@@ -759,9 +757,9 @@ section{padding:100px 8%;position:relative}
 /* FORM */
 .form-section{
   padding:100px 8%;
-  background:rgba(184,150,80,0.04);
-  border-top:1px solid rgba(184,150,80,0.15);
-  border-bottom:1px solid rgba(184,150,80,0.15);
+  background:rgba(234,88,12,0.04);
+  border-top:1px solid rgba(234,88,12,0.15);
+  border-bottom:1px solid rgba(234,88,12,0.15);
 }
 .form-wrap{
   max-width:760px;margin:0 auto;
@@ -773,15 +771,15 @@ section{padding:100px 8%;position:relative}
 .form-field{display:flex;flex-direction:column;gap:8px}
 .form-field.full{grid-column:span 2}
 .form-label{
-  font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;
+  font-family:'Poppins', sans-serif;font-size:11px;font-weight:600;
   letter-spacing:0.15em;text-transform:uppercase;
   color:rgba(245,240,232,0.5);
 }
 .form-input,.form-select{
   background:rgba(245,240,232,0.04);
-  border:1px solid rgba(184,150,80,0.2);
+  border:1px solid rgba(234,88,12,0.2);
   color:var(--ivory);padding:14px 16px;
-  font-family:'EB Garamond',serif;font-size:16px;
+  font-family:'Poppins',sans-serif;font-size:16px;
   outline:none;transition:border-color 0.3s;
   border-radius:0;
   -webkit-appearance:none;appearance:none;
@@ -796,14 +794,14 @@ section{padding:100px 8%;position:relative}
   background:#1a1a1a;
   color:#F5F0E8;
   padding:10px 12px;
-  font-family:'EB Garamond',serif;
+  font-family:'Poppins',sans-serif;
   font-size:16px;
 }
 .form-input:focus,.form-select:focus{border-color:var(--gold)}
 .form-input::placeholder{color:rgba(245,240,232,0.25)}
 .form-submit{
   width:100%;margin-top:24px;
-  font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;
+  font-family:'Poppins', sans-serif;font-size:12px;font-weight:700;
   letter-spacing:0.2em;text-transform:uppercase;
   background:var(--gold);color:var(--ink);
   border:none;padding:20px;cursor:none;
@@ -811,7 +809,7 @@ section{padding:100px 8%;position:relative}
 }
 .form-submit:hover{background:var(--ivory);transform:translateY(-2px)}
 .form-note{
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   color:rgba(245,240,232,0.35);text-align:center;
   margin-top:16px;letter-spacing:0.08em;
 }
@@ -823,7 +821,7 @@ section{padding:100px 8%;position:relative}
 }
 .guarantee-box{
   max-width:700px;margin:0 auto;
-  border:1px solid rgba(184,150,80,0.25);
+  border:1px solid rgba(234,88,12,0.25);
   padding:64px;position:relative;
 }
 .guarantee-box::before,.guarantee-box::after{
@@ -837,7 +835,7 @@ section{padding:100px 8%;position:relative}
   font-size:48px;display:block;margin-bottom:24px;
 }
 .guarantee-title{
-  font-family:'Playfair Display',serif;font-size:32px;
+  font-family:'Poppins', sans-serif;font-size:32px;
   font-weight:700;color:var(--ivory);margin-bottom:20px;
 }
 .guarantee-body{
@@ -848,17 +846,17 @@ section{padding:100px 8%;position:relative}
 /* FOOTER */
 footer{
   padding:64px 8%;
-  border-top:1px solid rgba(184,150,80,0.15);
+  border-top:1px solid rgba(234,88,12,0.15);
   display:flex;flex-wrap:wrap;gap:40px;
   justify-content:space-between;align-items:center;
 }
 .footer-brand{
-  font-family:'Playfair Display',serif;font-size:22px;
+  font-family:'Poppins', sans-serif;font-size:22px;
   font-weight:700;color:var(--gold);
 }
 .footer-brand span{color:var(--ivory);font-weight:400;font-style:italic}
 .footer-contact{
-  font-family:'Raleway',sans-serif;font-size:13px;
+  font-family:'Poppins', sans-serif;font-size:13px;
   color:rgba(245,240,232,0.5);line-height:2;text-align:right;
 }
 .footer-contact a{color:var(--gold);text-decoration:none}
@@ -870,7 +868,7 @@ footer{
   flex-wrap:wrap;gap:16px;
 }
 .footer-legal{
-  font-family:'Raleway',sans-serif;font-size:11px;
+  font-family:'Poppins', sans-serif;font-size:11px;
   color:rgba(245,240,232,0.25);letter-spacing:0.08em;
 }
 
@@ -888,12 +886,12 @@ footer{
 /* MID CTA BAND */
 .cta-band{
   padding:80px 8%;text-align:center;
-  background:rgba(184,150,80,0.06);
-  border-top:1px solid rgba(184,150,80,0.15);
-  border-bottom:1px solid rgba(184,150,80,0.15);
+  background:rgba(234,88,12,0.06);
+  border-top:1px solid rgba(234,88,12,0.15);
+  border-bottom:1px solid rgba(234,88,12,0.15);
 }
 .cta-band h2{
-  font-family:'Playfair Display',serif;
+  font-family:'Poppins', sans-serif;
   font-size:clamp(28px,3.5vw,48px);
   font-weight:700;color:var(--ivory);margin-bottom:16px;
 }
@@ -1050,7 +1048,6 @@ footer{
       </div>
     </div>
   </div>
-  </div>
 </div>
 
 <!-- HERO VISUAL IMAGE -->
@@ -1125,8 +1122,8 @@ footer{
   <div class="transformation-visual-wrap fade-up fade-up-d3" style="margin-top:60px;">
     <div class="img-inner">
       <div style="text-align:center;padding:16px 0 8px;">
-        <span style="font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">▶ Watch How It Works</span>
-        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:600;color:var(--ivory);margin-top:4px;font-style:italic;">See LeadMatrix in Action for Travel</h3>
+        <span style="font-family:'Poppins', sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">▶ Watch How It Works</span>
+        <h3 style="font-family:'Poppins', sans-serif;font-size:clamp(18px,2.5vw,24px);font-weight:600;color:var(--ivory);margin-top:4px;font-style:italic;">See LeadMatrix in Action for Travel</h3>
       </div>
       <video src="LTravel.mp4" controls playsinline preload="metadata" poster="Travel.jpeg" style="width:100%;height:auto;display:block;border-radius:16px;">
         Your browser does not support the video tag.
@@ -1258,7 +1255,7 @@ footer{
         </div>
       </div>
       <div class="dash-pipeline">
-        <div class="dash-chart-title" style="font-family:Raleway,sans-serif;font-size:11px;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase">Revenue Pipeline Progress</div>
+        <div class="dash-chart-title" style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase">Revenue Pipeline Progress</div>
         <div class="pipeline-stages">
           <div class="pipeline-stage"><div class="pipeline-fill pipeline-fill--anim" style="width:0" data-width="100"></div><div class="pipeline-label">New</div></div>
           <div class="pipeline-stage"><div class="pipeline-fill pipeline-fill--anim" style="width:0" data-width="75"></div><div class="pipeline-label">Qualified</div></div>
@@ -1317,7 +1314,7 @@ footer{
       <span class="vs-price-val">₹69,000/mo</span>
     </div>
   </div>
-  <p style="text-align:center;font-family:Raleway,sans-serif;font-size:13px;color:var(--text-muted);margin-top:24px;letter-spacing:0.1em">See tier pricing below — inquiry-based access only.</p>
+  <p style="text-align:center;font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);margin-top:24px;letter-spacing:0.1em">See tier pricing below — inquiry-based access only.</p>
 </section>
 
 <!-- MID CTA BAND -->
@@ -1488,7 +1485,7 @@ footer{
   <div class="form-wrap">
     <div class="section-eyebrow fade-up" style="justify-content:center">Free Revenue Leak Audit</div>
     <h2 class="section-h2 fade-up fade-up-d1" style="text-align:center">Claim your <em>free 20-minute audit.</em><br>Find out exactly what you're leaking.</h2>
-    <p style="text-align:center;font-size:17px;color:rgba(245,240,232,0.6);margin-bottom:8px;font-family:Raleway,sans-serif">Takes 3 minutes to fill. We do the math.</p>
+    <p style="text-align:center;font-size:17px;color:rgba(245,240,232,0.6);margin-bottom:8px;font-family:'Poppins',sans-serif">Takes 3 minutes to fill. We do the math.</p>
     <form id="auditForm" class="form-grid" onsubmit="return handleToursSubmit(event)">
       <div class="form-field fade-up fade-up-d2">
         <label class="form-label">Your Name</label>
@@ -1574,7 +1571,7 @@ footer{
 <footer class="fade-up">
   <div>
     <div class="footer-brand">Lead<span>Matrix</span></div>
-    <p style="font-family:Raleway,sans-serif;font-size:13px;color:rgba(245,240,232,0.4);margin-top:8px;max-width:320px">Revenue infrastructure for tour operators and travel companies that are ready to stop leaking bookings.</p>
+    <p style="font-family:'Poppins',sans-serif;font-size:13px;color:rgba(245,240,232,0.4);margin-top:8px;max-width:320px">Revenue infrastructure for tour operators and travel companies that are ready to stop leaking bookings.</p>
   </div>
   <div class="footer-contact">
     <div>Email: <a href="mailto:hypexofficial.team@gmail.com">hypexofficial.team@gmail.com</a></div>

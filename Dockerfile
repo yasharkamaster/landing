@@ -1,23 +1,30 @@
-# Use Node.js 18 LTS as base image
-FROM node:18-alpine
+FROM node:18-alpine AS base
 
-# Set working directory
+FROM base AS deps
 WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
 
-# Copy package files
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci --only=production
-
-# Copy application files
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+RUN npm run build
 
-# Expose port (will be overridden by Dokploy if needed)
-EXPOSE 4000
-
-# Set environment to production
+FROM base AS runner
+WORKDIR /app
 ENV NODE_ENV=production
+ENV PORT=4000
 
-# Start the application
-CMD ["npm", "start"]
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+EXPOSE 4000
+ENV HOSTNAME=0.0.0.0
+
+CMD ["node", "server.js"]
