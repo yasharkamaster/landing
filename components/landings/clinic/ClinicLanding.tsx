@@ -27,7 +27,7 @@ const LEVELS = [
 
 export default function ClinicLanding() {
   return (
-    <LandingFrame>
+    <LandingFrame bodyClass="leadmatrix-landing">
       <LeadmatrixClient
         source="clinic"
         leakRate={4.2}

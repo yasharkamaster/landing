@@ -25,7 +25,7 @@ const LEVELS = [
 
 export default function FoodLanding() {
   return (
-    <LandingFrame>
+    <LandingFrame bodyClass="leadmatrix-landing">
       <LeadmatrixClient
         source="food"
         leakRate={8.2}

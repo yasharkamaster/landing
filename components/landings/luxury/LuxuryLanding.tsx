@@ -7,7 +7,7 @@ export default function LuxuryLanding() {
   const a = (file: string) => asset('luxury', file);
 
   return (
-    <LandingFrame>
+    <LandingFrame bodyClass="luxury-landing">
       <LuxuryClient />
       <div id="landing-root">
 

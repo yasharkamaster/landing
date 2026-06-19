@@ -1,98 +1,98 @@
 {
   "D:\\5-Landing-Pages\\landing\\next-env.d.ts": {
-    "mtime": 1781172765.6872215,
+    "mtime": 1781896909.9979565,
     "hash": "90426577ad8f38459f3e566411c85589"
   },
   "D:\\5-Landing-Pages\\landing\\next.config.ts": {
-    "mtime": 1781172765.6829596,
+    "mtime": 1781896909.9979565,
     "hash": "9d5b14dc62fc4052a69ff1f98d7fd054"
   },
   "D:\\5-Landing-Pages\\landing\\app\\layout.tsx": {
-    "mtime": 1781172765.6773899,
+    "mtime": 1781896909.9979565,
     "hash": "56297a7777a406aaca7a75c14cb95c45"
   },
   "D:\\5-Landing-Pages\\landing\\app\\not-found.tsx": {
-    "mtime": 1781172765.6627014,
+    "mtime": 1781896909.9484825,
     "hash": "3f42aea1cd45cd06f42931a22380eba4"
   },
   "D:\\5-Landing-Pages\\landing\\app\\page.tsx": {
-    "mtime": 1781172765.6606803,
+    "mtime": 1781896909.946471,
     "hash": "505a6d16efea3d0902a213aab8b060c5"
   },
   "D:\\5-Landing-Pages\\landing\\app\\api\\submit\\route.ts": {
-    "mtime": 1781172765.6677964,
+    "mtime": 1781896909.9969568,
     "hash": "4ea0b8e26007f2f5e800867414bbb962"
   },
   "D:\\5-Landing-Pages\\landing\\app\\[slug]\\layout.tsx": {
-    "mtime": 1781172765.658661,
+    "mtime": 1781896909.9404275,
     "hash": "7997f5c0e315fc75cc9c34b3ef9e882b"
   },
   "D:\\5-Landing-Pages\\landing\\app\\[slug]\\page.tsx": {
-    "mtime": 1781178333.2818599,
-    "hash": "3a60ed3b0b39e7349bb60c9a0afe991a"
+    "mtime": 1781279630.1696274,
+    "hash": "983637e418cc000a7afe4c3fd3cbb929"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\registry.ts": {
-    "mtime": 1781178325.9777038,
+    "mtime": 1781279630.1716375,
     "hash": "758c45f880f1b37f402a3764926601e6"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\clinic\\ClinicLanding.tsx": {
-    "mtime": 1781177972.169582,
-    "hash": "2e420ba92a05290e4e762cb2f940334a"
+    "mtime": 1781898750.8204174,
+    "hash": "15c3a79f1ae5606fdcea8665d8c7a355"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\food\\FoodLanding.tsx": {
-    "mtime": 1781177972.1994164,
-    "hash": "b443a5ae0ad6cc9aea4d775eb3f6706c"
+    "mtime": 1781898750.8204174,
+    "hash": "a08535b77c5e44dc6784bff6cb20859d"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\luxury\\LuxuryClient.tsx": {
-    "mtime": 1781175972.9320455,
+    "mtime": 1781279630.0275555,
     "hash": "111194151ebd1e23c43161185a80e754"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\luxury\\LuxuryLanding.tsx": {
-    "mtime": 1781175453.3925333,
-    "hash": "79797671674884b5daa3a001e3806bd0"
+    "mtime": 1781898750.954731,
+    "hash": "95cd18a893f32a3009c44d6eb0d8e059"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\professional\\ProfessionalLanding.tsx": {
-    "mtime": 1781177972.1929567,
-    "hash": "bab6f67423d68cb40e30db79605b3c37"
+    "mtime": 1781898750.8204174,
+    "hash": "e067c0c34dd03c3e80eb04173728af2d"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\AuditForm.tsx": {
-    "mtime": 1781175196.8633225,
+    "mtime": 1781279630.3448792,
     "hash": "b6295c6c5faaf95eb691a6315f2d67ea"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\LandingAuditForm.tsx": {
-    "mtime": 1781177990.7263553,
+    "mtime": 1781279630.620005,
     "hash": "7f00525a65aaf41676bdf99919eae517"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\LandingFrame.tsx": {
-    "mtime": 1781175177.0134525,
+    "mtime": 1781279630.7465587,
     "hash": "6b1c77f234e1cad7ebf327c0161a5368"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\LeadmatrixClient.tsx": {
-    "mtime": 1781177642.4622593,
+    "mtime": 1781279630.2296596,
     "hash": "6d12bc0a10ae0946d4bcefbd18992a6a"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\tours\\ToursClient.tsx": {
-    "mtime": 1781175437.8661618,
+    "mtime": 1781279630.0253656,
     "hash": "37265a5308cc4268acc3cc1f15b239cf"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\tours\\ToursLanding.tsx": {
-    "mtime": 1781175647.4605296,
-    "hash": "a237010df9a0825b69f8ee719051b561"
+    "mtime": 1781898750.8204174,
+    "hash": "60ecd4dd6a00ee888076d69ec8300455"
   },
   "D:\\5-Landing-Pages\\landing\\lib\\landing-assets.ts": {
-    "mtime": 1781175156.4154847,
+    "mtime": 1781279630.6853983,
     "hash": "fb5048dcd4f0aa0385a01408d6f519c4"
   },
   "D:\\5-Landing-Pages\\landing\\lib\\landings.ts": {
-    "mtime": 1781172765.653848,
+    "mtime": 1781896909.9404275,
     "hash": "6ba783818a3a5fcbf2154fafa547e28f"
   },
   "D:\\5-Landing-Pages\\landing\\scripts\\convert-landings.mjs": {
-    "mtime": 1781172765.6336372,
+    "mtime": 1781896909.9404275,
     "hash": "b0f0eb3db68f3797f117c1a8d2ed1a8a"
   },
   "D:\\5-Landing-Pages\\landing\\scripts\\html-to-tsx.mjs": {
-    "mtime": 1781174212.7196534,
+    "mtime": 1781279630.2463717,
     "hash": "c780b0ca3b0f1f89bdc6c3728b91dc4f"
   },
   "D:\\5-Landing-Pages\\landing\\DEPLOYMENT.md": {
@@ -112,7 +112,7 @@
     "hash": "e0ebb0a1c874516ec92be50b337f1b52"
   },
   "D:\\5-Landing-Pages\\landing\\Clinic\\clinic_landing.html": {
-    "mtime": 1781172765.6919942,
+    "mtime": 1781896909.9979565,
     "hash": "074931cbec147438f098ecd9404b62fe"
   },
   "D:\\5-Landing-Pages\\landing\\content\\landings\\clinic\\body.html": {
@@ -148,7 +148,7 @@
     "hash": "04118da66e18e6f173325d15a3f74617"
   },
   "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\tours_v3.html": {
-    "mtime": 1781173886.7995741,
+    "mtime": 1781279630.4987526,
     "hash": "4feca97495e6e8d31296af0e2412d95e"
   },
   "D:\\5-Landing-Pages\\landing\\Clinic\\Book-removebg-preview.png": {

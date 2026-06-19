@@ -6,7 +6,7 @@ import './tours.css';
 
 export default function ToursLanding() {
   return (
-    <LandingFrame>
+    <LandingFrame bodyClass="leadmatrix-landing">
       <ToursClient />
       <>
         <div id="cursor"></div>

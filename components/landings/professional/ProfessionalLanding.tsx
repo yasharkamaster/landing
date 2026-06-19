@@ -24,7 +24,7 @@ const LEVELS = [
 
 export default function ProfessionalLanding() {
   return (
-    <LandingFrame>
+    <LandingFrame bodyClass="leadmatrix-landing">
       <LeadmatrixClient
         source="professional"
         leakRate={5.5}
