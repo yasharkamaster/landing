@@ -127,7 +127,7 @@ export default function FoodLanding() {
           </div>
         </div>
 
-        <section style={{ background: '#0C0B08', padding: '32px 6% 0' }}>
+        <section style={{ background: '#000000', padding: '32px 6% 0' }}>
           <div className="img-grid fade-up">
             <div className="img-grid-item">
               <img src={a('Food_Franchise.jpeg')} alt="Axiom OS for food franchises" loading="eager" />
@@ -325,7 +325,7 @@ export default function FoodLanding() {
             <div className="footer-brand">
               HypeX <span>|</span> Axiom
             </div>
-            <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: '13px', color: 'rgba(245,240,232,0.4)', marginTop: '8px', maxWidth: '320px' }}>
+            <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginTop: '8px', maxWidth: '320px' }}>
               Business operating system for food franchises ready to stop running blind.
             </p>
           </div>

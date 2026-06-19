@@ -120,7 +120,7 @@ export default function ClinicLanding() {
           </div>
         </div>
 
-        <section style={{ background: '#0C0B08', padding: '32px 6% 0' }}>
+        <section style={{ background: '#000000', padding: '32px 6% 0' }}>
           <div className="img-grid fade-up">
             <div className="img-grid-item">
               <img src={a('clinic.jpeg')} alt="LeadMatrix for healthcare clinics" loading="lazy" />
@@ -363,7 +363,7 @@ export default function ClinicLanding() {
             <div className="footer-brand">
               Lead<span>Matrix</span>
             </div>
-            <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: '13px', color: 'rgba(245,240,232,0.4)', marginTop: '8px', maxWidth: '320px' }}>
+            <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginTop: '8px', maxWidth: '320px' }}>
               Patient acquisition infrastructure for clinics ready to stop losing enquiries.
             </p>
           </div>

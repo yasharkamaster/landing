@@ -42,7 +42,7 @@ export default function LandingAuditForm({
           style={{
             textAlign: 'center',
             fontSize: '17px',
-            color: 'rgba(245,240,232,0.6)',
+            color: 'rgba(255,255,255,0.6)',
             marginBottom: '8px',
             fontFamily: "'Poppins',sans-serif",
           }}

@@ -12,12 +12,12 @@
     "hash": "56297a7777a406aaca7a75c14cb95c45"
   },
   "D:\\5-Landing-Pages\\landing\\app\\not-found.tsx": {
-    "mtime": 1781896909.9484825,
-    "hash": "3f42aea1cd45cd06f42931a22380eba4"
+    "mtime": 1781901195.622537,
+    "hash": "64244c829bc600e6013e973b7d72b574"
   },
   "D:\\5-Landing-Pages\\landing\\app\\page.tsx": {
-    "mtime": 1781896909.946471,
-    "hash": "505a6d16efea3d0902a213aab8b060c5"
+    "mtime": 1781901183.8095746,
+    "hash": "8b4e4bbaee1f8eb5ef289e7e530b7b77"
   },
   "D:\\5-Landing-Pages\\landing\\app\\api\\submit\\route.ts": {
     "mtime": 1781896909.9969568,
@@ -36,32 +36,32 @@
     "hash": "758c45f880f1b37f402a3764926601e6"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\clinic\\ClinicLanding.tsx": {
-    "mtime": 1781898750.8204174,
-    "hash": "15c3a79f1ae5606fdcea8665d8c7a355"
+    "mtime": 1781901185.524832,
+    "hash": "aa604aac0ab649a19cb38ba3959395bc"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\food\\FoodLanding.tsx": {
-    "mtime": 1781898750.8204174,
-    "hash": "a08535b77c5e44dc6784bff6cb20859d"
+    "mtime": 1781901185.7964597,
+    "hash": "9b24d0eff773b4023b1953d3540ed3e2"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\luxury\\LuxuryClient.tsx": {
     "mtime": 1781279630.0275555,
     "hash": "111194151ebd1e23c43161185a80e754"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\luxury\\LuxuryLanding.tsx": {
-    "mtime": 1781898750.954731,
-    "hash": "95cd18a893f32a3009c44d6eb0d8e059"
+    "mtime": 1781901189.938794,
+    "hash": "0c218a6ce425168255641cb4203cbc11"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\professional\\ProfessionalLanding.tsx": {
-    "mtime": 1781898750.8204174,
-    "hash": "e067c0c34dd03c3e80eb04173728af2d"
+    "mtime": 1781901183.5223489,
+    "hash": "266b74c7234947a1f895e9d99d2163c7"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\AuditForm.tsx": {
     "mtime": 1781279630.3448792,
     "hash": "b6295c6c5faaf95eb691a6315f2d67ea"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\LandingAuditForm.tsx": {
-    "mtime": 1781279630.620005,
-    "hash": "7f00525a65aaf41676bdf99919eae517"
+    "mtime": 1781901182.8609178,
+    "hash": "4e82e8a6262d796ff19a091346a6286e"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\shared\\LandingFrame.tsx": {
     "mtime": 1781279630.7465587,
@@ -76,8 +76,8 @@
     "hash": "37265a5308cc4268acc3cc1f15b239cf"
   },
   "D:\\5-Landing-Pages\\landing\\components\\landings\\tours\\ToursLanding.tsx": {
-    "mtime": 1781898750.8204174,
-    "hash": "60ecd4dd6a00ee888076d69ec8300455"
+    "mtime": 1781901810.3652573,
+    "hash": "4a05c8fa029b9b634040fc72f235133a"
   },
   "D:\\5-Landing-Pages\\landing\\lib\\landing-assets.ts": {
     "mtime": 1781279630.6853983,
@@ -391,9 +391,17 @@
     "mtime": 1780915611.1151867,
     "hash": "0e6121983bdc17ad9e74e505da7e18b0"
   },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\agency-travel-ai-agents.png": {
+    "mtime": 1781901352.5371966,
+    "hash": "3edac2a05cfd0c827c577a06f477a06a"
+  },
   "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\Every_Inquiry_Deserves_a_Premium_Response-removebg-preview.png": {
     "mtime": 1780915611.1771314,
     "hash": "d897b1c95d745ddf3166473b7ee2de80"
+  },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\global-travel-ai-agents.png": {
+    "mtime": 1781900781.1894116,
+    "hash": "739d50329bda1fe26faae32fe9d9fc66"
   },
   "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\Group_Bookings___Highest_Revenue_Per_Lead-removebg-preview.png": {
     "mtime": 1780915611.1950364,
@@ -407,6 +415,10 @@
     "mtime": 1780915612.5985365,
     "hash": "c1544edd83a07efb4cdf3a8d539eed06"
   },
+  "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\sri-lanka-tour-ai.png": {
+    "mtime": 1781901534.7823048,
+    "hash": "b49d120b8e1d9a52d4ed034fa0bfa5e6"
+  },
   "D:\\5-Landing-Pages\\landing\\public\\assets\\tours\\Travel.jpeg": {
     "mtime": 1780915612.6363108,
     "hash": "58a2567d1110e4d01b1825851a3a5ec4"
@@ -414,6 +426,18 @@
   "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\Every_Inquiry_Deserves_a_Premium_Response-removebg-preview.png": {
     "mtime": 1780915611.1771314,
     "hash": "d897b1c95d745ddf3166473b7ee2de80"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\Gemini_Generated_Image_e7r1uxe7r1uxe7r1.png": {
+    "mtime": 1781900781.1894116,
+    "hash": "739d50329bda1fe26faae32fe9d9fc66"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\Gemini_Generated_Image_sg08ifsg08ifsg08.png": {
+    "mtime": 1781901352.5371966,
+    "hash": "3edac2a05cfd0c827c577a06f477a06a"
+  },
+  "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\Gemini_Generated_Image_w7ztd7w7ztd7w7zt.png": {
+    "mtime": 1781901534.7823048,
+    "hash": "b49d120b8e1d9a52d4ed034fa0bfa5e6"
   },
   "D:\\5-Landing-Pages\\landing\\Tours_&_Travels\\Group_Bookings___Highest_Revenue_Per_Lead-removebg-preview.png": {
     "mtime": 1780915611.1950364,

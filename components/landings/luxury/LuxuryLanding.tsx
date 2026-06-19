@@ -525,12 +525,12 @@ export default function LuxuryLanding() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <span style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', fontWeight: '600', letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>Contact Us</span>
-              <a href="mailto:hypexofficial.team@gmail.com" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'rgba(245,239,228,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}>📧 hypexofficial.team@gmail.com</a>
-              <a href="tel:+916289109099" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'rgba(245,239,228,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}>📞 +91 6289109099</a>
-              <a href="tel:+918444815643" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'rgba(245,239,228,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}>📞 +91 8444815643</a>
+              <a href="mailto:hypexofficial.team@gmail.com" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}>📧 hypexofficial.team@gmail.com</a>
+              <a href="tel:+916289109099" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}>📞 +91 6289109099</a>
+              <a href="tel:+918444815643" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}>📞 +91 8444815643</a>
             </div>
             <div style={{ textAlign: 'right' }}>
-              <p style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'rgba(245,239,228,0.3)', letterSpacing: '1px' }}>© 2025 HypeX. All rights reserved.</p>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'rgba(255,255,255,0.3)', letterSpacing: '1px' }}>© 2025 HypeX. All rights reserved.</p>
             </div>
           </div>
         </footer>

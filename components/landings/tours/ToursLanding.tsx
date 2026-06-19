@@ -91,7 +91,7 @@ export default function ToursLanding() {
         </div>
 
 
-        <section style={{ background: '#0C0B08', padding: '32px 6% 0' }}>
+        <section style={{ background: '#000000', padding: '32px 6% 0' }}>
           <div className="img-grid fade-up">
             <div className="img-grid-item">
               <img src={asset('tours', 'Peak_Season_Windows_Are_Short._Systems_Capture_All_of_It.-removebg-preview.png')} alt="Peak season windows are short — systems capture all of it" />
@@ -153,12 +153,49 @@ export default function ToursLanding() {
           <div className="section-eyebrow fade-up">The Reality</div>
           <h2 className="section-h2 fade-up fade-up-d1">Profits go elsewhere. <em>Not passengers.</em></h2>
           <p className="section-lead fade-up fade-up-d2">When response is slow and systems fail, your revenue walks to the operator who answers first. Here's the shift that changes everything.</p>
-          <div className="transformation-visual-wrap fade-up fade-up-d2">
-            <div className="img-inner">
-              <img src={asset('tours', 'Travel.jpeg')} alt="Profits Go Elsewhere. Not Passengers. — From chaotic booking errors to a modern, customer-first travel experience." loading="lazy" />
-              <div className="img-caption-overlay">Before: chaos &amp; lost bookings → After: smooth operations &amp; happy travellers</div>
-            </div>
+
+          <div className="tours-showcase-grid fade-up fade-up-d2">
+            <figure className="tours-showcase-card">
+              <div className="card-media">
+                <img
+                  src={asset('tours', 'global-travel-ai-agents.png')}
+                  alt="HypeX Global Travel AI Agents — intelligent automation for global tour operators"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>
+                <div className="card-label">Global Operators</div>
+                <div className="card-title">AI agents that capture every inquiry — 24/7, across every channel</div>
+              </figcaption>
+            </figure>
+            <figure className="tours-showcase-card">
+              <div className="card-media">
+                <img
+                  src={asset('tours', 'agency-travel-ai-agents.png')}
+                  alt="HypeX Agency Travel AI Agents — intelligent bookings for travel agencies"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>
+                <div className="card-label">Travel Agencies</div>
+                <div className="card-title">Automated reservations, agent tools, and global payments in one system</div>
+              </figcaption>
+            </figure>
+            <figure className="tours-showcase-card">
+              <div className="card-media">
+                <img
+                  src={asset('tours', 'sri-lanka-tour-ai.png')}
+                  alt="Book Sri Lanka tour packages with AI — 6 nights, 7 days"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>
+                <div className="card-label">Package Sales</div>
+                <div className="card-title">Turn destination inquiries into confirmed bookings — without manual follow-up</div>
+              </figcaption>
+            </figure>
           </div>
+
           <div className="transformation-visual-wrap fade-up fade-up-d3" style={{ marginTop: '60px' }}>
             <div className="img-inner">
               <div style={{ textAlign: 'center', padding: '16px 0 8px' }}>
@@ -525,7 +562,7 @@ export default function ToursLanding() {
           <div className="form-wrap">
             <div className="section-eyebrow fade-up" style={{ justifyContent: 'center' }}>Free Revenue Leak Audit</div>
             <h2 className="section-h2 fade-up fade-up-d1" style={{ textAlign: 'center' }}>Claim your <em>free 20-minute audit.</em><br />Find out exactly what you're leaking.</h2>
-            <p style={{ textAlign: 'center', fontSize: '17px', color: 'rgba(245,240,232,0.6)', marginBottom: '8px', fontFamily: '\'Poppins\',sans-serif' }}>Takes 3 minutes to fill. We do the math.</p>
+            <p style={{ textAlign: 'center', fontSize: '17px', color: 'rgba(255,255,255,0.6)', marginBottom: '8px', fontFamily: '\'Poppins\',sans-serif' }}>Takes 3 minutes to fill. We do the math.</p>
             <form id="auditForm" className="form-grid">
               <div className="form-field fade-up fade-up-d2">
                 <label className="form-label">Your Name</label>
@@ -611,7 +648,7 @@ export default function ToursLanding() {
         <footer className="fade-up">
           <div>
             <div className="footer-brand">Lead<span>Matrix</span></div>
-            <p style={{ fontFamily: '\'Poppins\',sans-serif', fontSize: '13px', color: 'rgba(245,240,232,0.4)', marginTop: '8px', maxWidth: '320px' }}>Revenue infrastructure for tour operators and travel companies that are ready to stop leaking bookings.</p>
+            <p style={{ fontFamily: '\'Poppins\',sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginTop: '8px', maxWidth: '320px' }}>Revenue infrastructure for tour operators and travel companies that are ready to stop leaking bookings.</p>
           </div>
           <div className="footer-contact">
             <div>Email: <a href="mailto:hypexofficial.team@gmail.com">hypexofficial.team@gmail.com</a></div>
